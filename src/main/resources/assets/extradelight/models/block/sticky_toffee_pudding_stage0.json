@@ -1,6 +1,7 @@
 {
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
+	"render_type": "cutout",
 	"textures": {
 		"0": "extradelight:block/cake_plate",
 		"1": "extradelight:block/sticky_toffee_pudding",

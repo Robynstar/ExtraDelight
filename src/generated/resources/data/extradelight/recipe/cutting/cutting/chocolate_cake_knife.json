@@ -2,14 +2,14 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "extradelight:coffe_cake_feast"
+      "item": "extradelight:chocolate_cake_block"
     }
   ],
   "result": [
     {
       "item": {
         "count": 7,
-        "id": "extradelight:coffee_cake_slice"
+        "id": "extradelight:chocolate_cake"
       }
     }
   ],
