@@ -2401,10 +2401,16 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.save(consumer, EDLoc("monsieur_to_madam"));
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.COFFEE_CAKE_FEAST.get())
-				.requires(ExtraDelightItems.COFFEE_CAKE_SLICE.get(), 8)
+				.requires(ExtraDelightItems.COFFEE_CAKE_SLICE.get(), 7)
 				.unlockedBy(getName(),
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.COFFEE_CAKE_SLICE.get()))
 				.save(consumer, EDLoc("coffee_cake_from_slice"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.CHOCOLATE_CAKE_BLOCK.get())
+				.requires(ExtraDelightItems.CHOCOLATE_CAKE.get(), 7)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CHOCOLATE_CAKE.get()))
+				.save(consumer, EDLoc("chocolate_cake_from_slice"));
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.CHARCUTERIE_BOARD_FEAST.get()).pattern("cmh")
 				.pattern("cmh").pattern(" b ").define('m', ExtraDelightTags.MEAT_COOKED)
@@ -3931,7 +3937,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		CuttingBoardRecipeBuilder
 				.cuttingRecipe(Ingredient.of(ExtraDelightItems.COFFEE_CAKE_FEAST.get()),
-						Ingredient.of(CommonTags.TOOLS_KNIFE), ExtraDelightItems.COFFEE_CAKE_SLICE.get(), 8)
+						Ingredient.of(CommonTags.TOOLS_KNIFE), ExtraDelightItems.COFFEE_CAKE_SLICE.get(), 7)
 				.build(consumer, EDLoc("cutting/" + "coffee_cake_knife"));
 
 		CuttingBoardRecipeBuilder
@@ -4043,6 +4049,11 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.cuttingRecipe(Ingredient.of(ExtraDelightItems.HAZELNUTS_IN_SHELL.get()),
 						Ingredient.of(CommonTags.TOOLS_KNIFE), ExtraDelightItems.HAZELNUTS.get(), 2)
 				.build(consumer, EDLoc("cutting/" + "hazelnuts"));
+
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ExtraDelightItems.CHOCOLATE_CAKE_BLOCK.get()),
+						Ingredient.of(CommonTags.TOOLS_KNIFE), ExtraDelightItems.CHOCOLATE_CAKE.get(), 7)
+				.build(consumer, EDLoc("cutting/" + "chocolate_cake_knife"));
 	}
 
 	private void mortarRecipes(RecipeOutput consumer) {
@@ -4953,7 +4964,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(ExtraDelightTags.CHOCOLATE_SYRUP)
 				.addIngredient(CommonTags.FOODS_MILK).addIngredient(ExtraDelightTags.CHOCOLATE_SYRUP)
 				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Tags.Items.EGGS)
-				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Tags.Items.EGGS)
+				.addIngredient(ExtraDelightTags.SWEETENER)
 				.unlockedByAnyIngredient(ExtraDelightItems.SQUARE_PAN.get()).build(consumer);
 
 		OvenRecipeBuilder
