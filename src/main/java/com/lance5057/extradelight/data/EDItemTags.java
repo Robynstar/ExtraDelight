@@ -464,7 +464,8 @@ public class EDItemTags extends ItemTagsProvider {
 				ExtraDelightItems.WHITE_CHOCOLATE_SYRUP_BOTTLE.get());
 		tag(ExtraDelightTags.COOKIE).add(Items.COOKIE, ExtraDelightItems.APPLE_COOKIE.get(),
 				ExtraDelightItems.GINGERBREAD_COOKIE.get(), ExtraDelightItems.GLOW_BERRY_COOKIE.get(),
-				ExtraDelightItems.PUMPKIN_COOKIE.get(), ExtraDelightItems.SUGAR_COOKIE.get());
+				ExtraDelightItems.PUMPKIN_COOKIE.get(), ExtraDelightItems.SUGAR_COOKIE.get(),
+				ModItems.SWEET_BERRY_COOKIE.get(), ModItems.HONEY_COOKIE.get());
 		tag(ExtraDelightTags.COFFEE_CHERRIES).add(ExtraDelightItems.COFFEE_CHERRIES.get());
 		tag(ExtraDelightTags.GROUND_COFFEE_BEANS).add(ExtraDelightItems.GROUND_COFFEE.get());
 		tag(ExtraDelightTags.GREEN_COFFEE).add(ExtraDelightItems.GREEN_COFFEE.get());
