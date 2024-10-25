@@ -93,20 +93,20 @@ public class CornBottom extends CropBlock {
 		if (!pLevel.isAreaLoaded(pPos, 1))
 			return; // Forge: prevent loading unloaded chunks when checking neighbor's light
 
-		if (!this.isMaxAge(pState)) {
-			if (pLevel.getRawBrightness(pPos, 0) >= 9) {
-				int i = this.getAge(pState);
-				if (i < this.getMaxAge()) {
-					float f = CropBlock.getGrowthSpeed(pState, pLevel, pPos);
-					if (net.neoforged.neoforge.common.CommonHooks.canCropGrow(pLevel, pPos, pState,
-							pRandom.nextInt((int) (25.0F / f) + 1) == 0)) {
-						this.growCrops(pLevel, pPos, pState);
-						net.neoforged.neoforge.common.CommonHooks.fireCropGrowPost(pLevel, pPos, pState);
-					}
-				}
+//		if (!this.isMaxAge(pState)) {
+		if (pLevel.getRawBrightness(pPos, 0) >= 9) {
+			int i = this.getAge(pState);
+//			if (i < this.getMaxAge()) {
+			float f = CropBlock.getGrowthSpeed(pState, pLevel, pPos);
+			if (net.neoforged.neoforge.common.CommonHooks.canCropGrow(pLevel, pPos, pState,
+					pRandom.nextInt((int) (25.0F / f) + 1) == 0)) {
+				this.growCrops(pLevel, pPos, pState);
+				net.neoforged.neoforge.common.CommonHooks.fireCropGrowPost(pLevel, pPos, pState);
+//				}
 			}
-
 		}
+
+//		}
 
 	}
 

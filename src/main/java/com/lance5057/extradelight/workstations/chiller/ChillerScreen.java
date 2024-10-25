@@ -60,7 +60,7 @@ public class ChillerScreen extends AbstractContainerScreen<ChillerMenu> {
 		int l = this.menu.tileEntity.getCookTimeTotal();
 		int m = this.menu.tileEntity.getCookTime();
 		ms.blit(BACKGROUND_TEXTURE, this.leftPos + 101, this.topPos +  42, PROGRESS_ARROW.x, PROGRESS_ARROW.y,
-				m != 0 && l != 0 ? m * 24 / l : 0 + 1, PROGRESS_ARROW.height);
+				m != 0 && l != 0 ? m * 24 / l : 0, PROGRESS_ARROW.height);
 	}
 
 }

@@ -3,12 +3,15 @@ package com.lance5057.extradelight.workstations.chiller;
 import javax.annotation.Nullable;
 
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
+import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlockEntity;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.MenuProvider;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -34,6 +37,7 @@ import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import vectorwing.farmersdelight.common.utility.MathUtils;
 
@@ -127,8 +131,12 @@ public class ChillerBlock extends Block implements EntityBlock {
 	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
 		if (state.getBlock() != newState.getBlock()) {
 			BlockEntity tileEntity = level.getBlockEntity(pos);
-			if (tileEntity instanceof ChillerBlockEntity ChillerEntity) {
-//				Containers.dropContents(level, pos, ChillerEntity.);
+			if (tileEntity instanceof ChillerBlockEntity te) {
+				IItemHandler items = te.getInventory();
+				for (int i = 0; i < te.getInventory().getSlots(); i++) {
+						level.addFreshEntity(
+								new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), items.getStackInSlot(i)));
+				}
 				level.updateNeighbourForOutputSignal(pos, this);
 			}
 
