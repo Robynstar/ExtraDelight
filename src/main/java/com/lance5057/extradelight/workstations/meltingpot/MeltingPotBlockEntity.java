@@ -49,7 +49,6 @@ public class MeltingPotBlockEntity extends BlockEntity implements HeatableBlockE
 
 	public int cookingTime = 0;
 	public int cookingProgress = 0;
-//	private FluidStack result;
 
 	private final RecipeManager.CachedCheck<SingleRecipeInput, MeltingPotRecipe> quickCheck;
 
@@ -87,87 +86,97 @@ public class MeltingPotBlockEntity extends BlockEntity implements HeatableBlockE
 				return super.insertItem(slot, stack, simulate);
 			}
 
+			@Override
+			protected void onContentsChanged(int slot) {
+
+				updateInventory();
+			}
 		};
 	}
 
 	public static <T extends BlockEntity> void tick(Level level, BlockPos pos, BlockState state, T be) {
 		MeltingPotBlockEntity pBlockEntity = (MeltingPotBlockEntity) be;
-		boolean flag = false;
-		IItemHandlerModifiable h = pBlockEntity.getItemHandler();
-		FluidTank f = pBlockEntity.getFluidTank();
+		if (pBlockEntity.isHeated()) {
+//			boolean flag = false;
+			IItemHandlerModifiable h = pBlockEntity.getItemHandler();
+			FluidTank f = pBlockEntity.getFluidTank();
 
-		ItemStack itemstack = h.getStackInSlot(0);
-		RecipeHolder<MeltingPotRecipe> recipeholder;
-		if (!itemstack.isEmpty()) {
-			recipeholder = pBlockEntity.quickCheck.getRecipeFor(new SingleRecipeInput(itemstack), level).orElse(null);
-			if (recipeholder != null)
-				pBlockEntity.cookingTime = recipeholder.value().cooktime;
-			else {
+			ItemStack itemstack = h.getStackInSlot(0);
+			RecipeHolder<MeltingPotRecipe> recipeholder;
+			if (!itemstack.isEmpty()) {
+				recipeholder = pBlockEntity.quickCheck.getRecipeFor(new SingleRecipeInput(itemstack), level)
+						.orElse(null);
+				if (recipeholder != null)
+					pBlockEntity.cookingTime = recipeholder.value().cooktime;
+				else {
+					pBlockEntity.cookingTime = 0;
+					pBlockEntity.cookingProgress = 0;
+				}
+			} else {
+				recipeholder = null;
 				pBlockEntity.cookingTime = 0;
 				pBlockEntity.cookingProgress = 0;
 			}
-		} else {
-			recipeholder = null;
-			pBlockEntity.cookingTime = 0;
-			pBlockEntity.cookingProgress = 0;
-		}
 
-		if (recipeholder != null) {
-			FluidStack fluid = recipeholder.value().result.copy();
+			if (recipeholder != null) {
+				FluidStack fluid = recipeholder.value().result.copy();
 
-			if (f.isEmpty() || f.fill(fluid, FluidAction.SIMULATE) == fluid.getAmount())
-				if (!itemstack.isEmpty()) {
-					flag = true;
-					int j = pBlockEntity.cookingProgress++;
-					if (pBlockEntity.cookingProgress >= pBlockEntity.cookingTime) {
-						f.fill(fluid, FluidAction.EXECUTE);
-						itemstack.shrink(1);
-						pBlockEntity.cookingProgress = 0;
-						if (itemstack.isEmpty()) {
-							pBlockEntity.cookingTime = 0;
+				if (f.isEmpty() || f.fill(fluid, FluidAction.SIMULATE) == fluid.getAmount())
+					if (!itemstack.isEmpty()) {
+//						flag = true;
+						int j = pBlockEntity.cookingProgress++;
+						if (pBlockEntity.cookingProgress >= pBlockEntity.cookingTime) {
+							f.fill(fluid, FluidAction.EXECUTE);
+							itemstack.shrink(1);
+							pBlockEntity.cookingProgress = 0;
+							if (itemstack.isEmpty()) {
+								pBlockEntity.cookingTime = 0;
+							}
+							level.sendBlockUpdated(pos, state, state, 3);
+						} else {
+
+							for (int k = 0; k < 1; k++) {
+								level.addParticle(ParticleTypes.DOLPHIN, pos.getX() + level.random.nextDouble() / 16,
+										pos.getY() - level.random.nextDouble() / 16,
+										pos.getZ() + level.random.nextDouble() / 16, 0, 1f, 0);
+							}
 						}
-						level.sendBlockUpdated(pos, state, state, 3);
 					} else {
 
-						for (int k = 0; k < 1; k++) {
-							level.addParticle(ParticleTypes.DOLPHIN, pos.getX() + level.random.nextDouble() / 16,
-									pos.getY() - level.random.nextDouble() / 16,
-									pos.getZ() + level.random.nextDouble() / 16, 0, 1f, 0);
+					}
+
+//				if (flag) {
+					
+//				}
+			} else
+				pBlockEntity.cookingProgress = 0;
+
+			if (!h.getStackInSlot(BUCKET_SLOT).isEmpty()) {
+				ItemStack inputItem = h.getStackInSlot(BUCKET_SLOT);
+				ItemStack outputItem = h.getStackInSlot(BUCKET_SLOT_OUT);
+				if (inputItem.getItem() == Items.BUCKET) {
+					if (!f.getFluid().isEmpty()) {
+						FluidStack stack = f.drain(FluidType.BUCKET_VOLUME, IFluidHandler.FluidAction.SIMULATE);
+						if (stack.getAmount() == FluidType.BUCKET_VOLUME
+								&& (outputItem.isEmpty() || (outputItem.getItem() == stack.getFluid().getBucket()
+										&& outputItem.getCount() < outputItem.getMaxStackSize()))) {
+							f.drain(FluidType.BUCKET_VOLUME, IFluidHandler.FluidAction.EXECUTE);
+							inputItem.shrink(1);
+							if (outputItem.isEmpty()) {
+								h.setStackInSlot(2, stack.getFluid().getBucket().getDefaultInstance());
+							} else {
+								outputItem.grow(1);
+							}
 						}
 					}
 				} else {
-
+					IFluidHandlerItem fluidHandlerItem = inputItem.getCapability(Capabilities.FluidHandler.ITEM);
+					FluidUtil.tryFluidTransfer(fluidHandlerItem, f, f.getFluidAmount(), true);
 				}
 
-			if (flag) {
-				pBlockEntity.updateInventory();
 			}
 		}
-
-		if (!h.getStackInSlot(BUCKET_SLOT).isEmpty()) {
-			ItemStack inputItem = h.getStackInSlot(BUCKET_SLOT);
-			ItemStack outputItem = h.getStackInSlot(BUCKET_SLOT_OUT);
-			if (inputItem.getItem() == Items.BUCKET) {
-				if (!f.getFluid().isEmpty()) {
-					FluidStack stack = f.drain(FluidType.BUCKET_VOLUME, IFluidHandler.FluidAction.SIMULATE);
-					if (stack.getAmount() == FluidType.BUCKET_VOLUME
-							&& (outputItem.isEmpty() || (outputItem.getItem() == stack.getFluid().getBucket()
-									&& outputItem.getCount() < outputItem.getMaxStackSize()))) {
-						f.drain(FluidType.BUCKET_VOLUME, IFluidHandler.FluidAction.EXECUTE);
-						inputItem.shrink(1);
-						if (outputItem.isEmpty()) {
-							h.setStackInSlot(2, stack.getFluid().getBucket().getDefaultInstance());
-						} else {
-							outputItem.grow(1);
-						}
-					}
-				}
-			} else {
-				IFluidHandlerItem fluidHandlerItem = inputItem.getCapability(Capabilities.FluidHandler.ITEM);
-				FluidUtil.tryFluidTransfer(fluidHandlerItem, f, f.getFluidAmount(), flag);
-			}
-
-		}
+		pBlockEntity.updateInventory();
 	}
 
 	public boolean isHeated() {

@@ -23,6 +23,7 @@ import com.lance5057.extradelight.displays.spice.SpiceRackScreen;
 import com.lance5057.extradelight.displays.wreath.WreathRenderer;
 import com.lance5057.extradelight.displays.wreath.WreathScreen;
 import com.lance5057.extradelight.gui.StyleableScreen;
+import com.lance5057.extradelight.items.jar.JarItemModel;
 import com.lance5057.extradelight.workstations.chiller.ChillerScreen;
 import com.lance5057.extradelight.workstations.doughshaping.DoughShapingScreen;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackRenderer;
@@ -42,6 +43,7 @@ import net.minecraft.client.model.geom.LayerDefinitions;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.renderer.BiomeColors;
+import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.resources.ResourceLocation;
@@ -167,18 +169,27 @@ public class ExtraDelightClientEvents {
 //		for (RegistryObject<Item> b : AestheticBlocks.WREATH_ITEMS)
 		event.register(itemBlockColourHandler, AestheticBlocks.getRegistryListAsItems(AestheticBlocks.WREATH_ITEMS));
 	}
-	
+
 	@SubscribeEvent
 	public static void registerClientExtensions(RegisterClientExtensionsEvent event) {
 		event.registerItem(new IClientItemExtensions() {
 			@Override
 			public HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack,
-														  EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
+					EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
 				EntityModelSet models = Minecraft.getInstance().getEntityModels();
 				ModelPart root = models.bakeLayer(CorncobPipeModel.LAYER_LOCATION);
 				return new CorncobPipeModel(root);
 			}
 
 		}, ExtraDelightItems.CORN_COB_PIPE.asItem());
+
+		event.registerItem(new IClientItemExtensions() {
+
+			@Override
+			public BlockEntityWithoutLevelRenderer getCustomRenderer() {
+				return JarItemModel.getInstance();
+			}
+		}, ExtraDelightItems.JAR.asItem());
+
 	}
 }

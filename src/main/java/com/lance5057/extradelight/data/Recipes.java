@@ -9,7 +9,6 @@ import com.lance5057.extradelight.ExtraDelightFluids;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
-import com.lance5057.extradelight.blocks.JellyBlock;
 import com.lance5057.extradelight.data.recipebuilders.ChillerRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.DryingRackRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.FeastRecipeBuilder;
@@ -40,10 +39,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.Fluids;
-import net.minecraft.world.level.material.MapColor;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.NeoForgeMod;
 import net.neoforged.neoforge.common.Tags;
@@ -52,7 +48,6 @@ import net.neoforged.neoforge.common.crafting.CompoundIngredient;
 import net.neoforged.neoforge.common.crafting.DifferenceIngredient;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
-import net.neoforged.neoforge.registries.DeferredBlock;
 import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
 import vectorwing.farmersdelight.common.crafting.ingredient.ItemAbilityIngredient;
 import vectorwing.farmersdelight.common.registry.ModItems;
@@ -3122,6 +3117,12 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		bundleItem9(Ingredient.of(ExtraDelightItems.WHITE_CHOCOLATE_BAR.get()),
 				ExtraDelightItems.WHITE_CHOCOLATE_BLOCK.get(), ExtraDelightItems.WHITE_CHOCOLATE_BAR.get(), consumer,
 				"white_chocolate_block");
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.CHOCOLATE_CAKE_BLOCK.get(), 1)
+				.requires(ExtraDelightItems.CHOCOLATE_CAKE, 7)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CORN_FLAKES.get()))
+				.save(consumer, EDLoc("chocolate_cake_whole"));
 	}
 
 	private void bucket(String name, RecipeOutput consumer, ItemLike fullBucket, ItemLike emptyItem,
@@ -4964,13 +4965,14 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(ExtraDelightTags.CHOCOLATE_SYRUP)
 				.addIngredient(CommonTags.FOODS_MILK).addIngredient(ExtraDelightTags.CHOCOLATE_SYRUP)
 				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Tags.Items.EGGS)
-				.addIngredient(ExtraDelightTags.SWEETENER)
-				.unlockedByAnyIngredient(ExtraDelightItems.SQUARE_PAN.get()).build(consumer);
+				.addIngredient(ExtraDelightTags.SWEETENER).unlockedByAnyIngredient(ExtraDelightItems.SQUARE_PAN.get())
+				.build(consumer);
+
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.STICKY_TOFFEE_PUDDING_BLOCK.get(), 1), NORMAL_COOKING,
 						MEDIUM_EXP, new ItemStack(ExtraDelightItems.SQUARE_PAN.get()))
-				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(ExtraDelightTags.DRIED_FRUIT)
+				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(ExtraDelightItems.CARAMEL_SAUCE)
 				.addIngredient(ExtraDelightTags.FLOUR).addIngredient(ExtraDelightTags.BUTTER)
 				.addIngredient(CommonTags.FOODS_MILK).addIngredient(ExtraDelightTags.SWEETENER)
 				.addIngredient(Tags.Items.EGGS).addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Tags.Items.EGGS)
