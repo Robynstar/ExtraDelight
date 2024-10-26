@@ -249,7 +249,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		ChillerRecipeBuilder
 				.chill(ExtraDelightItems.FUDGE_BLOCK.toStack(1), FAST_COOKING, SMALL_EXP,
-						ExtraDelightItems.SQUARE_PAN.toStack(),
+						ExtraDelightItems.SHEET.toStack(),
 						new FluidStack(ExtraDelightFluids.WHITE_CHOCOLATE_SYRUP.FLUID.get(), 250))
 				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.MARSHMALLOW_FLUFF)
 				.addIngredient(CommonTags.FOODS_MILK).addIngredient(ExtraDelightTags.SWEETENER)
@@ -2061,17 +2061,17 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.save(consumer, EDLoc("omelette_mix_meat_cheese"));
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.JAM_TOAST.get())
-				.requires(Ingredient.of(ExtraDelightTags.JAM_MUNDANE)).requires(Ingredient.of(ExtraDelightTags.TOAST))
+				.requires(Ingredient.of(ExtraDelightTags.JAM_MUNDANE)).requires(Ingredient.of(ExtraDelightTags.BREAD_SLICE))
 				.unlockedBy(getName(), has(ExtraDelightTags.JAM)).save(consumer, EDLoc("jam_toast"));
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.GLOW_JAM_TOAST.get())
 				.requires(Ingredient.of(ExtraDelightTags.JAM_GLOW_BERRY))
-				.requires(Ingredient.of(ExtraDelightTags.TOAST))
+				.requires(Ingredient.of(ExtraDelightTags.BREAD_SLICE))
 				.unlockedBy(getName(), has(ExtraDelightTags.JAM_GLOW_BERRY)).save(consumer, EDLoc("glow_jam_toast"));
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.GOLDEN_JAM_TOAST.get())
 				.requires(Ingredient.of(ExtraDelightTags.JAM_GOLDEN_APPLE))
-				.requires(Ingredient.of(ExtraDelightTags.TOAST))
+				.requires(Ingredient.of(ExtraDelightTags.BREAD_SLICE))
 				.unlockedBy(getName(), has(ExtraDelightTags.JAM_GOLDEN_APPLE))
 				.save(consumer, EDLoc("golden_jam_toast"));
 

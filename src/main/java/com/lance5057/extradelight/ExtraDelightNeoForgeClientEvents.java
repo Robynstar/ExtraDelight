@@ -86,22 +86,6 @@ public class ExtraDelightNeoForgeClientEvents {
 	}
 
 	static Set<DeferredItem<Item>> feasts = Set.of(
-			ExtraDelightItems.JELLY_WHITE_FEAST_ITEM,
-			ExtraDelightItems.JELLY_ORANGE_FEAST_ITEM,
-			ExtraDelightItems.JELLY_MAGENTA_FEAST_ITEM,
-			ExtraDelightItems.JELLY_LIGHT_BLUE_FEAST_ITEM,
-			ExtraDelightItems.JELLY_YELLOW_FEAST_ITEM,
-			ExtraDelightItems.JELLY_LIME_FEAST_ITEM,
-			ExtraDelightItems.JELLY_PINK_FEAST_ITEM,
-			ExtraDelightItems.JELLY_GREY_FEAST_ITEM,
-			ExtraDelightItems.JELLY_LIGHT_GREY_FEAST_ITEM,
-			ExtraDelightItems.JELLY_CYAN_FEAST_ITEM,
-			ExtraDelightItems.JELLY_PURPLE_FEAST_ITEM,
-			ExtraDelightItems.JELLY_BLUE_FEAST_ITEM,
-			ExtraDelightItems.JELLY_BROWN_FEAST_ITEM,
-			ExtraDelightItems.JELLY_GREEN_FEAST_ITEM,
-			ExtraDelightItems.JELLY_RED_FEAST_ITEM,
-			ExtraDelightItems.JELLY_BLACK_FEAST_ITEM,
 			// Cakes and Pies
 			ExtraDelightItems.CHEESECAKE_ITEM,
 			ExtraDelightItems.CHOCOLATE_CHEESECAKE_ITEM,

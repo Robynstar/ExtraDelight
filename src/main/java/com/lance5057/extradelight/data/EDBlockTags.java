@@ -13,6 +13,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -171,10 +172,11 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.DARK_CHOCOLATE_FENCE.get(), ExtraDelightBlocks.MILK_CHOCOLATE_FENCE.get(),
 				ExtraDelightBlocks.WHITE_CHOCOLATE_FENCE.get());
 		tag(BlockTags.WOODEN_FENCES).add(ExtraDelightBlocks.CINNAMON_FENCE.get(), ExtraDelightBlocks.FRUIT_FENCE.get());
-		tag(BlockTags.FENCE_GATES).add(ExtraDelightBlocks.CINNAMON_FENCE_GATE.get(),
-				ExtraDelightBlocks.BLOOD_CHOCOLATE_FENCE_GATE.get(), ExtraDelightBlocks.DARK_CHOCOLATE_FENCE_GATE.get(),
-				ExtraDelightBlocks.FRUIT_FENCE_GATE.get(), ExtraDelightBlocks.MILK_CHOCOLATE_FENCE_GATE.get(),
+		tag(BlockTags.FENCE_GATES).add(ExtraDelightBlocks.BLOOD_CHOCOLATE_FENCE_GATE.get(),
+				ExtraDelightBlocks.DARK_CHOCOLATE_FENCE_GATE.get(), ExtraDelightBlocks.MILK_CHOCOLATE_FENCE_GATE.get(),
 				ExtraDelightBlocks.WHITE_CHOCOLATE_FENCE_GATE.get());
+		tag(Tags.Blocks.FENCE_GATES_WOODEN).add(ExtraDelightBlocks.CINNAMON_FENCE_GATE.get(),
+				ExtraDelightBlocks.FRUIT_FENCE_GATE.get());
 		tag(BlockTags.STAIRS).add(ExtraDelightBlocks.BLOOD_CHOCOLATE_STAIRS.get(),
 				ExtraDelightBlocks.DARK_CHOCOLATE_STAIRS.get(), ExtraDelightBlocks.MILK_CHOCOLATE_STAIRS.get(),
 				ExtraDelightBlocks.WHITE_CHOCOLATE_STAIRS.get());

@@ -73,6 +73,8 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add("farmersdelight.tooltip.unshucked_corn", "Hold Right-Click to shuck");
 
+		this.add("extradelight.jei.info.mint", "Watch out or it'll get away!");
+
 		this.add(ExtraDelight.MOD_ID + ".yeastpot.tooltip", "Use a bottle once the pot begins to bubble.");
 		this.add(ExtraDelight.MOD_ID + ".vinegarpot.tooltip", "Use a bottle once the pot begins to bubble.");
 		this.add(ExtraDelight.MOD_ID + ".tooltip.feast", "Feast Block");
@@ -86,7 +88,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelight.MOD_ID + ".advancement.start.desc", "Feeling a little extra.");
 
 		this.add(ExtraDelight.MOD_ID + ".advancement.grater.name", "It's Grate");
-		this.add(ExtraDelight.MOD_ID + ".advancement.grater.desc", "Use the grater to grate an ingredient.");
+		this.add(ExtraDelight.MOD_ID + ".advancement.grater.desc", "Make a Grater.");
 
 		this.add(ExtraDelight.MOD_ID + ".advancement.spoon.name", "Tick Approved");
 		this.add(ExtraDelight.MOD_ID + ".advancement.spoon.desc", "Make a spoon, you're gonna need it.");
@@ -110,11 +112,11 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelight.MOD_ID + ".advancement.flour.name", "A Little Less Roughage");
 		this.add(ExtraDelight.MOD_ID + ".advancement.flour.desc", "Make some flour and make your bread less fibrous.");
 
-		this.add(ExtraDelight.MOD_ID + ".advancement.amethyst.name", "Regal Purple");
-		this.add(ExtraDelight.MOD_ID + ".advancement.amethyst.desc", "Find an Amethyst set.");
+		// this.add(ExtraDelight.MOD_ID + ".advancement.amethyst.name", "Regal Purple");
+		// this.add(ExtraDelight.MOD_ID + ".advancement.amethyst.desc", "Find an Amethyst set.");
 
-		this.add(ExtraDelight.MOD_ID + ".advancement.gildedblackstone.name", "Deep Shimmer");
-		this.add(ExtraDelight.MOD_ID + ".advancement.gildedblackstone.desc", "Find a Gilded Blackstone set.");
+		// this.add(ExtraDelight.MOD_ID + ".advancement.gildedblackstone.name", "Deep Shimmer");
+		// this.add(ExtraDelight.MOD_ID + ".advancement.gildedblackstone.desc", "Find a Gilded Blackstone set.");
 
 		this.add(ExtraDelight.MOD_ID + ".advancement.doughshaping.name", "I Kneed it");
 		this.add(ExtraDelight.MOD_ID + ".advancement.doughshaping.desc",
@@ -131,11 +133,11 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add(ExtraDelight.MOD_ID + ".advancement.yeastpot.name", "Micro Flatulance");
 		this.add(ExtraDelight.MOD_ID + ".advancement.yeastpot.desc",
-				"Make a yeast pot and, once it starts to bubble use a bottle get yeast.");
+				"Make a yeast pot and, once it starts to bubble, use a bottle get yeast.");
 
 		this.add(ExtraDelight.MOD_ID + ".advancement.vinegarpot.name", "Positively Pickled");
 		this.add(ExtraDelight.MOD_ID + ".advancement.vinegarpot.desc",
-				"Make a vinegar pot and, once it starts to bubble use a bottle to get vinegar.");
+				"Make a vinegar pot and, once it starts to bubble, use a bottle to get vinegar.");
 
 		this.add(ExtraDelight.MOD_ID + ".advancement.jelly.name", "A Bouncy Castle For Ants");
 		this.add(ExtraDelight.MOD_ID + ".advancement.jelly.desc", "Make some Jelly!");
@@ -982,7 +984,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.TRAIL_MIX.get(), "Trail Mix");
 		this.add(ExtraDelightItems.NOUGAT.get(), "Nougat");
 		this.add(ExtraDelightItems.GUMMIES.get(), "Gummies");
-		this.add(ExtraDelightItems.PEANUT_BRITTLE.get(), "Peanut Brittle");
+		this.add(ExtraDelightItems.PEANUT_BRITTLE.get(), "Nut Brittle");
 		this.add(ExtraDelightItems.BUTTERSCOTCH.get(), "Butterscotch");
 		this.add(ExtraDelightItems.FLUFFER_NUTTER.get(), "Fluffer Nutter");
 
