@@ -73,7 +73,15 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add("farmersdelight.tooltip.unshucked_corn", "Hold Right-Click to shuck");
 
-		this.add("extradelight.jei.info.mint", "Watch out or it'll get away!");
+		this.add("extradelight.jei.info.mint", "Found in cold biomes.");
+		this.add("extradelight.jei.info.cinnamon", "Found in jungles.");
+		this.add("extradelight.jei.info.ginger", "Found in hot biomes.");
+		this.add("extradelight.jei.info.corn", "Found in drier, plains biomes.");
+		this.add("extradelight.jei.info.chili", "Spicy!");
+		this.add("extradelight.jei.info.mallow", "So soft.");
+		this.add("extradelight.jei.info.peanut", "Crunchy!");
+		this.add("extradelight.jei.info.coffee", "Zoom zoom!");
+		this.add("extradelight.jei.info.hazelnut", "Go nuts!");
 
 		this.add(ExtraDelight.MOD_ID + ".yeastpot.tooltip", "Use a bottle once the pot begins to bubble.");
 		this.add(ExtraDelight.MOD_ID + ".vinegarpot.tooltip", "Use a bottle once the pot begins to bubble.");

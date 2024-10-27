@@ -76,7 +76,33 @@ public class JEIPlugin implements IModPlugin {
 		registry.addRecipes(ChillerRecipeCategory.TYPE, Minecraft.getInstance().level.getRecipeManager()
 				.getAllRecipesFor(ExtraDelightRecipes.CHILLER.get()).stream().map(RecipeHolder::value).toList());
 
-		registry.addIngredientInfo(List.of(new ItemStack(ExtraDelightItems.MINT.get())), VanillaTypes.ITEM_STACK, Component.translatable(ExtraDelight.MOD_ID + ".jei.info.mint"));
+		registry.addIngredientInfo(new ItemStack(ExtraDelightItems.MINT.get()), VanillaTypes.ITEM_STACK,
+				Component.translatable(ExtraDelight.MOD_ID + ".jei.info.mint"));
+		registry.addIngredientInfo(List.of(new ItemStack(ExtraDelightItems.CINNAMON_SAPLING.get()),
+				new ItemStack(ExtraDelightItems.CINNAMON_LOG.get()), new ItemStack(ExtraDelightItems.CINNAMON_BARK.get()
+						)), VanillaTypes.ITEM_STACK,
+				Component.translatable(ExtraDelight.MOD_ID + ".jei.info.cinnamon"));
+		registry.addIngredientInfo(List.of(new ItemStack(ExtraDelightItems.WILD_GINGER.get()),
+						new ItemStack(ExtraDelightItems.GINGER.get())), VanillaTypes.ITEM_STACK,
+				Component.translatable(ExtraDelight.MOD_ID + ".jei.info.ginger"));
+		registry.addIngredientInfo(List.of(new ItemStack(ExtraDelightItems.CORN_SEEDS.get()),
+						new ItemStack(ExtraDelightItems.UNSHUCKED_CORN.get())), VanillaTypes.ITEM_STACK,
+				Component.translatable(ExtraDelight.MOD_ID + ".jei.info.corn"));
+		registry.addIngredientInfo(List.of(new ItemStack(ExtraDelightItems.WILD_CHILI_BLOCK.get()),
+						new ItemStack(ExtraDelightItems.CHILI.get()), new ItemStack(ExtraDelightItems.CHILI_SEEDS.get()
+						)), VanillaTypes.ITEM_STACK,
+				Component.translatable(ExtraDelight.MOD_ID + ".jei.info.chili"));
+		registry.addIngredientInfo(List.of(new ItemStack(ExtraDelightItems.WILD_MALLOW_ROOT_BLOCK.get()),
+						new ItemStack(ExtraDelightItems.MALLOW_ROOT.get())), VanillaTypes.ITEM_STACK,
+				Component.translatable(ExtraDelight.MOD_ID + ".jei.info.mallow"));
+		registry.addIngredientInfo(List.of(new ItemStack(ExtraDelightItems.WILD_PEANUT_BLOCK.get()),
+						new ItemStack(ExtraDelightItems.PEANUTS_IN_SHELL.get())), VanillaTypes.ITEM_STACK,
+				Component.translatable(ExtraDelight.MOD_ID + ".jei.info.peanut"));
+		registry.addIngredientInfo(List.of(new ItemStack(ExtraDelightItems.COFFEE_CHERRIES.get())), VanillaTypes.ITEM_STACK,
+				Component.translatable(ExtraDelight.MOD_ID + ".jei.info.coffee"));
+		registry.addIngredientInfo(List.of(new ItemStack(ExtraDelightItems.HAZELNUT_SAPLING.get()),
+						new ItemStack(ExtraDelightItems.HAZELNUTS_IN_SHELL.get())), VanillaTypes.ITEM_STACK,
+				Component.translatable(ExtraDelight.MOD_ID + ".jei.info.hazelnut"));
 
 		List<ItemStack> hide = List.of(ExtraDelightItems.EASTER_EGG.get().getDefaultInstance());
 		registry.getIngredientManager().removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK, hide);
