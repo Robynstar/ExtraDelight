@@ -68,7 +68,7 @@ public class EDItemTags extends ItemTagsProvider {
 
 		tag(ExtraDelightTags.TOAST).add(ExtraDelightItems.TOAST.get());
 
-		tag(Tags.Items.SLIMEBALLS).add(ExtraDelightItems.SEAWEED_PASTE.get());
+		tag(Tags.Items.SLIME_BALLS).add(ExtraDelightItems.SEAWEED_PASTE.get());
 
 		tag(ExtraDelightTags.FLOUR).add(ExtraDelightItems.FLOUR.get());
 
@@ -491,5 +491,10 @@ public class EDItemTags extends ItemTagsProvider {
 				ExtraDelightItems.MINT_CANDY_GREEN.get(), ExtraDelightItems.MINT_CANDY_RED.get());
 		tag(ExtraDelightTags.COFFEE).add(ExtraDelightItems.COFFEE.get());
 		tag(ExtraDelightTags.CHILI).add(ExtraDelightItems.CHILI.get());
+
+		tag(Tags.Items.CROPS).add(ExtraDelightItems.GINGER.get(), ExtraDelightItems.MINT.get(),
+				ExtraDelightItems.CHILI.get(), ExtraDelightItems.MALLOW_ROOT.get(), ExtraDelightItems.PEANUTS.get());
+		tag(Tags.Items.TOOLS).addTag(ExtraDelightTags.SPOONS).addTag(ExtraDelightTags.PESTLES);
+		tag(Tags.Items.SEEDS).add(ExtraDelightItems.CORN_SEEDS.get(), ExtraDelightItems.CHILI_SEEDS.get());
 	}
 }
