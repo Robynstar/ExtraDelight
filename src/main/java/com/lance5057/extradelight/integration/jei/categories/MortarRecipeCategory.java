@@ -72,9 +72,10 @@ public class MortarRecipeCategory implements IRecipeCategory<MortarRecipe> {
 		builder.addSlot(RecipeIngredientRole.INPUT, this.getWidth() / 2 - 39 + 6, 18).addIngredients(input);
 		builder.addSlot(RecipeIngredientRole.CATALYST, this.getWidth() / 2 - 39 + 26, 1).addIngredients(pestle);
 		builder.addSlot(RecipeIngredientRole.OUTPUT, this.getWidth() / 2 + 13 + 6, 26).addItemStack(output);
-		builder.addSlot(RecipeIngredientRole.OUTPUT, this.getWidth() / 2 + 13 + 6, 8)
-				.addIngredients(NeoForgeTypes.FLUID_STACK, List.of(recipe.getFluid()))
-				.setFluidRenderer(recipe.getFluid().getAmount(), false, 16, 16);
+		if (recipe.getFluid() != null && !recipe.getFluid().isEmpty())
+			builder.addSlot(RecipeIngredientRole.OUTPUT, this.getWidth() / 2 + 13 + 6, 8)
+					.addIngredients(NeoForgeTypes.FLUID_STACK, List.of(recipe.getFluid()))
+					.setFluidRenderer(recipe.getFluid().getAmount(), false, 16, 16);
 	}
 
 	@Override
