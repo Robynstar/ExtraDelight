@@ -57,6 +57,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("farmersdelight.tooltip.ginger_beer", "Minor Instant Health");
 		this.add("farmersdelight.tooltip.horchata", "Removes 1 Harmful Effect");
 		this.add("farmersdelight.tooltip.tea", "Minor Instant Health, Comfort");
+		this.add("farmersdelight.tooltip.gourmet_hot_chocolate", "Removes all Harmful Effects");
 
 		this.add("farmersdelight.tooltip.milkshake", "Minor Instant Health");
 		this.add("farmersdelight.tooltip.chocolate_milkshake", "Instant Health");
@@ -151,7 +152,7 @@ public class EnglishLoc extends LanguageProvider {
 				"Make a vinegar pot and, once it starts to bubble, use a bottle to get vinegar.");
 
 		this.add(ExtraDelight.MOD_ID + ".advancement.jelly.name", "A Bouncy Castle For Ants");
-		this.add(ExtraDelight.MOD_ID + ".advancement.jelly.desc", "Make some Jelly!");
+		this.add(ExtraDelight.MOD_ID + ".advancement.jelly.desc", "Make and serve some Jelly!");
 
 		this.add(ExtraDelight.MOD_ID + ".advancement.jellyall.name", "Taste The Rainbow");
 		this.add(ExtraDelight.MOD_ID + ".advancement.jellyall.desc", "Make all the Jelly!");
@@ -998,7 +999,7 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add(ExtraDelightItems.MARSHMALLOW.get(), "Marshmallow");
 		this.add(ExtraDelightItems.CHILI_POWDER.get(), "Chili Powder");
-		this.add(ExtraDelightItems.PEANUT_BUTTER_CUP.get(), "Peanut Butter Cup");
+		this.add(ExtraDelightItems.PEANUT_BUTTER_CUP.get(), "Nut Butter Cup");
 		this.add(ExtraDelightItems.MALLOW_CUP.get(), "Mallow Cup");
 		this.add(ExtraDelightItems.XOCOLATL.get(), "Xocolatl");
 		this.add(ExtraDelightItems.GOURMET_HOT_CHOCOLATE.get(), "Gourmet Hot Chocolate");

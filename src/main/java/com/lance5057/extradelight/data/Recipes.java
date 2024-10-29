@@ -4251,7 +4251,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.grind(Ingredient.of(Items.WHEAT_SEEDS), new ItemStack(ExtraDelightItems.FLOUR.get(), 1),
 						new FluidStack(ExtraDelightFluids.OIL.FLUID, 50), STANDARD_GRIND)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.BONE_MEAL))
-				.save(consumer, EDLoc("flour_oil_wheet_seeds"));
+				.save(consumer, EDLoc("flour_oil_wheat_seeds"));
 
 		MortarRecipeBuilder
 				.grind(DifferenceIngredient.of(Ingredient.of(Tags.Items.SEEDS),
