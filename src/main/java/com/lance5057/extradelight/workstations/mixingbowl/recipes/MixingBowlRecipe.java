@@ -147,7 +147,7 @@ public class MixingBowlRecipe implements Recipe<MixingBowlRecipeWrapper> {
 		private static final MapCodec<MixingBowlRecipe> CODEC = RecordCodecBuilder.mapCodec(
 				inst -> inst.group(Codec.STRING.optionalFieldOf("group", "").forGetter(MixingBowlRecipe::getGroup),
 
-						Ingredient.LIST_CODEC_NONEMPTY.fieldOf("ingredients").xmap(ing -> {
+						Ingredient.LIST_CODEC.fieldOf("ingredients").xmap(ing -> {
 							NonNullList<Ingredient> nonNullList = NonNullList.create();
 							nonNullList.addAll(ing);
 							return nonNullList;

@@ -19,6 +19,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.fluids.capability.IFluidHandlerItem;
 import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import net.neoforged.neoforge.items.SlotItemHandler;
@@ -60,13 +62,28 @@ public class ChillerMenu extends RecipeBookMenu<ChillerRecipeWrapper, ChillerRec
 		this.addSlot(new SlotItemHandler(inventory, ChillerBlockEntity.CONTAINER_SLOT, 73, 61 + 7));
 
 		// Bowl Output
-		this.addSlot(new SlotItemHandler(inventory, ChillerBlockEntity.OUTPUT_SLOT, 126, 42));
+		this.addSlot(new SlotItemHandler(inventory, ChillerBlockEntity.OUTPUT_SLOT, 126, 42) {
+			@Override
+			public boolean mayPickup(Player playerIn) {
+				return false;
+			}
+
+			@Override
+			public ItemStack remove(int amount) {
+				return ItemStack.EMPTY.copy();
+			}
+
+			@Override
+			public boolean mayPlace(ItemStack stack) {
+				return false;
+			}
+		});
 
 		this.addSlot(new SlotItemHandler(inventory, ChillerBlockEntity.FLUID_IN, 19, 13));
 		this.addSlot(new SlotItemHandler(inventory, ChillerBlockEntity.FLUID_OUT, 19, 68));
 
 		this.addSlot(new SlotItemHandler(inventory, ChillerBlockEntity.DRIP_TRAY_OUT, 150, 68));
-		
+
 		this.addSlot(new SlotItemHandler(inventory, ChillerBlockEntity.ICE, 126, 10));
 
 		// Main Player Inventory
@@ -87,7 +104,7 @@ public class ChillerMenu extends RecipeBookMenu<ChillerRecipeWrapper, ChillerRec
 	public FluidTank getFluidTank() {
 		return this.tileEntity.getFluidTank();
 	}
-	
+
 	public FluidTank getDripTray() {
 		return this.tileEntity.getDripTray();
 	}
@@ -113,25 +130,46 @@ public class ChillerMenu extends RecipeBookMenu<ChillerRecipeWrapper, ChillerRec
 
 	@Override
 	public ItemStack quickMoveStack(Player playerIn, int index) {
-		int indexContainerInput = 9;
-		int indexOutput = 10;
-		int startPlayerInv = indexOutput + 1;
+//		int indexContainerInput = 4;
+//		int indexOutput = 10;
+		int startPlayerInv = ChillerBlockEntity.INVENTORY_SIZE - 1;
 		int endPlayerInv = startPlayerInv + 36;
 		ItemStack itemstack = ItemStack.EMPTY;
 		Slot slot = this.slots.get(index);
 		if (slot.hasItem()) {
 			ItemStack itemstack1 = slot.getItem();
 			itemstack = itemstack1.copy();
-			if (index < indexOutput) {
+			if (index < startPlayerInv) {
 				if (!this.moveItemStackTo(itemstack1, startPlayerInv, endPlayerInv, true)) {
 					return ItemStack.EMPTY;
 				}
-			} else if (index > indexOutput) {
+			}
+			if (index > ChillerBlockEntity.CONTAINER_SLOT) {
 				if (itemstack1.is(ExtraDelightTags.TRAYS)) {
-					if (!this.moveItemStackTo(itemstack1, indexContainerInput, indexContainerInput, false)) {
+					if (!this.moveItemStackTo(itemstack1, ChillerBlockEntity.CONTAINER_SLOT - 1,
+							ChillerBlockEntity.CONTAINER_SLOT, false)) {
 						return ItemStack.EMPTY;
 					}
-				} else if (!this.moveItemStackTo(itemstack1, 0, indexContainerInput, false)) {
+
+				} else if (itemstack1.getCapability(Capabilities.FluidHandler.ITEM) != null) {
+					IFluidHandlerItem f = itemstack1.getCapability(Capabilities.FluidHandler.ITEM);
+					if (f.getFluidInTank(0).isEmpty()) {
+						if (!this.moveItemStackTo(itemstack1, ChillerBlockEntity.DRIP_TRAY_OUT - 1,
+								ChillerBlockEntity.DRIP_TRAY_OUT, false)) {
+							if (!this.moveItemStackTo(itemstack1, ChillerBlockEntity.FLUID_OUT - 1,
+									ChillerBlockEntity.FLUID_OUT, false)) {
+								return ItemStack.EMPTY;
+							}
+							return ItemStack.EMPTY;
+						}
+					} else if (!this.moveItemStackTo(itemstack1, ChillerBlockEntity.FLUID_IN - 1,
+							ChillerBlockEntity.FLUID_IN, false)) {
+						return ItemStack.EMPTY;
+					}
+
+				}
+
+				else if (!this.moveItemStackTo(itemstack1, 0, startPlayerInv, false)) {
 					return ItemStack.EMPTY;
 				}
 			}

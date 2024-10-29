@@ -80,8 +80,7 @@ public class ChillerBlockEntity extends BlockEntity {
 						ChillerBlockEntity.this.getBlockState(), ChillerBlockEntity.this.getBlockState(),
 						Block.UPDATE_ALL);
 				ChillerBlockEntity.this.setChanged();
-				
-				
+
 			}
 		};
 
@@ -166,17 +165,17 @@ public class ChillerBlockEntity extends BlockEntity {
 		ItemStack inputItem = bowl.inventory.getStackInSlot(DRIP_TRAY_OUT);
 		if (!inputItem.isEmpty()) {
 			if (inputItem.getItem() == Items.BUCKET) {
-				FluidStack stack = bowl.getFluidTank().drain(FluidType.BUCKET_VOLUME,
+				FluidStack stack = bowl.getDripTray().drain(FluidType.BUCKET_VOLUME,
 						IFluidHandler.FluidAction.SIMULATE);
 				if (stack.getAmount() == FluidType.BUCKET_VOLUME) {
-					bowl.getFluidTank().drain(FluidType.BUCKET_VOLUME, IFluidHandler.FluidAction.EXECUTE);
+					bowl.getDripTray().drain(FluidType.BUCKET_VOLUME, IFluidHandler.FluidAction.EXECUTE);
 					inputItem.shrink(1);
 					bowl.inventory.setStackInSlot(DRIP_TRAY_OUT, stack.getFluid().getBucket().getDefaultInstance());
 				}
 			} else {
 				IFluidHandlerItem fluidHandlerItem = inputItem.getCapability(Capabilities.FluidHandler.ITEM);
-				int filled = FluidUtil.tryFluidTransfer(fluidHandlerItem, bowl.getFluidTank(),
-						bowl.getFluidTank().getFluidAmount(), true).getAmount();
+				int filled = FluidUtil.tryFluidTransfer(fluidHandlerItem, bowl.getDripTray(),
+						bowl.getDripTray().getFluidAmount(), true).getAmount();
 				if (filled > 0) {
 					bowl.inventory.setStackInSlot(DRIP_TRAY_OUT, fluidHandlerItem.getContainer());
 				}
@@ -186,9 +185,6 @@ public class ChillerBlockEntity extends BlockEntity {
 
 	public static <T extends BlockEntity> void tick(Level level, BlockPos pos, BlockState state, T be) {
 		ChillerBlockEntity chiller = (ChillerBlockEntity) be;
-//		chiller.drainInternal(chiller);
-//		chiller.fillInternal(chiller);
-//		chiller.drainDripTray(chiller);
 
 		if (chiller.chilltime > 0) {
 			chiller.chilltime--;
@@ -203,12 +199,12 @@ public class ChillerBlockEntity extends BlockEntity {
 			chiller.cookTimeTotal = recipeholder.value().getCookTime();
 
 			if (chiller.cookTime >= chiller.cookTimeTotal) {
-				subtractItems(chiller);
-				chiller.fluid.drain(recipeholder.value().getFluid(), FluidAction.EXECUTE);
-
 				ItemStack result = recipeholder.value().getResultItem(level.registryAccess()).copy();
 				ItemStack test = chiller.inventory.insertItem(OUTPUT_SLOT, result, true);
 				if (test.isEmpty()) {
+					subtractItems(chiller);
+					chiller.fluid.drain(recipeholder.value().getFluid(), FluidAction.EXECUTE);
+
 					chiller.inventory.insertItem(OUTPUT_SLOT, result, false);
 					chiller.cookTime = 0;
 				}
@@ -326,14 +322,14 @@ public class ChillerBlockEntity extends BlockEntity {
 			@Override
 			protected void onContentsChanged(int slot) {
 				updateInventory();
-				
+
 				if (slot == FLUID_IN)
 					ChillerBlockEntity.fillInternal(ChillerBlockEntity.this);
 				if (slot == FLUID_OUT)
 					ChillerBlockEntity.drainInternal(ChillerBlockEntity.this);
 				if (slot == DRIP_TRAY_OUT)
 					ChillerBlockEntity.drainDripTray(ChillerBlockEntity.this);
-				
+
 			}
 
 			@Override
@@ -351,7 +347,7 @@ public class ChillerBlockEntity extends BlockEntity {
 								&& !stack.is(Tags.Items.BUCKETS))
 							return true;
 					return false;
-				}  else if (slot == DRIP_TRAY_OUT) {
+				} else if (slot == DRIP_TRAY_OUT) {
 					if (stack.getCapability(Capabilities.FluidHandler.ITEM) != null)
 						if (stack.is(Tags.Items.BUCKETS_EMPTY))
 							return true;
@@ -359,12 +355,10 @@ public class ChillerBlockEntity extends BlockEntity {
 								&& !stack.is(Tags.Items.BUCKETS))
 							return true;
 					return false;
-				}else if (slot == ICE) {
+				} else if (slot == ICE) {
 					if (!stack.has(ExtraDelightComponents.CHILL))
 						return false;
 				}
-				if (slot == OUTPUT_SLOT)
-					return false;
 				return true;
 			}
 

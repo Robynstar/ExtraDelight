@@ -328,21 +328,21 @@ public class BlockLootTables extends BlockLootSubProvider {
 
 		LootItemCondition.Builder peanut = LootItemBlockStatePropertyCondition
 				.hasBlockStateProperties(ExtraDelightBlocks.PEANUT_CROP.get())
-				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PeanutCrop.AGE, 3));
+				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PeanutCrop.AGE, 5));
 		crop(ExtraDelightBlocks.PEANUT_CROP.get(), ExtraDelightItems.PEANUTS_IN_SHELL.get(),
 				ExtraDelightItems.PEANUTS_IN_SHELL.get(), peanut);
 		this.dropOther(ExtraDelightBlocks.WILD_PEANUT.get(), ExtraDelightItems.PEANUTS_IN_SHELL.get());
 
 		LootItemCondition.Builder chili = LootItemBlockStatePropertyCondition
 				.hasBlockStateProperties(ExtraDelightBlocks.CHILI_CROP.get())
-				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(ChiliCrop.AGE, 3));
+				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(ChiliCrop.AGE, 6));
 		crop(ExtraDelightBlocks.CHILI_CROP.get(), ExtraDelightItems.CHILI.get(), ExtraDelightItems.CHILI_SEEDS.get(),
 				chili);
 		this.dropOther(ExtraDelightBlocks.WILD_CHILI.get(), ExtraDelightItems.CHILI.get());
 
 		LootItemCondition.Builder mallow = LootItemBlockStatePropertyCondition
 				.hasBlockStateProperties(ExtraDelightBlocks.MALLOW_ROOT_CROP.get())
-				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(MallowRootCrop.AGE, 3));
+				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(MallowRootCrop.AGE, 7));
 
 		this.add(ExtraDelightBlocks.MALLOW_ROOT_CROP.get(),
 				p_249159_ -> this.applyExplosionDecay(p_249159_,
@@ -351,7 +351,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 										.when(LootItemBlockStatePropertyCondition
 												.hasBlockStateProperties(ExtraDelightBlocks.MALLOW_ROOT_CROP.get())
 												.setProperties(StatePropertiesPredicate.Builder.properties()
-														.hasProperty(MallowRootCrop.AGE, 3)))
+														.hasProperty(MallowRootCrop.AGE, 7)))
 										.add(LootItem.lootTableItem(ExtraDelightItems.MALLOW_ROOT.get()))
 										.apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F)))
 										.apply(ApplyBonusCount.addUniformBonusCount(
@@ -361,7 +361,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 										.when(LootItemBlockStatePropertyCondition
 												.hasBlockStateProperties(ExtraDelightBlocks.MALLOW_ROOT_CROP.get())
 												.setProperties(StatePropertiesPredicate.Builder.properties()
-														.hasProperty(MallowRootCrop.AGE, 2)))
+														.hasProperty(MallowRootCrop.AGE, 6)))
 										.add(LootItem.lootTableItem(ExtraDelightItems.MALLOW_ROOT.get()))
 										.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
 										.apply(ApplyBonusCount.addUniformBonusCount(
@@ -406,11 +406,6 @@ public class BlockLootTables extends BlockLootSubProvider {
 //		this.dropSelf(ExtraDelightBlocks.FRUIT_WALL_HANGING_SIGN.get());
 		this.dropSelf(ExtraDelightBlocks.FRUIT_WALL_SIGN.get());
 
-		LootItemCondition.Builder chiliBuilder = LootItemBlockStatePropertyCondition
-				.hasBlockStateProperties(ExtraDelightBlocks.CHILI_CROP.get())
-				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(ChiliCrop.AGE, 7));
-		crop(ExtraDelightBlocks.CHILI_CROP.get(), ExtraDelightItems.CHILI.get(), ExtraDelightItems.CHILI_SEEDS.get(),
-				chiliBuilder);
 
 		this.dropSelf(ExtraDelightBlocks.MILK_CHOCOLATE_BLOCK.get());
 		this.dropSelf(ExtraDelightBlocks.MILK_CHOCOLATE_FENCE.get());

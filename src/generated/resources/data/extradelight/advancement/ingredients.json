@@ -1,7 +1,17 @@
 {
   "parent": "extradelight:food",
   "criteria": {
-    "ALFREDO_SAUCE": {
+    "agar_agar_powder": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:agar_agar"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "alfredo_sauce": {
       "conditions": {
         "items": [
           {
@@ -11,197 +21,27 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "BREADING_MISANPLAS": {
+    "apple_cinnamon_cookie_dough": {
       "conditions": {
         "items": [
           {
-            "items": "extradelight:breading_misanplas"
+            "items": "extradelight:apple_cookie_dough"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "BREAD_CRUMBS": {
+    "apple_sauce": {
       "conditions": {
         "items": [
           {
-            "items": "extradelight:breadcrumbs"
+            "items": "extradelight:apple_sauce"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "BREAD_SLICE": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:bread_slice"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "BUTTER": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:butter"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "CACTUS": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:cactus"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "CHEESE": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:cheese"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "COOKING_OIL": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:cooking_oil"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "CROUTONS": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:croutons"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "EGG_MIX": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:egg_mix"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "FISH_FLAKES": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:fish_flakes"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "FLOUR": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:flour"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "FURIKAKE": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:furikake"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "GLOW_BERRY_JAM": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:glow_berry_jam"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "GRATED_CARROT": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:grated_carrot"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "GRATED_POTATO": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:grated_potato"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "GRAVY": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:gravy_boat_item"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "LASAGNA_NOODLES": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:lasagna_noodles"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "MACARONI": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:macaroni"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "OMELETTE_MIX": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:omelette_mix"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "SLICED_APPLE": {
+    "apple_slices": {
       "conditions": {
         "items": [
           {
@@ -211,47 +51,497 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "SLICED_ONION": {
+    "bbq_sauce": {
       "conditions": {
         "items": [
           {
-            "items": "extradelight:sliced_onion"
+            "items": "extradelight:bbq_jar_item"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "SLICED_POTATO": {
+    "black_frosting": {
       "conditions": {
         "items": [
           {
-            "items": "extradelight:sliced_potato"
+            "items": "extradelight:frosting_black"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "SLICED_TOMATO": {
+    "blood_chocolate_chips": {
       "conditions": {
         "items": [
           {
-            "items": "extradelight:sliced_tomato"
+            "items": "extradelight:blood_chocolate_chips"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "SUNFLOWER_SEEDS": {
+    "blue_frosting": {
       "conditions": {
         "items": [
           {
-            "items": "extradelight:sunflower_seeds"
+            "items": "extradelight:frosting_blue"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "SWEET_BERRY_JAM": {
+    "breadcrumbs": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:breadcrumbs"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "breading_mise_en_place": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:breading_misanplas"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "brown_frosting": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:frosting_brown"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "butter": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:butter"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "cactus_paddle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:cactus"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "caramel_sauce": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:caramel_sauce"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "cheese": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:cheese"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "chili": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:chili"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "chili_powder": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:chili_powder"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "chocolate_chip_cookie_dough": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:chocolate_chip_cookie_dough"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "chocolate_nut_butter_spread": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:hazelnut_spread_bottle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "cocoa_butter": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:cocoa_butter_bottle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "cocoa_solids": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:cocoa_solids"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "coffee_beans": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:coffee_beans"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "cooked_corn": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:cooked_corn"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "cooked_pasta": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:cooked_pasta"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "cooking_oil": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:cooking_oil"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "corn": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:corn_seeds"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "corn_flakes": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:corn_flakes"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "corn_on_the_cob": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:corn_on_cob"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "corn_silk": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:corn_silk"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "cornmeal": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:corn_meal"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "croutons": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:croutons"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "cyan_frosting": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:frosting_cyan"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "dark_chocolate_chips": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:dark_chocolate_chips"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "dried_fruit": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:dried_fruit"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "egg_mix": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:egg_mix"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "fish_flakes": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:fish_flakes"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "flour": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:flour"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "furikake": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:furikake"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "gingerbread_cookie_dough": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:gingerbread_cookie_dough"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "glow_berry_cookie_dough": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:glow_berry_cookie_dough"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "glow_berry_jam": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:glow_berry_jam"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "golden_jam": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:golden_apple_jam"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "grated_carrot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:grated_carrot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "grated_ginger": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:grated_ginger"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "grated_potato": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:grated_potato"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "gravy": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:gravy_boat_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "gray_frosting": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:frosting_gray"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "green_coffee": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:green_coffee"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "green_frosting": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:frosting_green"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "ground_cinnamon": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:ground_cinnamon"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "ground_coffee": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:ground_coffee"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "hazelnuts": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:hazelnuts"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "honey_cookie_dough": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:honey_cookie_dough"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "jam": {
       "conditions": {
         "items": [
           {
@@ -261,7 +551,367 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "VINEGAR": {
+    "ketchup": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:ketchup_jar_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "lasagna_noodles": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:lasagna_noodles"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "light_blue_frosting": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:frosting_light_blue"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "light_gray_frosting": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:frosting_light_gray"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "lime_frosting": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:frosting_lime"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "liquid_dark_chocolate": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:dark_chocolate_syrup_bottle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "liquid_milk_chocolate": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:milk_chocolate_syrup_bottle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "liquid_white_chocolate": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:white_chocolate_syrup_bottle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "macaroni": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:macaroni"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "magenta_frosting": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:frosting_magenta"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "mallow_root_powder": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:mallow_powder"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "marshmallow_fluff": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:marshmallow_fluff_bottle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "mayo": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:mayo_jar_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "milk_chocolate_chips": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:milk_chocolate_chips"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "mint": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:mint"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "mint_jelly": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:mint_jelly"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "nut_butter": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:peanut_butter_bottle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "omelette_mix": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:omelette_mix"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "orange_frosting": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:frosting_orange"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "peanuts": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:peanuts"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "pickled_ginger": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pickled_ginger"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "pink_frosting": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:frosting_pink"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "potato_sticks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:potato_sticks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "puffed_rice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:crisp_rice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "pumpkin_cookie_dough": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pumpkin_cookie_dough"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "purple_frosting": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:frosting_purple"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "red_frosting": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:frosting_red"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "roasted_cocoa_beans": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:roasted_cocoa_beans"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "roasted_hazelnuts": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:roasted_hazelnuts"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "roasted_peanuts": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:roasted_peanuts"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "slice_of_bread": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:bread_slice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "sliced_ginger": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:sliced_ginger"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "sliced_onion": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:sliced_onion"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "sliced_potato": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:sliced_potato"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "sliced_tomato": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:sliced_tomato"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "sugar_cookie_dough": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:sugar_cookie_dough"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "vinegar": {
       "conditions": {
         "items": [
           {
@@ -271,7 +921,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "WHIPPED_CREAM": {
+    "whipped_cream": {
       "conditions": {
         "items": [
           {
@@ -281,11 +931,41 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "YEAST": {
+    "white_chocolate_chips": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:white_chocolate_chips"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "white_frosting": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:frosting_white"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "yeast": {
       "conditions": {
         "items": [
           {
             "items": "extradelight:yeast"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "yellow_frosting": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:frosting_yellow"
           }
         ]
       },
@@ -307,91 +987,295 @@
   },
   "requirements": [
     [
-      "ALFREDO_SAUCE"
+      "yeast"
     ],
     [
-      "BREAD_CRUMBS"
+      "vinegar"
     ],
     [
-      "BREAD_SLICE"
+      "flour"
     ],
     [
-      "BREADING_MISANPLAS"
+      "cooking_oil"
     ],
     [
-      "BUTTER"
+      "gravy"
     ],
     [
-      "CACTUS"
+      "sliced_onion"
     ],
     [
-      "CHEESE"
+      "sliced_tomato"
     ],
     [
-      "COOKING_OIL"
+      "agar_agar_powder"
     ],
     [
-      "CROUTONS"
+      "whipped_cream"
     ],
     [
-      "EGG_MIX"
+      "egg_mix"
     ],
     [
-      "FISH_FLAKES"
+      "omelette_mix"
     ],
     [
-      "FLOUR"
+      "bbq_sauce"
     ],
     [
-      "FURIKAKE"
+      "ketchup"
     ],
     [
-      "GLOW_BERRY_JAM"
+      "mayo"
     ],
     [
-      "GRATED_CARROT"
+      "furikake"
     ],
     [
-      "GRATED_POTATO"
+      "jam"
     ],
     [
-      "GRAVY"
+      "glow_berry_jam"
     ],
     [
-      "LASAGNA_NOODLES"
+      "golden_jam"
     ],
     [
-      "MACARONI"
+      "grated_potato"
     ],
     [
-      "OMELETTE_MIX"
+      "sliced_potato"
     ],
     [
-      "SLICED_APPLE"
+      "potato_sticks"
     ],
     [
-      "SLICED_ONION"
+      "grated_carrot"
     ],
     [
-      "SLICED_POTATO"
+      "apple_slices"
     ],
     [
-      "SLICED_TOMATO"
+      "apple_sauce"
     ],
     [
-      "SUNFLOWER_SEEDS"
+      "cheese"
     ],
     [
-      "SWEET_BERRY_JAM"
+      "butter"
     ],
     [
-      "WHIPPED_CREAM"
+      "slice_of_bread"
     ],
     [
-      "YEAST"
+      "breadcrumbs"
     ],
     [
-      "VINEGAR"
+      "breading_mise_en_place"
+    ],
+    [
+      "macaroni"
+    ],
+    [
+      "lasagna_noodles"
+    ],
+    [
+      "fish_flakes"
+    ],
+    [
+      "croutons"
+    ],
+    [
+      "alfredo_sauce"
+    ],
+    [
+      "cooked_pasta"
+    ],
+    [
+      "cactus_paddle"
+    ],
+    [
+      "corn"
+    ],
+    [
+      "corn_on_the_cob"
+    ],
+    [
+      "corn_silk"
+    ],
+    [
+      "cornmeal"
+    ],
+    [
+      "cooked_corn"
+    ],
+    [
+      "caramel_sauce"
+    ],
+    [
+      "ground_cinnamon"
+    ],
+    [
+      "gingerbread_cookie_dough"
+    ],
+    [
+      "sugar_cookie_dough"
+    ],
+    [
+      "pumpkin_cookie_dough"
+    ],
+    [
+      "glow_berry_cookie_dough"
+    ],
+    [
+      "apple_cinnamon_cookie_dough"
+    ],
+    [
+      "honey_cookie_dough"
+    ],
+    [
+      "chocolate_chip_cookie_dough"
+    ],
+    [
+      "mint"
+    ],
+    [
+      "sliced_ginger"
+    ],
+    [
+      "grated_ginger"
+    ],
+    [
+      "dried_fruit"
+    ],
+    [
+      "pickled_ginger"
+    ],
+    [
+      "mint_jelly"
+    ],
+    [
+      "cocoa_solids"
+    ],
+    [
+      "white_chocolate_chips"
+    ],
+    [
+      "milk_chocolate_chips"
+    ],
+    [
+      "dark_chocolate_chips"
+    ],
+    [
+      "blood_chocolate_chips"
+    ],
+    [
+      "chili_powder"
+    ],
+    [
+      "puffed_rice"
+    ],
+    [
+      "corn_flakes"
+    ],
+    [
+      "peanuts"
+    ],
+    [
+      "roasted_peanuts"
+    ],
+    [
+      "hazelnuts"
+    ],
+    [
+      "roasted_hazelnuts"
+    ],
+    [
+      "mallow_root_powder"
+    ],
+    [
+      "ground_coffee"
+    ],
+    [
+      "cocoa_butter"
+    ],
+    [
+      "liquid_white_chocolate"
+    ],
+    [
+      "liquid_dark_chocolate"
+    ],
+    [
+      "liquid_milk_chocolate"
+    ],
+    [
+      "nut_butter"
+    ],
+    [
+      "marshmallow_fluff"
+    ],
+    [
+      "chocolate_nut_butter_spread"
+    ],
+    [
+      "roasted_cocoa_beans"
+    ],
+    [
+      "green_coffee"
+    ],
+    [
+      "coffee_beans"
+    ],
+    [
+      "chili"
+    ],
+    [
+      "white_frosting"
+    ],
+    [
+      "light_gray_frosting"
+    ],
+    [
+      "gray_frosting"
+    ],
+    [
+      "black_frosting"
+    ],
+    [
+      "brown_frosting"
+    ],
+    [
+      "red_frosting"
+    ],
+    [
+      "orange_frosting"
+    ],
+    [
+      "yellow_frosting"
+    ],
+    [
+      "lime_frosting"
+    ],
+    [
+      "green_frosting"
+    ],
+    [
+      "cyan_frosting"
+    ],
+    [
+      "light_blue_frosting"
+    ],
+    [
+      "blue_frosting"
+    ],
+    [
+      "purple_frosting"
+    ],
+    [
+      "magenta_frosting"
+    ],
+    [
+      "pink_frosting"
     ]
   ],
   "sends_telemetry_event": true

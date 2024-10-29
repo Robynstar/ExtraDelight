@@ -19,7 +19,8 @@ public class ExtraDelightTabs {
 					.icon(() -> new ItemStack(ExtraDelightItems.WOODEN_SPOON.get()))
 					.displayItems((parameters, output) -> {
 						for (DeferredHolder<Item, ? extends Item> i : ExtraDelightItems.ITEMS.getEntries())
-							output.accept(i.get());
+							if (i != ExtraDelightItems.EASTER_EGG)
+								output.accept(i.get());
 					}).build());
 
 	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AESTHETICS = TABS.register("aesthetics",

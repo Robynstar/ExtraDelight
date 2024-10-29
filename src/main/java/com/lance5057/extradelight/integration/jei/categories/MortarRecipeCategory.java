@@ -74,7 +74,7 @@ public class MortarRecipeCategory implements IRecipeCategory<MortarRecipe> {
 		builder.addSlot(RecipeIngredientRole.OUTPUT, this.getWidth() / 2 + 13 + 6, 26).addItemStack(output);
 		builder.addSlot(RecipeIngredientRole.OUTPUT, this.getWidth() / 2 + 13 + 6, 8)
 				.addIngredients(NeoForgeTypes.FLUID_STACK, List.of(recipe.getFluid()))
-				.setFluidRenderer(1000, false, 16, 16);
+				.setFluidRenderer(recipe.getFluid().getAmount(), false, 16, 16);
 	}
 
 	@Override

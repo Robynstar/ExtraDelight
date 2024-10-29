@@ -36,6 +36,8 @@ public class DataGen {
 		generator.addProvider(true, blockTags);
 		generator.addProvider(event.includeServer(),
 				new EDItemTags(output, lookupProvider, blockTags.contentsGetter(), helper));
+		generator.addProvider(event.includeServer(),
+				new EDFluidTags(output, lookupProvider, helper));
 
 		generator.addProvider(event.includeServer(), new Recipes(output, lookupProvider));
 		generator.addProvider(event.includeServer(), new LootModifiers(lookupProvider, output));

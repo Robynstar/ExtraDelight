@@ -47,7 +47,9 @@ public class ExtraDelightCapabilities {
 					return be.getFluidTank();
 				});
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ExtraDelightBlockEntities.CHILLER.get(),
-				(o, d) -> o.getInventory());
+				(be, context) -> {
+					return be.getInventory();
+				});
 
 		event.registerBlockEntity(Capabilities.FluidHandler.BLOCK, ExtraDelightBlockEntities.KEG.get(),
 				(o, d) -> o.getTank());

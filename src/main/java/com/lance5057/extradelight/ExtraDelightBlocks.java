@@ -41,6 +41,7 @@ import com.lance5057.extradelight.worldgen.features.trees.ExtraDelightTreeGrower
 
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ButtonBlock;
@@ -64,12 +65,15 @@ import net.minecraft.world.level.block.TrapDoorBlock;
 import net.minecraft.world.level.block.WallSignBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.common.ItemAbilities;
+import net.neoforged.neoforge.common.ItemAbility;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import vectorwing.farmersdelight.common.block.CabinetBlock;
@@ -409,10 +413,11 @@ public class ExtraDelightBlocks {
 					Block.Properties.ofFullCopy(Blocks.DARK_OAK_SAPLING)));
 	public static final DeferredBlock<RotatedPillarBlock> STRIPPED_CINNAMON_LOG = BLOCKS.register(
 			"stripped_cinnamon_log", () -> new RotatedPillarBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LOG)));
-	public static final DeferredBlock<RotatedPillarBlock> CINNAMON_WOOD = BLOCKS.register("cinnamon_wood",
-			() -> new RotatedPillarBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LOG)));
 	public static final DeferredBlock<RotatedPillarBlock> STRIPPED_CINNAMON_WOOD = BLOCKS.register(
 			"stripped_cinnamon_wood", () -> new RotatedPillarBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LOG)));
+	public static final DeferredBlock<RotatedPillarBlock> CINNAMON_WOOD = BLOCKS.register("cinnamon_wood",
+			() -> new StrippableLog(STRIPPED_CINNAMON_WOOD.get(), MiscLootTables.CINNAMON_LOG,
+					Block.Properties.ofFullCopy(Blocks.ACACIA_LOG)));
 	public static final DeferredBlock<StrippableLog> CINNAMON_LOG = BLOCKS.register("cinnamon_log",
 			() -> new StrippableLog(STRIPPED_CINNAMON_LOG.get(), MiscLootTables.CINNAMON_LOG,
 					Block.Properties.ofFullCopy(Blocks.ACACIA_LOG)));
@@ -727,11 +732,29 @@ public class ExtraDelightBlocks {
 	public static final DeferredBlock<RotatedPillarBlock> STRIPPED_FRUIT_LOG = BLOCKS.register("stripped_fruit_log",
 			() -> new RotatedPillarBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LOG)));
 	public static final DeferredBlock<RotatedPillarBlock> FRUIT_WOOD = BLOCKS.register("fruit_wood",
-			() -> new RotatedPillarBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LOG)));
+			() -> new RotatedPillarBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LOG)) {
+				@Override
+				public BlockState getToolModifiedState(BlockState state, UseOnContext context, ItemAbility itemAbility,
+						boolean simulate) {
+					if (itemAbility == ItemAbilities.AXE_STRIP)
+						return ExtraDelightBlocks.STRIPPED_FRUIT_WOOD.get().defaultBlockState()
+								.setValue(RotatedPillarBlock.AXIS, state.getValue(RotatedPillarBlock.AXIS));
+					return null;
+				}
+			});
 	public static final DeferredBlock<RotatedPillarBlock> STRIPPED_FRUIT_WOOD = BLOCKS.register("stripped_fruit_wood",
 			() -> new RotatedPillarBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LOG)));
 	public static final DeferredBlock<RotatedPillarBlock> FRUIT_LOG = BLOCKS.register("fruit_log",
-			() -> new RotatedPillarBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LOG)));
+			() -> new RotatedPillarBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LOG)) {
+				@Override
+				public BlockState getToolModifiedState(BlockState state, UseOnContext context, ItemAbility itemAbility,
+						boolean simulate) {
+					if (itemAbility == ItemAbilities.AXE_STRIP)
+						return ExtraDelightBlocks.STRIPPED_FRUIT_LOG.get().defaultBlockState()
+								.setValue(RotatedPillarBlock.AXIS, state.getValue(RotatedPillarBlock.AXIS));
+					return null;
+				}
+			});
 	public static final DeferredBlock<Block> FRUIT_PLANKS = BLOCKS.register("fruit_planks",
 			() -> new Block(Block.Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
 	public static final DeferredBlock<FenceBlock> FRUIT_FENCE = BLOCKS.register("fruit_fence",

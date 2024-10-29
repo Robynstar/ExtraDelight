@@ -26,7 +26,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("screen.chiller.name", "Chiller");
 		this.add("extradelight.container.chiller.chilled", "Chilled");
 		this.add("extradelight.container.chiller.not_chilled", "Not Chilled");
-		
+
 		this.add("screen.melting_pot.name", "Melting Pot");
 
 		this.add("extradelight.dynamicname.1", "%s");
@@ -77,11 +77,11 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.jei.info.cinnamon", "Found in jungles.");
 		this.add("extradelight.jei.info.ginger", "Found in hot biomes.");
 		this.add("extradelight.jei.info.corn", "Found in drier, plains biomes.");
-		this.add("extradelight.jei.info.chili", "Spicy!");
-		this.add("extradelight.jei.info.mallow", "So soft.");
-		this.add("extradelight.jei.info.peanut", "Crunchy!");
-		this.add("extradelight.jei.info.coffee", "Zoom zoom!");
-		this.add("extradelight.jei.info.hazelnut", "Go nuts!");
+		this.add("extradelight.jei.info.chili", "Found in hot biomes.");
+		this.add("extradelight.jei.info.mallow", "Found in swamps.");
+		this.add("extradelight.jei.info.peanut", "Found in jungles.");
+		this.add("extradelight.jei.info.coffee", "Found in jungles.");
+		this.add("extradelight.jei.info.hazelnut", "Trees grow in forests.");
 
 		this.add(ExtraDelight.MOD_ID + ".yeastpot.tooltip", "Use a bottle once the pot begins to bubble.");
 		this.add(ExtraDelight.MOD_ID + ".vinegarpot.tooltip", "Use a bottle once the pot begins to bubble.");
@@ -89,7 +89,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelight.MOD_ID + ".tooltip.serving", "Feast Serving");
 		this.add(ExtraDelight.MOD_ID + ".tooltip.butchercraft", "Requires Butchercraft");
 		this.add(ExtraDelight.MOD_ID + ".tooltip.spatula", "Right click to style! Shift + Right click for the menu");
-		this.add(ExtraDelight.MOD_ID + ".tooltip.chill", "Chills for");
+		this.add(ExtraDelight.MOD_ID + ".tooltip.chill", "Chills for %s ticks");
 		this.add(ExtraDelight.MOD_ID + ".tooltip.styleable", "Can be styled with an Offset Spatula");
 
 		this.add(ExtraDelight.MOD_ID + ".advancement.start.name", "Extra Delight");
@@ -121,10 +121,13 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelight.MOD_ID + ".advancement.flour.desc", "Make some flour and make your bread less fibrous.");
 
 		// this.add(ExtraDelight.MOD_ID + ".advancement.amethyst.name", "Regal Purple");
-		// this.add(ExtraDelight.MOD_ID + ".advancement.amethyst.desc", "Find an Amethyst set.");
+		// this.add(ExtraDelight.MOD_ID + ".advancement.amethyst.desc", "Find an
+		// Amethyst set.");
 
-		// this.add(ExtraDelight.MOD_ID + ".advancement.gildedblackstone.name", "Deep Shimmer");
-		// this.add(ExtraDelight.MOD_ID + ".advancement.gildedblackstone.desc", "Find a Gilded Blackstone set.");
+		// this.add(ExtraDelight.MOD_ID + ".advancement.gildedblackstone.name", "Deep
+		// Shimmer");
+		// this.add(ExtraDelight.MOD_ID + ".advancement.gildedblackstone.desc", "Find a
+		// Gilded Blackstone set.");
 
 		this.add(ExtraDelight.MOD_ID + ".advancement.doughshaping.name", "I Kneed it");
 		this.add(ExtraDelight.MOD_ID + ".advancement.doughshaping.desc",
@@ -175,33 +178,51 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add(ExtraDelight.MOD_ID + ".advancement.ingredients.name", "Sous Chef");
 		this.add(ExtraDelight.MOD_ID + ".advancement.ingredients.desc", "Acquire and prepare every ingredient.");
-		
+
 		this.add(ExtraDelight.MOD_ID + ".advancement.melting_pot.name", "Soften Up A Little");
 		this.add(ExtraDelight.MOD_ID + ".advancement.melting_pot.desc", "Make a Melting Pot.");
-		
+
 		this.add(ExtraDelight.MOD_ID + ".advancement.chiller.name", "On Ice");
 		this.add(ExtraDelight.MOD_ID + ".advancement.chiller.desc", "Make a Chiller.");
-		
+
 		this.add(ExtraDelight.MOD_ID + ".advancement.counter.name", "Upgrades, People, Upgrades!");
 		this.add(ExtraDelight.MOD_ID + ".advancement.counter.desc", "Convert a Cabinet into a Countertop Cabinet.");
-		
+
 		this.add(ExtraDelight.MOD_ID + ".advancement.fondue.name", "Take A Dip");
 		this.add(ExtraDelight.MOD_ID + ".advancement.fondue.desc", "Make Fondue.");
-		
+
 		this.add(ExtraDelight.MOD_ID + ".advancement.chocolate_bar.name", "Je T'aime Très Beaucoup");
 		this.add(ExtraDelight.MOD_ID + ".advancement.chocolate_bar.desc", "Make a Chocolate Bar.");
-		
+
 		this.add(ExtraDelight.MOD_ID + ".advancement.tap.name", "I'd Tap That");
 		this.add(ExtraDelight.MOD_ID + ".advancement.tap.desc", "Make a Tap and receive infinite Water.");
-		
+
 		this.add(ExtraDelight.MOD_ID + ".advancement.keg.name", "Keg Stand!");
 		this.add(ExtraDelight.MOD_ID + ".advancement.keg.desc", "Make a Keg.");
-		
+
 		this.add(ExtraDelight.MOD_ID + ".advancement.sink.name", "Everything but...");
 		this.add(ExtraDelight.MOD_ID + ".advancement.sink.desc", "Make a Sink.");
-		
+
 		this.add(ExtraDelight.MOD_ID + ".advancement.funnel.name", "Small Water Slide");
 		this.add(ExtraDelight.MOD_ID + ".advancement.funnel.desc", "Make a Funnel.");
+
+		this.add(ExtraDelight.MOD_ID + ".advancement.burn_mint.name", "The Sickness Must Be Purged!");
+		this.add(ExtraDelight.MOD_ID + ".advancement.burn_mint.desc", "Set mint ablaze.");
+
+		this.add(ExtraDelight.MOD_ID + ".advancement.cookies.name", "C Is For Cookie!");
+		this.add(ExtraDelight.MOD_ID + ".advancement.cookies.desc", "Make every available cookie.");
+
+		this.add(ExtraDelight.MOD_ID + ".advancement.candy.name", "Take You To The Candy Shop");
+		this.add(ExtraDelight.MOD_ID + ".advancement.candy.desc", "Make every available candy.");
+
+		this.add(ExtraDelight.MOD_ID + ".advancement.drinks.name", "A Mighty Thirst");
+		this.add(ExtraDelight.MOD_ID + ".advancement.drinks.desc", "Make every available drink.");
+
+		this.add(ExtraDelight.MOD_ID + ".advancement.snacks.name", "Snack Attack!");
+		this.add(ExtraDelight.MOD_ID + ".advancement.snacks.desc", "Make every available snack.");
+
+		this.add(ExtraDelight.MOD_ID + ".advancement.frosting.name", "Full Palette");
+		this.add(ExtraDelight.MOD_ID + ".advancement.frosting.desc", "Make every color of frosting.");
 
 		this.add(ExtraDelightItems.BAKING_STONE.get(), "Baking Stone");
 		this.add(ExtraDelightItems.CHEESECAKE_ITEM.get(), "Cheesecake");
@@ -1131,7 +1152,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.MALLOW_POWDER.get(), "Mallow Root Powder");
 		this.add(ExtraDelightItems.GROUND_COFFEE.get(), "Ground Coffee");
 		this.add(ExtraDelightItems.GOLDEN_CARROT_CRATE_BLOCK.get(), "Golden Carrot Crate");
-		
+
 		AestheticBlocks.EngLoc(this);
 	}
 }

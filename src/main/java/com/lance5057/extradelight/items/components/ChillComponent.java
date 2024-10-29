@@ -8,7 +8,6 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import io.netty.buffer.ByteBuf;
 import net.minecraft.ChatFormatting;
-import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
@@ -22,8 +21,9 @@ public record ChillComponent(int time) implements TooltipProvider {
 			.group(ExtraCodecs.UNSIGNED_BYTE.fieldOf("flight_duration").forGetter(ChillComponent::time))
 			.apply(p_337946_, ChillComponent::new));
 
-	public static final StreamCodec<ByteBuf, ChillComponent> UNIT_STREAM_CODEC = StreamCodec.unit(new ChillComponent(0));
-	
+	public static final StreamCodec<ByteBuf, ChillComponent> UNIT_STREAM_CODEC = StreamCodec
+			.unit(new ChillComponent(0));
+
 	public static final StreamCodec<ByteBuf, ChillComponent> STREAM_CODEC = StreamCodec.composite(ByteBufCodecs.VAR_INT,
 			ChillComponent::time, ChillComponent::new);
 
@@ -33,8 +33,8 @@ public record ChillComponent(int time) implements TooltipProvider {
 
 	@Override
 	public void addToTooltip(TooltipContext context, Consumer<Component> tooltipAdder, TooltipFlag tooltipFlag) {
-		tooltipAdder.accept(Component.translatable(ExtraDelight.MOD_ID + ".tooltip.chill").append(CommonComponents.SPACE)
-				.append(String.valueOf(this.time)).withStyle(ChatFormatting.AQUA));
+		tooltipAdder.accept(Component.translatable(ExtraDelight.MOD_ID + ".tooltip.chill", this.time)
+				.withStyle(ChatFormatting.AQUA));
 	}
 
 }

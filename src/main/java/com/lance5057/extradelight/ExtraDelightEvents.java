@@ -12,10 +12,11 @@ public class ExtraDelightEvents {
 
 	@SubscribeEvent
 	public static void modifyComponents(ModifyDefaultComponentsEvent event) {
-		// Sets the component on melon seeds
-		event.modify(Items.ICE, builder -> builder.set(ExtraDelightComponents.CHILL.value(), new ChillComponent(1000)));
+		event.modify(Items.BLUE_ICE, builder -> builder.set(ExtraDelightComponents.CHILL.value(), new ChillComponent(2500)));
+		event.modify(Items.PACKED_ICE, builder -> builder.set(ExtraDelightComponents.CHILL.value(), new ChillComponent(1000)));
+		event.modify(Items.ICE, builder -> builder.set(ExtraDelightComponents.CHILL.value(), new ChillComponent(250)));
 		event.modify(Items.SNOWBALL,
-				builder -> builder.set(ExtraDelightComponents.CHILL.value(), new ChillComponent(250)));
+				builder -> builder.set(ExtraDelightComponents.CHILL.value(), new ChillComponent(100)));
 	}
 
 }
