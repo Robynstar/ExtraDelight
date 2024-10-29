@@ -141,16 +141,6 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "sugar_cookie_cookie": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:sugar_cookie"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "sugar_cookie_creeper": {
       "conditions": {
         "items": [
@@ -274,9 +264,6 @@
     ],
     [
       "gingerbread_emerald"
-    ],
-    [
-      "sugar_cookie_cookie"
     ],
     [
       "sugar_cookie_steve"

@@ -51,6 +51,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "square_pan": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:square_pan"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "tray": {
       "conditions": {
         "items": [
@@ -92,6 +102,9 @@
     ],
     [
       "muffin_tin"
+    ],
+    [
+      "square_pan"
     ]
   ],
   "sends_telemetry_event": true

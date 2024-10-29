@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:mortar/flour_oil_wheet_seeds"
+        "recipe": "extradelight:mortar/flour_oil_wheat_seeds"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:mortar/flour_oil_wheet_seeds"
+      "extradelight:mortar/flour_oil_wheat_seeds"
     ]
   }
 }
