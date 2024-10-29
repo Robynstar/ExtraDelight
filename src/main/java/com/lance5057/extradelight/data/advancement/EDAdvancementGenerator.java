@@ -123,6 +123,8 @@ public class EDAdvancementGenerator implements AdvancementProvider.AdvancementGe
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.PIE_DISH.get()))
 				.addCriterion("muffin_tin",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MUFFIN_TIN.get()))
+				.addCriterion("square_pan",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.SQUARE_PAN.get()))
 				.requirements(AdvancementRequirements.Strategy.AND).save(consumer, ExtraDelight.MOD_ID + ":trays");
 
 		AdvancementHolder mortar = Advancement.Builder.advancement()
@@ -1271,8 +1273,6 @@ public class EDAdvancementGenerator implements AdvancementProvider.AdvancementGe
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.GINGERBREAD_DIAMOND.get()))
 				.addCriterion("gingerbread_emerald",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.GINGERBREAD_EMERALD.get()))
-				.addCriterion("sugar_cookie_cookie",
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.SUGAR_COOKIE.get()))
 				.addCriterion("sugar_cookie_steve",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.SUGAR_COOKIE_STEVE.get()))
 				.addCriterion("sugar_cookie_alex",

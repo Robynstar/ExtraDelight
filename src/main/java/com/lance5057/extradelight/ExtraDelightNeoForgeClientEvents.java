@@ -72,7 +72,7 @@ public class ExtraDelightNeoForgeClientEvents {
 					Component.translatable(ExtraDelight.MOD_ID + ".tooltip.serving").withStyle(ChatFormatting.BLUE));
 		}
 
-		if (ModList.get().isLoaded("butchercraft"))
+		if (!ModList.get().isLoaded("butchercraft"))
 			if (butchercraft.stream().anyMatch(s -> event.getItemStack().is(s))) {
 				event.getToolTip().add(Component.translatable(ExtraDelight.MOD_ID + ".tooltip.butchercraft")
 						.withStyle(ChatFormatting.RED));
