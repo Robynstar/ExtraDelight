@@ -3,6 +3,7 @@
   "render_type": "minecraft:cutout",
   "textures": {
     "0": "minecraft:block/red_glazed_terracotta",
-    "1": "extradelight:block/ribbon/gray_ribbon"
+    "1": "extradelight:block/ribbon/gray_ribbon",
+    "particle": "minecraft:block/red_glazed_terracotta"
   }
 }

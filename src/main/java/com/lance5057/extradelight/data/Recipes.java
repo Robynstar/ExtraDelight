@@ -278,6 +278,12 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.MARSHMALLOW_FLUFF)
 				.addIngredient(CommonTags.FOODS_MILK).addIngredient(ExtraDelightTags.SWEETENER)
 				.build(consumer, "fudge_milk");
+
+		ChillerRecipeBuilder
+				.chill(ExtraDelightItems.MARSHMALLOW.toStack(1), FAST_COOKING, SMALL_EXP,
+						ExtraDelightItems.MUFFIN_TIN.toStack(),
+						new FluidStack(ExtraDelightFluids.MARSHMALLOW_FLUFF.FLUID.get(), 250))
+				.build(consumer, "fluff_to_marshmallow");
 	}
 
 	private void meltingRecipes(RecipeOutput consumer) {

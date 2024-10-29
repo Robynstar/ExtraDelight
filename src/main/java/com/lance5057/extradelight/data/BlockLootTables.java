@@ -234,12 +234,12 @@ public class BlockLootTables extends BlockLootSubProvider {
 					NORMAL_LEAVES_SAPLING_CHANCES);
 		});
 
-		this.add(ExtraDelightBlocks.HAZELNUT_LEAVES.get(), (p_124100_) -> {
-			return createLeavesDrops(p_124100_, ExtraDelightBlocks.HAZELNUT_SAPLING.get(),
+		this.add(ExtraDelightBlocks.HAZELNUT_LEAVES.get(), (p_124101_) -> {
+			return createLeavesDrops(p_124101_, ExtraDelightBlocks.HAZELNUT_SAPLING.get(),
 					NORMAL_LEAVES_SAPLING_CHANCES)
 					.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 							.when(LootItemBlockStatePropertyCondition
-									.hasBlockStateProperties(ExtraDelightBlocks.COFFEE_BUSH.get())
+									.hasBlockStateProperties(ExtraDelightBlocks.HAZELNUT_LEAVES.get())
 									.setProperties(StatePropertiesPredicate.Builder.properties()
 											.hasProperty(FruitLeafBlock.AGE, 3)))
 							.add(LootItem.lootTableItem(ExtraDelightItems.HAZELNUTS_IN_SHELL.get())));
@@ -397,7 +397,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(ExtraDelightBlocks.FRUIT_FENCE_GATE.get());
 		this.dropSelf(ExtraDelightBlocks.FRUIT_CABINET.get());
 		this.add(ExtraDelightBlocks.FRUIT_SLAB.get(), createSlabItemTable(ExtraDelightBlocks.FRUIT_SLAB.get()));
-		this.dropOther(ExtraDelightBlocks.HAZELNUT_LEAVES.get(), Items.AIR);
+//		this.dropOther(ExtraDelightBlocks.HAZELNUT_LEAVES.get(), Items.AIR);
 		this.dropSelf(ExtraDelightBlocks.FRUIT_BUTTON.get());
 		this.dropSelf(ExtraDelightBlocks.FRUIT_PRESSURE_PLATE.get());
 
@@ -405,7 +405,6 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(ExtraDelightBlocks.FRUIT_STANDING_SIGN.get());
 //		this.dropSelf(ExtraDelightBlocks.FRUIT_WALL_HANGING_SIGN.get());
 		this.dropSelf(ExtraDelightBlocks.FRUIT_WALL_SIGN.get());
-
 
 		this.dropSelf(ExtraDelightBlocks.MILK_CHOCOLATE_BLOCK.get());
 		this.dropSelf(ExtraDelightBlocks.MILK_CHOCOLATE_FENCE.get());

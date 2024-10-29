@@ -63,10 +63,6 @@ public class ChillerMenu extends RecipeBookMenu<ChillerRecipeWrapper, ChillerRec
 
 		// Bowl Output
 		this.addSlot(new SlotItemHandler(inventory, ChillerBlockEntity.OUTPUT_SLOT, 126, 42) {
-			@Override
-			public boolean mayPickup(Player playerIn) {
-				return false;
-			}
 
 			@Override
 			public ItemStack remove(int amount) {

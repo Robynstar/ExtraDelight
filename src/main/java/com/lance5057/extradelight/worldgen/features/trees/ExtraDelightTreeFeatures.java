@@ -40,8 +40,8 @@ public class ExtraDelightTreeFeatures {
 				BlockStateProvider.simple(ExtraDelightBlocks.FRUIT_LOG.get()),
 				new StraightTrunkPlacer(2, 0, 2),
 				BlockStateProvider.simple(ExtraDelightBlocks.HAZELNUT_LEAVES.get()),
-				new FancyFoliagePlacer(ConstantInt.of(2), ConstantInt.of(4), 4),
-				new TwoLayersFeatureSize(1, 0, 4));
+				new FancyFoliagePlacer(ConstantInt.of(2), ConstantInt.of(3), 3),
+				new TwoLayersFeatureSize(1, 0, 3));
 	}
 
 	public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> p_256317_) {

@@ -32,6 +32,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.level.portal.DimensionTransition;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -81,7 +82,7 @@ public class CornTop extends CropBlock implements Portal {
 
 	@Override
 	public boolean isRandomlyTicking(BlockState pState) {
-		return !this.isMaxAge(pState);
+		return !this.isMaxAge(pState) && !pState.getValue(CornProperties.DIMENSION);
 	}
 
 	@Override
@@ -219,6 +220,11 @@ public class CornTop extends CropBlock implements Portal {
 			pEntity.makeStuckInBlock(pState, new Vec3(0.8D, 0.75D, 0.4D));
 
 		}
+	}
+	
+	@Override
+	public boolean isPathfindable(BlockState state, PathComputationType pathComputationType) {
+		return true;
 	}
 
 	private static boolean isHalloween() {

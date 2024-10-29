@@ -102,7 +102,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelight.MOD_ID + ".advancement.spoon.desc", "Make a spoon, you're gonna need it.");
 
 		this.add(ExtraDelight.MOD_ID + ".advancement.mixingbowl.name", "Normal Sized Cereal Bowl");
-		this.add(ExtraDelight.MOD_ID + ".advancement.mixingbowl.desc", "Make a mixing bowl.");
+		this.add(ExtraDelight.MOD_ID + ".advancement.mixingbowl.desc", "Make and use a mixing bowl.");
 
 		this.add(ExtraDelight.MOD_ID + ".advancement.oven.name", "Hot Box");
 		this.add(ExtraDelight.MOD_ID + ".advancement.oven.desc", "Make an oven and start preparing even more meals!");
@@ -112,7 +112,7 @@ public class EnglishLoc extends LanguageProvider {
 				"The oven requires baking vessels for its recipes. Make one of each.");
 
 		this.add(ExtraDelight.MOD_ID + ".advancement.mortar.name", "The Daily Grind");
-		this.add(ExtraDelight.MOD_ID + ".advancement.mortar.desc", "Make or find a mortar.");
+		this.add(ExtraDelight.MOD_ID + ".advancement.mortar.desc", "Make and use a mortar.");
 
 		this.add(ExtraDelight.MOD_ID + ".advancement.grind.name", "Crushing Power");
 		this.add(ExtraDelight.MOD_ID + ".advancement.grind.desc", "Make or find a pestle.");

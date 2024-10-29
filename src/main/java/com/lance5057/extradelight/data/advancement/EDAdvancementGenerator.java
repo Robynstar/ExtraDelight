@@ -195,7 +195,7 @@ public class EDAdvancementGenerator implements AdvancementProvider.AdvancementGe
 				.addCriterion("macaroni_noodles",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MACARONI.get()))
 				.addCriterion("pasta", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.RAW_PASTA.get()))
-				.requirements(AdvancementRequirements.Strategy.OR).save(consumer, ExtraDelight.MOD_ID + ":noodles");
+				.requirements(AdvancementRequirements.Strategy.AND).save(consumer, ExtraDelight.MOD_ID + ":noodles");
 
 		AdvancementHolder dryingrack = Advancement.Builder.advancement()
 				.display(ExtraDelightItems.DRYING_RACK.get(),

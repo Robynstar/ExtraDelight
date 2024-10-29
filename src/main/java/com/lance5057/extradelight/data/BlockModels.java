@@ -576,6 +576,7 @@ public class BlockModels extends BlockStateProvider {
 					.withExistingParent(block.getColor() + "_chocolate_box", modLoc("block/chocolate_box"))
 					.texture("0", mcLoc("block/" + block.getColor() + "_glazed_terracotta"))
 					.texture("1", modLoc("block/ribbon/" + getOppositeColor(block.getColor()) + "_ribbon"))
+					.texture("particle", mcLoc("block/" + block.getColor() + "_glazed_terracotta"))
 					.renderType("cutout"))
 					.rotationY(((int) state.getValue(ChocolateBoxBlock.FACING).toYRot() + 180) % 360).build();
 		});

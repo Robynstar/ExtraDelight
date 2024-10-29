@@ -10,6 +10,7 @@ import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightWorldGen;
 import com.lance5057.extradelight.worldgen.features.ExtraDelightFeatures;
+import com.lance5057.extradelight.worldgen.features.trees.ExtraDelightTreeFeatures;
 import com.mojang.datafixers.util.Pair;
 
 import net.minecraft.core.HolderGetter;
@@ -25,7 +26,6 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -51,11 +51,7 @@ import net.minecraft.world.level.levelgen.SurfaceRules;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
-import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.RandomSpreadFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.BendingTrunkPlacer;
 import net.minecraft.world.level.levelgen.heightproviders.ConstantHeight;
 import net.minecraft.world.level.levelgen.placement.CountPlacement;
 import net.minecraft.world.level.levelgen.placement.InSquarePlacement;
@@ -81,14 +77,10 @@ public class EDRegistries {
 								new SimpleBlockConfiguration(BlockStateProvider.simple(Blocks.RAIL))));
 
 				bootstrap.register(ExtraDelightWorldGen.CONFIGURED_CINNAMON_TREE,
-						new ConfiguredFeature<>(Feature.TREE,
-								new TreeConfiguration.TreeConfigurationBuilder(
-										BlockStateProvider.simple(ExtraDelightBlocks.CINNAMON_LOG.get()),
-										new BendingTrunkPlacer(3, 0, 3, 6, ConstantInt.of(1)),
-										BlockStateProvider.simple(ExtraDelightBlocks.CINNAMON_LEAVES.get()),
-										new RandomSpreadFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0),
-												ConstantInt.of(2), 24),
-										new TwoLayersFeatureSize(1, 0, 1)).ignoreVines().build()));
+						new ConfiguredFeature<>(Feature.TREE, ExtraDelightTreeFeatures.createCinnamonTree().build()));
+
+				bootstrap.register(ExtraDelightWorldGen.CONFIGURED_HAZELNUT_TREE,
+						new ConfiguredFeature<>(Feature.TREE, ExtraDelightTreeFeatures.createHazelnutTree().build()));
 			}).add(Registries.PLACED_FEATURE, bootstrap -> {
 				HolderGetter<ConfiguredFeature<?, ?>> cfgs = bootstrap.lookup(Registries.CONFIGURED_FEATURE);
 				bootstrap.register(ExtraDelightWorldGen.PLACED_CORN_MAZE,
@@ -103,6 +95,10 @@ public class EDRegistries {
 				bootstrap.register(ExtraDelightWorldGen.PLACED_CINNAMON_TREE, new PlacedFeature(
 						cfgs.getOrThrow(ExtraDelightWorldGen.CONFIGURED_CINNAMON_TREE),
 						List.of(PlacementUtils.filteredByBlockSurvival(ExtraDelightBlocks.CINNAMON_SAPLING.get()))));
+
+				bootstrap.register(ExtraDelightWorldGen.PLACED_HAZELNUT_TREE, new PlacedFeature(
+						cfgs.getOrThrow(ExtraDelightWorldGen.CONFIGURED_HAZELNUT_TREE),
+						List.of(PlacementUtils.filteredByBlockSurvival(ExtraDelightBlocks.HAZELNUT_SAPLING.get()))));
 			}).add(Registries.BIOME, bootstrap -> {
 				HolderGetter<PlacedFeature> placedFeatures = bootstrap.lookup(Registries.PLACED_FEATURE);
 				bootstrap.register(ExtraDelightWorldGen.CORNFIELD_BIOME, new Biome.BiomeBuilder()

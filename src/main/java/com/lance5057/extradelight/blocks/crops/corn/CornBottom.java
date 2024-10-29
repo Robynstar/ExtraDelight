@@ -7,6 +7,7 @@ import javax.annotation.Nullable;
 
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightItems;
+import com.lance5057.extradelight.ExtraDelightWorldGen;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
@@ -105,6 +106,9 @@ public class CornBottom extends CropBlock {
 //				}
 			}
 		}
+		
+		if(pLevel.dimension() == ExtraDelightWorldGen.CORNFIELD)
+			pLevel.setBlock(pPos, pState.setValue(CornProperties.DIMENSION, true), Block.UPDATE_ALL);
 
 //		}
 
@@ -127,7 +131,7 @@ public class CornBottom extends CropBlock {
 			}
 		}
 
-		pLevel.setBlock(pPos, this.getStateForAge(i), 2);
+		pLevel.setBlock(pPos, this.getStateForAge(i), Block.UPDATE_ALL);
 	}
 
 	protected int getBonemealAgeIncrease(Level pLevel) {
@@ -214,7 +218,7 @@ public class CornBottom extends CropBlock {
 
 	@Override
 	public boolean isPathfindable(BlockState state, PathComputationType pathComputationType) {
-		return false;
+		return true;
 	}
 
 	protected ItemLike getBaseSeedId() {
@@ -288,9 +292,9 @@ public class CornBottom extends CropBlock {
 	@Nullable
 	public static void placeAt(LevelAccessor pLevel, BlockState pState, BlockPos pPos, int pFlags) {
 		pLevel.setBlock(pPos.above(), ExtraDelightBlocks.CORN_TOP.get().defaultBlockState().setValue(AGE, 3)
-				.setValue(CornProperties.DIMENSION, true), 0);
+				.setValue(CornProperties.DIMENSION, true), Block.UPDATE_ALL);
 		pLevel.setBlock(pPos, ExtraDelightBlocks.CORN_BOTTOM.get().defaultBlockState().setValue(AGE, 3)
-				.setValue(CornProperties.DIMENSION, true), 0);
+				.setValue(CornProperties.DIMENSION, true), Block.UPDATE_ALL);
 
 	}
 
@@ -302,7 +306,7 @@ public class CornBottom extends CropBlock {
 	@Override
 	public void destroy(LevelAccessor pLevel, BlockPos pPos, BlockState pState) {
 		if (pState.getValue(CornProperties.DIMENSION)) {
-			pLevel.setBlock(pPos, pState, 4);
+			pLevel.setBlock(pPos, pState, Block.UPDATE_ALL);
 		}
 	}
 }

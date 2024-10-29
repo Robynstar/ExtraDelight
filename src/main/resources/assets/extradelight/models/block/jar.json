@@ -3,7 +3,8 @@
 	"parent": "block/block",
 	"render_type": "cutout",
 	"textures": {
-		"1": "extradelight:block/glass_jar"
+		"1": "extradelight:block/glass_jar",
+		"particle": "extradelight:block/glass_jar"
 	},
 	"elements": [
 		{
