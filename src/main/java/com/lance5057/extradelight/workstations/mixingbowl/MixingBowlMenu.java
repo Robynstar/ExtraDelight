@@ -46,7 +46,7 @@ public class MixingBowlMenu extends AbstractContainerMenu {
 			this.addSlot(
 					new SlotItemHandler(tileEntity.getItemHandler(), MixingBowlBlockEntity.CONTAINER_SLOT, 122, 46));
 			this.addSlot(
-					new SlotItemHandler(tileEntity.getItemHandler(), MixingBowlBlockEntity.LIQUID_IN_SLOT, 17, -4));
+					new SlotItemHandler(tileEntity.getItemHandler(), MixingBowlBlockEntity.LIQUID_IN_SLOT, 17, -5));
 			this.addSlot(
 					new SlotItemHandler(tileEntity.getItemHandler(), MixingBowlBlockEntity.LIQUID_OUT_SLOT, 17, 51));
 			this.addSlot(new SlotItemHandler(tileEntity.getItemHandler(), MixingBowlBlockEntity.GHOST_SLOT, 147, 23) {
