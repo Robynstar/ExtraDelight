@@ -3,7 +3,7 @@
   "category": "misc",
   "ingredients": [
     {
-      "tag": "c:cookie"
+      "tag": "c:foods/cookie"
     },
     {
       "item": "extradelight:chocolate_custard"

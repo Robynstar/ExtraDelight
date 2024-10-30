@@ -229,7 +229,7 @@
     "frame": "challenge",
     "icon": {
       "count": 1,
-      "id": "extradelight:cactus_juice"
+      "id": "extradelight:sweet_berry_juice"
     },
     "title": {
       "translate": "extradelight.advancement.drinks.name"

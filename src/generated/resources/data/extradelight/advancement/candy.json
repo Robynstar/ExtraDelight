@@ -11,36 +11,6 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "blood_chocolate_bar": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:blood_chocolate_bar"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "blood_chocolate_filled_bar": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:blood_chocolate_filled_bar"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "blood_chocolate_truffle": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:blood_chocolate_truffle"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "blue_candy": {
       "conditions": {
         "items": [
@@ -758,16 +728,10 @@
       "dark_chocolate_bar"
     ],
     [
-      "blood_chocolate_bar"
-    ],
-    [
       "white_chocolate_filled_bar"
     ],
     [
       "milk_chocolate_filled_bar"
-    ],
-    [
-      "blood_chocolate_filled_bar"
     ],
     [
       "white_chocolate_truffle"
@@ -777,9 +741,6 @@
     ],
     [
       "dark_chocolate_truffle"
-    ],
-    [
-      "blood_chocolate_truffle"
     ],
     [
       "marshmallow"

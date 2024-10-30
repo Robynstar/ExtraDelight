@@ -71,16 +71,6 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "blood_chocolate_chips": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:blood_chocolate_chips"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "blue_frosting": {
       "conditions": {
         "items": [
@@ -1165,9 +1155,6 @@
     ],
     [
       "dark_chocolate_chips"
-    ],
-    [
-      "blood_chocolate_chips"
     ],
     [
       "chili_powder"

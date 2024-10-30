@@ -20,7 +20,7 @@
       "tag": "c:meat/cooked"
     },
     {
-      "tag": "c:soup"
+      "tag": "c:foods/soup"
     },
     {
       "tag": "c:meat/cooked"
@@ -29,7 +29,7 @@
       "tag": "c:foods/vegetable"
     },
     {
-      "tag": "c:soup"
+      "tag": "c:foods/soup"
     },
     {
       "tag": "c:foods/vegetable"

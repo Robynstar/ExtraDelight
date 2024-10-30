@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoField;
 
 import com.lance5057.extradelight.ExtraDelightBlocks;
+import com.lance5057.extradelight.ExtraDelightConfig;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightWorldGen;
 
@@ -228,10 +229,13 @@ public class CornTop extends CropBlock implements Portal {
 	}
 
 	private static boolean isHalloween() {
-		LocalDate localdate = LocalDate.now();
-		int i = localdate.get(ChronoField.DAY_OF_MONTH);
-		int j = localdate.get(ChronoField.MONTH_OF_YEAR);
-		return j == 10 && i >= 1 || j == 11 && i <= 10;
+		if (!ExtraDelightConfig.ALL_YEAR.getAsBoolean()) {
+			LocalDate localdate = LocalDate.now();
+			int i = localdate.get(ChronoField.DAY_OF_MONTH);
+			int j = localdate.get(ChronoField.MONTH_OF_YEAR);
+			return j == 10 && i >= 1 || j == 11 && i <= 10;
+		}
+		return true;
 	}
 
 	protected ItemLike getBaseSeedId() {

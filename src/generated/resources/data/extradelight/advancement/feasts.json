@@ -1,67 +1,227 @@
 {
   "parent": "extradelight:food",
   "criteria": {
-    "bbq": {
+    "apple_cheesecake": {
       "conditions": {
         "items": [
           {
-            "items": "extradelight:bbq_ribs_block_item"
+            "items": "extradelight:apple_cheesecake"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "beef": {
+    "apple_crisp": {
       "conditions": {
         "items": [
           {
-            "items": "extradelight:beef_stew_feast"
+            "items": "extradelight:apple_crisp"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "chicken_stew": {
+    "black_forest_trifle": {
       "conditions": {
         "items": [
           {
-            "items": "extradelight:chicken_stew_feast"
+            "items": "extradelight:black_forest_trifle"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "curry": {
+    "blondies": {
       "conditions": {
         "items": [
           {
-            "items": "extradelight:curry_feast"
+            "items": "extradelight:blondies_block"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "fish_stew": {
+    "brownies": {
       "conditions": {
         "items": [
           {
-            "items": "extradelight:fish_stew_feast"
+            "items": "extradelight:brownies_block"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "haggis": {
+    "caramel_cheesecake": {
       "conditions": {
         "items": [
           {
-            "items": "extradelight:haggis_block_item"
+            "items": "extradelight:caramel_cheesecake_item"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "hotdish": {
+    "charcuterie_board": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:charcuterie_board"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "cheesecake": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:cheesecake"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "chef_salad_feast": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:salad_block_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "chocolate_cake": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:chocolate_cake"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "chocolate_cheesecake": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:chocolate_cheesecake"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "christmas_pudding": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:christmas_pudding"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "cinnamon_rolls": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:cinnamon_rolls_feast"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "coffee_cake": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:coffe_cake_feast"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "corn_pudding": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:corn_pudding"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "cornbread": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:cornbread"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "dark_chocolate_fondue": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:dark_chocolate_fondue_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "fudge": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:fudge_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "glow_berry_cheesecake": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:glow_berry_cheesecake"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "glow_berry_pie": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:glow_berry_pie"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "hash": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:hash"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "honey_cheesecake": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:honey_cheesecake"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "hotdish_dinner": {
       "conditions": {
         "items": [
           {
@@ -71,37 +231,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "lamb_stew": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:lamb_stew_feast"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "lasagna": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:lasanga_feast"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "mac_cheese": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:macaroni_cheese_feast"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "mash_potato": {
+    "mashed_potatoes_with_gravy": {
       "conditions": {
         "items": [
           {
@@ -111,17 +241,17 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "meatloaf": {
+    "meat_loaf": {
       "conditions": {
         "items": [
           {
-            "items": "extradelight:meatloaf_feast"
+            "items": "extradelight:meatloaf"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "meatpie": {
+    "meat_pie": {
       "conditions": {
         "items": [
           {
@@ -131,7 +261,107 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "pork_stew": {
+    "milk_chocolate_fondue": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:milk_chocolate_fondue_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "milk_tart": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:milk_tart_feast"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "monkey_bread": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:monkey_bread"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "pan_of_lasagna": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:lasanga_feast"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "pot_of_beef_stew": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:beef_stew_feast"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "pot_of_chicken_stew": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:chicken_stew_feast"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "pot_of_curry": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:curry"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "pot_of_fish_stew": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:fish_stew_feast"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "pot_of_mac_and_cheese": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:macaroni_cheese_feast"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "pot_of_mutton_stew": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:lamb_stew_feast"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "pot_of_pork_stew": {
       "conditions": {
         "items": [
           {
@@ -141,21 +371,71 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "pot_roast": {
+    "pot_of_rabbit_stew": {
       "conditions": {
         "items": [
           {
-            "items": "extradelight:pot_roast_block_item"
+            "items": "extradelight:rabbit_stew_feast"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "pulled_pork": {
+    "potatoes_au_gratin": {
       "conditions": {
         "items": [
           {
-            "items": "extradelight:pulled_pork_block_item"
+            "items": "extradelight:potato_au_gratin_feast"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "puffed_rice_treats": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:crisp_rice_treats_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "pumpkin_cheesecake": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pumpkin_cheesecake"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "pumpkin_pie": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pumpkin_pie_item"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "pumpkin_roll": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pumpkin_roll"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "punch": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:punch"
           }
         ]
       },
@@ -171,41 +451,31 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "rabbit_stew": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:rabbit_stew_feast"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "rack_lamb": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:rack_lamb_block_item"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "salad": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:salad_block_item"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "salisbury_steak": {
       "conditions": {
         "items": [
           {
-            "items": "extradelight:salisbury_steak_block_item"
+            "items": "extradelight:salisbury_steak"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "scotcharoos": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:scotcharoo_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "sticky_toffee_pudding": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:sticky_toffee_pudding_block"
           }
         ]
       },
@@ -215,17 +485,37 @@
       "conditions": {
         "items": [
           {
-            "items": "extradelight:stirfry_block_item"
+            "items": "extradelight:stirfry"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "wellington": {
+    "stuffing": {
       "conditions": {
         "items": [
           {
-            "items": "extradelight:beef_wellington_block_item"
+            "items": "extradelight:stuffing"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "sweet_berry_pie": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:sweet_berry_pie"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "white_chocolate_fondue": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:white_chocolate_fondue_block"
           }
         ]
       },
@@ -239,7 +529,7 @@
     "frame": "challenge",
     "icon": {
       "count": 1,
-      "id": "extradelight:beef_wellington_block_item"
+      "id": "extradelight:macaroni_cheese_feast"
     },
     "title": {
       "translate": "extradelight.advancement.feasts.name"
@@ -247,73 +537,160 @@
   },
   "requirements": [
     [
-      "bbq"
+      "sweet_berry_pie"
     ],
     [
-      "beef"
+      "glow_berry_pie"
     ],
     [
-      "wellington"
+      "cheesecake"
     ],
     [
-      "chicken_stew"
+      "honey_cheesecake"
     ],
     [
-      "curry"
+      "chocolate_cheesecake"
     ],
     [
-      "fish_stew"
+      "pumpkin_cheesecake"
     ],
     [
-      "haggis"
+      "glow_berry_cheesecake"
     ],
     [
-      "hotdish"
-    ],
-    [
-      "lamb_stew"
-    ],
-    [
-      "lasagna"
-    ],
-    [
-      "mac_cheese"
-    ],
-    [
-      "mash_potato"
-    ],
-    [
-      "meatloaf"
-    ],
-    [
-      "pork_stew"
-    ],
-    [
-      "pot_roast"
-    ],
-    [
-      "pulled_pork"
-    ],
-    [
-      "rabbit_stew"
-    ],
-    [
-      "rack_lamb"
-    ],
-    [
-      "salad"
-    ],
-    [
-      "salisbury_steak"
+      "apple_cheesecake"
     ],
     [
       "quiche"
     ],
     [
-      "meatpie"
+      "salisbury_steak"
+    ],
+    [
+      "mashed_potatoes_with_gravy"
+    ],
+    [
+      "pot_of_beef_stew"
+    ],
+    [
+      "pot_of_pork_stew"
+    ],
+    [
+      "pot_of_mutton_stew"
+    ],
+    [
+      "pot_of_rabbit_stew"
+    ],
+    [
+      "pot_of_chicken_stew"
+    ],
+    [
+      "pot_of_fish_stew"
+    ],
+    [
+      "pot_of_curry"
+    ],
+    [
+      "meat_loaf"
+    ],
+    [
+      "hash"
+    ],
+    [
+      "meat_pie"
     ],
     [
       "stirfry"
+    ],
+    [
+      "pot_of_mac_and_cheese"
+    ],
+    [
+      "pan_of_lasagna"
+    ],
+    [
+      "hotdish_dinner"
+    ],
+    [
+      "chef_salad_feast"
+    ],
+    [
+      "caramel_cheesecake"
+    ],
+    [
+      "cornbread"
+    ],
+    [
+      "corn_pudding"
+    ],
+    [
+      "pumpkin_pie"
+    ],
+    [
+      "pumpkin_roll"
+    ],
+    [
+      "apple_crisp"
+    ],
+    [
+      "stuffing"
+    ],
+    [
+      "potatoes_au_gratin"
+    ],
+    [
+      "cinnamon_rolls"
+    ],
+    [
+      "monkey_bread"
+    ],
+    [
+      "coffee_cake"
+    ],
+    [
+      "charcuterie_board"
+    ],
+    [
+      "christmas_pudding"
+    ],
+    [
+      "punch"
+    ],
+    [
+      "milk_tart"
+    ],
+    [
+      "brownies"
+    ],
+    [
+      "blondies"
+    ],
+    [
+      "chocolate_cake"
+    ],
+    [
+      "fudge"
+    ],
+    [
+      "sticky_toffee_pudding"
+    ],
+    [
+      "puffed_rice_treats"
+    ],
+    [
+      "scotcharoos"
+    ],
+    [
+      "black_forest_trifle"
+    ],
+    [
+      "dark_chocolate_fondue"
+    ],
+    [
+      "milk_chocolate_fondue"
+    ],
+    [
+      "white_chocolate_fondue"
     ]
   ],
   "sends_telemetry_event": true

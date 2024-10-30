@@ -1065,7 +1065,7 @@ public class EDAdvancementGenerator implements AdvancementProvider.AdvancementGe
 				.save(consumer, ExtraDelight.MOD_ID + ":ingredients");
 
 		AdvancementHolder drinks = Advancement.Builder.advancement()
-				.display(ExtraDelightItems.CACTUS_JUICE.get(),
+				.display(ExtraDelightItems.SWEET_BERRY_JUICE.get(),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.drinks.name"),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.drinks.desc"), null,
 						AdvancementType.CHALLENGE, true, true, false)
@@ -1425,7 +1425,7 @@ public class EDAdvancementGenerator implements AdvancementProvider.AdvancementGe
 				.addCriterion("BLOOD_CHOCOLATE_DIPPED_COFFEE_BEAN",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item()
 								.of(ExtraDelightItems.BLOOD_CHOCOLATE_DIPPED_COFFEE_BEAN).build()))
-
+				.requirements(AdvancementRequirements.Strategy.AND)
 				.save(consumer, ExtraDelight.MOD_ID + ":butcher");
 
 		AdvancementHolder chiller = Advancement.Builder.advancement()

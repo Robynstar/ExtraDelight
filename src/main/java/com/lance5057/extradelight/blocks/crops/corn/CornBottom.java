@@ -6,6 +6,7 @@ import java.time.temporal.ChronoField;
 import javax.annotation.Nullable;
 
 import com.lance5057.extradelight.ExtraDelightBlocks;
+import com.lance5057.extradelight.ExtraDelightConfig;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightWorldGen;
 
@@ -106,8 +107,8 @@ public class CornBottom extends CropBlock {
 //				}
 			}
 		}
-		
-		if(pLevel.dimension() == ExtraDelightWorldGen.CORNFIELD)
+
+		if (pLevel.dimension() == ExtraDelightWorldGen.CORNFIELD)
 			pLevel.setBlock(pPos, pState.setValue(CornProperties.DIMENSION, true), Block.UPDATE_ALL);
 
 //		}
@@ -210,10 +211,13 @@ public class CornBottom extends CropBlock {
 	}
 
 	private static boolean isHalloween() {
-		LocalDate localdate = LocalDate.now();
-		int i = localdate.get(ChronoField.DAY_OF_MONTH);
-		int j = localdate.get(ChronoField.MONTH_OF_YEAR);
-		return j == 10 && i >= 1 || j == 11 && i <= 10;
+		if (!ExtraDelightConfig.ALL_YEAR.getAsBoolean()) {
+			LocalDate localdate = LocalDate.now();
+			int i = localdate.get(ChronoField.DAY_OF_MONTH);
+			int j = localdate.get(ChronoField.MONTH_OF_YEAR);
+			return j == 10 && i >= 1 || j == 11 && i <= 10;
+		}
+		return true;
 	}
 
 	@Override

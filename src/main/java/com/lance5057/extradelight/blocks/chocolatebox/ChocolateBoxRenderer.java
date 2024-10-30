@@ -44,7 +44,7 @@ public class ChocolateBoxRenderer implements BlockEntityRenderer<ChocolateBoxBlo
 		for (int i = 0; i < ChocolateBoxBlockEntity.NUM_SLOTS; i++) {
 			xoff = (i % 4) * 0.15f;
 			if (i % 4 == 0) {
-				zoff += 0.175f;
+				zoff += 0.15f;
 //				yoff -= 0.1f;
 			}
 
@@ -60,8 +60,8 @@ public class ChocolateBoxRenderer implements BlockEntityRenderer<ChocolateBoxBlo
 				if (i % 2 == 0)
 					pPoseStack.translate(0, 0.0, 0.05);
 
-				pPoseStack.mulPose(new Quaternionf().rotateXYZ((float) Math.toRadians(-90), 0, 0));
-				float uniscale = 0.65f;
+				pPoseStack.mulPose(new Quaternionf().rotateXYZ((float) Math.toRadians(-80), 0, 0));
+				float uniscale = 0.5f;
 				pPoseStack.scale(uniscale, uniscale, uniscale);
 				itemRenderer.render(item, ItemDisplayContext.GROUND, false, pPoseStack, pBufferSource, pPackedLight,
 						pPackedOverlay, bakedmodel);

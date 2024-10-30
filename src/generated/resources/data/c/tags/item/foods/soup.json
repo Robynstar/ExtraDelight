@@ -9,8 +9,6 @@
     "farmersdelight:chicken_soup",
     "farmersdelight:noodle_soup",
     "farmersdelight:pumpkin_soup",
-    "farmersdelight:vegetable_soup",
-    "minecraft:beetroot_soup",
-    "minecraft:mushroom_stew"
+    "farmersdelight:vegetable_soup"
   ]
 }

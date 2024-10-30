@@ -96,7 +96,7 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.BREAD_SLICE).add(ExtraDelightItems.BREAD_SLICE.get());
 		tag(ExtraDelightTags.TOAST).add(ExtraDelightItems.TOAST.get());
 		tag(ExtraDelightTags.TOAST_OR_BREAD_SLICE).addTag(ExtraDelightTags.BREAD_SLICE).addTag(ExtraDelightTags.TOAST);
-		
+
 		tag(ExtraDelightTags.CHEESE).add(ExtraDelightItems.CHEESE.get());
 		tag(ExtraDelightTags.GROUND_MEAT_RAW).add(ModItems.MINCED_BEEF.get());
 		tag(ExtraDelightTags.GROUND_MEAT_COOKED).add(ModItems.BEEF_PATTY.get());
@@ -192,6 +192,8 @@ public class EDItemTags extends ItemTagsProvider {
 				ExtraDelightItems.CANDY_CANE_GREEN.get(), ExtraDelightItems.CANDIED_GINGER.get());
 
 		tag(ExtraDelightTags.CANDY_BOWL_VALID).addTag(ExtraDelightTags.CANDY);
+		tag(ExtraDelightTags.CHOCOLATE_BOX_VALID).addTag(ExtraDelightTags.CANDY).addTag(ExtraDelightTags.CHOCOLATE_BAR)
+				.addTag(ExtraDelightTags.CHOCOLATE_BAR_FILLED).addTag(ExtraDelightTags.CHOCOLATE_TRUFFLE);
 
 		tag(ExtraDelightTags.OFFSET_SPATULAS).add(ExtraDelightItems.OFFSET_SPATULA_DIAMOND.get(),
 				ExtraDelightItems.OFFSET_SPATULA_GOLD.get(), ExtraDelightItems.OFFSET_SPATULA_IRON.get(),
@@ -456,7 +458,7 @@ public class EDItemTags extends ItemTagsProvider {
 				ExtraDelightItems.MILK_CHOCOLATE_SYRUP_BOTTLE.get(),
 				ExtraDelightItems.WHITE_CHOCOLATE_SYRUP_BOTTLE.get());
 		tag(ExtraDelightTags.SUGAR_COOKIE).add(ExtraDelightItems.SUGAR_COOKIE.get(),
-				ExtraDelightItems.SUGAR_COOKIE_ALEX.get(),	ExtraDelightItems.SUGAR_COOKIE_CREEPER.get(),
+				ExtraDelightItems.SUGAR_COOKIE_ALEX.get(), ExtraDelightItems.SUGAR_COOKIE_CREEPER.get(),
 				ExtraDelightItems.SUGAR_COOKIE_DIAMOND.get(), ExtraDelightItems.SUGAR_COOKIE_EMERALD.get(),
 				ExtraDelightItems.SUGAR_COOKIE_PICKAXE.get(), ExtraDelightItems.SUGAR_COOKIE_STEVE.get(),
 				ExtraDelightItems.SUGAR_COOKIE_SWORD.get());
@@ -465,8 +467,9 @@ public class EDItemTags extends ItemTagsProvider {
 				ExtraDelightItems.GINGERBREAD_DIAMOND.get(), ExtraDelightItems.GINGERBREAD_EMERALD.get(),
 				ExtraDelightItems.GINGERBREAD_PICKAXE.get(), ExtraDelightItems.GINGERBREAD_STEVE.get(),
 				ExtraDelightItems.GINGERBREAD_SWORD.get());
-		tag(ExtraDelightTags.COOKIE).add(ExtraDelightItems.APPLE_COOKIE.get(),
-						ExtraDelightItems.GLOW_BERRY_COOKIE.get(), ExtraDelightItems.PUMPKIN_COOKIE.get())
+		tag(ExtraDelightTags.COOKIE)
+				.add(ExtraDelightItems.APPLE_COOKIE.get(), ExtraDelightItems.GLOW_BERRY_COOKIE.get(),
+						ExtraDelightItems.PUMPKIN_COOKIE.get())
 				.addTag(ExtraDelightTags.SUGAR_COOKIE).addTag(ExtraDelightTags.GINGERBREAD_COOKIE);
 		tag(ExtraDelightTags.COFFEE_CHERRIES).add(ExtraDelightItems.COFFEE_CHERRIES.get());
 		tag(ExtraDelightTags.GROUND_COFFEE_BEANS).add(ExtraDelightItems.GROUND_COFFEE.get());
