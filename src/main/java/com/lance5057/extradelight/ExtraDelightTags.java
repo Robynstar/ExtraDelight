@@ -269,7 +269,7 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> CHEESE = neoforgeItemTag("cheese");
 	public static final TagKey<Item> BUTTER = neoforgeItemTag("butter");
 
-	public static final TagKey<Item> SOUP = neoforgeItemTag("soup");
+	public static final TagKey<Item> SOUP = neoforgeItemTag("foods/soup");
 
 	public static final TagKey<Item> RICEBALL_FILLING = modTag("riceball_filling");
 
@@ -424,7 +424,9 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> JAMMABLE = neoforgeItemTag("jammable");
 	public static final TagKey<Item> PEANUT_BUTTER = neoforgeItemTag("peanut_butter");
 	public static final TagKey<Item> CHOCOLATE_SYRUP = neoforgeItemTag("liquid_chocolate");
-	public static final TagKey<Item> COOKIE = neoforgeItemTag("cookie");
+	public static final TagKey<Item> COOKIE = neoforgeItemTag("foods/cookie");
+	public static final TagKey<Item> SUGAR_COOKIE = neoforgeItemTag("foods/cookie/sugar");
+	public static final TagKey<Item> GINGERBREAD_COOKIE = neoforgeItemTag("foods/cookie/gingerbread");
 	public static final TagKey<Item> COFFEE = neoforgeItemTag("coffee");
 	public static final TagKey<Item> GRAHAM_CRACKER = neoforgeItemTag("graham_cracker");
 	public static final TagKey<Item> MALLOWROOT_POWDER = neoforgeItemTag("mallowroot/powder");

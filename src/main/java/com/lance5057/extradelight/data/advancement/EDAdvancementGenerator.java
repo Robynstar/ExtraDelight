@@ -221,7 +221,7 @@ public class EDAdvancementGenerator implements AdvancementProvider.AdvancementGe
 				.requirements(AdvancementRequirements.Strategy.AND).save(consumer, ExtraDelight.MOD_ID + ":yeastpot");
 
 		AdvancementHolder vinegarpot = Advancement.Builder.advancement()
-				.display(ExtraDelightItems.YEAST_POT.get(),
+				.display(ExtraDelightItems.VINEGAR_POT.get(),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.vinegarpot.name"),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.vinegarpot.desc"), null,
 						AdvancementType.TASK, true, true, false)
@@ -380,7 +380,7 @@ public class EDAdvancementGenerator implements AdvancementProvider.AdvancementGe
 				.requirements(AdvancementRequirements.Strategy.AND).save(consumer, ExtraDelight.MOD_ID + ":snacks");
 
 		AdvancementHolder feasts = Advancement.Builder.advancement()
-				.display(ExtraDelightItems.BEEF_WELLINGTON_FEAST_ITEM.get(),
+				.display(ExtraDelightItems.MACARONI_CHEESE_FEAST.get(),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.feasts.name"),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.feasts.desc"), null,
 						AdvancementType.CHALLENGE, true, true, false)
@@ -429,10 +429,6 @@ public class EDAdvancementGenerator implements AdvancementProvider.AdvancementGe
 				.addCriterion("hash", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.HASH.get()))
 				.addCriterion("meat_pie",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MEAT_PIE_BLOCK_ITEM.get()))
-				.addCriterion("pulled_pork",
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.PULLED_PORK_FEAST_ITEM.get()))
-				.addCriterion("crown_roast_of_lamb",
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.RACK_LAMB_FEAST_ITEM.get()))
 				.addCriterion("stirfry",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.STIRFRY.get()))
 				.addCriterion("pot_of_mac_and_cheese",
@@ -466,8 +462,6 @@ public class EDAdvancementGenerator implements AdvancementProvider.AdvancementGe
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MONKEY_BREAD.get()))
 				.addCriterion("coffee_cake",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.COFFEE_CAKE_FEAST.get()))
-				.addCriterion("mint_encrusted_lamb",
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MINT_LAMB_FEAST.get()))
 				.addCriterion("charcuterie_board",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CHARCUTERIE_BOARD.get()))
 				.addCriterion("christmas_pudding",
@@ -493,9 +487,6 @@ public class EDAdvancementGenerator implements AdvancementProvider.AdvancementGe
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.SCOTCHAROO_BLOCK.get()))
 				.addCriterion("black_forest_trifle",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BLACK_FOREST_TRIFLE.get()))
-				.addCriterion("blood_chocolate_fondue",
-						InventoryChangeTrigger.TriggerInstance
-								.hasItems(ExtraDelightItems.BLOOD_CHOCOLATE_FONDUE_BLOCK.get()))
 				.addCriterion("dark_chocolate_fondue",
 						InventoryChangeTrigger.TriggerInstance
 								.hasItems(ExtraDelightItems.DARK_CHOCOLATE_FONDUE_BLOCK.get()))
@@ -597,8 +588,6 @@ public class EDAdvancementGenerator implements AdvancementProvider.AdvancementGe
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.GRILLED_CHEESE.get()))
 				.addCriterion("bowl of hash",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.HASH.get()))
-				.addCriterion("bowl of pot roast",
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.POT_ROAST.get()))
 				.addCriterion("plate of meat loaf",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MEAT_LOAF.get()))
 				.addCriterion("meat loaf sandwich",
@@ -607,10 +596,6 @@ public class EDAdvancementGenerator implements AdvancementProvider.AdvancementGe
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MEAT_PIE_SLICE.get()))
 				.addCriterion("bowl of stirfry",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.STIRFRY.get()))
-				.addCriterion("plate of beef wellington",
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BEEF_WELLINGTON.get()))
-				.addCriterion("bowl of haggis",
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.HAGGIS.get()))
 				.addCriterion("mac and cheese",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MACARONI_CHEESE.get()))
 				.addCriterion("lasagna",
@@ -713,7 +698,7 @@ public class EDAdvancementGenerator implements AdvancementProvider.AdvancementGe
 				.requirements(AdvancementRequirements.Strategy.AND).save(consumer, ExtraDelight.MOD_ID + ":meals");
 
 		AdvancementHolder dessert = Advancement.Builder.advancement()
-				.display(ExtraDelightItems.GLOW_BERRY_PIE_ITEM.get(),
+				.display(ExtraDelightItems.CHRISTMAS_PUDDING.get(),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.desert.name"),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.desert.desc"), null,
 						AdvancementType.CHALLENGE, true, true, false)
@@ -1001,8 +986,6 @@ public class EDAdvancementGenerator implements AdvancementProvider.AdvancementGe
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MILK_CHOCOLATE_CHIPS.get()))
 				.addCriterion("dark_chocolate_chips",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.DARK_CHOCOLATE_CHIPS.get()))
-				.addCriterion("blood_chocolate_chips",
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BLOOD_CHOCOLATE_CHIPS.get()))
 				.addCriterion("chili_powder",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CHILI_POWDER.get()))
 				.addCriterion("puffed_rice",
@@ -1190,17 +1173,12 @@ public class EDAdvancementGenerator implements AdvancementProvider.AdvancementGe
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MILK_CHOCOLATE_BAR.get()))
 				.addCriterion("dark_chocolate_bar",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.DARK_CHOCOLATE_BAR.get()))
-				.addCriterion("blood_chocolate_bar",
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BLOOD_CHOCOLATE_BAR.get()))
 				.addCriterion("white_chocolate_filled_bar",
 						InventoryChangeTrigger.TriggerInstance
 								.hasItems(ExtraDelightItems.WHITE_CHOCOLATE_FILLED_BAR.get()))
 				.addCriterion("milk_chocolate_filled_bar",
 						InventoryChangeTrigger.TriggerInstance
 								.hasItems(ExtraDelightItems.MILK_CHOCOLATE_FILLED_BAR.get()))
-				.addCriterion("blood_chocolate_filled_bar",
-						InventoryChangeTrigger.TriggerInstance
-								.hasItems(ExtraDelightItems.BLOOD_CHOCOLATE_FILLED_BAR.get()))
 				.addCriterion("white_chocolate_truffle",
 						InventoryChangeTrigger.TriggerInstance
 								.hasItems(ExtraDelightItems.WHITE_CHOCOLATE_TRUFFLE.get()))
@@ -1208,9 +1186,6 @@ public class EDAdvancementGenerator implements AdvancementProvider.AdvancementGe
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MILK_CHOCOLATE_TRUFFLE.get()))
 				.addCriterion("dark_chocolate_truffle",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.DARK_CHOCOLATE_TRUFFLE.get()))
-				.addCriterion("blood_chocolate_truffle",
-						InventoryChangeTrigger.TriggerInstance
-								.hasItems(ExtraDelightItems.BLOOD_CHOCOLATE_TRUFFLE.get()))
 				.addCriterion("marshmallow",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MARSHMALLOW.get()))
 				.addCriterion("peanut_butter_cup",
@@ -1411,6 +1386,9 @@ public class EDAdvancementGenerator implements AdvancementProvider.AdvancementGe
 				.addCriterion("MINT_LAMB",
 						InventoryChangeTrigger.TriggerInstance
 								.hasItems(ItemPredicate.Builder.item().of(ExtraDelightItems.MINT_LAMB).build()))
+				.addCriterion("liquid_blood_chocolate",
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(ExtraDelightItems.BLOOD_CHOCOLATE_SYRUP_BOTTLE.get()))
 				.addCriterion("BLOOD_CHOCOLATE_BAR",
 						InventoryChangeTrigger.TriggerInstance.hasItems(
 								ItemPredicate.Builder.item().of(ExtraDelightItems.BLOOD_CHOCOLATE_BAR).build()))
