@@ -224,6 +224,9 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add(ExtraDelight.MOD_ID + ".advancement.frosting.name", "Full Palette");
 		this.add(ExtraDelight.MOD_ID + ".advancement.frosting.desc", "Make every color of frosting.");
+		
+		this.add(ExtraDelight.MOD_ID + ".advancement.butcher.name", "Certified Carnivore");
+		this.add(ExtraDelight.MOD_ID + ".advancement.butcher.desc", "Make every Butchercraft meal.");
 
 		this.add(ExtraDelightItems.BAKING_STONE.get(), "Baking Stone");
 		this.add(ExtraDelightItems.CHEESECAKE_ITEM.get(), "Cheesecake");

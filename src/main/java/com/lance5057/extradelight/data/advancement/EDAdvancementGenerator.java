@@ -427,10 +427,6 @@ public class EDAdvancementGenerator implements AdvancementProvider.AdvancementGe
 				.addCriterion("meat_loaf",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MEAT_LOAF.get()))
 				.addCriterion("hash", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.HASH.get()))
-				.addCriterion("pot_roast",
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.POT_ROAST.get()))
-				.addCriterion("bbq_ribs",
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BBQ_RIBS.get()))
 				.addCriterion("meat_pie",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MEAT_PIE_BLOCK_ITEM.get()))
 				.addCriterion("pulled_pork",
@@ -439,9 +435,6 @@ public class EDAdvancementGenerator implements AdvancementProvider.AdvancementGe
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.RACK_LAMB_FEAST_ITEM.get()))
 				.addCriterion("stirfry",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.STIRFRY.get()))
-				.addCriterion("beef_wellington",
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BEEF_WELLINGTON.get()))
-				.addCriterion("haggis", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.HAGGIS.get()))
 				.addCriterion("pot_of_mac_and_cheese",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MACARONI_CHEESE_FEAST.get()))
 				.addCriterion("pan_of_lasagna",
@@ -587,11 +580,6 @@ public class EDAdvancementGenerator implements AdvancementProvider.AdvancementGe
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FISH_STEW_RICE.get()))
 				.addCriterion("curry rice",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CURRY_RICE.get()))
-				.addCriterion("sausage roll",
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.SAUSAGE_ROLL.get()))
-				.addCriterion("sos", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.SOS.get()))
-				.addCriterion("liver and onions",
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.LIVER_ONIONS.get()))
 				.addCriterion("fried fish",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FRIED_FISH.get()))
 				.addCriterion("chicken fried steak",
@@ -603,12 +591,6 @@ public class EDAdvancementGenerator implements AdvancementProvider.AdvancementGe
 								.hasItems(ExtraDelightItems.PORK_TENDERLOIN_SANDWICH.get()))
 				.addCriterion("fried chicken",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FRIED_CHICKEN.get()))
-				.addCriterion("stuffed heart",
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.STUFFED_HEART.get()))
-				.addCriterion("fried brains",
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FRIED_BRAINS.get()))
-				.addCriterion("oxtail soup",
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.OXTAIL_SOUP.get()))
 				.addCriterion("cheese sandwich",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CHEESE_SANDWICH.get()))
 				.addCriterion("grilled cheese",
@@ -621,14 +603,8 @@ public class EDAdvancementGenerator implements AdvancementProvider.AdvancementGe
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MEAT_LOAF.get()))
 				.addCriterion("meat loaf sandwich",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MEAT_LOAF_SANDWICH.get()))
-				.addCriterion("plate of bbq ribs",
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BBQ_RIBS.get()))
 				.addCriterion("slice of meat pie",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MEAT_PIE_SLICE.get()))
-				.addCriterion("pulled pork sandwich",
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.PULLED_PORK_SANDWICH.get()))
-				.addCriterion("crown roast of lamb plate",
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.RACK_LAMB.get()))
 				.addCriterion("bowl of stirfry",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.STIRFRY.get()))
 				.addCriterion("plate of beef wellington",
@@ -724,8 +700,6 @@ public class EDAdvancementGenerator implements AdvancementProvider.AdvancementGe
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CROQUE_MONSIEUR.get()))
 				.addCriterion("croque madam",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CROQUE_MADAME.get()))
-				.addCriterion("plate of mint encrasted lamb",
-						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MINT_LAMB.get()))
 				.addCriterion("plate of charcuterie",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CHARCUTERIE_BOARD.get()))
 				.addCriterion("bowl of puffed rice",
@@ -1369,6 +1343,112 @@ public class EDAdvancementGenerator implements AdvancementProvider.AdvancementGe
 				.addCriterion("sugar_cookie_emerald",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.SUGAR_COOKIE_EMERALD.get()))
 				.requirements(AdvancementRequirements.Strategy.AND).save(consumer, ExtraDelight.MOD_ID + ":cookies");
+
+		AdvancementHolder butcher = Advancement.Builder.advancement()
+				.display(ExtraDelightItems.BBQ_RIBS_FEAST_ITEM.get(),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.butcher.name"),
+						Component.translatable(ExtraDelight.MOD_ID + ".advancement.butcher.desc"), null,
+						AdvancementType.CHALLENGE, true, true, true)
+				.parent(start)
+
+				.addCriterion("SAUSAGE_ROLL",
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(ItemPredicate.Builder.item().of(ExtraDelightItems.SAUSAGE_ROLL).build()))
+				.addCriterion("SOS",
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(ItemPredicate.Builder.item().of(ExtraDelightItems.SOS).build()))
+				.addCriterion("LIVER_ONIONS",
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(ItemPredicate.Builder.item().of(ExtraDelightItems.LIVER_ONIONS).build()))
+				.addCriterion("STUFFED_HEART",
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(ItemPredicate.Builder.item().of(ExtraDelightItems.STUFFED_HEART).build()))
+				.addCriterion("FRIED_BRAINS",
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(ItemPredicate.Builder.item().of(ExtraDelightItems.FRIED_BRAINS).build()))
+				.addCriterion("OXTAIL_SOUP",
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(ItemPredicate.Builder.item().of(ExtraDelightItems.OXTAIL_SOUP).build()))
+				.addCriterion("POT_ROAST_FEAST_ITEM",
+						InventoryChangeTrigger.TriggerInstance.hasItems(
+								ItemPredicate.Builder.item().of(ExtraDelightItems.POT_ROAST_FEAST_ITEM).build()))
+				.addCriterion("POT_ROAST",
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(ItemPredicate.Builder.item().of(ExtraDelightItems.POT_ROAST).build()))
+				.addCriterion("BBQ_RIBS_FEAST_ITEM",
+						InventoryChangeTrigger.TriggerInstance.hasItems(
+								ItemPredicate.Builder.item().of(ExtraDelightItems.BBQ_RIBS_FEAST_ITEM).build()))
+				.addCriterion("BBQ_RIBS",
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(ItemPredicate.Builder.item().of(ExtraDelightItems.BBQ_RIBS).build()))
+				.addCriterion("PULLED_PORK_FEAST_ITEM",
+						InventoryChangeTrigger.TriggerInstance.hasItems(
+								ItemPredicate.Builder.item().of(ExtraDelightItems.PULLED_PORK_FEAST_ITEM).build()))
+				.addCriterion("PULLED_PORK_SANDWICH",
+						InventoryChangeTrigger.TriggerInstance.hasItems(
+								ItemPredicate.Builder.item().of(ExtraDelightItems.PULLED_PORK_SANDWICH).build()))
+				.addCriterion("RACK_LAMB_FEAST_ITEM",
+						InventoryChangeTrigger.TriggerInstance.hasItems(
+								ItemPredicate.Builder.item().of(ExtraDelightItems.RACK_LAMB_FEAST_ITEM).build()))
+				.addCriterion("RACK_LAMB",
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(ItemPredicate.Builder.item().of(ExtraDelightItems.RACK_LAMB).build()))
+				.addCriterion("BEEF_WELLINGTON_FEAST_ITEM",
+						InventoryChangeTrigger.TriggerInstance.hasItems(
+								ItemPredicate.Builder.item().of(ExtraDelightItems.BEEF_WELLINGTON_FEAST_ITEM).build()))
+				.addCriterion("BEEF_WELLINGTON",
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(ItemPredicate.Builder.item().of(ExtraDelightItems.BEEF_WELLINGTON).build()))
+				.addCriterion("HAGGIS_FEAST_ITEM",
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(ItemPredicate.Builder.item().of(ExtraDelightItems.HAGGIS_FEAST_ITEM).build()))
+				.addCriterion("HAGGIS",
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(ItemPredicate.Builder.item().of(ExtraDelightItems.HAGGIS).build()))
+				.addCriterion("MINT_LAMB_FEAST",
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(ItemPredicate.Builder.item().of(ExtraDelightItems.MINT_LAMB_FEAST).build()))
+				.addCriterion("MINT_LAMB",
+						InventoryChangeTrigger.TriggerInstance
+								.hasItems(ItemPredicate.Builder.item().of(ExtraDelightItems.MINT_LAMB).build()))
+				.addCriterion("BLOOD_CHOCOLATE_BAR",
+						InventoryChangeTrigger.TriggerInstance.hasItems(
+								ItemPredicate.Builder.item().of(ExtraDelightItems.BLOOD_CHOCOLATE_BAR).build()))
+				.addCriterion("BLOOD_CHOCOLATE_CHIPS",
+						InventoryChangeTrigger.TriggerInstance.hasItems(
+								ItemPredicate.Builder.item().of(ExtraDelightItems.BLOOD_CHOCOLATE_CHIPS).build()))
+				.addCriterion("BLOOD_CHOCOLATE_FILLED_BAR",
+						InventoryChangeTrigger.TriggerInstance.hasItems(
+								ItemPredicate.Builder.item().of(ExtraDelightItems.BLOOD_CHOCOLATE_FILLED_BAR).build()))
+				.addCriterion("BLOOD_CHOCOLATE_TRUFFLE",
+						InventoryChangeTrigger.TriggerInstance.hasItems(
+								ItemPredicate.Builder.item().of(ExtraDelightItems.BLOOD_CHOCOLATE_TRUFFLE).build()))
+				.addCriterion("BLOOD_CHOCOLATE_FONDUE_BLOCK",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item()
+								.of(ExtraDelightItems.BLOOD_CHOCOLATE_FONDUE_BLOCK).build()))
+				.addCriterion("BLOOD_CHOCOLATE_DIPPED_SWEET_BERRY",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item()
+								.of(ExtraDelightItems.BLOOD_CHOCOLATE_DIPPED_SWEET_BERRY).build()))
+				.addCriterion("BLOOD_CHOCOLATE_DIPPED_GLOW_BERRY",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item()
+								.of(ExtraDelightItems.BLOOD_CHOCOLATE_DIPPED_GLOW_BERRY).build()))
+				.addCriterion("BLOOD_CHOCOLATE_DIPPED_APPLE_SLICE",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item()
+								.of(ExtraDelightItems.BLOOD_CHOCOLATE_DIPPED_APPLE_SLICE).build()))
+				.addCriterion("BLOOD_CHOCOLATE_DIPPED_MARSHMALLOW",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item()
+								.of(ExtraDelightItems.BLOOD_CHOCOLATE_DIPPED_MARSHMALLOW).build()))
+				.addCriterion("BLOOD_CHOCOLATE_DIPPED_GRAHAM_CRACKER",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item()
+								.of(ExtraDelightItems.BLOOD_CHOCOLATE_DIPPED_GRAHAM_CRACKER).build()))
+				.addCriterion("BLOOD_CHOCOLATE_DIPPED_BACON",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item()
+								.of(ExtraDelightItems.BLOOD_CHOCOLATE_DIPPED_BACON).build()))
+				.addCriterion("BLOOD_CHOCOLATE_DIPPED_COFFEE_BEAN",
+						InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item()
+								.of(ExtraDelightItems.BLOOD_CHOCOLATE_DIPPED_COFFEE_BEAN).build()))
+
+				.save(consumer, ExtraDelight.MOD_ID + ":butcher");
 
 		AdvancementHolder chiller = Advancement.Builder.advancement()
 				.display(ExtraDelightItems.CHILLER.get(),
