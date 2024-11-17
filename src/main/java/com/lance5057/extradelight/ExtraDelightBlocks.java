@@ -1,17 +1,7 @@
 package com.lance5057.extradelight;
 
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
-import com.lance5057.extradelight.blocks.BakingStoneBlock;
-import com.lance5057.extradelight.blocks.ChocolateStyleBlock;
-import com.lance5057.extradelight.blocks.FrostableBlock;
-import com.lance5057.extradelight.blocks.FruitLeafBlock;
-import com.lance5057.extradelight.blocks.HorizontalPanBlock;
-import com.lance5057.extradelight.blocks.JellyBlock;
-import com.lance5057.extradelight.blocks.RecipeFeastBlock;
-import com.lance5057.extradelight.blocks.RecipeFondueFeastBlock;
-import com.lance5057.extradelight.blocks.StrippableLog;
-import com.lance5057.extradelight.blocks.TapBlock;
-import com.lance5057.extradelight.blocks.YeastPotBlock;
+import com.lance5057.extradelight.blocks.*;
 import com.lance5057.extradelight.blocks.chocolatebox.ChocolateBoxBlock;
 import com.lance5057.extradelight.blocks.crops.ChiliCrop;
 import com.lance5057.extradelight.blocks.crops.CoffeeBush;
@@ -41,6 +31,7 @@ import com.lance5057.extradelight.worldgen.features.trees.ExtraDelightTreeGrower
 
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -141,6 +132,8 @@ public class ExtraDelightBlocks {
 		fire.setFlammable(ExtraDelightBlocks.DRIED_CORN_HUSK_BUNDLE.get(), 300, 600);
 
 		fire.setFlammable(ExtraDelightBlocks.MINT_CROP.get(), 1000, 1000);
+
+		fire.setFlammable(ExtraDelightBlocks.APPLE_LEAVES.get(), 30, 60);
 	}
 
 	public static final DeferredBlock<Block> OVEN = BLOCKS.register("oven", OvenBlock::new);
@@ -995,4 +988,11 @@ public class ExtraDelightBlocks {
 	public static final DeferredBlock<Block> GOLDEN_CARROT_CRATE = BLOCKS.register("golden_carrot_crate",
 			() -> new Block(
 					Block.Properties.ofFullCopy(ModBlocks.BEETROOT_CRATE.get()).mapColor(MapColor.TERRACOTTA_YELLOW)));
+
+	public static final DeferredBlock<VanillaFruitLeafBlock> APPLE_LEAVES = BLOCKS.register("apple_leaves",
+			() -> new VanillaFruitLeafBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES),
+					Items.APPLE));
+	public static final DeferredBlock<SaplingBlock> APPLE_SAPLING = BLOCKS.register("apple_sapling",
+			() -> new SaplingBlock(ExtraDelightTreeGrowers.APPLE,
+					Block.Properties.ofFullCopy(Blocks.DARK_OAK_SAPLING)));
 }

@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
+import net.minecraft.world.item.Item;
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelightBlocks;
@@ -234,16 +235,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 					NORMAL_LEAVES_SAPLING_CHANCES);
 		});
 
-		this.add(ExtraDelightBlocks.HAZELNUT_LEAVES.get(), (p_124101_) -> {
-			return createLeavesDrops(p_124101_, ExtraDelightBlocks.HAZELNUT_SAPLING.get(),
-					NORMAL_LEAVES_SAPLING_CHANCES)
-					.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
-							.when(LootItemBlockStatePropertyCondition
-									.hasBlockStateProperties(ExtraDelightBlocks.HAZELNUT_LEAVES.get())
-									.setProperties(StatePropertiesPredicate.Builder.properties()
-											.hasProperty(FruitLeafBlock.AGE, 3)))
-							.add(LootItem.lootTableItem(ExtraDelightItems.HAZELNUTS_IN_SHELL.get())));
-		});
+		this.createFruitLeavesDrop(ExtraDelightBlocks.HAZELNUT_LEAVES.get(), ExtraDelightBlocks.HAZELNUT_SAPLING.get(),
+				ExtraDelightItems.HAZELNUTS_IN_SHELL.get());
 
 		this.dropSelf(ExtraDelightBlocks.APPLE_COOKIE_BLOCK.get());
 		this.dropSelf(ExtraDelightBlocks.CHOCOLATE_CHIP_COOKIE_BLOCK.get());
@@ -489,6 +482,23 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(ExtraDelightBlocks.GOLDEN_CARROT_CRATE.get());
 
 		this.add(ExtraDelightBlocks.JAR.get(), p_248609_ -> this.createJarDrop(p_248609_));
+
+		this.createFruitLeavesDrop(ExtraDelightBlocks.APPLE_LEAVES.get(), ExtraDelightBlocks.APPLE_SAPLING.get(),
+				Items.APPLE);
+		this.dropSelf(ExtraDelightBlocks.APPLE_SAPLING.get());
+	}
+
+	protected void createFruitLeavesDrop(Block leaves, Block sapling, Item fruit) {
+		this.add(leaves, (p_124101_) -> {
+			return createLeavesDrops(p_124101_, sapling,
+					NORMAL_LEAVES_SAPLING_CHANCES)
+					.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+							.when(LootItemBlockStatePropertyCondition
+									.hasBlockStateProperties(leaves)
+									.setProperties(StatePropertiesPredicate.Builder.properties()
+											.hasProperty(FruitLeafBlock.AGE, 3)))
+							.add(LootItem.lootTableItem(fruit)));
+		});
 	}
 
 	protected LootTable.Builder createChocolateBoxDrop(Block block) {

@@ -83,6 +83,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("extradelight.jei.info.peanut", "Found in jungles.");
 		this.add("extradelight.jei.info.coffee", "Found in jungles.");
 		this.add("extradelight.jei.info.hazelnut", "Trees grow in forests.");
+		this.add("extradelight.jei.info.apple", "Trees grow in forests.");
 
 		this.add(ExtraDelight.MOD_ID + ".yeastpot.tooltip", "Use a bottle once the pot begins to bubble.");
 		this.add(ExtraDelight.MOD_ID + ".vinegarpot.tooltip", "Use a bottle once the pot begins to bubble.");
@@ -1156,6 +1157,9 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.MALLOW_POWDER.get(), "Mallow Root Powder");
 		this.add(ExtraDelightItems.GROUND_COFFEE.get(), "Ground Coffee");
 		this.add(ExtraDelightItems.GOLDEN_CARROT_CRATE_BLOCK.get(), "Golden Carrot Crate");
+
+		this.add(ExtraDelightItems.APPLE_LEAVES.get(), "Apple Leaves");
+		this.add(ExtraDelightItems.APPLE_SAPLING.get(), "Apple Sapling");
 
 		AestheticBlocks.EngLoc(this);
 	}

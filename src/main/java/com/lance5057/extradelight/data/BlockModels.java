@@ -544,6 +544,8 @@ public class BlockModels extends BlockStateProvider {
 
 		this.simpleBlock(ExtraDelightBlocks.MARSHMALLOW_BLOCK.get());
 
+		//this.fruitLeafBlock(ExtraDelightBlocks.APPLE_LEAVES.get(), "apple");
+
 		AestheticBlocks.blockModel(this);
 	}
 

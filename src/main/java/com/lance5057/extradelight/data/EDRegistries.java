@@ -99,6 +99,10 @@ public class EDRegistries {
 				bootstrap.register(ExtraDelightWorldGen.PLACED_HAZELNUT_TREE, new PlacedFeature(
 						cfgs.getOrThrow(ExtraDelightWorldGen.CONFIGURED_HAZELNUT_TREE),
 						List.of(PlacementUtils.filteredByBlockSurvival(ExtraDelightBlocks.HAZELNUT_SAPLING.get()))));
+
+				bootstrap.register(ExtraDelightWorldGen.PLACED_APPLE_TREE, new PlacedFeature(
+						cfgs.getOrThrow(ExtraDelightWorldGen.CONFIGURED_APPLE_TREE),
+						List.of(PlacementUtils.filteredByBlockSurvival(ExtraDelightBlocks.APPLE_SAPLING.get()))));
 			}).add(Registries.BIOME, bootstrap -> {
 				HolderGetter<PlacedFeature> placedFeatures = bootstrap.lookup(Registries.PLACED_FEATURE);
 				bootstrap.register(ExtraDelightWorldGen.CORNFIELD_BIOME, new Biome.BiomeBuilder()

@@ -372,7 +372,8 @@ public class EDItemTags extends ItemTagsProvider {
 				ExtraDelightItems.DARK_CHOCOLATE_DOOR.get(), ExtraDelightItems.MILK_CHOCOLATE_DOOR.get(),
 				ExtraDelightItems.WHITE_CHOCOLATE_DOOR.get());
 		tag(ItemTags.WOODEN_DOORS).add(ExtraDelightItems.CINNAMON_DOOR.get(), ExtraDelightItems.FRUIT_DOOR.get());
-		tag(ItemTags.SAPLINGS).add(ExtraDelightItems.CINNAMON_SAPLING.get(), ExtraDelightItems.HAZELNUT_SAPLING.get());
+		tag(ItemTags.SAPLINGS).add(ExtraDelightItems.CINNAMON_SAPLING.get(), ExtraDelightItems.HAZELNUT_SAPLING.get(),
+				ExtraDelightItems.APPLE_SAPLING.get());
 
 		tag(ExtraDelightTags.MILK_CHOCOLATE_BAR).add(ExtraDelightItems.MILK_CHOCOLATE_BAR.get());
 		tag(ExtraDelightTags.MILK_CHOCOLATE_BAR_FILLED).add(ExtraDelightItems.MILK_CHOCOLATE_FILLED_BAR.get());

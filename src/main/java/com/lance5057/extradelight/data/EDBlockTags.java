@@ -40,7 +40,8 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.FRUIT_LOG.get(), ExtraDelightBlocks.STRIPPED_FRUIT_LOG.get(),
 				ExtraDelightBlocks.CINNAMON_WOOD.get(), ExtraDelightBlocks.FRUIT_WOOD.get(),
 				ExtraDelightBlocks.STRIPPED_CINNAMON_WOOD.get(), ExtraDelightBlocks.STRIPPED_FRUIT_WOOD.get());
-		tag(BlockTags.LEAVES).add(ExtraDelightBlocks.CINNAMON_LEAVES.get(), ExtraDelightBlocks.HAZELNUT_LEAVES.get());
+		tag(BlockTags.LEAVES).add(ExtraDelightBlocks.CINNAMON_LEAVES.get(), ExtraDelightBlocks.HAZELNUT_LEAVES.get(),
+				ExtraDelightBlocks.APPLE_LEAVES.get());
 		tag(BlockTags.MINEABLE_WITH_AXE).add(ExtraDelightBlocks.DRYING_RACK.get(),
 				ExtraDelightBlocks.FOOD_DISPLAY.get(), ExtraDelightBlocks.DOUGH_SHAPING.get(),
 				ExtraDelightBlocks.MIXING_BOWL.get());
@@ -149,7 +150,7 @@ public class EDBlockTags extends BlockTagsProvider {
 		tag(BlockTags.SMALL_FLOWERS).add(ExtraDelightBlocks.WILD_GINGER.get());
 
 		tag(BlockTags.MINEABLE_WITH_HOE).add(ExtraDelightBlocks.CINNAMON_LEAVES.get(),
-				ExtraDelightBlocks.HAZELNUT_LEAVES.get()
+				ExtraDelightBlocks.HAZELNUT_LEAVES.get(), ExtraDelightBlocks.APPLE_LEAVES.get()
 		);
 		tag(BlockTags.MINEABLE_WITH_AXE).add(ExtraDelightBlocks.CINNAMON_LOG.get(),
 				ExtraDelightBlocks.STRIPPED_CINNAMON_LOG.get(), ExtraDelightBlocks.CINNAMON_PLANKS.get(),
@@ -201,7 +202,7 @@ public class EDBlockTags extends BlockTagsProvider {
 		tag(BlockTags.WOODEN_DOORS).add(ExtraDelightBlocks.CINNAMON_DOOR.get(),
 				ExtraDelightBlocks.FRUIT_DOOR.get());
 		tag(BlockTags.SAPLINGS).add(ExtraDelightBlocks.CINNAMON_SAPLING.get(),
-				ExtraDelightBlocks.HAZELNUT_SAPLING.get());
+				ExtraDelightBlocks.HAZELNUT_SAPLING.get(), ExtraDelightBlocks.APPLE_SAPLING.get());
 
 		tag(ExtraDelightTags.COLD_SOURCES).add(Blocks.ICE, Blocks.BLUE_ICE, Blocks.FROSTED_ICE, Blocks.PACKED_ICE,
 					Blocks.SNOW_BLOCK, Blocks.POWDER_SNOW_CAULDRON);

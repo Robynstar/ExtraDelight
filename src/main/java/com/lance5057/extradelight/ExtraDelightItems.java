@@ -2041,4 +2041,9 @@ public class ExtraDelightItems {
 
 	public static final DeferredItem<Item> HAZELNUT_SPREAD_BOTTLE = ITEMS.register("hazelnut_spread_bottle",
 			() -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(EDFoods.HAZELNUT_SPREAD)));
+
+	public static final DeferredItem<Item> APPLE_LEAVES = ITEMS.register("apple_leaves",
+			() -> new BlockItem(ExtraDelightBlocks.APPLE_LEAVES.get(), new Item.Properties()));
+	public static final DeferredItem<Item> APPLE_SAPLING = ITEMS.register("apple_sapling",
+			() -> new BlockItem(ExtraDelightBlocks.APPLE_SAPLING.get(), new Item.Properties()));
 }
