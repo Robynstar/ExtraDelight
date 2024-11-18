@@ -1091,7 +1091,8 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.MALLOW_POWDER, "mallow_root_powder");
 		forItem(ExtraDelightItems.GROUND_COFFEE, "ground_coffee");
 
-		//forBlockItem(ExtraDelightItems.APPLE_LEAVES, "apple_leaves");
+		forBlockItem(ExtraDelightItems.APPLE_LEAVES, modLoc("block/crops/fruit/apple/apple_leaves_stage0"));
+		forBlockItemFlat(ExtraDelightItems.APPLE_SAPLING, "crops/fruit/apple/apple_sapling");
 
 		AestheticBlocks.itemModel(this);
 	}

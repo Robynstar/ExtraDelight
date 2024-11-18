@@ -81,6 +81,9 @@ public class EDRegistries {
 
 				bootstrap.register(ExtraDelightWorldGen.CONFIGURED_HAZELNUT_TREE,
 						new ConfiguredFeature<>(Feature.TREE, ExtraDelightTreeFeatures.createHazelnutTree().build()));
+
+				bootstrap.register(ExtraDelightWorldGen.CONFIGURED_APPLE_TREE,
+						new ConfiguredFeature<>(Feature.TREE, ExtraDelightTreeFeatures.createAppleTree().build()));
 			}).add(Registries.PLACED_FEATURE, bootstrap -> {
 				HolderGetter<ConfiguredFeature<?, ?>> cfgs = bootstrap.lookup(Registries.CONFIGURED_FEATURE);
 				bootstrap.register(ExtraDelightWorldGen.PLACED_CORN_MAZE,

@@ -545,11 +545,8 @@ public class BlockModels extends BlockStateProvider {
 
 		this.simpleBlock(ExtraDelightBlocks.MARSHMALLOW_BLOCK.get());
 
-//		this.simpleBlock(ExtraDelightBlocks.YEAST_POT.get(), models().getExistingFile(modLoc("block/yeast_pot")));
-//		this.simpleBlock(ExtraDelightBlocks.APPLE_LEAVES.get(),
-//				models().getExistingFile(modLoc("block/crops/fruit/apple/apple_leaves_stage_0")));
-
-		 this.vanillaFruitLeafBlock(ExtraDelightBlocks.APPLE_LEAVES.get(), "apple");
+		this.vanillaFruitLeafBlock(ExtraDelightBlocks.APPLE_LEAVES.get(), "apple");
+		this.simpleCross(ExtraDelightBlocks.APPLE_SAPLING.get(), "crops/fruit/apple/apple_sapling");
 
 		AestheticBlocks.blockModel(this);
 	}
