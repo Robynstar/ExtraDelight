@@ -11,6 +11,7 @@ import com.lance5057.extradelight.blocks.HorizontalPanBlock;
 import com.lance5057.extradelight.blocks.RecipeFeastBlock;
 import com.lance5057.extradelight.blocks.RecipeFondueFeastBlock;
 import com.lance5057.extradelight.blocks.TapBlock;
+import com.lance5057.extradelight.blocks.VanillaFruitLeafBlock;
 import com.lance5057.extradelight.blocks.chocolatebox.ChocolateBoxBlock;
 import com.lance5057.extradelight.blocks.crops.ChiliCrop;
 import com.lance5057.extradelight.blocks.crops.CoffeeBush;
@@ -544,7 +545,11 @@ public class BlockModels extends BlockStateProvider {
 
 		this.simpleBlock(ExtraDelightBlocks.MARSHMALLOW_BLOCK.get());
 
-		//this.fruitLeafBlock(ExtraDelightBlocks.APPLE_LEAVES.get(), "apple");
+//		this.simpleBlock(ExtraDelightBlocks.YEAST_POT.get(), models().getExistingFile(modLoc("block/yeast_pot")));
+//		this.simpleBlock(ExtraDelightBlocks.APPLE_LEAVES.get(),
+//				models().getExistingFile(modLoc("block/crops/fruit/apple/apple_leaves_stage_0")));
+
+		 this.vanillaFruitLeafBlock(ExtraDelightBlocks.APPLE_LEAVES.get(), "apple");
 
 		AestheticBlocks.blockModel(this);
 	}
@@ -650,6 +655,19 @@ public class BlockModels extends BlockStateProvider {
 	public void fruitLeafBlock(FruitLeafBlock block, String name) {
 		getVariantBuilder(block).forAllStates(state -> {
 			int age = state.getValue(FruitLeafBlock.AGE);
+
+			String suffix = "_stage" + age;
+
+			ModelFile model = models()
+					.getExistingFile(modLoc("block/crops/fruit/" + name + "/" + name + "_leaves" + suffix));
+
+			return ConfiguredModel.builder().modelFile(model).build();
+		});
+	}
+	
+	public void vanillaFruitLeafBlock(VanillaFruitLeafBlock block, String name) {
+		getVariantBuilder(block).forAllStates(state -> {
+			int age = state.getValue(VanillaFruitLeafBlock.AGE);
 
 			String suffix = "_stage" + age;
 
