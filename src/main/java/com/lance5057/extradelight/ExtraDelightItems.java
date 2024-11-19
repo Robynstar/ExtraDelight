@@ -2046,4 +2046,9 @@ public class ExtraDelightItems {
 			() -> new BlockItem(ExtraDelightBlocks.APPLE_LEAVES.get(), new Item.Properties()));
 	public static final DeferredItem<Item> APPLE_SAPLING = ITEMS.register("apple_sapling",
 			() -> new BlockItem(ExtraDelightBlocks.APPLE_SAPLING.get(), new Item.Properties()));
+
+	public static final DeferredItem<Item> ROMBOSSE = ITEMS.register("rombosse",
+			() -> new Item(foodItem(EDFoods.MUFFIN)));
+	public static final DeferredItem<Item> APPLE_SLAW = ITEMS.register("apple_slaw",
+			() -> new Item(foodItem(EDFoods.EGG_SALAD)));
 }

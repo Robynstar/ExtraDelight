@@ -205,12 +205,6 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.PROCESSED_GINGER).addTag(ExtraDelightTags.GRATED_GINGER)
 				.addTag(ExtraDelightTags.SLICED_GINGER);
 
-		tag(ExtraDelightTags.COOKIE_DOUGH).add(ExtraDelightItems.APPLE_COOKIE_DOUGH.get(),
-				ExtraDelightItems.CHOCOLATE_CHIP_COOKIE_DOUGH.get(), ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get(),
-				ExtraDelightItems.GLOW_BERRY_COOKIE_DOUGH.get(), ExtraDelightItems.HONEY_COOKIE_DOUGH.get(),
-				ExtraDelightItems.PUMPKIN_COOKIE_DOUGH.get(), ExtraDelightItems.SUGAR_COOKIE_DOUGH.get(),
-				ExtraDelightItems.SWEET_BERRY_COOKIE_DOUGH.get());
-
 		tag(ExtraDelightTags.SALT).add(ExtraDelightItems.BACON_CHEESEBURGER.get(),
 				ExtraDelightItems.BACON_EGG_CHEESE_SANDWICH.get(), ExtraDelightItems.BACON_EGG_SANDWICH.get(),
 				ExtraDelightItems.BAD_FOOD.get(), ExtraDelightItems.BBQ_RIBS.get(),
@@ -292,11 +286,11 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.SWEET_BERRY_COOKIE_DOUGH).add(ExtraDelightItems.SWEET_BERRY_COOKIE_DOUGH.get());
 		tag(ExtraDelightTags.CHOCOLATE_CHIP_COOKIE_DOUGH).add(ExtraDelightItems.CHOCOLATE_CHIP_COOKIE_DOUGH.get());
 
-		tag(ExtraDelightTags.COOKIE_DOUGH).add(ExtraDelightItems.SWEET_BERRY_COOKIE_DOUGH.get())
-				.add(ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get())
-				.add(ExtraDelightItems.GLOW_BERRY_COOKIE_DOUGH.get()).add(ExtraDelightItems.HONEY_COOKIE_DOUGH.get())
-				.add(ExtraDelightItems.PUMPKIN_COOKIE_DOUGH.get()).add(ExtraDelightItems.SWEET_BERRY_COOKIE_DOUGH.get())
-				.add(ExtraDelightItems.CHOCOLATE_CHIP_COOKIE_DOUGH.get());
+		tag(ExtraDelightTags.COOKIE_DOUGH).add(ExtraDelightItems.APPLE_COOKIE_DOUGH.get(),
+				ExtraDelightItems.CHOCOLATE_CHIP_COOKIE_DOUGH.get(), ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get(),
+				ExtraDelightItems.GLOW_BERRY_COOKIE_DOUGH.get(), ExtraDelightItems.HONEY_COOKIE_DOUGH.get(),
+				ExtraDelightItems.PUMPKIN_COOKIE_DOUGH.get(), ExtraDelightItems.SUGAR_COOKIE_DOUGH.get(),
+				ExtraDelightItems.SWEET_BERRY_COOKIE_DOUGH.get());
 
 		tag(ExtraDelightTags.FROSTING_BLACK).add(ExtraDelightItems.FROSTING_BLACK.get());
 		tag(ExtraDelightTags.FROSTING_BLUE).add(ExtraDelightItems.FROSTING_BLUE.get());

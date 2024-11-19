@@ -1787,6 +1787,18 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				new SizedFluidIngredient[] { SizedFluidIngredient.of(ExtraDelightTags.CHOCOLATE_FLUID, 250),
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.NUT_BUTTER.FLUID, 250)) },
 				consumer, "hazelnut_spread");
+
+		mixing(new ItemStack(ExtraDelightItems.APPLE_SLAW.get(), 1), STANDARD_GRIND,
+				new ItemStack(Items.BOWL),
+				new Ingredient[] {
+						Ingredient.of(ModItems.CABBAGE_LEAF.get()),
+						Ingredient.of(ExtraDelightItems.SLICED_APPLE.get())
+				},
+				new SizedFluidIngredient[] {
+						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.MAYO.FLUID, 250)),
+						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.VINEGAR.FLUID, 250))
+				},
+				consumer, "apple_slaw");
 	}
 
 	private void mixing(@NotNull ItemStack output, int grind, ItemStack container, Ingredient[] ingredients,
@@ -5066,6 +5078,17 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(CommonTags.FOODS_MILK).addIngredient(ExtraDelightTags.SWEETENER)
 				.addIngredient(Tags.Items.EGGS).addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Tags.Items.EGGS)
 				.unlockedByAnyIngredient(ExtraDelightItems.SQUARE_PAN.get()).build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(new ItemStack(ExtraDelightItems.ROMBOSSE.get(), 1), NORMAL_COOKING, MEDIUM_EXP,
+						new ItemStack(ExtraDelightItems.TRAY.get()))
+				.addIngredient(Items.APPLE)
+				.addIngredient(ExtraDelightTags.BUTTER)
+				.addIngredient(ExtraDelightTags.SWEETENER)
+				.addIngredient(ModItems.WHEAT_DOUGH.get())
+				.addIngredient(ExtraDelightTags.CINNAMON_STICK)
+				.unlockedByAnyIngredient(ExtraDelightItems.TRAY.get())
+				.build(consumer);
 	}
 
 	private void bulkBake(ItemLike mainResult, Ingredient in, RecipeOutput consumer, ItemLike pan, String name) {

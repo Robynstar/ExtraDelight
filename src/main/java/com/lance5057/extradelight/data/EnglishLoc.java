@@ -1161,6 +1161,9 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.APPLE_LEAVES.get(), "Apple Leaves");
 		this.add(ExtraDelightItems.APPLE_SAPLING.get(), "Apple Sapling");
 
+		this.add(ExtraDelightItems.ROMBOSSE.get(), "Rombosse");
+		this.add(ExtraDelightItems.APPLE_SLAW.get(), "Apple Slaw");
+
 		AestheticBlocks.EngLoc(this);
 	}
 }
