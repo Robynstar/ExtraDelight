@@ -2051,4 +2051,8 @@ public class ExtraDelightItems {
 			() -> new Item(foodItem(EDFoods.MUFFIN)));
 	public static final DeferredItem<Item> APPLE_SLAW = ITEMS.register("apple_slaw",
 			() -> new Item(foodItem(EDFoods.EGG_SALAD)));
+	public static final DeferredItem<Item> PORK_AND_APPLES_FEAST = ITEMS.register("pork_and_apples_feast",
+			() -> new BlockItem(ExtraDelightBlocks.PORK_AND_APPLES_FEAST.get(), new Item.Properties()));
+	public static final DeferredItem<Item> PORK_AND_APPLES = ITEMS.register("pork_and_apples",
+			() -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.PULLED_PORK_SANDWICH), true));
 }

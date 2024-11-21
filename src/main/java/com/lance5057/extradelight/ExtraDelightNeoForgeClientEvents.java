@@ -106,6 +106,7 @@ public class ExtraDelightNeoForgeClientEvents {
 			ExtraDelightItems.CHRISTMAS_PUDDING, ExtraDelightItems.PUNCH, ExtraDelightItems.BROWNIE,
 			ExtraDelightItems.BLONDIE, ExtraDelightItems.FUDGE_SLICE, ExtraDelightItems.STICKY_TOFFEE_PUDDING_SLICE,
 			ExtraDelightItems.CRISP_RICE_TREAT, ExtraDelightItems.SCOTCHAROO, ExtraDelightItems.BLACK_FOREST_TRIFLE,
+			ExtraDelightItems.PORK_AND_APPLES,
 			// Cakes and Pies
 			ExtraDelightItems.CHEESECAKE_SLICE, ExtraDelightItems.CHOCOLATE_CHEESECAKE_SLICE,
 			ExtraDelightItems.GLOW_BERRY_CHEESECAKE_SLICE, ExtraDelightItems.GLOW_BERRY_PIE_SLICE,
@@ -133,6 +134,7 @@ public class ExtraDelightNeoForgeClientEvents {
 			ExtraDelightItems.BLOOD_CHOCOLATE_DIPPED_APPLE_SLICE, ExtraDelightItems.BLOOD_CHOCOLATE_DIPPED_MARSHMALLOW,
 			ExtraDelightItems.BLOOD_CHOCOLATE_DIPPED_GRAHAM_CRACKER, ExtraDelightItems.BLOOD_CHOCOLATE_DIPPED_BACON,
 			ExtraDelightItems.BLOOD_CHOCOLATE_DIPPED_COFFEE_BEAN, ExtraDelightItems.BLOOD_CHOCOLATE_SYRUP_BOTTLE,
-			ExtraDelightItems.BLOOD_CHOCOLATE_SYRUP_FLUID_BUCKET);
+			ExtraDelightItems.BLOOD_CHOCOLATE_SYRUP_FLUID_BUCKET,
+			ExtraDelightItems.PORK_AND_APPLES_FEAST, ExtraDelightItems.PORK_AND_APPLES);
 
 }

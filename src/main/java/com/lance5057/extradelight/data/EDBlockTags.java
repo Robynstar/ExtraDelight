@@ -130,7 +130,7 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.BEEF_WELLINGTON.get(), ExtraDelightBlocks.HAGGIS.get(),
 				ExtraDelightBlocks.MINT_LAMB.get(), ExtraDelightBlocks.CHARCUTERIE_BOARD.get(),
 				ExtraDelightBlocks.CHRISTMAS_PUDDING.get(), ExtraDelightBlocks.MONKEY_BREAD.get(),
-				ExtraDelightBlocks.STICKY_TOFFEE_PUDDING.get(),
+				ExtraDelightBlocks.STICKY_TOFFEE_PUDDING.get(), ExtraDelightBlocks.PORK_AND_APPLES_FEAST.get(),
 
 				// Jellies (also plated)
 				ExtraDelightBlocks.JELLY_WHITE.get(), ExtraDelightBlocks.JELLY_ORANGE.get(),

@@ -1018,6 +1018,12 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						ExtraDelightItems.JELLY_BLACK_FEAST_ITEM.get())
 				.unlockedBy("has_hotdish", has(ExtraDelightItems.JELLY_BLACK_FEAST_ITEM.get()))
 				.save(consumer, EDLoc("jelly_black_block"));
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.BOWL),
+						new ItemStack(ExtraDelightItems.PORK_AND_APPLES.get()),
+						ExtraDelightItems.PORK_AND_APPLES_FEAST.get())
+				.unlockedBy("has_feast", has(ExtraDelightItems.PORK_AND_APPLES_FEAST.get()))
+				.save(consumer, EDLoc("pork_apples_feast"));
 	}
 
 	private void doughShapeRecipes(RecipeOutput consumer) {
@@ -5088,6 +5094,18 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ModItems.WHEAT_DOUGH.get())
 				.addIngredient(ExtraDelightTags.CINNAMON_STICK)
 				.unlockedByAnyIngredient(ExtraDelightItems.TRAY.get())
+				.build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(new ItemStack(ExtraDelightItems.PORK_AND_APPLES_FEAST.get(), 1), SLOW_COOKING, MEDIUM_EXP,
+						new ItemStack(ExtraDelightItems.SQUARE_PAN.get()))
+				.addIngredient(ExtraDelightTags.PROCESSED_APPLE)
+				.addIngredient(ExtraDelightTags.PORK_ROAST)
+				.addIngredient(ExtraDelightTags.PROCESSED_APPLE)
+				.addIngredient(ExtraDelightTags.PROCESSED_ONION)
+				.addIngredient(ModItems.BONE_BROTH.get())
+				.addIngredient(ExtraDelightTags.BUTTER)
+				.unlockedByAnyIngredient(ExtraDelightItems.SQUARE_PAN.get())
 				.build(consumer);
 	}
 
