@@ -999,4 +999,7 @@ public class ExtraDelightBlocks {
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.COLOR_BROWN),
 					true, plate, Block.box(5.0D, 2.0D, 2.0D, 11.0D, 8.0D, 14.0D),
 					Block.box(2.0D, 2.0D, 5.0D, 14.0D, 8.0D, 11.0D)));
+	public static final DeferredBlock<RecipeFeastBlock> STUFFED_APPLES_FEAST = BLOCKS.register("stuffed_apples",
+			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.COLOR_BROWN),
+					true, pan));
 }

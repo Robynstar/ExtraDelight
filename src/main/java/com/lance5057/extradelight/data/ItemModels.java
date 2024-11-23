@@ -1098,6 +1098,12 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.PORK_AND_APPLES_FEAST,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/pork_apple_roast_stage0"));
 		forItem(ExtraDelightItems.PORK_AND_APPLES, "pork_apple_roast");
+		forItem(ExtraDelightItems.APPLE_CHIPS, "apple_chips");
+		forBlockItem(ExtraDelightItems.STUFFED_APPLES_FEAST,
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/stuffed_apples_stage0"));
+		//forItem(ExtraDelightItems.STUFFED_APPLES, "stuffed_apples");
+		forItem(ExtraDelightItems.STUFFED_APPLE_ICE_CREAM, "stuffed_apple_ice_cream");
+		//forItem(ExtraDelightItems.MULLIGATAWNY_SOUP, "mulligatawny_soup");
 
 		AestheticBlocks.itemModel(this);
 	}

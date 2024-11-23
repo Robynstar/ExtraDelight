@@ -1024,6 +1024,18 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						ExtraDelightItems.PORK_AND_APPLES_FEAST.get())
 				.unlockedBy("has_feast", has(ExtraDelightItems.PORK_AND_APPLES_FEAST.get()))
 				.save(consumer, EDLoc("pork_apples_feast"));
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.BOWL),
+						new ItemStack(ExtraDelightItems.STUFFED_APPLE.get()),
+						ExtraDelightItems.STUFFED_APPLES_FEAST.get())
+				.unlockedBy("has_feast", has(ExtraDelightItems.STUFFED_APPLES_FEAST.get()))
+				.save(consumer, EDLoc("stuffed_apple_feast"));
+		FeastRecipeBuilder
+				.feast(Ingredient.of(ExtraDelightTags.ICE_CREAM),
+						new ItemStack(ExtraDelightItems.STUFFED_APPLE_ICE_CREAM.get()),
+						ExtraDelightItems.STUFFED_APPLES_FEAST.get())
+				.unlockedBy("has_feast", has(ExtraDelightItems.STUFFED_APPLES_FEAST.get()))
+				.save(consumer, EDLoc("stuffed_apple_ice_cream_feast"));
 	}
 
 	private void doughShapeRecipes(RecipeOutput consumer) {
@@ -1804,7 +1816,18 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.MAYO.FLUID, 250)),
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.VINEGAR.FLUID, 250))
 				},
-				consumer, "apple_slaw");
+				consumer, "apple_slaw_fluids");
+
+		mixing(new ItemStack(ExtraDelightItems.APPLE_SLAW.get(), 1), STANDARD_GRIND,
+				new ItemStack(Items.BOWL),
+				new Ingredient[] {
+						Ingredient.of(ModItems.CABBAGE_LEAF.get()),
+						Ingredient.of(ExtraDelightItems.SLICED_APPLE.get()),
+						Ingredient.of(ExtraDelightTags.MAYO),
+						Ingredient.of(ExtraDelightTags.VINEGAR)
+				},
+				new SizedFluidIngredient[] {},
+				consumer, "apple_slaw_bottles");
 	}
 
 	private void mixing(@NotNull ItemStack output, int grind, ItemStack container, Ingredient[] ingredients,
@@ -3877,6 +3900,17 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		pot(ExtraDelightItems.FRIED_BRAINS.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, null, new Ingredient[] {
 				Ingredient.of(ExtraDelightTags.BRAIN), Ingredient.of(ExtraDelightItems.BREADING_MISANPLAS.get()) },
 				"fried_brains", consumer);
+
+		pot(ExtraDelightItems.MULLIGATAWNY_SOUP.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
+				new Ingredient[] {
+						Ingredient.of(ExtraDelightItems.CURRY_POWDER.get()),
+						Ingredient.of(ExtraDelightTags.SLICED_APPLE),
+						Ingredient.of(ExtraDelightTags.PROCESSED_ONION),
+						Ingredient.of(ModItems.BONE_BROTH.get()),
+						Ingredient.of(CommonTags.FOODS_RAW_CHICKEN),
+						Ingredient.of(ModItems.RICE.get())
+				},
+				"mulligatawny_soup", consumer);
 	}
 
 	private void knifeRecipes(RecipeOutput consumer) {
@@ -5088,7 +5122,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.ROMBOSSE.get(), 1), NORMAL_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.TRAY.get()))
-				.addIngredient(Items.APPLE)
+				.addIngredient(ExtraDelightTags.FRUIT_APPLE)
 				.addIngredient(ExtraDelightTags.BUTTER)
 				.addIngredient(ExtraDelightTags.SWEETENER)
 				.addIngredient(ModItems.WHEAT_DOUGH.get())
@@ -5105,6 +5139,36 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ExtraDelightTags.PROCESSED_ONION)
 				.addIngredient(ModItems.BONE_BROTH.get())
 				.addIngredient(ExtraDelightTags.BUTTER)
+				.unlockedByAnyIngredient(ExtraDelightItems.SQUARE_PAN.get())
+				.build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(new ItemStack(ExtraDelightItems.APPLE_CHIPS.get(), 8), NORMAL_COOKING, MEDIUM_EXP,
+						new ItemStack(ExtraDelightItems.SHEET.get()))
+				.addIngredient(ExtraDelightTags.SLICED_APPLE)
+				.addIngredient(ExtraDelightTags.SLICED_APPLE)
+				.addIngredient(ExtraDelightTags.SLICED_APPLE)
+				.addIngredient(ExtraDelightTags.SLICED_APPLE)
+				.addIngredient(ExtraDelightTags.GROUND_CINNAMON)
+				.addIngredient(ExtraDelightTags.SLICED_APPLE)
+				.addIngredient(ExtraDelightTags.SLICED_APPLE)
+				.addIngredient(ExtraDelightTags.SLICED_APPLE)
+				.addIngredient(ExtraDelightTags.SLICED_APPLE)
+				.unlockedByAnyIngredient(ExtraDelightItems.SHEET.get())
+				.build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(new ItemStack(ExtraDelightItems.STUFFED_APPLES_FEAST.get(), 1), NORMAL_COOKING, MEDIUM_EXP,
+						new ItemStack(ExtraDelightItems.SQUARE_PAN.get()))
+				.addIngredient(ExtraDelightTags.FRUIT_APPLE)
+				.addIngredient(ExtraDelightTags.DRIED_FRUIT)
+				.addIngredient(ExtraDelightTags.FRUIT_APPLE)
+				.addIngredient(ExtraDelightTags.FRUIT_APPLE)
+				.addIngredient(ExtraDelightTags.BUTTER)
+				.addIngredient(ExtraDelightTags.FRUIT_APPLE)
+				.addIngredient(ExtraDelightTags.NUTS)
+				.addIngredient(ExtraDelightTags.SWEETENER)
+				.addIngredient(ExtraDelightTags.GROUND_CINNAMON)
 				.unlockedByAnyIngredient(ExtraDelightItems.SQUARE_PAN.get())
 				.build(consumer);
 	}

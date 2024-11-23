@@ -2055,4 +2055,14 @@ public class ExtraDelightItems {
 			() -> new BlockItem(ExtraDelightBlocks.PORK_AND_APPLES_FEAST.get(), new Item.Properties()));
 	public static final DeferredItem<Item> PORK_AND_APPLES = ITEMS.register("pork_and_apples",
 			() -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.PULLED_PORK_SANDWICH), true));
+	public static final DeferredItem<Item> APPLE_CHIPS = ITEMS.register("apple_chips",
+			() -> new Item(foodItem(EDFoods.APPLE_FRITTERS)));
+	public static final DeferredItem<Item> STUFFED_APPLES_FEAST = ITEMS.register("stuffed_apples_feast",
+			() -> new BlockItem(ExtraDelightBlocks.STUFFED_APPLES_FEAST.get(), new Item.Properties()));
+	public static final DeferredItem<Item> STUFFED_APPLE = ITEMS.register("stuffed_apple",
+			() -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.APPLE_CRISP), true));
+	public static final DeferredItem<Item> STUFFED_APPLE_ICE_CREAM = ITEMS.register("stuffed_apple_ice_cream",
+			() -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.APPLE_CRISP), true));
+	public static final DeferredItem<Item> MULLIGATAWNY_SOUP = ITEMS.register("mulligatawny_soup",
+			() -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.CARROT_SOUP), true));
 }

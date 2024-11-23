@@ -123,6 +123,7 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.PUNCH.get(), ExtraDelightBlocks.BROWNIES.get(), ExtraDelightBlocks.BLONDIES.get(),
 				ExtraDelightBlocks.FUDGE.get(), ExtraDelightBlocks.CRISP_RICE_TREATS.get(),
 				ExtraDelightBlocks.SCOTCHAROOS.get(), ExtraDelightBlocks.BLACK_FOREST_TRIFLE.get(),
+				ExtraDelightBlocks.STUFFED_APPLES_FEAST.get(),
 
 				// Feasts on plates
 				ExtraDelightBlocks.MEATLOAF_FEAST.get(), ExtraDelightBlocks.POT_ROAST_FEAST.get(),

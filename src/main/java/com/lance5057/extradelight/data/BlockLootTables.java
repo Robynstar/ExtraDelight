@@ -486,7 +486,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.createFruitLeavesDrop(ExtraDelightBlocks.APPLE_LEAVES.get(), ExtraDelightBlocks.APPLE_SAPLING.get(),
 				Items.APPLE);
 		this.dropSelf(ExtraDelightBlocks.APPLE_SAPLING.get());
-		this.dropOther(ExtraDelightBlocks.PORK_AND_APPLES_FEAST.get(), Items.BOWL);
+		this.dropOther(ExtraDelightBlocks.PORK_AND_APPLES_FEAST.get(), Items.AIR);
+		this.dropOther(ExtraDelightBlocks.STUFFED_APPLES_FEAST.get(), Items.AIR);
 	}
 
 	protected void createFruitLeavesDrop(Block leaves, Block sapling, Item fruit) {
