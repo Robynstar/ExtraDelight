@@ -463,8 +463,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.add(ExtraDelightBlocks.BLACK_CHOCOLATE_BOX.get(), p_248609_ -> this.createChocolateBoxDrop(p_248609_));
 		this.add(ExtraDelightBlocks.PURPLE_CHOCOLATE_BOX.get(), p_248609_ -> this.createChocolateBoxDrop(p_248609_));
 
-		this.dropOther(ExtraDelightBlocks.BROWNIES.get(), ExtraDelightItems.TRAY);
-		this.dropOther(ExtraDelightBlocks.BLONDIES.get(), ExtraDelightItems.TRAY);
+		this.dropOther(ExtraDelightBlocks.BROWNIES.get(), ExtraDelightItems.SQUARE_PAN);
+		this.dropOther(ExtraDelightBlocks.BLONDIES.get(), ExtraDelightItems.SQUARE_PAN);
 		this.dropOther(ExtraDelightBlocks.CHOCOLATE_CAKE.get(), Items.AIR);
 		this.dropOther(ExtraDelightBlocks.FUDGE.get(), ExtraDelightItems.TRAY);
 		this.dropOther(ExtraDelightBlocks.STICKY_TOFFEE_PUDDING.get(), Items.BOWL);
@@ -488,6 +488,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(ExtraDelightBlocks.APPLE_SAPLING.get());
 		this.dropOther(ExtraDelightBlocks.PORK_AND_APPLES_FEAST.get(), Items.AIR);
 		this.dropOther(ExtraDelightBlocks.STUFFED_APPLES_FEAST.get(), Items.AIR);
+		this.add(ExtraDelightBlocks.TARTE_TATIN.get(), noDrop());
 	}
 
 	protected void createFruitLeavesDrop(Block leaves, Block sapling, Item fruit) {

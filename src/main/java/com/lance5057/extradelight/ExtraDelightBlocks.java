@@ -1002,4 +1002,6 @@ public class ExtraDelightBlocks {
 	public static final DeferredBlock<RecipeFeastBlock> STUFFED_APPLES_FEAST = BLOCKS.register("stuffed_apples",
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.COLOR_BROWN),
 					true, pan));
+	public static final DeferredBlock<Block> TARTE_TATIN = ExtraDelightBlocks.BLOCKS.register("tarte_tatin",
+			() -> new PieBlock(Block.Properties.ofFullCopy(Blocks.CAKE), ExtraDelightItems.TARTE_TATIN_SLICE));
 }

@@ -249,7 +249,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		ChillerRecipeBuilder
 				.chill(ExtraDelightItems.FUDGE_BLOCK.toStack(1), FAST_COOKING, SMALL_EXP,
-						ExtraDelightItems.SHEET.toStack(),
+						ExtraDelightItems.TRAY.toStack(),
 						new FluidStack(ExtraDelightFluids.WHITE_CHOCOLATE_SYRUP.FLUID.get(), 250))
 				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.MARSHMALLOW_FLUFF)
 				.addIngredient(CommonTags.FOODS_MILK).addIngredient(ExtraDelightTags.SWEETENER)
@@ -257,7 +257,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		ChillerRecipeBuilder
 				.chill(ExtraDelightItems.FUDGE_BLOCK.toStack(1), FAST_COOKING, SMALL_EXP,
-						ExtraDelightItems.SHEET.toStack(),
+						ExtraDelightItems.TRAY.toStack(),
 						new FluidStack(ExtraDelightFluids.BLOOD_CHOCOLATE_SYRUP.FLUID.get(), 250))
 				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.MARSHMALLOW_FLUFF)
 				.addIngredient(CommonTags.FOODS_MILK).addIngredient(ExtraDelightTags.SWEETENER)
@@ -265,7 +265,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		ChillerRecipeBuilder
 				.chill(ExtraDelightItems.FUDGE_BLOCK.toStack(1), FAST_COOKING, SMALL_EXP,
-						ExtraDelightItems.SHEET.toStack(),
+						ExtraDelightItems.TRAY.toStack(),
 						new FluidStack(ExtraDelightFluids.DARK_CHOCOLATE_SYRUP.FLUID.get(), 250))
 				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.MARSHMALLOW_FLUFF)
 				.addIngredient(CommonTags.FOODS_MILK).addIngredient(ExtraDelightTags.SWEETENER)
@@ -273,7 +273,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		ChillerRecipeBuilder
 				.chill(ExtraDelightItems.FUDGE_BLOCK.toStack(1), FAST_COOKING, SMALL_EXP,
-						ExtraDelightItems.SHEET.toStack(),
+						ExtraDelightItems.TRAY.toStack(),
 						new FluidStack(ExtraDelightFluids.MILK_CHOCOLATE_SYRUP.FLUID.get(), 250))
 				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.MARSHMALLOW_FLUFF)
 				.addIngredient(CommonTags.FOODS_MILK).addIngredient(ExtraDelightTags.SWEETENER)
@@ -3231,6 +3231,12 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(),
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CORN_FLAKES.get()))
 				.save(consumer, EDLoc("chocolate_cake_whole"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.TARTE_TATIN.get()).pattern("ff ")
+				.pattern("ff ").define('f', ExtraDelightItems.TARTE_TATIN_SLICE.get())
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.TARTE_TATIN.get()))
+				.save(consumer, EDLoc("tarte_tatin_slice"));
 	}
 
 	private void bucket(String name, RecipeOutput consumer, ItemLike fullBucket, ItemLike emptyItem,
@@ -4174,6 +4180,11 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.cuttingRecipe(Ingredient.of(ExtraDelightItems.CHOCOLATE_CAKE_BLOCK.get()),
 						Ingredient.of(CommonTags.TOOLS_KNIFE), ExtraDelightItems.CHOCOLATE_CAKE.get(), 7)
 				.build(consumer, EDLoc("cutting/" + "chocolate_cake_knife"));
+
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ExtraDelightItems.TARTE_TATIN.get()),
+						Ingredient.of(CommonTags.TOOLS_KNIFE), ExtraDelightItems.TARTE_TATIN_SLICE.get(), 4)
+				.build(consumer, EDLoc("cutting/" + "tarte_tatin_knife"));
 	}
 
 	private void mortarRecipes(RecipeOutput consumer) {
@@ -5170,6 +5181,18 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ExtraDelightTags.SWEETENER)
 				.addIngredient(ExtraDelightTags.GROUND_CINNAMON)
 				.unlockedByAnyIngredient(ExtraDelightItems.SQUARE_PAN.get())
+				.build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(new ItemStack(ExtraDelightItems.TARTE_TATIN.get(), 1), NORMAL_COOKING, MEDIUM_EXP,
+						new ItemStack(ModItems.SKILLET.get()))
+				.addIngredient(ExtraDelightItems.CARAMEL_SAUCE.get())
+				.addIngredient(ModItems.PIE_CRUST.get())
+				.addIngredient(ExtraDelightTags.BUTTER)
+				.addIngredient(ExtraDelightTags.FRUIT_APPLE)
+				.addIngredient(ExtraDelightTags.FRUIT_APPLE)
+				.addIngredient(ExtraDelightTags.FRUIT_APPLE)
+				.unlockedByAnyIngredient(Items.APPLE, ModItems.SKILLET.get())
 				.build(consumer);
 	}
 
