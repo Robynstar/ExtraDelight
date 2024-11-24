@@ -2065,4 +2065,8 @@ public class ExtraDelightItems {
 			() -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.APPLE_CRISP), true));
 	public static final DeferredItem<Item> MULLIGATAWNY_SOUP = ITEMS.register("mulligatawny_soup",
 			() -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.CARROT_SOUP), true));
+	public static final DeferredItem<Item> TARTE_TATIN = ITEMS.register("tarte_tatin",
+			() -> new BlockItem(ExtraDelightBlocks.TARTE_TATIN.get(), new Item.Properties()));
+	public static final DeferredItem<Item> TARTE_TATIN_SLICE = ITEMS.register("tarte_tatin_slice",
+			() -> new Item(foodItem(FoodValues.PIE_SLICE)));
 }
