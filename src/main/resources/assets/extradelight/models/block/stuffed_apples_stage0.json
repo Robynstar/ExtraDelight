@@ -4,7 +4,7 @@
 	"textures": {
 		"0": "extradelight:block/sheet",
 		"1": "extradelight:block/baked_apple",
-		"2": "extradelight:liquid/caramel_sauce_overlay",
+		"2": "extradelight:block/caramel_sauce",
 		"particle": "extradelight:block/sheet"
 	},
 	"elements": [

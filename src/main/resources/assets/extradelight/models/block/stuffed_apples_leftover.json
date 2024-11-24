@@ -3,7 +3,7 @@
 	"parent": "block/block",
 	"textures": {
 		"0": "extradelight:block/sheet",
-		"2": "extradelight:liquid/caramel_sauce_overlay",
+		"2": "extradelight:block/caramel_sauce",
 		"particle": "extradelight:block/sheet"
 	},
 	"elements": [
