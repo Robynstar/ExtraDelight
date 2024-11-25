@@ -1,0 +1,27 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "fluids": [],
+  "ingredients": [
+    {
+      "item": "farmersdelight:cabbage_leaf"
+    },
+    {
+      "item": "extradelight:sliced_apple"
+    },
+    {
+      "tag": "c:condiments/mayonnaise"
+    },
+    {
+      "tag": "c:vinegar"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:apple_slaw"
+  },
+  "stirs": 4,
+  "usedItem": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  }
+}

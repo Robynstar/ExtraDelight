@@ -1,8 +1,9 @@
 {
   "type": "extradelight:oven",
+  "consumeContainer": false,
   "container": {
     "count": 1,
-    "id": "extradelight:square_pan"
+    "id": "extradelight:pie_dish"
   },
   "cookingtime": 800,
   "experience": 1.0,

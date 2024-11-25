@@ -7,6 +7,7 @@ import com.lance5057.extradelight.ExtraDelightBlockEntities;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
@@ -39,29 +40,34 @@ public class DryingRackBlock extends Block implements EntityBlock {
 		return true;
 	}
 
-	@Nonnull
-	@Override
-	public ItemInteractionResult useItemOn(ItemStack stack, BlockState pState, Level pLevel, BlockPos pPos,
-			Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+	protected InteractionResult useWithoutItem(ItemStack stack, BlockState pState, Level pLevel, BlockPos pPos,
+			Player pPlayer, BlockHitResult pHit) {
 		BlockEntity blockentity = pLevel.getBlockEntity(pPos);
-		if (blockentity instanceof DryingRackBlockEntity) {
-			DryingRackBlockEntity be = (DryingRackBlockEntity) blockentity;
+		if (blockentity instanceof DryingRackBlockEntity be) {
 
 			if (pPlayer.isCrouching()) {
 				if (!pLevel.isClientSide) {
 					be.extractItem(pPlayer);
-					return ItemInteractionResult.SUCCESS;
+					return InteractionResult.SUCCESS;
 				}
-				return ItemInteractionResult.CONSUME;
-			} else {
+				return InteractionResult.CONSUME;
+			}
+		}
 
-				ItemStack itemstack = pPlayer.getItemInHand(pHand);
-				if (!pLevel.isClientSide) {
-					be.insertItem(itemstack);
-					return ItemInteractionResult.SUCCESS;
-				}
+		return InteractionResult.CONSUME;
+	}
 
-				return ItemInteractionResult.CONSUME;
+	@Nonnull
+	@Override
+	public ItemInteractionResult useItemOn(ItemStack stack, BlockState pState, Level pLevel, BlockPos pPos,
+			Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+
+		BlockEntity blockentity = pLevel.getBlockEntity(pPos);
+		if (blockentity instanceof DryingRackBlockEntity be) {
+			ItemStack itemstack = pPlayer.getItemInHand(pHand);
+			if (!pLevel.isClientSide) {
+				be.insertItem(itemstack);
+				return ItemInteractionResult.SUCCESS;
 			}
 		}
 
