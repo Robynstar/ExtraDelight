@@ -1093,7 +1093,7 @@ public class ItemModels extends ItemModelProvider {
 
 		forBlockItem(ExtraDelightItems.APPLE_LEAVES, modLoc("block/crops/fruit/apple/apple_leaves_stage0"));
 		forBlockItemFlat(ExtraDelightItems.APPLE_SAPLING, "crops/fruit/apple/apple_sapling");
-		//forItem(ExtraDelightItems.ROMBOSSE, "rombosse");
+		forItem(ExtraDelightItems.ROMBOSSE, "rombosse");
 		forItem(ExtraDelightItems.APPLE_SLAW, "apple_slaw");
 		forBlockItem(ExtraDelightItems.PORK_AND_APPLES_FEAST,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/pork_apple_roast_stage0"));
@@ -1101,11 +1101,13 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.APPLE_CHIPS, "apple_chips");
 		forBlockItem(ExtraDelightItems.STUFFED_APPLES_FEAST,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/stuffed_apples_stage0"));
-		//forItem(ExtraDelightItems.STUFFED_APPLES, "stuffed_apples");
+		forItem(ExtraDelightItems.STUFFED_APPLE, "stuffed_apple");
 		forItem(ExtraDelightItems.STUFFED_APPLE_ICE_CREAM, "stuffed_apple_ice_cream");
-		//forItem(ExtraDelightItems.MULLIGATAWNY_SOUP, "mulligatawny_soup");
+		forItem(ExtraDelightItems.MULLIGATAWNY_SOUP, "mulligatawny_soup");
 		//forItem(ExtraDelightItems.TARTE_TATIN, "tarte_tatin");
-		//forItem(ExtraDelightItems.TARTE_TATIN_SLICE, "tarte_tatin_slice");
+		forItem(ExtraDelightItems.TARTE_TATIN_SLICE, "tarte_tatin_slice");
+		forItem(ExtraDelightItems.AEBLEFLAESK, "aebleflaesk");
+		forItem(ExtraDelightItems.CANDY_BAR_SALAD, "candy_bar_salad");
 
 		AestheticBlocks.itemModel(this);
 	}

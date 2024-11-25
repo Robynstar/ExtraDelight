@@ -496,5 +496,10 @@ public class EDItemTags extends ItemTagsProvider {
 				ExtraDelightItems.CHILI.get(), ExtraDelightItems.MALLOW_ROOT.get(), ExtraDelightItems.PEANUTS.get());
 		tag(Tags.Items.TOOLS).addTag(ExtraDelightTags.SPOONS).addTag(ExtraDelightTags.PESTLES);
 		tag(Tags.Items.SEEDS).add(ExtraDelightItems.CORN_SEEDS.get(), ExtraDelightItems.CHILI_SEEDS.get());
+
+		tag(ExtraDelightTags.CUSTARD).add(ExtraDelightItems.APPLE_CUSTARD.get(),
+				ExtraDelightItems.CARAMEL_CUSTARD.get(), ExtraDelightItems.CHOCOLATE_CUSTARD.get(),
+				ModItems.GLOW_BERRY_CUSTARD.get(), ExtraDelightItems.HONEY_CUSTARD.get(),
+				ExtraDelightItems.PUMPKIN_CUSTARD.get(), ExtraDelightItems.SWEET_BERRY_CUSTARD.get());
 	}
 }
