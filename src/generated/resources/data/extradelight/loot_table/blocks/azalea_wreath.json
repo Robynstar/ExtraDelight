@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "extradelight:square_pan"
+          "name": "extradelight:azalea_wreath"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "extradelight:blocks/lasagna_block"
+  "random_sequence": "extradelight:blocks/azalea_wreath"
 }
