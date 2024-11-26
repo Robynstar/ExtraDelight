@@ -170,8 +170,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 
 		this.dropOther(ExtraDelightBlocks.MEAT_PIE_BLOCK.get(), Items.AIR);
 		this.dropOther(ExtraDelightBlocks.MACARONI_CHEESE.get(), Items.AIR);
-		this.dropOther(ExtraDelightBlocks.HOTDISH.get(), Items.AIR);
-		this.dropOther(ExtraDelightBlocks.LASAGNA.get(), Items.AIR);
+		this.dropOther(ExtraDelightBlocks.HOTDISH.get(), ExtraDelightItems.SQUARE_PAN);
+		this.dropOther(ExtraDelightBlocks.LASAGNA.get(), ExtraDelightItems.SQUARE_PAN);
 
 		this.dropOther(ExtraDelightBlocks.BEEF_STEW.get(), Items.BOWL);
 		this.dropOther(ExtraDelightBlocks.CHICKEN_STEW.get(), Items.BOWL);
@@ -190,14 +190,14 @@ public class BlockLootTables extends BlockLootSubProvider {
 		crop(ExtraDelightBlocks.CORN_TOP.get(), ExtraDelightItems.UNSHUCKED_CORN.get(),
 				ExtraDelightItems.CORN_SEEDS.get(), lootitemcondition$builder2, 3.0f);
 
-		this.dropOther(ExtraDelightBlocks.CORNBREAD.get(), Items.AIR);
+		this.dropOther(ExtraDelightBlocks.CORNBREAD.get(), ModItems.SKILLET.get());
 		this.dropOther(ExtraDelightBlocks.CARAMEL_CHEESECAKE.get(), Items.AIR);
-		this.dropOther(ExtraDelightBlocks.CORN_PUDDING.get(), Items.AIR);
+		this.dropOther(ExtraDelightBlocks.CORN_PUDDING.get(), ExtraDelightItems.SQUARE_PAN);
 		this.dropOther(ExtraDelightBlocks.PUMPKIN_PIE.get(), Items.AIR);
 		this.dropOther(ExtraDelightBlocks.PUMPKIN_ROLL.get(), Items.AIR);
-		this.dropOther(ExtraDelightBlocks.APPLE_CRISP.get(), Items.BOWL);
+		this.dropOther(ExtraDelightBlocks.APPLE_CRISP.get(), ExtraDelightItems.SQUARE_PAN);
 		this.dropOther(ExtraDelightBlocks.STUFFING.get(), Items.BOWL);
-		this.dropOther(ExtraDelightBlocks.POTATO_AU_GRATIN.get(), Items.BOWL);
+		this.dropOther(ExtraDelightBlocks.POTATO_AU_GRATIN.get(), ExtraDelightItems.SQUARE_PAN);
 
 		this.dropSelf(ExtraDelightBlocks.FLOUR_SACK.get());
 		this.dropSelf(ExtraDelightBlocks.CORNMEAL_SACK.get());
@@ -278,7 +278,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 
 		this.dropOther(ExtraDelightBlocks.WILD_GINGER.get(), ExtraDelightItems.GINGER.get());
 
-		this.dropOther(ExtraDelightBlocks.CINNAMON_ROLLS.get(), Items.AIR);
+		this.dropOther(ExtraDelightBlocks.CINNAMON_ROLLS.get(), ExtraDelightItems.SQUARE_PAN);
 		this.dropOther(ExtraDelightBlocks.MONKEY_BREAD.get(), Items.AIR);
 		this.dropOther(ExtraDelightBlocks.COFFEE_CAKE.get(), Items.AIR);
 		this.dropOther(ExtraDelightBlocks.MINT_LAMB.get(), Items.AIR);

@@ -4637,7 +4637,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.LASAGNA_FEAST.get(), 1), SLOW_COOKING, MEDIUM_EXP,
-						new ItemStack(ExtraDelightItems.SQUARE_PAN.get()), false)
+						new ItemStack(ExtraDelightItems.SQUARE_PAN.get()), true)
 				.addIngredient(ExtraDelightTags.CHEESE).addIngredient(ModItems.TOMATO_SAUCE.get())
 				.addIngredient(ExtraDelightTags.CHEESE).addIngredient(ExtraDelightItems.LASAGNA_NOODLES.get())
 				.addIngredient(ExtraDelightItems.LASAGNA_NOODLES.get())
@@ -4679,7 +4679,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.HOTDISH_FEAST.get(), 1), SLOW_COOKING, MEDIUM_EXP,
-						new ItemStack(ExtraDelightItems.SQUARE_PAN.get()), false)
+						new ItemStack(ExtraDelightItems.SQUARE_PAN.get()), true)
 				.addIngredient(ExtraDelightTags.STARCH).addIngredient(ExtraDelightTags.STARCH)
 				.addIngredient(ExtraDelightTags.STARCH).addIngredient(ExtraDelightTags.MEAT_COOKED)
 				.addIngredient(ExtraDelightTags.SOUP).addIngredient(ExtraDelightTags.MEAT_COOKED)
@@ -4736,7 +4736,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ModItems.CHOCOLATE_PIE.get(), 1), NORMAL_COOKING, MEDIUM_EXP,
-						new ItemStack(ExtraDelightItems.PIE_DISH.get()), true)
+						new ItemStack(ExtraDelightItems.PIE_DISH.get()), false)
 				.addIngredient(Items.COCOA_BEANS).addIngredient(ExtraDelightTags.WHIPPED_CREAM)
 				.addIngredient(Items.COCOA_BEANS).addIngredient(ExtraDelightItems.EGG_MIX.get())
 				.addIngredient(Items.COCOA_BEANS).addIngredient(ExtraDelightTags.FLOUR)

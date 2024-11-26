@@ -305,12 +305,12 @@ public class AestheticBlocks {
 			else if (WOOD.values()[i].toString() == "fruit")
 				for (int j = 0; j < EXTRA_LEAVES.values().length; j++) {
 					if (EXTRA_LEAVES.values()[j].toString() == "azalea" || EXTRA_LEAVES.values()[j].toString() == "flowering_azalea") {
-						bsp.horizontalBlock(WREATHS.get(i + j - 1).get(), bsp.models()
+						bsp.horizontalBlock(WREATHS.get(WOOD.values().length + j - 2).get(), bsp.models()
 								.withExistingParent(EXTRA_LEAVES.values()[j].toString() + "_wreath_block", bsp.modLoc("block/wreath"))
 								.texture("all", bsp.mcLoc("block/" + EXTRA_LEAVES.values()[j].toString() + "_leaves"))
 								.renderType("cutout"));
 					} else {
-						bsp.horizontalBlock(WREATHS.get(i + j - 1).get(), bsp.models()
+						bsp.horizontalBlock(WREATHS.get(WOOD.values().length + j - 2).get(), bsp.models()
 								.withExistingParent(EXTRA_LEAVES.values()[j].toString() + "_wreath_block", bsp.modLoc("block/wreath"))
 								.texture("all", ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/crops/fruit/" + EXTRA_LEAVES.values()[j].toString() + "/" + EXTRA_LEAVES.values()[j].toString() + "_leaves"))
 								.renderType("cutout"));
@@ -428,11 +428,11 @@ public class AestheticBlocks {
 			else if (WOOD.values()[i].toString() == "fruit") {
 				for (int j = 0; j < EXTRA_LEAVES.values().length; j++) {
 					if (EXTRA_LEAVES.values()[j].toString() == "azalea" || EXTRA_LEAVES.values()[j].toString() == "flowering_azalea") {
-						tmp.getBuilder(WREATHS.get(i + j - 1).getId().getPath())
+						tmp.getBuilder(WREATHS.get(WOOD.values().length + j - 2).getId().getPath())
 								.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/wreath")))
 								.texture("all", tmp.mcLoc("block/" + EXTRA_LEAVES.values()[j].toString() + "_leaves"));
 					} else {
-						tmp.getBuilder(WREATHS.get(i + j - 1).getId().getPath())
+						tmp.getBuilder(WREATHS.get(WOOD.values().length + j - 2).getId().getPath())
 								.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/wreath")))
 								.texture("all", ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/crops/fruit/" + EXTRA_LEAVES.values()[j].toString() + "/" + EXTRA_LEAVES.values()[j].toString() + "_leaves"));
 					}
@@ -485,7 +485,7 @@ public class AestheticBlocks {
 				for (int j = 0; j < EXTRA_LEAVES.values().length; j++) {
 					String f = EXTRA_LEAVES.values()[j].toString();
 					f = WordUtils.capitalize(f.replace('_', ' '));
-					lp.add(WREATHS.get(i+j-1).get(), f + " Wreath");
+					lp.add(WREATHS.get(WOOD.values().length + j - 2).get(), f + " Wreath");
 				}
 			}
 
@@ -509,8 +509,8 @@ public class AestheticBlocks {
 		lp.add(CORN_HUSK_DOLL.get(), "Corn Husk Doll");
 	}
 
-	// oak, dark_oak, spruce, birch, jungle, acacia, crimson, warped, mangrove,
-	// cinnamon
+	// oak, dark_oak, spruce, birch, jungle, acacia, crimson, warped, mangrove, cherry, bamboo
+	// cinnamon, fruit
 	public static void Recipes(RecipeOutput consumer) {
 		woodRecipe(consumer, Items.ACACIA_SLAB, Items.ACACIA_TRAPDOOR, Items.ACACIA_FENCE, Items.ACACIA_LEAVES,
 				WOOD.acacia);
