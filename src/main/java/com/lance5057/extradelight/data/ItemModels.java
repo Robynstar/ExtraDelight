@@ -1104,7 +1104,10 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.STUFFED_APPLE, "stuffed_apple");
 		forItem(ExtraDelightItems.STUFFED_APPLE_ICE_CREAM, "stuffed_apple_ice_cream");
 		forItem(ExtraDelightItems.MULLIGATAWNY_SOUP, "mulligatawny_soup");
-		//forItem(ExtraDelightItems.TARTE_TATIN, "tarte_tatin");
+		getBuilder(ExtraDelightItems.TARTE_TATIN_IN_PAN.getId().getPath()).parent(new ModelFile.UncheckedModelFile(
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/tarte_tatin")));
+		forBlockItem(ExtraDelightItems.TARTE_TATIN,
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/tarte_tatin_stage0"));
 		forItem(ExtraDelightItems.TARTE_TATIN_SLICE, "tarte_tatin_slice");
 		forItem(ExtraDelightItems.AEBLEFLAESK, "aebleflaesk");
 		forItem(ExtraDelightItems.CANDY_BAR_SALAD, "candy_bar_salad");

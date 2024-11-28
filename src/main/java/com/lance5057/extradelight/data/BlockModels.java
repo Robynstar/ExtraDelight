@@ -549,7 +549,7 @@ public class BlockModels extends BlockStateProvider {
 		this.simpleCross(ExtraDelightBlocks.APPLE_SAPLING.get(), "crops/fruit/apple/apple_sapling");
 		this.recipeFeastBlock(ExtraDelightBlocks.PORK_AND_APPLES_FEAST.get());
 		this.recipeFeastBlock(ExtraDelightBlocks.STUFFED_APPLES_FEAST.get());
-		//pieBlock(ExtraDelightBlocks.TARTE_TATIN.get(), "tarte_tatin");
+		pieLikeBlock(ExtraDelightBlocks.TARTE_TATIN.get(), "tarte_tatin");
 
 		AestheticBlocks.blockModel(this);
 	}

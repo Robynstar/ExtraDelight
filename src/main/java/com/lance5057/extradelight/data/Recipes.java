@@ -5220,7 +5220,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.build(consumer);
 
 		OvenRecipeBuilder
-				.OvenRecipe(new ItemStack(ExtraDelightItems.TARTE_TATIN.get(), 1), NORMAL_COOKING, MEDIUM_EXP,
+				.OvenRecipe(new ItemStack(ExtraDelightItems.TARTE_TATIN_IN_PAN.get(), 1), NORMAL_COOKING, MEDIUM_EXP,
 						new ItemStack(ModItems.SKILLET.get()), true)
 				.addIngredient(ExtraDelightItems.CARAMEL_SAUCE.get())
 				.addIngredient(ModItems.PIE_CRUST.get())

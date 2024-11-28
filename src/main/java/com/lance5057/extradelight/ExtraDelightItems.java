@@ -29,6 +29,7 @@ import com.lance5057.extradelight.items.jar.JarItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.BlockItem;
@@ -38,6 +39,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.SolidBucketItem;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.TooltipFlag;
@@ -2065,6 +2067,8 @@ public class ExtraDelightItems {
 			() -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.APPLE_CRISP), true));
 	public static final DeferredItem<Item> MULLIGATAWNY_SOUP = ITEMS.register("mulligatawny_soup",
 			() -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.CARROT_SOUP), true));
+	public static final DeferredItem<Item> TARTE_TATIN_IN_PAN = ITEMS.register("tarte_tatin_in_pan",
+			() -> new SolidBucketItem(ExtraDelightBlocks.TARTE_TATIN.get(), SoundEvents.DYE_USE, new Item.Properties().stacksTo(1)));
 	public static final DeferredItem<Item> TARTE_TATIN = ITEMS.register("tarte_tatin",
 			() -> new BlockItem(ExtraDelightBlocks.TARTE_TATIN.get(), new Item.Properties()));
 	public static final DeferredItem<Item> TARTE_TATIN_SLICE = ITEMS.register("tarte_tatin_slice",

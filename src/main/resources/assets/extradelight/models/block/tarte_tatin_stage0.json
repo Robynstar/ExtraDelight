@@ -3,7 +3,8 @@
 	"textures": {
 		"side": "extradelight:block/tart_side",
 		"top": "extradelight:block/tarte_tatin",
-		"bottom": "farmersdelight:block/pie_bottom"
+		"bottom": "farmersdelight:block/pie_bottom",
+		"particle": "extradelight:block/tarte_tatin"
 	},
 	"elements": [
 		{
