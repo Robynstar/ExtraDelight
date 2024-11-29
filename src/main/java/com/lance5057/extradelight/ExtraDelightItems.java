@@ -30,6 +30,8 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.BlockItem;
@@ -44,6 +46,7 @@ import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.ItemContainerContents;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.block.DispenserBlock;
 import net.neoforged.neoforge.fluids.DispenseFluidContainer;
@@ -55,6 +58,7 @@ import vectorwing.farmersdelight.common.item.DrinkableItem;
 import vectorwing.farmersdelight.common.item.HotCocoaItem;
 import vectorwing.farmersdelight.common.item.MelonJuiceItem;
 import vectorwing.farmersdelight.common.item.MilkBottleItem;
+import vectorwing.farmersdelight.common.registry.ModItems;
 
 public class ExtraDelightItems {
 	public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ExtraDelight.MOD_ID);
@@ -2067,8 +2071,22 @@ public class ExtraDelightItems {
 			() -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.APPLE_CRISP), true));
 	public static final DeferredItem<Item> MULLIGATAWNY_SOUP = ITEMS.register("mulligatawny_soup",
 			() -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.CARROT_SOUP), true));
+
 	public static final DeferredItem<Item> TARTE_TATIN_IN_PAN = ITEMS.register("tarte_tatin_in_pan",
-			() -> new SolidBucketItem(ExtraDelightBlocks.TARTE_TATIN.get(), SoundEvents.DYE_USE, new Item.Properties().stacksTo(1)));
+			() -> new SolidBucketItem(ExtraDelightBlocks.TARTE_TATIN.get(), SoundEvents.DYE_USE,
+					new Item.Properties().stacksTo(1)) {
+				@Override
+				public InteractionResult useOn(UseOnContext context) {
+					InteractionResult interactionresult = super.useOn(context);
+					Player player = context.getPlayer();
+					if (interactionresult.consumesAction() && player != null) {
+						player.setItemInHand(context.getHand(), new ItemStack(ModItems.SKILLET.get()));
+					}
+
+					return interactionresult;
+				}
+			});
+
 	public static final DeferredItem<Item> TARTE_TATIN = ITEMS.register("tarte_tatin",
 			() -> new BlockItem(ExtraDelightBlocks.TARTE_TATIN.get(), new Item.Properties()));
 	public static final DeferredItem<Item> TARTE_TATIN_SLICE = ITEMS.register("tarte_tatin_slice",
