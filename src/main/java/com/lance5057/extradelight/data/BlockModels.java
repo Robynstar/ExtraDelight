@@ -678,19 +678,6 @@ public class BlockModels extends BlockStateProvider {
 		});
 	}
 
-	public void vanillaFruitLeafBlock(VanillaFruitLeafBlock block, String name) {
-		getVariantBuilder(block).forAllStates(state -> {
-			int age = state.getValue(VanillaFruitLeafBlock.AGE);
-
-			String suffix = "_stage" + age;
-
-			ModelFile model = models()
-					.getExistingFile(modLoc("block/crops/fruit/" + name + "/" + name + "_leaves" + suffix));
-
-			return ConfiguredModel.builder().modelFile(model).build();
-		});
-	}
-
 	public void coffeeBushBlock(CoffeeBush block) {
 		getVariantBuilder(block).forAllStates(state -> {
 			int age = state.getValue(CoffeeBush.AGE);
