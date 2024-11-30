@@ -2054,23 +2054,23 @@ public class ExtraDelightItems {
 			() -> new BlockItem(ExtraDelightBlocks.APPLE_SAPLING.get(), new Item.Properties()));
 
 	public static final DeferredItem<Item> ROMBOSSE = ITEMS.register("rombosse",
-			() -> new Item(foodItem(EDFoods.MUFFIN)));
+			() -> new Item(foodItem(EDFoods.ROMBOSSE)));
 	public static final DeferredItem<Item> APPLE_SLAW = ITEMS.register("apple_slaw",
-			() -> new Item(foodItem(EDFoods.EGG_SALAD)));
+			() -> new Item(foodItem(EDFoods.APPLE_SLAW)));
 	public static final DeferredItem<Item> PORK_AND_APPLES_FEAST = ITEMS.register("pork_and_apples_feast",
 			() -> new BlockItem(ExtraDelightBlocks.PORK_AND_APPLES_FEAST.get(), new Item.Properties()));
 	public static final DeferredItem<Item> PORK_AND_APPLES = ITEMS.register("pork_and_apples",
-			() -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.PULLED_PORK_SANDWICH), true));
+			() -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.PORK_AND_APPLES), true));
 	public static final DeferredItem<Item> APPLE_CHIPS = ITEMS.register("apple_chips",
-			() -> new Item(foodItem(EDFoods.APPLE_FRITTERS)));
+			() -> new Item(foodItem(EDFoods.APPLE_CHIPS)));
 	public static final DeferredItem<Item> STUFFED_APPLES_FEAST = ITEMS.register("stuffed_apples_feast",
 			() -> new BlockItem(ExtraDelightBlocks.STUFFED_APPLES_FEAST.get(), new Item.Properties()));
 	public static final DeferredItem<Item> STUFFED_APPLE = ITEMS.register("stuffed_apple",
-			() -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.APPLE_CRISP), true));
+			() -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.STUFFED_APPLE), true));
 	public static final DeferredItem<Item> STUFFED_APPLE_ICE_CREAM = ITEMS.register("stuffed_apple_ice_cream",
-			() -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.APPLE_CRISP), true));
+			() -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.STUFFED_APPLE_ICE_CREAM), true));
 	public static final DeferredItem<Item> MULLIGATAWNY_SOUP = ITEMS.register("mulligatawny_soup",
-			() -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.CARROT_SOUP), true));
+			() -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.MULLIGATAWNY_SOUP), true));
 
 	public static final DeferredItem<Item> TARTE_TATIN_IN_PAN = ITEMS.register("tarte_tatin_in_pan",
 			() -> new SolidBucketItem(ExtraDelightBlocks.TARTE_TATIN.get(), SoundEvents.DYE_USE,
@@ -2090,9 +2090,9 @@ public class ExtraDelightItems {
 	public static final DeferredItem<Item> TARTE_TATIN = ITEMS.register("tarte_tatin",
 			() -> new BlockItem(ExtraDelightBlocks.TARTE_TATIN.get(), new Item.Properties()));
 	public static final DeferredItem<Item> TARTE_TATIN_SLICE = ITEMS.register("tarte_tatin_slice",
-			() -> new Item(foodItem(FoodValues.PIE_SLICE)));
+			() -> new Item(foodItem(EDFoods.TARTE_TATIN_SLICE)));
 	public static final DeferredItem<Item> AEBLEFLAESK = ITEMS.register("aebleflaesk",
-			() -> new Item(stack16FoodItem(EDFoods.CHEESE_SANDWICH)));
+			() -> new Item(stack16FoodItem(EDFoods.AEBLEFLAESK)));
 	public static final DeferredItem<Item> CANDY_BAR_SALAD = ITEMS.register("candy_bar_salad",
-			() -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.APPLE_CRISP), true));
+			() -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.CANDY_BAR_SALAD), true));
 }

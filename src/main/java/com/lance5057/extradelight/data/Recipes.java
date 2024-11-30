@@ -3934,7 +3934,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				Ingredient.of(ExtraDelightTags.BRAIN), Ingredient.of(ExtraDelightItems.BREADING_MISANPLAS.get()) },
 				"fried_brains", consumer);
 
-		pot(ExtraDelightItems.MULLIGATAWNY_SOUP.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
+		pot(ExtraDelightItems.MULLIGATAWNY_SOUP.get(), 2, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
 				new Ingredient[] {
 						Ingredient.of(ExtraDelightItems.CURRY_POWDER.get()),
 						Ingredient.of(ExtraDelightTags.SLICED_APPLE),
