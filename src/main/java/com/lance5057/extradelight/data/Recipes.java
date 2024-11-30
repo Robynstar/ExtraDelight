@@ -250,7 +250,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		ChillerRecipeBuilder
 				.chill(ExtraDelightItems.FUDGE_BLOCK.toStack(1), FAST_COOKING, SMALL_EXP,
 						ExtraDelightItems.TRAY.toStack(),
-						new FluidStack(ExtraDelightFluids.WHITE_CHOCOLATE_SYRUP.FLUID.get(), 250))
+						new FluidStack(ExtraDelightFluids.WHITE_CHOCOLATE_SYRUP.FLUID.get(), 250), true)
 				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.MARSHMALLOW_FLUFF)
 				.addIngredient(CommonTags.FOODS_MILK).addIngredient(ExtraDelightTags.SWEETENER)
 				.build(consumer, "fudge_white");
@@ -258,7 +258,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		ChillerRecipeBuilder
 				.chill(ExtraDelightItems.FUDGE_BLOCK.toStack(1), FAST_COOKING, SMALL_EXP,
 						ExtraDelightItems.TRAY.toStack(),
-						new FluidStack(ExtraDelightFluids.BLOOD_CHOCOLATE_SYRUP.FLUID.get(), 250))
+						new FluidStack(ExtraDelightFluids.BLOOD_CHOCOLATE_SYRUP.FLUID.get(), 250), true)
 				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.MARSHMALLOW_FLUFF)
 				.addIngredient(CommonTags.FOODS_MILK).addIngredient(ExtraDelightTags.SWEETENER)
 				.build(consumer, "fudge_blood");
@@ -266,7 +266,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		ChillerRecipeBuilder
 				.chill(ExtraDelightItems.FUDGE_BLOCK.toStack(1), FAST_COOKING, SMALL_EXP,
 						ExtraDelightItems.TRAY.toStack(),
-						new FluidStack(ExtraDelightFluids.DARK_CHOCOLATE_SYRUP.FLUID.get(), 250))
+						new FluidStack(ExtraDelightFluids.DARK_CHOCOLATE_SYRUP.FLUID.get(), 250), true)
 				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.MARSHMALLOW_FLUFF)
 				.addIngredient(CommonTags.FOODS_MILK).addIngredient(ExtraDelightTags.SWEETENER)
 				.build(consumer, "fudge_dark");
@@ -274,7 +274,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		ChillerRecipeBuilder
 				.chill(ExtraDelightItems.FUDGE_BLOCK.toStack(1), FAST_COOKING, SMALL_EXP,
 						ExtraDelightItems.TRAY.toStack(),
-						new FluidStack(ExtraDelightFluids.MILK_CHOCOLATE_SYRUP.FLUID.get(), 250))
+						new FluidStack(ExtraDelightFluids.MILK_CHOCOLATE_SYRUP.FLUID.get(), 250), true)
 				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.MARSHMALLOW_FLUFF)
 				.addIngredient(CommonTags.FOODS_MILK).addIngredient(ExtraDelightTags.SWEETENER)
 				.build(consumer, "fudge_milk");
@@ -288,7 +288,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 	private void meltingRecipes(RecipeOutput consumer) {
 		MeltingPotRecipeBuilder.melt(Ingredient.of(Items.ICE), FAST_COOKING, new FluidStack(Fluids.WATER, 1000))
-				.save(consumer, EDLoc("test"));
+				.save(consumer, EDLoc("ice_to_water"));
 
 		MeltingPotRecipeBuilder
 				.melt(Ingredient.of(ExtraDelightItems.BLOOD_CHOCOLATE_BAR), FAST_COOKING,

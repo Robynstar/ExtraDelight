@@ -88,7 +88,7 @@ public class ExtraDelightNeoForgeClientEvents {
 			ExtraDelightItems.PUMPKIN_PIE_ITEM, ExtraDelightItems.PUMPKIN_ROLL_FEAST,
 			ExtraDelightItems.APPLE_CHEESECAKE_ITEM, ExtraDelightItems.COFFEE_CAKE_FEAST,
 			ExtraDelightItems.MILK_TART_FEAST, ExtraDelightItems.CHOCOLATE_CAKE_BLOCK,
-			ExtraDelightItems.TARTE_TATIN);
+			ExtraDelightItems.TARTE_TATIN, ExtraDelightItems.MEAT_PIE_BLOCK_ITEM);
 
 	static Set<DeferredItem<Item>> servings = Set.of(ExtraDelightItems.JELLY_WHITE, ExtraDelightItems.JELLY_ORANGE,
 			ExtraDelightItems.JELLY_MAGENTA, ExtraDelightItems.JELLY_LIGHT_BLUE, ExtraDelightItems.JELLY_YELLOW,
