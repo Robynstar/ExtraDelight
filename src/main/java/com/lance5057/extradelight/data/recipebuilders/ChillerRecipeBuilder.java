@@ -35,10 +35,11 @@ public class ChillerRecipeBuilder implements RecipeBuilder {
 	private final float experience;
 	private final ItemStack container;
 	private final FluidStack fluid;
+	private final Boolean consumeContainer;
 	private final Map<String, Criterion<?>> criteria = new LinkedHashMap<>();
 
 	private ChillerRecipeBuilder(ItemStack resultIn, int cookingTime, float experience, ItemStack container,
-			FluidStack fluid) {
+			FluidStack fluid, boolean consumeContainer) {
 		this.result = resultIn.getItem();
 		this.resultStack = resultIn;
 		this.cookingTime = cookingTime;
@@ -46,11 +47,17 @@ public class ChillerRecipeBuilder implements RecipeBuilder {
 		this.container = container;
 //		this.tab = null;
 		this.fluid = fluid;
+		this.consumeContainer = consumeContainer;
 	}
 	
 	public static ChillerRecipeBuilder chill(ItemStack mainResult, int cookingTime, float experience,
 			ItemStack container, FluidStack fluid) {
-		return new ChillerRecipeBuilder(mainResult, cookingTime, experience, container, fluid);
+		return new ChillerRecipeBuilder(mainResult, cookingTime, experience, container, fluid, false);
+	}
+
+	public static ChillerRecipeBuilder chill(ItemStack mainResult, int cookingTime, float experience,
+			ItemStack container, FluidStack fluid, boolean consumeContainer) {
+		return new ChillerRecipeBuilder(mainResult, cookingTime, experience, container, fluid, consumeContainer);
 	}
 
 	public ChillerRecipeBuilder addIngredient(TagKey<Item> tagIn) {
@@ -134,7 +141,7 @@ public class ChillerRecipeBuilder implements RecipeBuilder {
 		this.criteria.forEach(advancementBuilder::addCriterion);
 
 		ChillerRecipe recipe = new ChillerRecipe("", this.ingredients, this.fluid, this.resultStack, this.container,
-				this.experience, this.cookingTime);
+				this.experience, this.cookingTime, this.consumeContainer);
 		output.accept(recipeId, recipe, advancementBuilder.build(id.withPrefix("recipes/chilling/")));
 	}
 

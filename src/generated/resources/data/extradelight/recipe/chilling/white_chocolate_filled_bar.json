@@ -1,5 +1,6 @@
 {
   "type": "extradelight:chiller",
+  "consumeContainer": false,
   "container": {
     "count": 1,
     "id": "extradelight:bar_mold"

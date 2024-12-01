@@ -29,10 +29,10 @@ public class OvenRecipe implements Recipe<RecipeWrapper> {
 	private final ItemStack container;
 	private final float experience;
 	private final int cookTime;
+	private final boolean consumeContainer;
 
-	public OvenRecipe(String group,
-			/* @Nullable OvenRecipeBookTab tab, */ NonNullList<Ingredient> inputItems,
-			ItemStack output, ItemStack container, float experience, int cookTime) {
+	public OvenRecipe(String group, /* @Nullable OvenRecipeBookTab tab, */ NonNullList<Ingredient> inputItems,
+			ItemStack output, ItemStack container, float experience, int cookTime, boolean consumeContainer) {
 		this.group = group;
 //		this.tab = tab;
 		this.inputItems = inputItems;
@@ -46,6 +46,7 @@ public class OvenRecipe implements Recipe<RecipeWrapper> {
 
 		this.experience = experience;
 		this.cookTime = cookTime;
+		this.consumeContainer = consumeContainer;
 	}
 
 //	@Override
@@ -62,10 +63,9 @@ public class OvenRecipe implements Recipe<RecipeWrapper> {
 		return this.group;
 	}
 
-//	@Nullable
-//	public OvenRecipeBookTab getRecipeBookTab() {
-//		return this.tab;
-//	}
+	public boolean shouldConsumeContainer() {
+		return this.consumeContainer;
+	}
 
 	@Override
 	public NonNullList<Ingredient> getIngredients() {
@@ -134,21 +134,20 @@ public class OvenRecipe implements Recipe<RecipeWrapper> {
 		public Serializer() {
 		}
 
-		private static final MapCodec<OvenRecipe> CODEC = RecordCodecBuilder.mapCodec(inst -> inst.group(
-				Codec.STRING.optionalFieldOf("group", "").forGetter(OvenRecipe::getGroup),
-//				OvenRecipeBookTab.CODEC.optionalFieldOf("recipe_book_tab")
-//						.xmap(optional -> optional.orElse(null), Optional::of).forGetter(OvenRecipe::getRecipeBookTab),
-				Ingredient.LIST_CODEC_NONEMPTY.fieldOf("ingredients").xmap(ingredients -> {
-					NonNullList<Ingredient> nonNullList = NonNullList.create();
-					nonNullList.addAll(ingredients);
-					return nonNullList;
-				}, ingredients -> ingredients).forGetter(OvenRecipe::getIngredients),
-				ItemStack.CODEC.fieldOf("result").forGetter(r -> r.output),
-				ItemStack.CODEC.lenientOptionalFieldOf("container", ItemStack.EMPTY)
-						.forGetter(OvenRecipe::getContainerOverride),
-				Codec.FLOAT.optionalFieldOf("experience", 0.0F).forGetter(OvenRecipe::getExperience),
-				Codec.INT.lenientOptionalFieldOf("cookingtime", 200).forGetter(OvenRecipe::getCookTime))
-				.apply(inst, OvenRecipe::new));
+		private static final MapCodec<OvenRecipe> CODEC = RecordCodecBuilder
+				.mapCodec(inst -> inst.group(Codec.STRING.optionalFieldOf("group", "").forGetter(OvenRecipe::getGroup),
+						Ingredient.LIST_CODEC_NONEMPTY.fieldOf("ingredients").xmap(ingredients -> {
+							NonNullList<Ingredient> nonNullList = NonNullList.create();
+							nonNullList.addAll(ingredients);
+							return nonNullList;
+						}, ingredients -> ingredients).forGetter(OvenRecipe::getIngredients),
+						ItemStack.CODEC.fieldOf("result").forGetter(r -> r.output),
+						ItemStack.CODEC.lenientOptionalFieldOf("container", ItemStack.EMPTY)
+								.forGetter(OvenRecipe::getContainerOverride),
+						Codec.FLOAT.optionalFieldOf("experience", 0.0F).forGetter(OvenRecipe::getExperience),
+						Codec.INT.lenientOptionalFieldOf("cookingtime", 200).forGetter(OvenRecipe::getCookTime),
+						Codec.BOOL.fieldOf("consumeContainer").forGetter(OvenRecipe::shouldConsumeContainer))
+						.apply(inst, OvenRecipe::new));
 
 		public static OvenRecipe fromNetwork(RegistryFriendlyByteBuf buffer) {
 			String groupIn = buffer.readUtf();
@@ -164,7 +163,8 @@ public class OvenRecipe implements Recipe<RecipeWrapper> {
 			ItemStack container = ItemStack.STREAM_CODEC.decode(buffer);
 			float experienceIn = buffer.readFloat();
 			int cookTimeIn = buffer.readVarInt();
-			return new OvenRecipe(groupIn, /* tabIn, */ inputItemsIn, outputIn, container, experienceIn, cookTimeIn);
+			boolean consume = buffer.readBoolean();
+			return new OvenRecipe(groupIn, inputItemsIn, outputIn, container, experienceIn, cookTimeIn, consume);
 		}
 
 		public static void toNetwork(RegistryFriendlyByteBuf buffer, OvenRecipe recipe) {
@@ -180,6 +180,7 @@ public class OvenRecipe implements Recipe<RecipeWrapper> {
 			ItemStack.STREAM_CODEC.encode(buffer, recipe.container);
 			buffer.writeFloat(recipe.experience);
 			buffer.writeVarInt(recipe.cookTime);
+			buffer.writeBoolean(recipe.consumeContainer);
 		}
 
 		@Override

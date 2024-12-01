@@ -202,7 +202,7 @@ public class ChillerBlockEntity extends BlockEntity {
 				ItemStack result = recipeholder.value().getResultItem(level.registryAccess()).copy();
 				ItemStack test = chiller.inventory.insertItem(OUTPUT_SLOT, result, true);
 				if (test.isEmpty()) {
-					subtractItems(chiller);
+					subtractItems(chiller, recipeholder.value().shouldConsumeContainer());
 					chiller.fluid.drain(recipeholder.value().getFluid(), FluidAction.EXECUTE);
 
 					chiller.inventory.insertItem(OUTPUT_SLOT, result, false);
@@ -238,10 +238,12 @@ public class ChillerBlockEntity extends BlockEntity {
 		return false;
 	}
 
-	private static void subtractItems(ChillerBlockEntity chiller) {
+	private static void subtractItems(ChillerBlockEntity chiller, boolean consumeContainer) {
 		ItemStackHandler i = chiller.inventory;
 
-//		i.getStackInSlot(CONTAINER_SLOT).shrink(1);
+		if (consumeContainer) {
+			i.getStackInSlot(CONTAINER_SLOT).shrink(1);
+		}
 		for (int j = 0; j < 4; j++)
 			i.getStackInSlot(j).shrink(1);
 	}
