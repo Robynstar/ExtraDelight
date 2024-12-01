@@ -1173,6 +1173,8 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.TARTE_TATIN_IN_PAN.get(), "Tarte Tatin");
 		this.add(ExtraDelightItems.TARTE_TATIN.get(), "Tarte Tatin");
 		this.add(ExtraDelightItems.TARTE_TATIN_SLICE.get(), "Slice of Tarte Tatin");
+		this.add(ExtraDelightItems.AEBLEFLAESK.get(), "Æbleflæsk");
+		this.add(ExtraDelightItems.CANDY_BAR_SALAD.get(), "Candy Bar Salad");
 
 		AestheticBlocks.EngLoc(this);
 	}
