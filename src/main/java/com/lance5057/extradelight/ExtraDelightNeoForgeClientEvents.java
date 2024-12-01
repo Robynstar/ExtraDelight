@@ -108,6 +108,7 @@ public class ExtraDelightNeoForgeClientEvents {
 			ExtraDelightItems.BLONDIE, ExtraDelightItems.FUDGE_SLICE, ExtraDelightItems.STICKY_TOFFEE_PUDDING_SLICE,
 			ExtraDelightItems.CRISP_RICE_TREAT, ExtraDelightItems.SCOTCHAROO, ExtraDelightItems.BLACK_FOREST_TRIFLE,
 			ExtraDelightItems.PORK_AND_APPLES, ExtraDelightItems.STUFFED_APPLE,
+			ExtraDelightItems.STUFFED_APPLE_ICE_CREAM,
 			// Cakes and Pies
 			ExtraDelightItems.CHEESECAKE_SLICE, ExtraDelightItems.CHOCOLATE_CHEESECAKE_SLICE,
 			ExtraDelightItems.GLOW_BERRY_CHEESECAKE_SLICE, ExtraDelightItems.GLOW_BERRY_PIE_SLICE,

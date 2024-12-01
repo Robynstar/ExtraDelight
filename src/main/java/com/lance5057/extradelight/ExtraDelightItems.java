@@ -2054,9 +2054,9 @@ public class ExtraDelightItems {
 			() -> new BlockItem(ExtraDelightBlocks.APPLE_SAPLING.get(), new Item.Properties()));
 
 	public static final DeferredItem<Item> ROMBOSSE = ITEMS.register("rombosse",
-			() -> new Item(foodItem(EDFoods.ROMBOSSE)));
+			() -> new ToolTipConsumableItem(foodItem(EDFoods.ROMBOSSE), true));
 	public static final DeferredItem<Item> APPLE_SLAW = ITEMS.register("apple_slaw",
-			() -> new Item(foodItem(EDFoods.APPLE_SLAW)));
+			() -> new Item(stack16FoodItem(EDFoods.APPLE_SLAW)));
 	public static final DeferredItem<Item> PORK_AND_APPLES_FEAST = ITEMS.register("pork_and_apples_feast",
 			() -> new BlockItem(ExtraDelightBlocks.PORK_AND_APPLES_FEAST.get(), new Item.Properties()));
 	public static final DeferredItem<Item> PORK_AND_APPLES = ITEMS.register("pork_and_apples",
@@ -2090,9 +2090,9 @@ public class ExtraDelightItems {
 	public static final DeferredItem<Item> TARTE_TATIN = ITEMS.register("tarte_tatin",
 			() -> new BlockItem(ExtraDelightBlocks.TARTE_TATIN.get(), new Item.Properties()));
 	public static final DeferredItem<Item> TARTE_TATIN_SLICE = ITEMS.register("tarte_tatin_slice",
-			() -> new Item(foodItem(EDFoods.TARTE_TATIN_SLICE)));
+			() -> new ToolTipConsumableItem(foodItem(EDFoods.TARTE_TATIN_SLICE), true));
 	public static final DeferredItem<Item> AEBLEFLAESK = ITEMS.register("aebleflaesk",
-			() -> new Item(stack16FoodItem(EDFoods.AEBLEFLAESK)));
+			() -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.AEBLEFLAESK), true));
 	public static final DeferredItem<Item> CANDY_BAR_SALAD = ITEMS.register("candy_bar_salad",
 			() -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.CANDY_BAR_SALAD), true));
 }
