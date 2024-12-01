@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:melting/test"
+        "recipe": "extradelight:melting/ice_to_water"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -15,7 +15,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:melting/test"
+      "extradelight:melting/ice_to_water"
     ]
   }
 }
