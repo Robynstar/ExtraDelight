@@ -150,7 +150,7 @@ public class OvenBlockEntity extends SyncedBlockEntity
 				Oven.moveMealToOutput();
 				didInventoryChange = true;
 			} else if (!Oven.inventory.getStackInSlot(CONTAINER_SLOT).isEmpty()) {
-				Oven.useStoredContainersOnMeal(recipe.get().value().shouldConsumeContainer());
+//				Oven.useStoredContainersOnMeal(recipe.get().value().shouldConsumeContainer());
 				didInventoryChange = true;
 			}
 		}
@@ -307,10 +307,11 @@ public class OvenBlockEntity extends SyncedBlockEntity
 
 		cookTime = 0;
 		mealContainerStack = recipe.value().getOutputContainer();
+		ItemStack containerInputStack = inventory.getStackInSlot(CONTAINER_SLOT);
 		ItemStack resultStack = recipe.value().getResultItem(this.level.registryAccess());
-		ItemStack storedMealStack = inventory.getStackInSlot(MEAL_DISPLAY_SLOT);
+		ItemStack storedMealStack = inventory.getStackInSlot(OUTPUT_SLOT);
 		if (storedMealStack.isEmpty()) {
-			inventory.setStackInSlot(MEAL_DISPLAY_SLOT, resultStack.copy());
+			inventory.setStackInSlot(OUTPUT_SLOT, resultStack.copy());
 		} else if (ItemStack.isSameItem(resultStack, storedMealStack)) {
 			storedMealStack.grow(resultStack.getCount());
 		}
@@ -328,6 +329,8 @@ public class OvenBlockEntity extends SyncedBlockEntity
 			}
 			if (!slotStack.isEmpty())
 				slotStack.shrink(1);
+			if(recipe.value().shouldConsumeContainer())
+				containerInputStack.shrink(1);
 		}
 		return true;
 	}
