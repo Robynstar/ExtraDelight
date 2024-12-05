@@ -8,6 +8,7 @@ import com.lance5057.extradelight.util.RenderUtil;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 
+import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
@@ -39,8 +40,8 @@ public class FunnelRenderer implements BlockEntityRenderer<FunnelBlockEntity> {
 					new Vector3f(1f / 16f, 14f / 16f, 15f / 16f), new Vector3f(15f / 16f, 14f / 16f, 15f / 16f),
 					new Vector3f(15f / 16f, 14f / 16f, 1f / 16f), vertexConsumer, mat, matrix3f,
 					fluidTypeExtensions.getTintColor(fluidStack),
-					RenderUtil.getUV(fluidTypeExtensions.getStillTexture()), Direction.UP.getNormal(), packedOverlay,
-					packedLight, poseStack);
+					RenderUtil.getUV(fluidTypeExtensions.getStillTexture()), Direction.UP.getNormal(),
+					LightTexture.FULL_SKY, packedOverlay, poseStack);
 			poseStack.popPose();
 		}
 

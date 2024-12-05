@@ -41,7 +41,7 @@ public class FunnelBlockEntity extends BlockEntity {
 			protected void onContentsChanged() {
 				FunnelBlockEntity.this.requestModelDataUpdate();
 				FunnelBlockEntity.this.getLevel().sendBlockUpdated(FunnelBlockEntity.this.getBlockPos(),
-						FunnelBlockEntity.this.getBlockState(), FunnelBlockEntity.this.getBlockState(), 3);
+						FunnelBlockEntity.this.getBlockState(), FunnelBlockEntity.this.getBlockState(), Block.UPDATE_ALL_IMMEDIATE);
 				FunnelBlockEntity.this.setChanged();
 			}
 		};

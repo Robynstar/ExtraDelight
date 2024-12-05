@@ -13,6 +13,7 @@ import com.lance5057.extradelight.data.MiscLootTables;
 import com.lance5057.extradelight.fluids.FluidRegistration;
 import com.lance5057.extradelight.food.EDFoods;
 import com.lance5057.extradelight.items.CactusJuiceItem;
+import com.lance5057.extradelight.items.CoffeeItem;
 import com.lance5057.extradelight.items.CornSilkTeaItem;
 import com.lance5057.extradelight.items.FrostingItem;
 import com.lance5057.extradelight.items.GlowberryFoodItem;
@@ -1743,7 +1744,7 @@ public class ExtraDelightItems {
 			() -> new ItemNameBlockItem(ExtraDelightBlocks.COFFEE_BUSH.get(),
 					new Item.Properties().food(EDFoods.COFFEE_BEANS)));
 	public static final DeferredItem<Item> COFFEE = ITEMS.register("coffee",
-			() -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)));
+			() -> new CoffeeItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)));
 
 	public static final DeferredItem<Item> BROWNIES_BLOCK = ITEMS.register("brownies_block",
 			() -> new BlockItem(ExtraDelightBlocks.BROWNIES.get(), new Item.Properties()));

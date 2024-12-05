@@ -20,6 +20,9 @@ public class ExtraDelightCapabilities {
 				(o, d) -> o.getItemHandler());
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ExtraDelightBlockEntities.MORTAR.get(),
 				(o, d) -> o.getItemHandler());
+		event.registerBlockEntity(Capabilities.FluidHandler.BLOCK, ExtraDelightBlockEntities.MORTAR.get(),
+				(o, d) -> o.getFluidTank());
+
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ExtraDelightBlockEntities.OVEN.get(),
 				(be, context) -> {
 					if (context == Direction.DOWN) {
@@ -72,5 +75,9 @@ public class ExtraDelightCapabilities {
 
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ExtraDelightBlockEntities.CHOCOLATE_BOX.get(),
 				(be, context) -> be.getItems());
+
+		event.registerBlockEntity(Capabilities.FluidHandler.BLOCK, ExtraDelightBlockEntities.FUNNEL.get(), (o, d) -> {
+			return o.getFluidTank();
+		});
 	}
 }
