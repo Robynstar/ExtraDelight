@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.armor.EDArmorMaterial;
+import com.lance5057.extradelight.items.dynamicfood.api.PieceTypes;
 import com.lance5057.extradelight.network.NetworkHandler;
 import com.lance5057.extradelight.worldgen.features.ExtraDelightFeatures;
 
@@ -41,6 +42,9 @@ public class ExtraDelight {
 		ExtraDelightComponents.COMPONENTS.register(modEventBus);
 		ExtraDelightBlocks.register(modEventBus);
 		ExtraDelightFluids.register(modEventBus);
+		
+		PieceTypes.PIECES.register(modEventBus);
+		
 		ExtraDelightItems.ITEMS.register(modEventBus);
 		ExtraDelightTabs.TABS.register(modEventBus);
 
