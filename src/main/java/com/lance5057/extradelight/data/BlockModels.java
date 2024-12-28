@@ -13,11 +13,7 @@ import com.lance5057.extradelight.blocks.RecipeFondueFeastBlock;
 import com.lance5057.extradelight.blocks.TapBlock;
 import com.lance5057.extradelight.blocks.VanillaFruitLeafBlock;
 import com.lance5057.extradelight.blocks.chocolatebox.ChocolateBoxBlock;
-import com.lance5057.extradelight.blocks.crops.ChiliCrop;
-import com.lance5057.extradelight.blocks.crops.CoffeeBush;
-import com.lance5057.extradelight.blocks.crops.GingerCrop;
-import com.lance5057.extradelight.blocks.crops.MallowRootCrop;
-import com.lance5057.extradelight.blocks.crops.PeanutCrop;
+import com.lance5057.extradelight.blocks.crops.*;
 import com.lance5057.extradelight.blocks.crops.corn.CornBottom;
 import com.lance5057.extradelight.blocks.crops.corn.CornProperties;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
@@ -247,7 +243,7 @@ public class BlockModels extends BlockStateProvider {
 		pieLikeBlock(ExtraDelightBlocks.MILK_TART.get(), "milk_tart");
 		recipeFeastBlock(ExtraDelightBlocks.PUNCH.get(), "punch");
 		tapBlock(ExtraDelightBlocks.TAP.get());
-		coffeeBushBlock(ExtraDelightBlocks.COFFEE_BUSH.get());
+		bushStageFourBlock(ExtraDelightBlocks.COFFEE_BUSH.get(), "coffee");
 
 		this.axisBlock(ExtraDelightBlocks.KEG.get(),
 				models().orientableWithBottom("keg_vertical", modLoc("block/keg_side"), modLoc("block/keg_side"),
@@ -678,14 +674,14 @@ public class BlockModels extends BlockStateProvider {
 		});
 	}
 
-	public void coffeeBushBlock(CoffeeBush block) {
+	public void bushStageFourBlock(BushStageFour block, String name) {
 		getVariantBuilder(block).forAllStates(state -> {
-			int age = state.getValue(CoffeeBush.AGE);
+			int age = state.getValue(BushStageFour.AGE);
 
 			String suffix = "_stage" + age;
 
-			ModelFile model = models().withExistingParent("coffee_plant" + suffix,
-					modLoc("block/crops/coffee/coffee_plant" + suffix));
+			ModelFile model = models().withExistingParent(name + "_bush" + suffix,
+					modLoc("block/crops/" + name + "/" + name + "_bush" + suffix));
 
 			return ConfiguredModel.builder().modelFile(model).build();
 		});
