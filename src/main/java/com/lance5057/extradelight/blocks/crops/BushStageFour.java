@@ -4,6 +4,7 @@ import com.lance5057.extradelight.ExtraDelightItems;
 import com.mojang.serialization.MapCodec;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -11,6 +12,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
@@ -28,27 +30,40 @@ import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.neoforged.neoforge.registries.DeferredItem;
 
-public class CoffeeBush extends BushBlock implements BonemealableBlock {
-	public static final MapCodec<CoffeeBush> CODEC = simpleCodec(CoffeeBush::new);
+public class BushStageFour extends BushBlock implements BonemealableBlock {
+	public static final MapCodec<BushStageFour> CODEC = simpleCodec(BushStageFour::new);
 	public static final int MAX_AGE = 3;
 	public static final IntegerProperty AGE = BlockStateProperties.AGE_3;
-	private static final VoxelShape SAPLING_SHAPE = Block.box(3.0, 0.0, 3.0, 13.0, 8.0, 13.0);
-	private static final VoxelShape MID_GROWTH_SHAPE = Block.box(1.0, 0.0, 1.0, 15.0, 16.0, 15.0);
+	private final VoxelShape SAPLING_SHAPE;
+	private final VoxelShape MID_GROWTH_SHAPE;
+	private final DeferredItem fruit;
 
 	@Override
-	public MapCodec<CoffeeBush> codec() {
+	public MapCodec<BushStageFour> codec() {
 		return CODEC;
 	}
 
-	public CoffeeBush(BlockBehaviour.Properties p_57249_) {
+	public BushStageFour(BlockBehaviour.Properties p_57249_) {
 		super(p_57249_);
+		this.SAPLING_SHAPE = Block.box(3.0, 0.0, 3.0, 13.0, 8.0, 13.0);
+		this.MID_GROWTH_SHAPE = Block.box(1.0, 0.0, 1.0, 15.0, 16.0, 15.0);
+        this.fruit = ExtraDelightItems.COFFEE_CHERRIES;
+        this.registerDefaultState(this.stateDefinition.any().setValue(AGE, Integer.valueOf(0)));
+	}
+
+	public BushStageFour(VoxelShape SAPLING_SHAPE, VoxelShape MID_GROWTH_SHAPE, DeferredItem fruit, BlockBehaviour.Properties properties) {
+		super(properties);
+		this.SAPLING_SHAPE = SAPLING_SHAPE;
+		this.MID_GROWTH_SHAPE = MID_GROWTH_SHAPE;
+		this.fruit = fruit;
 		this.registerDefaultState(this.stateDefinition.any().setValue(AGE, Integer.valueOf(0)));
 	}
 
 	@Override
 	public ItemStack getCloneItemStack(LevelReader p_304655_, BlockPos p_57257_, BlockState p_57258_) {
-		return new ItemStack(ExtraDelightItems.COFFEE_CHERRIES.get());
+		return new ItemStack((Holder<Item>) fruit.get());
 	}
 
 	@Override
@@ -57,20 +72,20 @@ public class CoffeeBush extends BushBlock implements BonemealableBlock {
 		if (p_57291_.getValue(AGE) == 0) {
 			return SAPLING_SHAPE;
 		} else {
-			return p_57291_.getValue(AGE) < 3 ? MID_GROWTH_SHAPE
+			return p_57291_.getValue(AGE) < MAX_AGE ? MID_GROWTH_SHAPE
 					: super.getShape(p_57291_, p_57292_, p_57293_, p_57294_);
 		}
 	}
 
 	@Override
 	public boolean isRandomlyTicking(BlockState p_57284_) {
-		return p_57284_.getValue(AGE) < 3;
+		return p_57284_.getValue(AGE) < MAX_AGE;
 	}
 
 	@Override
 	public void randomTick(BlockState p_222563_, ServerLevel p_222564_, BlockPos p_222565_, RandomSource p_222566_) {
 		int i = p_222563_.getValue(AGE);
-		if (i < 3 && p_222564_.getRawBrightness(p_222565_.above(), 0) >= 9 && net.neoforged.neoforge.common.CommonHooks
+		if (i < MAX_AGE && p_222564_.getRawBrightness(p_222565_.above(), 0) >= 9 && net.neoforged.neoforge.common.CommonHooks
 				.canCropGrow(p_222564_, p_222565_, p_222563_, p_222566_.nextInt(5) == 0)) {
 			BlockState blockstate = p_222563_.setValue(AGE, Integer.valueOf(i + 1));
 			p_222564_.setBlock(p_222565_, blockstate, 2);
@@ -83,12 +98,12 @@ public class CoffeeBush extends BushBlock implements BonemealableBlock {
 	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player,
 			InteractionHand hand, BlockHitResult hitResult) {
 		int i = state.getValue(AGE);
-		boolean flag = i == 3;
+		boolean flag = i == MAX_AGE;
 		if (!flag && stack.is(Items.BONE_MEAL)) {
 			return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 		} else if (i > 2) {
 			int j = 1 + level.random.nextInt(2);
-			popResource(level, pos, new ItemStack(ExtraDelightItems.COFFEE_CHERRIES.get(), j + 1));
+			popResource(level, pos, new ItemStack((Holder<Item>) fruit.get(), j + 1));
 			level.playSound(null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F,
 					0.8F + level.random.nextFloat() * 0.4F);
 			BlockState blockstate = state.setValue(AGE, Integer.valueOf(1));
@@ -107,7 +122,7 @@ public class CoffeeBush extends BushBlock implements BonemealableBlock {
 
 	@Override
 	public boolean isValidBonemealTarget(LevelReader p_256056_, BlockPos p_57261_, BlockState p_57262_) {
-		return p_57262_.getValue(AGE) < 3;
+		return p_57262_.getValue(AGE) < MAX_AGE;
 	}
 
 	@Override
@@ -119,7 +134,7 @@ public class CoffeeBush extends BushBlock implements BonemealableBlock {
 	@Override
 	public void performBonemeal(ServerLevel p_222553_, RandomSource p_222554_, BlockPos p_222555_,
 			BlockState p_222556_) {
-		int i = Math.min(3, p_222556_.getValue(AGE) + 1);
+		int i = Math.min(MAX_AGE, p_222556_.getValue(AGE) + 1);
 		p_222553_.setBlock(p_222555_, p_222556_.setValue(AGE, Integer.valueOf(i)), 2);
 	}
 }
