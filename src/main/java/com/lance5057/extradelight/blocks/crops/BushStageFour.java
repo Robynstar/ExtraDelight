@@ -38,7 +38,7 @@ public class BushStageFour extends BushBlock implements BonemealableBlock {
 	public static final IntegerProperty AGE = BlockStateProperties.AGE_3;
 	private final VoxelShape SAPLING_SHAPE;
 	private final VoxelShape MID_GROWTH_SHAPE;
-	private final DeferredItem fruit;
+	private final DeferredItem<Item> fruit;
 
 	@Override
 	public MapCodec<BushStageFour> codec() {
@@ -53,7 +53,7 @@ public class BushStageFour extends BushBlock implements BonemealableBlock {
         this.registerDefaultState(this.stateDefinition.any().setValue(AGE, Integer.valueOf(0)));
 	}
 
-	public BushStageFour(VoxelShape SAPLING_SHAPE, VoxelShape MID_GROWTH_SHAPE, DeferredItem fruit, BlockBehaviour.Properties properties) {
+	public BushStageFour(VoxelShape SAPLING_SHAPE, VoxelShape MID_GROWTH_SHAPE, DeferredItem<Item> fruit, BlockBehaviour.Properties properties) {
 		super(properties);
 		this.SAPLING_SHAPE = SAPLING_SHAPE;
 		this.MID_GROWTH_SHAPE = MID_GROWTH_SHAPE;
@@ -63,7 +63,7 @@ public class BushStageFour extends BushBlock implements BonemealableBlock {
 
 	@Override
 	public ItemStack getCloneItemStack(LevelReader p_304655_, BlockPos p_57257_, BlockState p_57258_) {
-		return new ItemStack((Holder<Item>) fruit.get());
+		return new ItemStack(fruit.get());
 	}
 
 	@Override
@@ -103,7 +103,7 @@ public class BushStageFour extends BushBlock implements BonemealableBlock {
 			return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 		} else if (i > 2) {
 			int j = 1 + level.random.nextInt(2);
-			popResource(level, pos, new ItemStack((Holder<Item>) fruit.get(), j + 1));
+			popResource(level, pos, new ItemStack(fruit.get(), j + 1));
 			level.playSound(null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F,
 					0.8F + level.random.nextFloat() * 0.4F);
 			BlockState blockstate = state.setValue(AGE, Integer.valueOf(1));
