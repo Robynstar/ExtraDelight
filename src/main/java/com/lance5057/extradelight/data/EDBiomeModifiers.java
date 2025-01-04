@@ -60,7 +60,7 @@ public class EDBiomeModifiers extends BaseDatapackRegistryProvider {
 				// Coffee
 				HolderSet.Direct<PlacedFeature> wildCoffeeHolderSet = HolderSet.direct(Holder.direct(new PlacedFeature(
 						Holder.direct(new ConfiguredFeature<>(ExtraDelightFeatures.PATCH_WILD_COFFEE.get(),
-								new WildConfig(10, 100, 10, 5, 256))),
+								new WildConfig(5, 10, 5, 5, 128))),
 						List.of(RarityFilter.onAverageOnceEvery(20), InSquarePlacement.spread(),
 								HeightmapPlacement.onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
 								BiomeFilter.biome()))));
@@ -99,7 +99,7 @@ public class EDBiomeModifiers extends BaseDatapackRegistryProvider {
 				// Peanut
 				HolderSet.Direct<PlacedFeature> wildPeanutHolderSet = HolderSet.direct(Holder.direct(new PlacedFeature(
 						Holder.direct(new ConfiguredFeature<>(ExtraDelightFeatures.PATCH_WILD_PEANUT.get(),
-								new WildConfig(10, 100, 10, 5, 256))),
+								new WildConfig(5, 10, 5, 5, 128))),
 						List.of(RarityFilter.onAverageOnceEvery(20), InSquarePlacement.spread(),
 								HeightmapPlacement.onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
 								BiomeFilter.biome()))));
@@ -112,8 +112,8 @@ public class EDBiomeModifiers extends BaseDatapackRegistryProvider {
 				// Mallow
 				HolderSet.Direct<PlacedFeature> wildMallowHolderSet = HolderSet.direct(Holder.direct(new PlacedFeature(
 						Holder.direct(new ConfiguredFeature<>(ExtraDelightFeatures.PATCH_WILD_MALLOW.get(),
-								new WildConfig(20, 100, 10, 5, 256))),
-						List.of(RarityFilter.onAverageOnceEvery(20), InSquarePlacement.spread(),
+								new WildConfig(70, 150, 10, 5, 256))),
+						List.of(RarityFilter.onAverageOnceEvery(70), InSquarePlacement.spread(),
 								HeightmapPlacement.onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
 								BiomeFilter.biome()))));
 

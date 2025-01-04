@@ -5,10 +5,10 @@
     "feature": {
       "type": "extradelight:wild_coffee",
       "config": {
-        "max_count": 100,
-        "min_count": 10,
-        "tries": 256,
-        "xz_spread": 10,
+        "max_count": 10,
+        "min_count": 5,
+        "tries": 128,
+        "xz_spread": 5,
         "y_spread": 5
       }
     },
