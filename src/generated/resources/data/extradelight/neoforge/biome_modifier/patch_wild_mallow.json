@@ -5,8 +5,8 @@
     "feature": {
       "type": "extradelight:wild_mallow",
       "config": {
-        "max_count": 100,
-        "min_count": 20,
+        "max_count": 150,
+        "min_count": 70,
         "tries": 256,
         "xz_spread": 10,
         "y_spread": 5
@@ -15,7 +15,7 @@
     "placement": [
       {
         "type": "minecraft:rarity_filter",
-        "chance": 20
+        "chance": 70
       },
       {
         "type": "minecraft:in_square"
