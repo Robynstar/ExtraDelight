@@ -52,6 +52,9 @@ public class WreathRenderer implements BlockEntityRenderer<WreathEntity> {
 				pPoseStack.mulPose(new Quaternionf().fromAxisAngleDeg(0, 1, 0, -dir.toYRot()));
 				pPoseStack.translate(-0.5f, 0, -0.5f);
 				pPoseStack.translate(0.5f, 0.5f, 0.15f);
+				
+				if(i % 2 == 0)
+					pPoseStack.translate(0.0f, 0.0f, 0.01f);
 
 				pPoseStack.mulPose(new Quaternionf().fromAxisAngleDeg(0, 0, 1, i * 45));
 //				pPoseStack.mulPose(new Quaternionf().rotateXYZ(0, 0, i * 45));

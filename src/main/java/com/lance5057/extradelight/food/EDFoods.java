@@ -237,8 +237,8 @@ public class EDFoods {
 	public static final FoodProperties DIPPED_BACON = new FoodProperties.Builder().nutrition(2).saturationModifier(0.2f).effect(COMFORT_BRIEF, 1F).alwaysEdible().build();
 	public static final FoodProperties NUTS = new FoodProperties.Builder().nutrition(2).saturationModifier(1f).build();
 	public static final FoodProperties PBJ = new FoodProperties.Builder().nutrition(8).saturationModifier(0.54f).effect(COMFORT_MEDIUM, 1F).effect(NOURISHMENT_MEDIUM, 1F).build();
-	public static final FoodProperties ICE_CREAM_SUNDAE = new FoodProperties.Builder().nutrition(8).saturationModifier(0.37f).effect(COMFORT_LONG, 1F).build();
-	public static final FoodProperties HAZELNUT_SPREAD = new FoodProperties.Builder().nutrition(2).saturationModifier(0.55f).build();
+	public static final FoodProperties ICE_CREAM_SUNDAE = new FoodProperties.Builder().nutrition(8).saturationModifier(0.37f).effect(COMFORT_LONG, 1F).usingConvertsTo(Items.GLASS_BOTTLE).build();
+	public static final FoodProperties HAZELNUT_SPREAD = new FoodProperties.Builder().nutrition(2).saturationModifier(0.55f).usingConvertsTo(Items.GLASS_BOTTLE).build();
 	public static final FoodProperties ROASTED_NUTS = new FoodProperties.Builder().nutrition(6).saturationModifier(1f).build();
 	public static final FoodProperties DIPPED_COFFEE_BEAN = new FoodProperties.Builder().nutrition(2).saturationModifier(0.1f).effect(COMFORT_BRIEF, 1F).effect(SPEED_BRIEF, 1F).alwaysEdible().build();
 	public static final FoodProperties ROMBOSSE = new FoodProperties.Builder().nutrition(9).saturationModifier(0.45f).effect(COMFORT_MEDIUM, 1F).build();
@@ -251,4 +251,6 @@ public class EDFoods {
 	public static final FoodProperties TARTE_TATIN_SLICE = new FoodProperties.Builder().nutrition(5).saturationModifier(0.07f).effect(COMFORT_BRIEF, 1F).build();
 	public static final FoodProperties AEBLEFLAESK = new FoodProperties.Builder().nutrition(8).saturationModifier(0.27f).effect(NOURISHMENT_MEDIUM, 1F).build();
 	public static final FoodProperties CANDY_BAR_SALAD = new FoodProperties.Builder().nutrition(8).saturationModifier(0.31f).effect(COMFORT_MEDIUM, 1F).usingConvertsTo(Items.BOWL).build();
+	public static final FoodProperties MARSHMALLOW_FLUFF = new FoodProperties.Builder().nutrition(2).saturationModifier(0.12f).usingConvertsTo(Items.GLASS_BOTTLE).build();
+	public static final FoodProperties NUT_BUTTER = new FoodProperties.Builder().nutrition(3).saturationModifier(0.6f).usingConvertsTo(Items.GLASS_BOTTLE).build();
 }

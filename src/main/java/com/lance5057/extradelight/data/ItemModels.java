@@ -295,8 +295,7 @@ public class ItemModels extends ItemModelProvider {
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/bbq_ribs_block_stage0"));
 		forItem(ExtraDelightItems.BBQ_RIBS, "bbq_ribs");
 
-		forBlockItem(ExtraDelightItems.MEAT_PIE_BLOCK_ITEM,
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/meat_pie"));
+		forItem(ExtraDelightItems.MEAT_PIE_BLOCK_ITEM, "meat_pie");
 		forItem(ExtraDelightItems.MEAT_PIE_SLICE, "meat_pie_slice");
 
 		forBlockItem(ExtraDelightItems.PULLED_PORK_FEAST_ITEM,

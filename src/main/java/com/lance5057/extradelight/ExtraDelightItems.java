@@ -247,8 +247,7 @@ public class ExtraDelightItems {
 	public static final DeferredItem<Item> FLOUR = ITEMS.register("flour",
 			() -> new BlockItem(ExtraDelightBlocks.FLOUR.get(), new Item.Properties()));
 	public static final DeferredItem<Item> COOKING_OIL = ITEMS.register("cooking_oil",
-			() -> new BlockItem(ExtraDelightBlocks.COOKING_OIL.get(),
-					new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)));
+			() -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)));
 
 	public static final DeferredItem<Item> GRAVY = ITEMS.register("gravy_boat_item",
 			() -> new Item(new Item.Properties().craftRemainder(Items.BOWL)));
@@ -2041,10 +2040,10 @@ public class ExtraDelightItems {
 			() -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(EDFoods.CHOCOLATE_BAR)));
 
 	public static final DeferredItem<Item> PEANUT_BUTTER_BOTTLE = ITEMS.register("peanut_butter_bottle",
-			() -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(EDFoods.ROASTED_NUTS)));
+			() -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(EDFoods.NUT_BUTTER)));
 
 	public static final DeferredItem<Item> MARSHMALLOW_FLUFF_BOTTLE = ITEMS.register("marshmallow_fluff_bottle",
-			() -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(EDFoods.MARSHMALLOW)));
+			() -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(EDFoods.MARSHMALLOW_FLUFF)));
 
 	public static final DeferredItem<Item> HAZELNUT_SPREAD_BOTTLE = ITEMS.register("hazelnut_spread_bottle",
 			() -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(EDFoods.HAZELNUT_SPREAD)));

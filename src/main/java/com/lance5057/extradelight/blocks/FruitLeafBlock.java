@@ -54,7 +54,10 @@ public class FruitLeafBlock extends Block {
 
 	@Override
 	public boolean isRandomlyTicking(BlockState p_54449_) {
-		return !p_54449_.getValue(PERSISTENT) && p_54449_.getValue(DISTANCE) == 7 || p_54449_.getValue(AGE) < 3;
+		if (p_54449_.getValue(PERSISTENT))
+			return false;
+		else
+			return (p_54449_.getValue(DISTANCE) == 7 || p_54449_.getValue(AGE) < 3);
 	}
 
 	@Override
@@ -164,4 +167,5 @@ public class FruitLeafBlock extends Block {
 			}
 		return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 	}
+
 }

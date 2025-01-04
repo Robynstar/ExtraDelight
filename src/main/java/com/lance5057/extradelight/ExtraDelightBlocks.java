@@ -154,9 +154,9 @@ public class ExtraDelightBlocks {
 
 	public static final DeferredBlock<Block> FLOUR = BLOCKS.register("flour", () -> new CarpetBlock(
 			Properties.ofFullCopy(Blocks.MOSS_BLOCK).strength(0.1F, 0.0F).sound(SoundType.WOOL).noOcclusion()));
-	public static final DeferredBlock<Block> COOKING_OIL = BLOCKS.register("cooking_oil",
-			() -> new CarpetBlock(Properties.ofFullCopy(Blocks.YELLOW_CARPET).strength(0.1F, 0.0F)
-					.sound(SoundType.SLIME_BLOCK).noOcclusion().friction(0.98f)));
+//	public static final DeferredBlock<Block> COOKING_OIL = BLOCKS.register("cooking_oil",
+//			() -> new CarpetBlock(Properties.ofFullCopy(Blocks.YELLOW_CARPET).strength(0.1F, 0.0F)
+//					.sound(SoundType.SLIME_BLOCK).noOcclusion().friction(0.98f)));
 	public static final DeferredBlock<Block> BREADCRUMBS = BLOCKS.register("breadcrumbs", () -> new CarpetBlock(
 			Properties.ofFullCopy(Blocks.MOSS_BLOCK).strength(0.1F, 0.0F).sound(SoundType.WOOL).noOcclusion()));
 	public static final DeferredBlock<Block> CORNMEAL = BLOCKS.register("cornmeal", () -> new CarpetBlock(

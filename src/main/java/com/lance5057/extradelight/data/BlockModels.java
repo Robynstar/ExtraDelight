@@ -63,8 +63,8 @@ public class BlockModels extends BlockStateProvider {
 
 		this.mortarStyleBlock(ExtraDelightBlocks.MORTAR_STONE.get());
 
-		this.simpleBlock(ExtraDelightBlocks.COOKING_OIL.get(), models()
-				.withExistingParent("cooking_oil", mcLoc("block/carpet")).texture("wool", modLoc("block/cooking_oil")));
+//		this.simpleBlock(ExtraDelightBlocks.COOKING_OIL.get(), models()
+//				.withExistingParent("cooking_oil", mcLoc("block/carpet")).texture("wool", modLoc("block/cooking_oil")));
 
 		pieBlock(ExtraDelightBlocks.SWEET_BERRY_PIE.get(), "sweet_berry_pie");
 		pieBlock(ExtraDelightBlocks.GLOW_BERRY_PIE.get(), "glow_berry_pie");

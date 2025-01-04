@@ -1019,14 +1019,12 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy("has_hotdish", has(ExtraDelightItems.JELLY_BLACK_FEAST_ITEM.get()))
 				.save(consumer, EDLoc("jelly_black_block"));
 		FeastRecipeBuilder
-				.feast(Ingredient.of(Items.BOWL),
-						new ItemStack(ExtraDelightItems.PORK_AND_APPLES.get()),
+				.feast(Ingredient.of(Items.BOWL), new ItemStack(ExtraDelightItems.PORK_AND_APPLES.get()),
 						ExtraDelightItems.PORK_AND_APPLES_FEAST.get())
 				.unlockedBy("has_feast", has(ExtraDelightItems.PORK_AND_APPLES_FEAST.get()))
 				.save(consumer, EDLoc("pork_apples_feast"));
 		FeastRecipeBuilder
-				.feast(Ingredient.of(Items.BOWL),
-						new ItemStack(ExtraDelightItems.STUFFED_APPLE.get()),
+				.feast(Ingredient.of(Items.BOWL), new ItemStack(ExtraDelightItems.STUFFED_APPLE.get()),
 						ExtraDelightItems.STUFFED_APPLES_FEAST.get())
 				.unlockedBy("has_feast", has(ExtraDelightItems.STUFFED_APPLES_FEAST.get()))
 				.save(consumer, EDLoc("stuffed_apple_feast"));
@@ -1806,55 +1804,35 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.NUT_BUTTER.FLUID, 250)) },
 				consumer, "hazelnut_spread");
 
-		mixing(new ItemStack(ExtraDelightItems.APPLE_SLAW.get(), 1), STANDARD_GRIND,
-				new ItemStack(Items.BOWL),
-				new Ingredient[] {
-						Ingredient.of(ModItems.CABBAGE_LEAF.get()),
-						Ingredient.of(ExtraDelightItems.SLICED_APPLE.get())
-				},
+		mixing(new ItemStack(ExtraDelightItems.APPLE_SLAW.get(), 1), STANDARD_GRIND, new ItemStack(Items.BOWL),
+				new Ingredient[] { Ingredient.of(ModItems.CABBAGE_LEAF.get()),
+						Ingredient.of(ExtraDelightItems.SLICED_APPLE.get()) },
 				new SizedFluidIngredient[] {
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.MAYO.FLUID, 250)),
-						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.VINEGAR.FLUID, 250))
-				},
+						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.VINEGAR.FLUID, 250)) },
 				consumer, "apple_slaw_fluids");
 
-		mixing(new ItemStack(ExtraDelightItems.APPLE_SLAW.get(), 1), STANDARD_GRIND,
-				new ItemStack(Items.BOWL),
-				new Ingredient[] {
-						Ingredient.of(ModItems.CABBAGE_LEAF.get()),
-						Ingredient.of(ExtraDelightTags.SLICED_APPLE),
-						Ingredient.of(ExtraDelightTags.MAYO),
-						Ingredient.of(ExtraDelightTags.VINEGAR)
-				},
-				new SizedFluidIngredient[] {},
-				consumer, "apple_slaw_bottles");
+		mixing(new ItemStack(ExtraDelightItems.APPLE_SLAW.get(), 1), STANDARD_GRIND, new ItemStack(Items.BOWL),
+				new Ingredient[] { Ingredient.of(ModItems.CABBAGE_LEAF.get()),
+						Ingredient.of(ExtraDelightTags.SLICED_APPLE), Ingredient.of(ExtraDelightTags.MAYO),
+						Ingredient.of(ExtraDelightTags.VINEGAR) },
+				new SizedFluidIngredient[] {}, consumer, "apple_slaw_bottles");
 
-		mixing(new ItemStack(ExtraDelightItems.CANDY_BAR_SALAD.get(), 1), STANDARD_GRIND,
-				new ItemStack(Items.BOWL),
-				new Ingredient[] {
-						Ingredient.of(ExtraDelightTags.CHOCOLATE_BAR),
-						Ingredient.of(ExtraDelightTags.SLICED_APPLE),
-						Ingredient.of(ExtraDelightTags.CUSTARD),
-						Ingredient.of(ExtraDelightTags.MARSHMALLOW)
-				},
+		mixing(new ItemStack(ExtraDelightItems.CANDY_BAR_SALAD.get(), 1), STANDARD_GRIND, new ItemStack(Items.BOWL),
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.CHOCOLATE_BAR),
+						Ingredient.of(ExtraDelightTags.SLICED_APPLE), Ingredient.of(ExtraDelightTags.CUSTARD),
+						Ingredient.of(ExtraDelightTags.MARSHMALLOW) },
 				new SizedFluidIngredient[] {
 						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID, 250)),
-						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.CARAMEL_SAUCE.FLUID, 250))
-				},
+						SizedFluidIngredient.of(new FluidStack(ExtraDelightFluids.CARAMEL_SAUCE.FLUID, 250)) },
 				consumer, "candy_bar_salad_fluids");
 
-		mixing(new ItemStack(ExtraDelightItems.CANDY_BAR_SALAD.get(), 1), STANDARD_GRIND,
-				new ItemStack(Items.BOWL),
-				new Ingredient[] {
-						Ingredient.of(ExtraDelightTags.WHIPPED_CREAM),
-						Ingredient.of(ExtraDelightTags.CHOCOLATE_BAR),
-						Ingredient.of(ExtraDelightTags.SLICED_APPLE),
-						Ingredient.of(ExtraDelightTags.CUSTARD),
-						Ingredient.of(ExtraDelightItems.CARAMEL_SAUCE.get()),
-						Ingredient.of(ExtraDelightTags.MARSHMALLOW)
-				},
-				new SizedFluidIngredient[] {},
-				consumer, "candy_bar_salad_bottles");
+		mixing(new ItemStack(ExtraDelightItems.CANDY_BAR_SALAD.get(), 1), STANDARD_GRIND, new ItemStack(Items.BOWL),
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.WHIPPED_CREAM),
+						Ingredient.of(ExtraDelightTags.CHOCOLATE_BAR), Ingredient.of(ExtraDelightTags.SLICED_APPLE),
+						Ingredient.of(ExtraDelightTags.CUSTARD), Ingredient.of(ExtraDelightItems.CARAMEL_SAUCE.get()),
+						Ingredient.of(ExtraDelightTags.MARSHMALLOW) },
+				new SizedFluidIngredient[] {}, consumer, "candy_bar_salad_bottles");
 	}
 
 	private void mixing(@NotNull ItemStack output, int grind, ItemStack container, Ingredient[] ingredients,
@@ -3332,7 +3310,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(ExtraDelightTags.VINEGAR) },
 				"bbq_sugar", consumer);
 
-		pot(ModItems.BONE_BROTH.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.GLASS_BOTTLE,
+		pot(ModItems.BONE_BROTH.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.MAKES_STOCK), Ingredient.of(Items.BONE) }, "stock",
 				consumer);
 
@@ -3935,23 +3913,16 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				"fried_brains", consumer);
 
 		pot(ExtraDelightItems.MULLIGATAWNY_SOUP.get(), 2, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
-				new Ingredient[] {
-						Ingredient.of(ExtraDelightItems.CURRY_POWDER.get()),
-						Ingredient.of(ExtraDelightTags.SLICED_APPLE),
-						Ingredient.of(ExtraDelightTags.PROCESSED_ONION),
-						Ingredient.of(ModItems.BONE_BROTH.get()),
-						Ingredient.of(CommonTags.FOODS_RAW_CHICKEN),
-						Ingredient.of(ModItems.RICE.get())
-				},
+				new Ingredient[] { Ingredient.of(ExtraDelightItems.CURRY_POWDER.get()),
+						Ingredient.of(ExtraDelightTags.SLICED_APPLE), Ingredient.of(ExtraDelightTags.PROCESSED_ONION),
+						Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(CommonTags.FOODS_RAW_CHICKEN),
+						Ingredient.of(ModItems.RICE.get()) },
 				"mulligatawny_soup", consumer);
 
 		pot(ExtraDelightItems.AEBLEFLAESK.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, ExtraDelightItems.TOAST,
-				new Ingredient[] {
-						Ingredient.of(ExtraDelightTags.SLICED_APPLE),
-						Ingredient.of(ExtraDelightTags.PROCESSED_ONION),
-						Ingredient.of(ModItems.BACON.get()),
-						Ingredient.of(Items.SUGAR)
-				},
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.SLICED_APPLE),
+						Ingredient.of(ExtraDelightTags.PROCESSED_ONION), Ingredient.of(ModItems.BACON.get()),
+						Ingredient.of(Items.SUGAR) },
 				"aebleflaesk", consumer);
 	}
 
@@ -5050,8 +5021,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.build(consumer);
 
 		OvenRecipeBuilder
-				.OvenRecipe(new ItemStack(ExtraDelightItems.ROLL.get(),
-						6), NORMAL_COOKING, MEDIUM_EXP, new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()), false)
+				.OvenRecipe(new ItemStack(ExtraDelightItems.ROLL.get(), 6), NORMAL_COOKING, MEDIUM_EXP,
+						new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()), false)
 				.addIngredient(CommonTags.FOODS_DOUGH)/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
 				.unlockedByAnyIngredient(ModItems.WHEAT_DOUGH.get()).build(consumer);
 
@@ -5169,67 +5140,46 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.ROMBOSSE.get(), 1), NORMAL_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.TRAY.get()), false)
-				.addIngredient(ExtraDelightTags.FRUIT_APPLE)
-				.addIngredient(ExtraDelightTags.BUTTER)
-				.addIngredient(ExtraDelightTags.SWEETENER)
-				.addIngredient(ModItems.WHEAT_DOUGH.get())
-				.addIngredient(ExtraDelightTags.CINNAMON_STICK)
-				.unlockedByAnyIngredient(ExtraDelightItems.TRAY.get())
+				.addIngredient(ExtraDelightTags.FRUIT_APPLE).addIngredient(ExtraDelightTags.BUTTER)
+				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(ModItems.WHEAT_DOUGH.get())
+				.addIngredient(ExtraDelightTags.CINNAMON_STICK).unlockedByAnyIngredient(ExtraDelightItems.TRAY.get())
 				.build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.PORK_AND_APPLES_FEAST.get(), 1), SLOW_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.SQUARE_PAN.get()), false)
-				.addIngredient(ExtraDelightTags.PROCESSED_APPLE)
-				.addIngredient(ExtraDelightTags.PORK_ROAST)
-				.addIngredient(ExtraDelightTags.PROCESSED_APPLE)
-				.addIngredient(ExtraDelightTags.PROCESSED_ONION)
-				.addIngredient(ModItems.BONE_BROTH.get())
-				.addIngredient(ExtraDelightTags.BUTTER)
-				.unlockedByAnyIngredient(ExtraDelightItems.SQUARE_PAN.get())
-				.build(consumer);
+				.addIngredient(ExtraDelightTags.PROCESSED_APPLE).addIngredient(ExtraDelightTags.PORK_ROAST)
+				.addIngredient(ExtraDelightTags.PROCESSED_APPLE).addIngredient(ExtraDelightTags.PROCESSED_ONION)
+				.addIngredient(ModItems.BONE_BROTH.get()).addIngredient(ExtraDelightTags.BUTTER)
+				.unlockedByAnyIngredient(ExtraDelightItems.SQUARE_PAN.get()).build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.APPLE_CHIPS.get(), 8), NORMAL_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.SHEET.get()), false)
-				.addIngredient(ExtraDelightTags.SLICED_APPLE)
-				.addIngredient(ExtraDelightTags.SLICED_APPLE)
-				.addIngredient(ExtraDelightTags.SLICED_APPLE)
-				.addIngredient(ExtraDelightTags.SLICED_APPLE)
-				.addIngredient(ExtraDelightTags.GROUND_CINNAMON)
-				.addIngredient(ExtraDelightTags.SLICED_APPLE)
-				.addIngredient(ExtraDelightTags.SLICED_APPLE)
-				.addIngredient(ExtraDelightTags.SLICED_APPLE)
-				.addIngredient(ExtraDelightTags.SLICED_APPLE)
-				.unlockedByAnyIngredient(ExtraDelightItems.SHEET.get())
+				.addIngredient(ExtraDelightTags.SLICED_APPLE).addIngredient(ExtraDelightTags.SLICED_APPLE)
+				.addIngredient(ExtraDelightTags.SLICED_APPLE).addIngredient(ExtraDelightTags.SLICED_APPLE)
+				.addIngredient(ExtraDelightTags.GROUND_CINNAMON).addIngredient(ExtraDelightTags.SLICED_APPLE)
+				.addIngredient(ExtraDelightTags.SLICED_APPLE).addIngredient(ExtraDelightTags.SLICED_APPLE)
+				.addIngredient(ExtraDelightTags.SLICED_APPLE).unlockedByAnyIngredient(ExtraDelightItems.SHEET.get())
 				.build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.STUFFED_APPLES_FEAST.get(), 1), NORMAL_COOKING, MEDIUM_EXP,
 						new ItemStack(ExtraDelightItems.SQUARE_PAN.get()), false)
-				.addIngredient(ExtraDelightTags.FRUIT_APPLE)
-				.addIngredient(ExtraDelightTags.DRIED_FRUIT)
-				.addIngredient(ExtraDelightTags.FRUIT_APPLE)
-				.addIngredient(ExtraDelightTags.FRUIT_APPLE)
-				.addIngredient(ExtraDelightTags.BUTTER)
-				.addIngredient(ExtraDelightTags.FRUIT_APPLE)
-				.addIngredient(ExtraDelightTags.NUTS)
-				.addIngredient(ExtraDelightTags.SWEETENER)
+				.addIngredient(ExtraDelightTags.FRUIT_APPLE).addIngredient(ExtraDelightTags.DRIED_FRUIT)
+				.addIngredient(ExtraDelightTags.FRUIT_APPLE).addIngredient(ExtraDelightTags.FRUIT_APPLE)
+				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.FRUIT_APPLE)
+				.addIngredient(ExtraDelightTags.NUTS).addIngredient(ExtraDelightTags.SWEETENER)
 				.addIngredient(ExtraDelightTags.GROUND_CINNAMON)
-				.unlockedByAnyIngredient(ExtraDelightItems.SQUARE_PAN.get())
-				.build(consumer);
+				.unlockedByAnyIngredient(ExtraDelightItems.SQUARE_PAN.get()).build(consumer);
 
 		OvenRecipeBuilder
 				.OvenRecipe(new ItemStack(ExtraDelightItems.TARTE_TATIN_IN_PAN.get(), 1), NORMAL_COOKING, MEDIUM_EXP,
 						new ItemStack(ModItems.SKILLET.get()), true)
-				.addIngredient(ExtraDelightItems.CARAMEL_SAUCE.get())
-				.addIngredient(ModItems.PIE_CRUST.get())
-				.addIngredient(ExtraDelightTags.BUTTER)
-				.addIngredient(ExtraDelightTags.FRUIT_APPLE)
-				.addIngredient(ExtraDelightTags.FRUIT_APPLE)
-				.addIngredient(ExtraDelightTags.FRUIT_APPLE)
-				.unlockedByAnyIngredient(Items.APPLE, ModItems.SKILLET.get())
-				.build(consumer);
+				.addIngredient(ExtraDelightItems.CARAMEL_SAUCE.get()).addIngredient(ModItems.PIE_CRUST.get())
+				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.FRUIT_APPLE)
+				.addIngredient(ExtraDelightTags.FRUIT_APPLE).addIngredient(ExtraDelightTags.FRUIT_APPLE)
+				.unlockedByAnyIngredient(Items.APPLE, ModItems.SKILLET.get()).build(consumer);
 	}
 
 	private void bulkBake(ItemLike mainResult, Ingredient in, RecipeOutput consumer, ItemLike pan, String name) {
@@ -5240,7 +5190,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 			int count) {
 		for (int i = 1; i < 10; i++)
 			OvenRecipeBuilder
-					.OvenRecipe(new ItemStack(mainResult, i * count), NORMAL_COOKING, MEDIUM_EXP, new ItemStack(pan), false)
+					.OvenRecipe(new ItemStack(mainResult, i * count), NORMAL_COOKING, MEDIUM_EXP, new ItemStack(pan),
+							false)
 					.addIngredient(in, i)/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */.unlockedByItems(name, pan)
 					.build(consumer, "extradelight:oven/bulk/" + name + i);
 	}
