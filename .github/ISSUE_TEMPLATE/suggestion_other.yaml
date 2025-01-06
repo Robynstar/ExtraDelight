@@ -1,5 +1,5 @@
 name: Suggestion (Other)
-description: Tasty
+description: Anything else, Kitchen or food related only please!
 title: '[Suggestion: Other]'
 body:
   - type: textarea

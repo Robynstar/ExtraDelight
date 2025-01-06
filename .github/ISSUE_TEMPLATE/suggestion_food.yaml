@@ -1,5 +1,5 @@
 name: Suggestion (Food)
-description: Tasty
+description: Food suggestions only.
 title: '[Suggestion: Food]'
 body:
   - type: input
