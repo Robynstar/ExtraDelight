@@ -100,8 +100,8 @@ public class SinkRenderer implements BlockEntityRenderer<SinkCabinetBlockEntity>
 			// Basin
 			if (copiedQuads.size() > 1 && copiedQuads.get(1) != null)
 				setUVBottom = RenderUtil.getUVFromSprite(copiedQuads.get(1).getSprite(), 1, 1, 15, 15);
-			if (copiedQuads.size() > 2 && copiedQuads.get(4) != null)
-				setUVEast = RenderUtil.getUVFromSprite(copiedQuads.get(4).getSprite(), 2, 2, 12, 5);
+			if (copiedQuads.size() > 2 && copiedQuads.get(2) != null)
+				setUVEast = RenderUtil.getUVFromSprite(copiedQuads.get(2).getSprite(), 2, 2, 12, 5);
 
 			RenderUtil.buildInvertedCubePillar(new Vector3f(1.015f / 16f, 12f / 16f, 1.015F / 16f),
 					new Vector3f(13.97f / 16f, 4f / 16f, 13f / 16f), vertexconsumer, matrix4f, matrix3f,

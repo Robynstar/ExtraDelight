@@ -4298,7 +4298,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.POPPY))
 				.save(consumer, EDLoc("dye_red_poppy"));
 		MortarRecipeBuilder
-				.grind(Ingredient.of(Items.ROSE_BUSH), new ItemStack(Items.RED_DYE, 2), FluidStack.EMPTY,
+				.grind(Ingredient.of(Items.ROSE_BUSH), new ItemStack(Items.RED_DYE, 4), FluidStack.EMPTY,
 						STANDARD_GRIND)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.ROSE_BUSH))
 				.save(consumer, EDLoc("dye_red_rose"));
@@ -4312,6 +4312,16 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						STANDARD_GRIND)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.WITHER_ROSE))
 				.save(consumer, EDLoc("dye_black_wither_rose"));
+		MortarRecipeBuilder
+				.grind(Ingredient.of(Items.TORCHFLOWER), new ItemStack(Items.ORANGE_DYE, 2), FluidStack.EMPTY,
+						STANDARD_GRIND)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.TORCHFLOWER))
+				.save(consumer, EDLoc("dye_orange_torchflower"));
+		MortarRecipeBuilder
+				.grind(Ingredient.of(Items.PITCHER_PLANT), new ItemStack(Items.CYAN_DYE, 2), FluidStack.EMPTY,
+						STANDARD_GRIND)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.PITCHER_PLANT))
+				.save(consumer, EDLoc("dye_cyan_pitcher_plant"));
 
 		MortarRecipeBuilder
 				.grind(Ingredient.of(Items.BONE), new ItemStack(Items.BONE_MEAL, 4), FluidStack.EMPTY, LONG_GRIND)
