@@ -1,0 +1,29 @@
+name: Suggestion (Food)
+description: Tasty
+title: '[Suggestion: Food]'
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Food Name
+    validations:
+      required: true
+  - type: textarea
+    id: recipe
+    attributes:
+      label: Recipe
+      description: Please link or write out the recipe for the suggested food item.
+    validations:
+      required: true
+  - type: textarea
+    id: etc
+    attributes:
+      label: Additional Information
+      description: >-
+        Include any other relevant info such as country of origin, variants,
+        wikipedia pages, personal stories, etc.
+  - type: markdown
+    attributes:
+      value: >-
+        This template was generated with [Issue Forms
+        Creator](https://issue-forms-creator.netlify.app)
