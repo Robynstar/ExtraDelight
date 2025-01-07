@@ -114,10 +114,10 @@ public class EnglishLoc extends LanguageProvider {
 				"The oven requires baking vessels for its recipes. Make one of each.");
 
 		this.add(ExtraDelight.MOD_ID + ".advancement.mortar.name", "The Daily Grind");
-		this.add(ExtraDelight.MOD_ID + ".advancement.mortar.desc", "Make and use a mortar.");
+		this.add(ExtraDelight.MOD_ID + ".advancement.mortar.desc", "Make a mortar.");
 
 		this.add(ExtraDelight.MOD_ID + ".advancement.grind.name", "Crushing Power");
-		this.add(ExtraDelight.MOD_ID + ".advancement.grind.desc", "Make or find a pestle.");
+		this.add(ExtraDelight.MOD_ID + ".advancement.grind.desc", "Use a pestle on a mortar.");
 
 		this.add(ExtraDelight.MOD_ID + ".advancement.flour.name", "A Little Less Roughage");
 		this.add(ExtraDelight.MOD_ID + ".advancement.flour.desc", "Make some flour and make your bread less fibrous.");

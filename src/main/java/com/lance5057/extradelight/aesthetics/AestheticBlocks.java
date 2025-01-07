@@ -35,6 +35,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.CarpetBlock;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.PipeBlock;
 import net.minecraft.world.level.block.SoundType;
@@ -66,6 +67,7 @@ public class AestheticBlocks {
 	public static enum WOOD {
 		oak, dark_oak, spruce, birch, jungle, acacia, crimson, warped, mangrove, cinnamon, cherry, bamboo, fruit
 	};
+
 	public static enum EXTRA_LEAVES {
 		azalea, flowering_azalea, hazelnut, apple
 	};
@@ -79,6 +81,8 @@ public class AestheticBlocks {
 
 	public static final List<DeferredBlock<Block>> WALLPAPER_BLOCKS = new ArrayList<DeferredBlock<Block>>();
 	public static final List<DeferredBlock<Block>> MOLDED_WALLPAPER_BLOCKS = new ArrayList<DeferredBlock<Block>>();
+	public static final List<DeferredBlock<Block>> GINGHAM_BLOCKS = new ArrayList<DeferredBlock<Block>>();
+	public static final List<DeferredBlock<Block>> GINGHAM_CARPET_BLOCKS = new ArrayList<DeferredBlock<Block>>();
 
 	public static final List<DeferredItem<Item>> STEP_STOOL_ITEMS = new ArrayList<DeferredItem<Item>>();
 	public static final List<DeferredItem<Item>> SPICE_RACKS_ITEMS = new ArrayList<DeferredItem<Item>>();
@@ -89,6 +93,8 @@ public class AestheticBlocks {
 
 	public static final List<DeferredItem<Item>> WALLPAPER_ITEMS = new ArrayList<DeferredItem<Item>>();
 	public static final List<DeferredItem<Item>> MOLDED_WALLPAPER_ITEMS = new ArrayList<DeferredItem<Item>>();
+	public static final List<DeferredItem<Item>> GINGHAM_ITEMS = new ArrayList<DeferredItem<Item>>();
+	public static final List<DeferredItem<Item>> GINGHAM_CARPET_ITEMS = new ArrayList<DeferredItem<Item>>();
 
 	public static final DeferredHolder<Block, CornHuskDollBlock> CORN_HUSK_DOLL = BLOCKS.register("corn_husk_doll",
 			() -> new CornHuskDollBlock());
@@ -177,9 +183,8 @@ public class AestheticBlocks {
 
 				blocks.add(b);
 				items.add(t);
-			}
-			else if (w.toString() == "fruit") {
-				for(EXTRA_LEAVES f : EXTRA_LEAVES.values()) {
+			} else if (w.toString() == "fruit") {
+				for (EXTRA_LEAVES f : EXTRA_LEAVES.values()) {
 					DeferredBlock<Block> b = BLOCKS.register(f.toString() + "_" + name, block);
 					DeferredItem<Item> t = ITEMS.register(f.toString() + "_" + name,
 							() -> new HelmetBlockItem(b.get(), new Item.Properties()));
@@ -228,34 +233,12 @@ public class AestheticBlocks {
 		registerAllColorsHelm("ribbon_bow",
 				() -> new RibbonBlock(Properties.ofFullCopy(Blocks.BLACK_WOOL).noOcclusion().noCollission()), BOWS,
 				BOW_ITEMS);
-	}
 
-//	public static void loot(BlockLootSubProvider bl) {
-//		for (DeferredBlock<Block> b : STEP_STOOLS)
-//			bl..dropSelf(b.get());
-//		for (DeferredBlock<Block> b : SPICE_RACKS)
-//			bl.dropSelf(b.get());
-//		for (DeferredBlock<Block> b : SPICE_RACKS_FULL)
-//			bl.dropSelf(b.get());
-//		for (DeferredBlock<Block> b : KNIFE_BLOCKS)
-//			bl.dropSelf(b.get());
-//		for (DeferredBlock<Block> b : CABINETS)
-//			bl.dropSelf(b.get());
-//		for (DeferredBlock<Block> b : DRIED_CORN_FENCE)
-//			bl.dropSelf(b.get());
-//
-//		for (DeferredBlock<Block> b : WALLPAPER_BLOCKS)
-//			bl.dropSelf(b.get());
-//		for (DeferredBlock<Block> b : MOLDED_WALLPAPER_BLOCKS)
-//			bl.dropSelf(b.get());
-//
-//		bl.dropSelf(CORN_HUSK_DOLL.get());
-//
-//		for (DeferredBlock<Block> b : WREATHS)
-//			bl.dropSelf(b.get());
-//		for (DeferredBlock<Block> b : BOWS)
-//			bl.dropSelf(b.get());
-//	}
+		registerAllColors("gingham", () -> new Block(Properties.ofFullCopy(Blocks.BLACK_WOOL)), GINGHAM_BLOCKS,
+				GINGHAM_ITEMS);
+		registerAllColors("gingham_carpet", () -> new CarpetBlock(Properties.ofFullCopy(Blocks.BLACK_CARPET)),
+				GINGHAM_CARPET_BLOCKS, GINGHAM_CARPET_ITEMS);
+	}
 
 	public static void blockModel(BlockStateProvider bsp) {
 		for (int i = 0; i < WOOD.values().length; i++) {
@@ -304,16 +287,23 @@ public class AestheticBlocks {
 						.renderType("cutout"));
 			else if (WOOD.values()[i].toString() == "fruit")
 				for (int j = 0; j < EXTRA_LEAVES.values().length; j++) {
-					if (EXTRA_LEAVES.values()[j].toString() == "azalea" || EXTRA_LEAVES.values()[j].toString() == "flowering_azalea") {
+					if (EXTRA_LEAVES.values()[j].toString() == "azalea"
+							|| EXTRA_LEAVES.values()[j].toString() == "flowering_azalea") {
 						bsp.horizontalBlock(WREATHS.get(WOOD.values().length + j - 2).get(), bsp.models()
-								.withExistingParent(EXTRA_LEAVES.values()[j].toString() + "_wreath_block", bsp.modLoc("block/wreath"))
+								.withExistingParent(EXTRA_LEAVES.values()[j].toString() + "_wreath_block",
+										bsp.modLoc("block/wreath"))
 								.texture("all", bsp.mcLoc("block/" + EXTRA_LEAVES.values()[j].toString() + "_leaves"))
 								.renderType("cutout"));
 					} else {
-						bsp.horizontalBlock(WREATHS.get(WOOD.values().length + j - 2).get(), bsp.models()
-								.withExistingParent(EXTRA_LEAVES.values()[j].toString() + "_wreath_block", bsp.modLoc("block/wreath"))
-								.texture("all", ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/crops/fruit/" + EXTRA_LEAVES.values()[j].toString() + "/" + EXTRA_LEAVES.values()[j].toString() + "_leaves"))
-								.renderType("cutout"));
+						bsp.horizontalBlock(WREATHS.get(WOOD.values().length + j - 2).get(),
+								bsp.models()
+										.withExistingParent(EXTRA_LEAVES.values()[j].toString() + "_wreath_block",
+												bsp.modLoc("block/wreath"))
+										.texture("all",
+												ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+														"block/crops/fruit/" + EXTRA_LEAVES.values()[j].toString() + "/"
+																+ EXTRA_LEAVES.values()[j].toString() + "_leaves"))
+										.renderType("cutout"));
 					}
 				}
 
@@ -342,6 +332,13 @@ public class AestheticBlocks {
 							bsp.modLoc("block/ribbon/" + DyeColor.values()[i].toString().toLowerCase() + "_ribbon"))
 					.texture("particle",
 							bsp.modLoc("block/ribbon/" + DyeColor.values()[i].toString().toLowerCase() + "_ribbon")));
+
+			bsp.simpleBlock(GINGHAM_BLOCKS.get(i).get(),
+					bsp.models().cubeAll("gingham_" + DyeColor.values()[i].toString(),
+							bsp.modLoc("block/gingham/" + DyeColor.values()[i].toString())));
+			bsp.simpleBlock(GINGHAM_CARPET_BLOCKS.get(i).get(),
+					bsp.models().carpet("gingham_carpet_" + DyeColor.values()[i].toString(),
+							bsp.modLoc("block/gingham/" + DyeColor.values()[i].toString())));
 		}
 
 		for (int i = 0; i < WOOD.values().length; i++) {
@@ -424,17 +421,19 @@ public class AestheticBlocks {
 				tmp.getBuilder(WREATHS.get(i).getId().getPath())
 						.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/wreath")))
 						.texture("all", tmp.mcLoc("block/" + WOOD.values()[i].toString() + "_leaves"));
-			}
-			else if (WOOD.values()[i].toString() == "fruit") {
+			} else if (WOOD.values()[i].toString() == "fruit") {
 				for (int j = 0; j < EXTRA_LEAVES.values().length; j++) {
-					if (EXTRA_LEAVES.values()[j].toString() == "azalea" || EXTRA_LEAVES.values()[j].toString() == "flowering_azalea") {
+					if (EXTRA_LEAVES.values()[j].toString() == "azalea"
+							|| EXTRA_LEAVES.values()[j].toString() == "flowering_azalea") {
 						tmp.getBuilder(WREATHS.get(WOOD.values().length + j - 2).getId().getPath())
 								.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/wreath")))
 								.texture("all", tmp.mcLoc("block/" + EXTRA_LEAVES.values()[j].toString() + "_leaves"));
 					} else {
 						tmp.getBuilder(WREATHS.get(WOOD.values().length + j - 2).getId().getPath())
-								.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/wreath")))
-								.texture("all", ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/crops/fruit/" + EXTRA_LEAVES.values()[j].toString() + "/" + EXTRA_LEAVES.values()[j].toString() + "_leaves"));
+								.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/wreath"))).texture("all",
+										ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+												"block/crops/fruit/" + EXTRA_LEAVES.values()[j].toString() + "/"
+														+ EXTRA_LEAVES.values()[j].toString() + "_leaves"));
 					}
 				}
 			}
@@ -449,6 +448,16 @@ public class AestheticBlocks {
 			tmp.getBuilder(BOWS.get(i).getId().getPath())
 					.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/ribbon_bow")))
 					.texture("0", tmp.modLoc("block/ribbon/" + DyeColor.values()[i].toString() + "_ribbon"));
+
+			tmp.getBuilder(GINGHAM_ITEMS.get(i).getId().getPath())
+					.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+							"block/" + BuiltInRegistries.BLOCK
+									.getKey(((BlockItem) GINGHAM_ITEMS.get(i).get()).getBlock()).getPath())));
+
+			tmp.getBuilder(GINGHAM_CARPET_ITEMS.get(i).getId().getPath())
+					.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+							"block/" + BuiltInRegistries.BLOCK
+									.getKey(((BlockItem) GINGHAM_CARPET_ITEMS.get(i).get()).getBlock()).getPath())));
 		}
 
 		for (int i = 0; i < WOOD.values().length; i++) {
@@ -480,8 +489,7 @@ public class AestheticBlocks {
 			lp.add(COUNTER_CABINETS.get(i).get(), w + " Cabinet (Countertop)");
 			if (WOOD.values()[i].toString() != "fruit" && WOOD.values()[i].toString() != "bamboo") {
 				lp.add(WREATHS.get(i).get(), w + " Wreath");
-			}
-			else if (WOOD.values()[i].toString() == "fruit") {
+			} else if (WOOD.values()[i].toString() == "fruit") {
 				for (int j = 0; j < EXTRA_LEAVES.values().length; j++) {
 					String f = EXTRA_LEAVES.values()[j].toString();
 					f = WordUtils.capitalize(f.replace('_', ' '));
@@ -509,7 +517,8 @@ public class AestheticBlocks {
 		lp.add(CORN_HUSK_DOLL.get(), "Corn Husk Doll");
 	}
 
-	// oak, dark_oak, spruce, birch, jungle, acacia, crimson, warped, mangrove, cherry, bamboo
+	// oak, dark_oak, spruce, birch, jungle, acacia, crimson, warped, mangrove,
+	// cherry, bamboo
 	// cinnamon, fruit
 	public static void Recipes(RecipeOutput consumer) {
 		woodRecipe(consumer, Items.ACACIA_SLAB, Items.ACACIA_TRAPDOOR, Items.ACACIA_FENCE, Items.ACACIA_LEAVES,

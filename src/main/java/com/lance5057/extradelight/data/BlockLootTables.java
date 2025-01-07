@@ -6,7 +6,6 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-import net.minecraft.world.item.Item;
 import org.jetbrains.annotations.NotNull;
 
 import com.lance5057.extradelight.ExtraDelightBlocks;
@@ -27,6 +26,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.ItemLike;
@@ -88,6 +88,11 @@ public class BlockLootTables extends BlockLootSubProvider {
 		for (DeferredBlock<Block> b : AestheticBlocks.WREATHS)
 			dropSelf(b.get());
 		for (DeferredBlock<Block> b : AestheticBlocks.BOWS)
+			dropSelf(b.get());
+
+		for (DeferredBlock<Block> b : AestheticBlocks.GINGHAM_BLOCKS)
+			dropSelf(b.get());
+		for (DeferredBlock<Block> b : AestheticBlocks.GINGHAM_CARPET_BLOCKS)
 			dropSelf(b.get());
 
 		this.dropSelf(ExtraDelightBlocks.OVEN.get());
@@ -493,13 +498,10 @@ public class BlockLootTables extends BlockLootSubProvider {
 
 	protected void createFruitLeavesDrop(Block leaves, Block sapling, Item fruit) {
 		this.add(leaves, (p_124101_) -> {
-			return createLeavesDrops(p_124101_, sapling,
-					NORMAL_LEAVES_SAPLING_CHANCES)
+			return createLeavesDrops(p_124101_, sapling, NORMAL_LEAVES_SAPLING_CHANCES)
 					.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
-							.when(LootItemBlockStatePropertyCondition
-									.hasBlockStateProperties(leaves)
-									.setProperties(StatePropertiesPredicate.Builder.properties()
-											.hasProperty(FruitLeafBlock.AGE, 3)))
+							.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(leaves).setProperties(
+									StatePropertiesPredicate.Builder.properties().hasProperty(FruitLeafBlock.AGE, 3)))
 							.add(LootItem.lootTableItem(fruit)));
 		});
 	}

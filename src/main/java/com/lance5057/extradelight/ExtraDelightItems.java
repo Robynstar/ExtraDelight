@@ -218,6 +218,15 @@ public class ExtraDelightItems {
 	public static final DeferredItem<Item> NETHERITE_SPOON = ITEMS.register("netherite_spoon",
 			() -> new SwordItem(Tiers.NETHERITE, new Item.Properties()));
 
+	public static final DeferredItem<Item> TAP = ITEMS.register("tap",
+			() -> new BlockItem(ExtraDelightBlocks.TAP.get(), new Item.Properties()));
+
+	public static final DeferredItem<Item> KEG = ITEMS.register("keg_item",
+			() -> new BlockItem(ExtraDelightBlocks.KEG.get(), new Item.Properties()));
+
+	public static final DeferredItem<Item> JAR = ITEMS.register("jar", () -> new JarItem(ExtraDelightBlocks.JAR.get(),
+			new Item.Properties().component(ExtraDelightComponents.FLUID.get(), SimpleFluidContent.EMPTY).stacksTo(1)));
+
 	public static final DeferredItem<Item> YEAST = ITEMS.register("yeast",
 			() -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)));
 	public static final DeferredItem<Item> YEAST_POT = ITEMS.register("yeast_pot",
@@ -1435,12 +1444,6 @@ public class ExtraDelightItems {
 	public static final DeferredItem<Item> CINNAMON_SAPLING = ITEMS.register("cinnamon_sapling",
 			() -> new BlockItem(ExtraDelightBlocks.CINNAMON_SAPLING.get(), new Item.Properties()));
 
-	public static final DeferredItem<Item> TAP = ITEMS.register("tap",
-			() -> new BlockItem(ExtraDelightBlocks.TAP.get(), new Item.Properties()));
-
-	public static final DeferredItem<Item> KEG = ITEMS.register("keg_item",
-			() -> new BlockItem(ExtraDelightBlocks.KEG.get(), new Item.Properties()));
-
 	public static final DeferredItem<Item> FRUIT_LOG = ITEMS.register("fruit_log",
 			() -> new BlockItem(ExtraDelightBlocks.FRUIT_LOG.get(), new Item.Properties()) {
 				public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
@@ -1917,9 +1920,6 @@ public class ExtraDelightItems {
 
 	public static final DeferredItem<Item> HAZELNUT_SAPLING = ITEMS.register("hazelnut_sapling",
 			() -> new BlockItem(ExtraDelightBlocks.HAZELNUT_SAPLING.get(), new Item.Properties()));
-
-	public static final DeferredItem<Item> JAR = ITEMS.register("jar", () -> new JarItem(ExtraDelightBlocks.JAR.get(),
-			new Item.Properties().component(ExtraDelightComponents.FLUID.get(), SimpleFluidContent.EMPTY).stacksTo(1)));
 
 	public static final DeferredItem<Item> ICE_CREAM_SUNDAE = ITEMS.register("ice_cream_sundae",
 			() -> new ToolTipConsumableItem(foodItem(EDFoods.ICE_CREAM_SUNDAE).craftRemainder(Items.GLASS_BOTTLE),

@@ -8,6 +8,7 @@ import com.lance5057.extradelight.armor.EDArmorMaterial;
 import com.lance5057.extradelight.items.dynamicfood.api.PieceTypes;
 import com.lance5057.extradelight.network.NetworkHandler;
 import com.lance5057.extradelight.worldgen.features.ExtraDelightFeatures;
+import com.lance5057.extradelight.worldgen.placers.FoliagePlacerRegistry;
 
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
@@ -54,6 +55,8 @@ public class ExtraDelight {
 		ExtraDelightContainers.MENU_TYPES.register(modEventBus);
 		ExtraDelightLootModifiers.LOOT_MODIFIERS.register(modEventBus);
 		EDArmorMaterial.register(modEventBus);
+		
+		FoliagePlacerRegistry.PLACER.register(modEventBus);
 		ExtraDelightWorldGen.FEATURES.register(modEventBus);
 
 		ExtraDelightFeatures.FEATURES.register(modEventBus);

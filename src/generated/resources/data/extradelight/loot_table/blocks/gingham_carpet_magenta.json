@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "extradelight:cooking_oil"
+          "name": "extradelight:gingham_carpet_magenta"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "extradelight:blocks/cooking_oil"
+  "random_sequence": "extradelight:blocks/gingham_carpet_magenta"
 }

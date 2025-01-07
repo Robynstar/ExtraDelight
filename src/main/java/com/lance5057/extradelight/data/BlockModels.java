@@ -664,7 +664,7 @@ public class BlockModels extends BlockStateProvider {
 			return ConfiguredModel.builder().modelFile(model).build();
 		});
 	}
-	
+
 	public void vanillaFruitLeafBlock(VanillaFruitLeafBlock block, String name) {
 		getVariantBuilder(block).forAllStates(state -> {
 			int age = state.getValue(VanillaFruitLeafBlock.AGE);

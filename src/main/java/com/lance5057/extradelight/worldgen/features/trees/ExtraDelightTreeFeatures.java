@@ -2,6 +2,7 @@ package com.lance5057.extradelight.worldgen.features.trees;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightBlocks;
+import com.lance5057.extradelight.worldgen.placers.FruitLeafPlacer;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
@@ -13,7 +14,6 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.FancyFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.RandomSpreadFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.BendingTrunkPlacer;
@@ -37,23 +37,19 @@ public class ExtraDelightTreeFeatures {
 
 	public static TreeConfiguration.TreeConfigurationBuilder createHazelnutTree() {
 		return new TreeConfiguration.TreeConfigurationBuilder(
-				BlockStateProvider.simple(ExtraDelightBlocks.FRUIT_LOG.get()),
-				new StraightTrunkPlacer(2, 0, 2),
+				BlockStateProvider.simple(ExtraDelightBlocks.FRUIT_LOG.get()), new StraightTrunkPlacer(4, 0, 2),
 				BlockStateProvider.simple(ExtraDelightBlocks.HAZELNUT_LEAVES.get()),
-				new FancyFoliagePlacer(ConstantInt.of(2), ConstantInt.of(3), 3),
-				new TwoLayersFeatureSize(1, 0, 3));
+				new FruitLeafPlacer(ConstantInt.of(2), ConstantInt.of(0), 3), new TwoLayersFeatureSize(1, 2, 1));
 	}
 
-	public static final ResourceKey<ConfiguredFeature<?, ?>> APPLE = ResourceKey.create(
-			Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "apple"));
+	public static final ResourceKey<ConfiguredFeature<?, ?>> APPLE = ResourceKey.create(Registries.CONFIGURED_FEATURE,
+			ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "apple"));
 
 	public static TreeConfiguration.TreeConfigurationBuilder createAppleTree() {
 		return new TreeConfiguration.TreeConfigurationBuilder(
-				BlockStateProvider.simple(ExtraDelightBlocks.FRUIT_LOG.get()),
-				new StraightTrunkPlacer(2, 0, 2),
+				BlockStateProvider.simple(ExtraDelightBlocks.FRUIT_LOG.get()), new StraightTrunkPlacer(2, 0, 2),
 				BlockStateProvider.simple(ExtraDelightBlocks.APPLE_LEAVES.get()),
-				new FancyFoliagePlacer(ConstantInt.of(2), ConstantInt.of(3), 3),
-				new TwoLayersFeatureSize(1, 0, 3));
+				new FruitLeafPlacer(ConstantInt.of(2), ConstantInt.of(0), 3), new TwoLayersFeatureSize(3, 0, 3));
 	}
 
 	public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> p_256317_) {

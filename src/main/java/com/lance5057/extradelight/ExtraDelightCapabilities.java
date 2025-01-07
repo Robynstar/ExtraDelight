@@ -18,6 +18,8 @@ public class ExtraDelightCapabilities {
 				(o, d) -> o.getItemHandler());
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ExtraDelightBlockEntities.MIXING_BOWL.get(),
 				(o, d) -> o.getItemHandler());
+		event.registerBlockEntity(Capabilities.FluidHandler.BLOCK, ExtraDelightBlockEntities.MIXING_BOWL.get(),
+				(o, d) -> o.getFluidTank());
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ExtraDelightBlockEntities.MORTAR.get(),
 				(o, d) -> o.getItemHandler());
 		event.registerBlockEntity(Capabilities.FluidHandler.BLOCK, ExtraDelightBlockEntities.MORTAR.get(),
@@ -36,6 +38,8 @@ public class ExtraDelightCapabilities {
 				(o, d) -> o.getItemHandler());
 
 		event.registerBlockEntity(Capabilities.FluidHandler.BLOCK, ExtraDelightBlockEntities.TAP.get(),
+				(o, d) -> o.getFluidHandler());
+		event.registerBlockEntity(Capabilities.FluidHandler.BLOCK, ExtraDelightBlockEntities.SINK_BLOCK.get(),
 				(o, d) -> o.getFluidHandler());
 
 		event.registerBlockEntity(Capabilities.FluidHandler.BLOCK, ExtraDelightBlockEntities.MELTING_POT.get(),

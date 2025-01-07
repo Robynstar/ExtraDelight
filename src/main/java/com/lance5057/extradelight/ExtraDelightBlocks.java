@@ -1,7 +1,18 @@
 package com.lance5057.extradelight;
 
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
-import com.lance5057.extradelight.blocks.*;
+import com.lance5057.extradelight.blocks.BakingStoneBlock;
+import com.lance5057.extradelight.blocks.ChocolateStyleBlock;
+import com.lance5057.extradelight.blocks.FrostableBlock;
+import com.lance5057.extradelight.blocks.FruitLeafBlock;
+import com.lance5057.extradelight.blocks.HorizontalPanBlock;
+import com.lance5057.extradelight.blocks.JellyBlock;
+import com.lance5057.extradelight.blocks.RecipeFeastBlock;
+import com.lance5057.extradelight.blocks.RecipeFondueFeastBlock;
+import com.lance5057.extradelight.blocks.StrippableLog;
+import com.lance5057.extradelight.blocks.TapBlock;
+import com.lance5057.extradelight.blocks.VanillaFruitLeafBlock;
+import com.lance5057.extradelight.blocks.YeastPotBlock;
 import com.lance5057.extradelight.blocks.chocolatebox.ChocolateBoxBlock;
 import com.lance5057.extradelight.blocks.crops.ChiliCrop;
 import com.lance5057.extradelight.blocks.crops.CoffeeBush;
@@ -29,10 +40,13 @@ import com.lance5057.extradelight.workstations.mortar.MortarBlock;
 import com.lance5057.extradelight.workstations.oven.OvenBlock;
 import com.lance5057.extradelight.worldgen.features.trees.ExtraDelightTreeGrowers;
 
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ButtonBlock;
@@ -61,6 +75,7 @@ import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
+import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.ItemAbilities;
@@ -362,7 +377,19 @@ public class ExtraDelightBlocks {
 
 	public static final DeferredBlock<PieBlock> PUMPKIN_ROLL = BLOCKS.register("pumpkin_roll",
 			() -> new PieBlock(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.COLOR_BROWN),
-					ExtraDelightItems.PUMPKIN_ROLL));
+					ExtraDelightItems.TARTE_TATIN_SLICE) {
+				@Override
+				public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos,
+						CollisionContext context) {
+					switch (state.getValue(PieBlock.FACING)) {
+					case Direction.EAST:
+					case Direction.WEST:
+						return Block.box(2.0D, 0.0D, 4.5D, 14.0D, 7.0D, 11.5D);
+					default:
+						return Block.box(4.5D, 0.0D, 2.0D, 11.5D, 7.0D, 14.0D);
+					}
+				}
+			});
 
 	public static final DeferredBlock<RecipeFeastBlock> APPLE_CRISP = BLOCKS.register("apple_crisp",
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.COLOR_BROWN),
@@ -565,8 +592,14 @@ public class ExtraDelightBlocks {
 	public static final DeferredBlock<RecipeFeastBlock> PUNCH = BLOCKS.register("punch",
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_PINK), true,
 					Block.box(2.0D, 0.0D, 2.0D, 14.0D, 5.0D, 14.0D)));
-	public static final DeferredBlock<Block> MILK_TART = ExtraDelightBlocks.BLOCKS.register("milk_tart",
-			() -> new PieBlock(Block.Properties.ofFullCopy(Blocks.CAKE), ExtraDelightItems.MILK_TART_SLICE));
+	public static final DeferredBlock<PieBlock> MILK_TART = ExtraDelightBlocks.BLOCKS.register("milk_tart",
+			() -> new PieBlock(Block.Properties.ofFullCopy(Blocks.CAKE), ExtraDelightItems.MILK_TART_SLICE) {
+				@Override
+				public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos,
+						CollisionContext context) {
+					return Block.box(2.0D, 0.0D, 2.0D, 14.0D, 2.0D, 14.0D);
+				}
+			});
 	public static final DeferredBlock<RecipeFeastBlock> MINT_LAMB = BLOCKS.register("mint_lamb",
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.COLOR_BROWN),
 					true, Block.box(0.0D, 0.0D, 4.0D, 16.0D, 1.0D, 12.0D),
@@ -939,17 +972,25 @@ public class ExtraDelightBlocks {
 					true, Block.box(2.0D, 2.0D, 2.0D, 14.0D, 7.0D, 14.0D)));
 
 	public static final DeferredBlock<RecipeFondueFeastBlock> MILK_CHOCOLATE_FONDUE = BLOCKS
-			.register("milk_chocolate_fondue", () -> new RecipeFondueFeastBlock(
-					Block.Properties.ofFullCopy(Blocks.BROWN_WOOL).mapColor(MapColor.COLOR_BROWN), true, fondue));
+			.register("milk_chocolate_fondue",
+					() -> new RecipeFondueFeastBlock(
+							Block.Properties.ofFullCopy(Blocks.BROWN_WOOL).mapColor(MapColor.COLOR_BROWN), true,
+							fondue));
 	public static final DeferredBlock<RecipeFondueFeastBlock> DARK_CHOCOLATE_FONDUE = BLOCKS
-			.register("dark_chocolate_fondue", () -> new RecipeFondueFeastBlock(
-					Block.Properties.ofFullCopy(Blocks.BROWN_WOOL).mapColor(MapColor.COLOR_BROWN), true, fondue));
+			.register("dark_chocolate_fondue",
+					() -> new RecipeFondueFeastBlock(
+							Block.Properties.ofFullCopy(Blocks.BROWN_WOOL).mapColor(MapColor.COLOR_BROWN), true,
+							fondue));
 	public static final DeferredBlock<RecipeFondueFeastBlock> WHITE_CHOCOLATE_FONDUE = BLOCKS
-			.register("white_chocolate_fondue", () -> new RecipeFondueFeastBlock(
-					Block.Properties.ofFullCopy(Blocks.BROWN_WOOL).mapColor(MapColor.COLOR_BROWN), true, fondue));
+			.register("white_chocolate_fondue",
+					() -> new RecipeFondueFeastBlock(
+							Block.Properties.ofFullCopy(Blocks.BROWN_WOOL).mapColor(MapColor.COLOR_BROWN), true,
+							fondue));
 	public static final DeferredBlock<RecipeFondueFeastBlock> BLOOD_CHOCOLATE_FONDUE = BLOCKS
-			.register("blood_chocolate_fondue", () -> new RecipeFondueFeastBlock(
-					Block.Properties.ofFullCopy(Blocks.BROWN_WOOL).mapColor(MapColor.COLOR_BROWN), true, fondue));
+			.register("blood_chocolate_fondue",
+					() -> new RecipeFondueFeastBlock(
+							Block.Properties.ofFullCopy(Blocks.BROWN_WOOL).mapColor(MapColor.COLOR_BROWN), true,
+							fondue));
 
 	public static final DeferredBlock<LiquidBlock> COCOA_BUTTER_FLUID_BLOCK = BLOCKS.register(
 			"cocoa_butter_fluid_block",
@@ -994,8 +1035,7 @@ public class ExtraDelightBlocks {
 					Block.Properties.ofFullCopy(ModBlocks.BEETROOT_CRATE.get()).mapColor(MapColor.TERRACOTTA_YELLOW)));
 
 	public static final DeferredBlock<VanillaFruitLeafBlock> APPLE_LEAVES = BLOCKS.register("apple_leaves",
-			() -> new VanillaFruitLeafBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES),
-					Items.APPLE));
+			() -> new VanillaFruitLeafBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES), Items.APPLE));
 	public static final DeferredBlock<SaplingBlock> APPLE_SAPLING = BLOCKS.register("apple_sapling",
 			() -> new SaplingBlock(ExtraDelightTreeGrowers.APPLE,
 					Block.Properties.ofFullCopy(Blocks.DARK_OAK_SAPLING)));
@@ -1006,6 +1046,12 @@ public class ExtraDelightBlocks {
 	public static final DeferredBlock<RecipeFeastBlock> STUFFED_APPLES_FEAST = BLOCKS.register("stuffed_apples",
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.COLOR_BROWN),
 					true, pan));
-	public static final DeferredBlock<Block> TARTE_TATIN = ExtraDelightBlocks.BLOCKS.register("tarte_tatin",
-			() -> new PieBlock(Block.Properties.ofFullCopy(Blocks.CAKE), ExtraDelightItems.TARTE_TATIN_SLICE));
+	public static final DeferredBlock<PieBlock> TARTE_TATIN = ExtraDelightBlocks.BLOCKS.register("tarte_tatin",
+			() -> new PieBlock(Block.Properties.ofFullCopy(Blocks.CAKE), ExtraDelightItems.TARTE_TATIN_SLICE) {
+				@Override
+				public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos,
+						CollisionContext context) {
+					return Block.box(2.0D, 0.0D, 2.0D, 14.0D, 3.0D, 14.0D);
+				}
+			});
 }
