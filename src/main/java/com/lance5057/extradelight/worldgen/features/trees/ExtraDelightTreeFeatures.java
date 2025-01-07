@@ -14,9 +14,8 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.RandomSpreadFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.FancyFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.BendingTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 
 public class ExtraDelightTreeFeatures {
@@ -26,9 +25,9 @@ public class ExtraDelightTreeFeatures {
 	public static TreeConfiguration.TreeConfigurationBuilder createCinnamonTree() {
 		return new TreeConfiguration.TreeConfigurationBuilder(
 				BlockStateProvider.simple(ExtraDelightBlocks.CINNAMON_LOG.get()),
-				new BendingTrunkPlacer(2, 0, 10, 6, ConstantInt.of(1)),
+				new StraightTrunkPlacer(4, 2, 2),
 				BlockStateProvider.simple(ExtraDelightBlocks.CINNAMON_LEAVES.get()),
-				new RandomSpreadFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), ConstantInt.of(2), 12),
+				new FancyFoliagePlacer(ConstantInt.of(1), ConstantInt.of(0), 3),
 				new TwoLayersFeatureSize(1, 0, 2));
 	}
 
