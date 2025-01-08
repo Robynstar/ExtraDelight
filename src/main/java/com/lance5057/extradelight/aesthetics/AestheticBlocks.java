@@ -35,7 +35,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.CarpetBlock;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.PipeBlock;
 import net.minecraft.world.level.block.SoundType;
@@ -81,8 +80,8 @@ public class AestheticBlocks {
 
 	public static final List<DeferredBlock<Block>> WALLPAPER_BLOCKS = new ArrayList<DeferredBlock<Block>>();
 	public static final List<DeferredBlock<Block>> MOLDED_WALLPAPER_BLOCKS = new ArrayList<DeferredBlock<Block>>();
-	public static final List<DeferredBlock<Block>> GINGHAM_BLOCKS = new ArrayList<DeferredBlock<Block>>();
-	public static final List<DeferredBlock<Block>> GINGHAM_CARPET_BLOCKS = new ArrayList<DeferredBlock<Block>>();
+//	public static final List<DeferredBlock<Block>> GINGHAM_BLOCKS = new ArrayList<DeferredBlock<Block>>();
+//	public static final List<DeferredBlock<Block>> GINGHAM_CARPET_BLOCKS = new ArrayList<DeferredBlock<Block>>();
 
 	public static final List<DeferredItem<Item>> STEP_STOOL_ITEMS = new ArrayList<DeferredItem<Item>>();
 	public static final List<DeferredItem<Item>> SPICE_RACKS_ITEMS = new ArrayList<DeferredItem<Item>>();
@@ -93,8 +92,8 @@ public class AestheticBlocks {
 
 	public static final List<DeferredItem<Item>> WALLPAPER_ITEMS = new ArrayList<DeferredItem<Item>>();
 	public static final List<DeferredItem<Item>> MOLDED_WALLPAPER_ITEMS = new ArrayList<DeferredItem<Item>>();
-	public static final List<DeferredItem<Item>> GINGHAM_ITEMS = new ArrayList<DeferredItem<Item>>();
-	public static final List<DeferredItem<Item>> GINGHAM_CARPET_ITEMS = new ArrayList<DeferredItem<Item>>();
+//	public static final List<DeferredItem<Item>> GINGHAM_ITEMS = new ArrayList<DeferredItem<Item>>();
+//	public static final List<DeferredItem<Item>> GINGHAM_CARPET_ITEMS = new ArrayList<DeferredItem<Item>>();
 
 	public static final DeferredHolder<Block, CornHuskDollBlock> CORN_HUSK_DOLL = BLOCKS.register("corn_husk_doll",
 			() -> new CornHuskDollBlock());
@@ -234,10 +233,10 @@ public class AestheticBlocks {
 				() -> new RibbonBlock(Properties.ofFullCopy(Blocks.BLACK_WOOL).noOcclusion().noCollission()), BOWS,
 				BOW_ITEMS);
 
-		registerAllColors("gingham", () -> new Block(Properties.ofFullCopy(Blocks.BLACK_WOOL)), GINGHAM_BLOCKS,
-				GINGHAM_ITEMS);
-		registerAllColors("gingham_carpet", () -> new CarpetBlock(Properties.ofFullCopy(Blocks.BLACK_CARPET)),
-				GINGHAM_CARPET_BLOCKS, GINGHAM_CARPET_ITEMS);
+//		registerAllColors("gingham", () -> new Block(Properties.ofFullCopy(Blocks.BLACK_WOOL)), GINGHAM_BLOCKS,
+//				GINGHAM_ITEMS);
+//		registerAllColors("gingham_carpet", () -> new CarpetBlock(Properties.ofFullCopy(Blocks.BLACK_CARPET)),
+//				GINGHAM_CARPET_BLOCKS, GINGHAM_CARPET_ITEMS);
 	}
 
 	public static void blockModel(BlockStateProvider bsp) {
@@ -333,12 +332,12 @@ public class AestheticBlocks {
 					.texture("particle",
 							bsp.modLoc("block/ribbon/" + DyeColor.values()[i].toString().toLowerCase() + "_ribbon")));
 
-			bsp.simpleBlock(GINGHAM_BLOCKS.get(i).get(),
-					bsp.models().cubeAll("gingham_" + DyeColor.values()[i].toString(),
-							bsp.modLoc("block/gingham/" + DyeColor.values()[i].toString())));
-			bsp.simpleBlock(GINGHAM_CARPET_BLOCKS.get(i).get(),
-					bsp.models().carpet("gingham_carpet_" + DyeColor.values()[i].toString(),
-							bsp.modLoc("block/gingham/" + DyeColor.values()[i].toString())));
+//			bsp.simpleBlock(GINGHAM_BLOCKS.get(i).get(),
+//					bsp.models().cubeAll("gingham_" + DyeColor.values()[i].toString(),
+//							bsp.modLoc("block/gingham/" + DyeColor.values()[i].toString())));
+//			bsp.simpleBlock(GINGHAM_CARPET_BLOCKS.get(i).get(),
+//					bsp.models().carpet("gingham_carpet_" + DyeColor.values()[i].toString(),
+//							bsp.modLoc("block/gingham/" + DyeColor.values()[i].toString())));
 		}
 
 		for (int i = 0; i < WOOD.values().length; i++) {
@@ -449,15 +448,15 @@ public class AestheticBlocks {
 					.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/ribbon_bow")))
 					.texture("0", tmp.modLoc("block/ribbon/" + DyeColor.values()[i].toString() + "_ribbon"));
 
-			tmp.getBuilder(GINGHAM_ITEMS.get(i).getId().getPath())
-					.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
-							"block/" + BuiltInRegistries.BLOCK
-									.getKey(((BlockItem) GINGHAM_ITEMS.get(i).get()).getBlock()).getPath())));
-
-			tmp.getBuilder(GINGHAM_CARPET_ITEMS.get(i).getId().getPath())
-					.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
-							"block/" + BuiltInRegistries.BLOCK
-									.getKey(((BlockItem) GINGHAM_CARPET_ITEMS.get(i).get()).getBlock()).getPath())));
+//			tmp.getBuilder(GINGHAM_ITEMS.get(i).getId().getPath())
+//					.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+//							"block/" + BuiltInRegistries.BLOCK
+//									.getKey(((BlockItem) GINGHAM_ITEMS.get(i).get()).getBlock()).getPath())));
+//
+//			tmp.getBuilder(GINGHAM_CARPET_ITEMS.get(i).getId().getPath())
+//					.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+//							"block/" + BuiltInRegistries.BLOCK
+//									.getKey(((BlockItem) GINGHAM_CARPET_ITEMS.get(i).get()).getBlock()).getPath())));
 		}
 
 		for (int i = 0; i < WOOD.values().length; i++) {

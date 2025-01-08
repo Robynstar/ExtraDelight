@@ -7,10 +7,10 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "extradelight:makes_stock"
+      "item": "minecraft:bone"
     },
     {
-      "item": "minecraft:bone"
+      "tag": "extradelight:makes_stock"
     }
   ],
   "recipe_book_tab": "meals",

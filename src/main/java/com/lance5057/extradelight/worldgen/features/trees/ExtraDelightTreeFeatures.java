@@ -46,9 +46,9 @@ public class ExtraDelightTreeFeatures {
 
 	public static TreeConfiguration.TreeConfigurationBuilder createAppleTree() {
 		return new TreeConfiguration.TreeConfigurationBuilder(
-				BlockStateProvider.simple(ExtraDelightBlocks.FRUIT_LOG.get()), new StraightTrunkPlacer(2, 0, 2),
+				BlockStateProvider.simple(ExtraDelightBlocks.FRUIT_LOG.get()), new StraightTrunkPlacer(4, 0, 2),
 				BlockStateProvider.simple(ExtraDelightBlocks.APPLE_LEAVES.get()),
-				new FruitLeafPlacer(ConstantInt.of(2), ConstantInt.of(0), 3), new TwoLayersFeatureSize(3, 0, 3));
+				new FruitLeafPlacer(ConstantInt.of(2), ConstantInt.of(0), 3), new TwoLayersFeatureSize(3, 2, 3));
 	}
 
 	public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> p_256317_) {

@@ -89,11 +89,11 @@ public class BlockLootTables extends BlockLootSubProvider {
 			dropSelf(b.get());
 		for (DeferredBlock<Block> b : AestheticBlocks.BOWS)
 			dropSelf(b.get());
-
-		for (DeferredBlock<Block> b : AestheticBlocks.GINGHAM_BLOCKS)
-			dropSelf(b.get());
-		for (DeferredBlock<Block> b : AestheticBlocks.GINGHAM_CARPET_BLOCKS)
-			dropSelf(b.get());
+//
+//		for (DeferredBlock<Block> b : AestheticBlocks.GINGHAM_BLOCKS)
+//			dropSelf(b.get());
+//		for (DeferredBlock<Block> b : AestheticBlocks.GINGHAM_CARPET_BLOCKS)
+//			dropSelf(b.get());
 
 		this.dropSelf(ExtraDelightBlocks.OVEN.get());
 		this.dropSelf(ExtraDelightBlocks.DOUGH_SHAPING.get());
@@ -286,8 +286,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropOther(ExtraDelightBlocks.CINNAMON_ROLLS.get(), ExtraDelightItems.SQUARE_PAN);
 		this.dropOther(ExtraDelightBlocks.MONKEY_BREAD.get(), Items.AIR);
 		this.dropOther(ExtraDelightBlocks.COFFEE_CAKE.get(), Items.AIR);
-		this.dropOther(ExtraDelightBlocks.MINT_LAMB.get(), Items.AIR);
-		this.dropOther(ExtraDelightBlocks.CHARCUTERIE_BOARD.get(), Items.AIR);
+		this.dropOther(ExtraDelightBlocks.MINT_LAMB.get(), Items.BOWL);
+		this.dropOther(ExtraDelightBlocks.CHARCUTERIE_BOARD.get(), Items.BOWL);
 		this.dropOther(ExtraDelightBlocks.MILK_TART.get(), Items.AIR);
 		this.dropOther(ExtraDelightBlocks.PUNCH.get(), Items.AIR);
 		this.dropOther(ExtraDelightBlocks.CHRISTMAS_PUDDING.get(), Items.AIR);

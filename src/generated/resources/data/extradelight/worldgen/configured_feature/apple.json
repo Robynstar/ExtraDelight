@@ -31,12 +31,12 @@
     "minimum_size": {
       "type": "minecraft:two_layers_feature_size",
       "limit": 3,
-      "lower_size": 0,
+      "lower_size": 2,
       "upper_size": 3
     },
     "trunk_placer": {
       "type": "minecraft:straight_trunk_placer",
-      "base_height": 2,
+      "base_height": 4,
       "height_rand_a": 0,
       "height_rand_b": 2
     },

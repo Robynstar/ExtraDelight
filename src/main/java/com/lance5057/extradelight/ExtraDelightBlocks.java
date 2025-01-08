@@ -351,7 +351,7 @@ public class ExtraDelightBlocks {
 
 	public static final DeferredBlock<RecipeFeastBlock> SALAD = BLOCKS.register("salad_block",
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.COLOR_GREEN),
-					true, Block.box(3.5D, 0.0D, 2.0D, 14.5D, 4.0D, 13.0D)));
+					true, Block.box(2.5D, 0.0D, 2.5D, 13.5D, 4.0D, 13.5D)));
 
 //Halloween Start
 	public static final DeferredBlock<CornBottom> CORN_BOTTOM = BLOCKS.register("corn_bottom",
@@ -602,8 +602,9 @@ public class ExtraDelightBlocks {
 			});
 	public static final DeferredBlock<RecipeFeastBlock> MINT_LAMB = BLOCKS.register("mint_lamb",
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.COLOR_BROWN),
-					true, Block.box(0.0D, 0.0D, 4.0D, 16.0D, 1.0D, 12.0D),
-					Block.box(0.0D, 1.0D, 4.0D, 16.0D, 4.0D, 12.0D)));
+					true, Block.box(0.0D, 0.0D, 0.0D, 0.0D, 0.0D, 0.0D),
+					Block.box(4.0D, 0.0D, 0.0D, 12.0D, 1.0D, 16.0D), Block.box(0.0D, 0.0D, 4.0D, 16.0D, 1.0D, 12.0D),
+					Block.box(4.0D, 0.0D, 0.0D, 12.0D, 4.0D, 16.0D), Block.box(0.0D, 0.0D, 4.0D, 16.0D, 4.0D, 12.0D)));
 	public static final DeferredBlock<RecipeFeastBlock> CHARCUTERIE_BOARD = BLOCKS.register("charcuterie_board",
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.COLOR_BROWN),
 					true, plate, Block.box(1.0D, 1.0D, 1.0D, 15.0D, 5.0D, 15.0D)));
@@ -957,7 +958,8 @@ public class ExtraDelightBlocks {
 			() -> new CakeBlock(Block.Properties.ofFullCopy(Blocks.CAKE)));
 	public static final DeferredBlock<RecipeFeastBlock> FUDGE = BLOCKS.register("fudge",
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.BROWN_WOOL).mapColor(MapColor.COLOR_BROWN),
-					true, Block.box(1.0D, 0.0D, 0.0D, 15.0D, 2.0D, 16.0D)));
+					true, Block.box(0.0D, 0.0D, 0.0D, 0.0D, 0.0D, 0.0D),
+					Block.box(0.0D, 0.0D, 1.0D, 16.0D, 2.0D, 15.0D), Block.box(1.0D, 0.0D, 0.0D, 15.0D, 2.0D, 16.0D)));
 	public static final DeferredBlock<RecipeFeastBlock> STICKY_TOFFEE_PUDDING = BLOCKS.register("sticky_toffee_pudding",
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.BROWN_WOOL).mapColor(MapColor.COLOR_BROWN),
 					true, stand));

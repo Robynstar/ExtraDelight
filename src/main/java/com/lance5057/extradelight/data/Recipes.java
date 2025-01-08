@@ -3311,7 +3311,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				"bbq_sugar", consumer);
 
 		pot(ModItems.BONE_BROTH.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
-				new Ingredient[] { Ingredient.of(ExtraDelightTags.MAKES_STOCK), Ingredient.of(Items.BONE) }, "stock",
+				new Ingredient[] {  Ingredient.of(Items.BONE), Ingredient.of(ExtraDelightTags.MAKES_STOCK) }, "stock",
 				consumer);
 
 		pot(ExtraDelightItems.GRAVY.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
