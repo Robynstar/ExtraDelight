@@ -25,6 +25,7 @@ import com.lance5057.extradelight.items.OffsetSpatulaItem;
 import com.lance5057.extradelight.items.ShuckableCorn;
 import com.lance5057.extradelight.items.ToolTipConsumableItem;
 import com.lance5057.extradelight.items.XocolatlItem;
+import com.lance5057.extradelight.items.dynamicfood.DynamicPie;
 import com.lance5057.extradelight.items.dynamicfood.api.DynamicItemComponent;
 import com.lance5057.extradelight.items.jar.JarItem;
 
@@ -2097,7 +2098,7 @@ public class ExtraDelightItems {
 	public static final DeferredItem<Item> CANDY_BAR_SALAD = ITEMS.register("candy_bar_salad",
 			() -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.CANDY_BAR_SALAD), true));
 
-	public static final DeferredItem<Item> DYNAMIC_TEST = ITEMS.register("dynamic_test", () -> new Item(
+	public static final DeferredItem<DynamicPie> DYNAMIC_TEST = ITEMS.register("dynamic_test", () -> new DynamicPie(
 			new Item.Properties().component(ExtraDelightComponents.DYNAMIC_FOOD.get(), DynamicItemComponent.EMPTY)));
 
 }
