@@ -5,5 +5,5 @@ import java.util.Collection;
 import net.minecraft.world.item.ItemStack;
 
 public interface IDynamic {
-	Collection<IPiece> getPieces(ItemStack itemStack);
+	Collection<ItemStack> getPieces(ItemStack itemStack);
 }

@@ -58,6 +58,14 @@ public class ExtraDelightNeoForgeClientEvents {
 				tooltip.add(i);
 			}, flag);
 		}
+		
+		TooltipProvider tooltipProvider1 = stack.get(ExtraDelightComponents.DYNAMIC_FOOD.get());
+
+		if (tooltipProvider1 != null) {
+			tooltipProvider1.addToTooltip(ctx, i -> {
+				tooltip.add(i);
+			}, flag);
+		}
 	}
 
 	@SubscribeEvent

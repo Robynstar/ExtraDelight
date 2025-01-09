@@ -1,13 +1,11 @@
 package com.lance5057.extradelight;
 
 import com.lance5057.extradelight.items.components.ChillComponent;
-import com.lance5057.extradelight.items.dynamicfood.api.PieceTypes;
 
 import net.minecraft.world.item.Items;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.ModifyDefaultComponentsEvent;
-import net.neoforged.neoforge.registries.NewRegistryEvent;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, modid = ExtraDelight.MOD_ID)
 public class ExtraDelightEvents {
@@ -21,8 +19,8 @@ public class ExtraDelightEvents {
 				builder -> builder.set(ExtraDelightComponents.CHILL.value(), new ChillComponent(100)));
 	}
 
-	@SubscribeEvent
-	static void registerRegistries(NewRegistryEvent event) {
-	    event.register(PieceTypes.PIECE_REGISTRY);
-	}
+//	@SubscribeEvent
+//	static void registerRegistries(NewRegistryEvent event) {
+//	    event.register(PieceTypes.PIECE_REGISTRY);
+//	}
 }

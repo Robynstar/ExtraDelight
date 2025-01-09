@@ -3,6 +3,7 @@ package com.lance5057.extradelight.data;
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
+import com.lance5057.extradelight.items.dynamicfood.client.DynamicFoodGeometryLoader;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
@@ -1110,6 +1111,10 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.TARTE_TATIN_SLICE, "tarte_tatin_slice");
 		forItem(ExtraDelightItems.AEBLEFLAESK, "aebleflaesk");
 		forItem(ExtraDelightItems.CANDY_BAR_SALAD, "candy_bar_salad");
+
+		getBuilder(ExtraDelightItems.DYNAMIC_TEST.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("item/generated"))
+				.customLoader(DynamicFoodGeometryLoader::builder);
 
 		AestheticBlocks.itemModel(this);
 	}

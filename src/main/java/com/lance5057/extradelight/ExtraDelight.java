@@ -5,11 +5,11 @@ import org.apache.logging.log4j.Logger;
 
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.armor.EDArmorMaterial;
-import com.lance5057.extradelight.items.dynamicfood.api.PieceTypes;
 import com.lance5057.extradelight.network.NetworkHandler;
 import com.lance5057.extradelight.worldgen.features.ExtraDelightFeatures;
 import com.lance5057.extradelight.worldgen.placers.FoliagePlacerRegistry;
 
+import net.minecraft.resources.ResourceLocation;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
@@ -22,6 +22,10 @@ import net.neoforged.neoforge.common.NeoForgeMod;
 public class ExtraDelight {
 	public final static String MOD_ID = "extradelight";
 	public static final String VERSION = "2.2.2";
+
+	public static ResourceLocation modLoc(String s) {
+		return ResourceLocation.fromNamespaceAndPath(MOD_ID, s);
+	}
 
 	public static Logger logger = LogManager.getLogger();
 
@@ -43,9 +47,9 @@ public class ExtraDelight {
 		ExtraDelightComponents.COMPONENTS.register(modEventBus);
 		ExtraDelightBlocks.register(modEventBus);
 		ExtraDelightFluids.register(modEventBus);
-		
-		PieceTypes.PIECES.register(modEventBus);
-		
+
+//		PieceTypes.PIECES.register(modEventBus);
+
 		ExtraDelightItems.ITEMS.register(modEventBus);
 		ExtraDelightTabs.TABS.register(modEventBus);
 
@@ -55,7 +59,7 @@ public class ExtraDelight {
 		ExtraDelightContainers.MENU_TYPES.register(modEventBus);
 		ExtraDelightLootModifiers.LOOT_MODIFIERS.register(modEventBus);
 		EDArmorMaterial.register(modEventBus);
-		
+
 		FoliagePlacerRegistry.PLACER.register(modEventBus);
 		ExtraDelightWorldGen.FEATURES.register(modEventBus);
 

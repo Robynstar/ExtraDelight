@@ -23,6 +23,7 @@ import com.lance5057.extradelight.displays.spice.SpiceRackScreen;
 import com.lance5057.extradelight.displays.wreath.WreathRenderer;
 import com.lance5057.extradelight.displays.wreath.WreathScreen;
 import com.lance5057.extradelight.gui.StyleableScreen;
+import com.lance5057.extradelight.items.dynamicfood.client.DynamicFoodGeometryLoader;
 import com.lance5057.extradelight.items.jar.JarItemModel;
 import com.lance5057.extradelight.workstations.chiller.ChillerScreen;
 import com.lance5057.extradelight.workstations.doughshaping.DoughShapingScreen;
@@ -58,6 +59,7 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.ModelEvent;
 import net.neoforged.neoforge.client.event.ModelEvent.RegisterAdditional;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
@@ -191,5 +193,10 @@ public class ExtraDelightClientEvents {
 			}
 		}, ExtraDelightItems.JAR.asItem());
 
+	}
+
+	@SubscribeEvent
+	public static void registerLoader(ModelEvent.RegisterGeometryLoaders registerGeometryLoaders) {
+		registerGeometryLoaders.register(DynamicFoodGeometryLoader.ID, new DynamicFoodGeometryLoader());
 	}
 }
