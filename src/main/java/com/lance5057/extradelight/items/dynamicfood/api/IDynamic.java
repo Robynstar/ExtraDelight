@@ -2,8 +2,9 @@ package com.lance5057.extradelight.items.dynamicfood.api;
 
 import java.util.Collection;
 
+import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.world.item.ItemStack;
 
 public interface IDynamic {
-	Collection<ItemStack> getPieces(ItemStack itemStack);
+	Collection<BakedModel> getPieces(ItemStack itemStack);
 }
