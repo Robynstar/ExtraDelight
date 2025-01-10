@@ -11,7 +11,6 @@ import com.lance5057.extradelight.ExtraDelight;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
-import net.minecraft.ChatFormatting;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.chat.Component;
@@ -28,10 +27,18 @@ public class DynamicItemComponent implements TooltipProvider {
 			.xmap(DynamicItemComponent::fromSlots, DynamicItemComponent::asSlots);
 	public static final StreamCodec<RegistryFriendlyByteBuf, DynamicItemComponent> STREAM_CODEC = ItemStack.OPTIONAL_STREAM_CODEC
 			.apply(ByteBufCodecs.list(256)).map(DynamicItemComponent::new, p_331691_ -> p_331691_.items);
-	private final NonNullList<ItemStack> items;
+	private NonNullList<ItemStack> items;
 
 	public NonNullList<ItemStack> getItems() {
 		return items;
+	}
+
+	public void setItems(NonNullList<ItemStack> items) {
+		this.items = items;
+	}
+
+	public void addItem(ItemStack stack) {
+		this.items.add(stack);
 	}
 
 	private final int hashCode;
@@ -195,11 +202,10 @@ public class DynamicItemComponent implements TooltipProvider {
 
 	@Override
 	public void addToTooltip(TooltipContext context, Consumer<Component> tooltipAdder, TooltipFlag tooltipFlag) {
-		NonNullList <ItemStack> i = this.getItems();
+		NonNullList<ItemStack> i = this.getItems();
 		List<Component> c = List.of();
-		for(ItemStack s : i)
-		{
-			c.add( s.getDisplayName());
+		for (ItemStack s : i) {
+			c.add(s.getDisplayName());
 		}
 		tooltipAdder.accept(Component.translatable(ExtraDelight.MOD_ID + ".tooltip.dynamic", c.toArray()));
 	}

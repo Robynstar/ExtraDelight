@@ -11,6 +11,7 @@ import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.data.recipebuilders.ChillerRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.DryingRackRecipeBuilder;
+import com.lance5057.extradelight.data.recipebuilders.DynamicJamRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.FeastRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MeltingPotRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MixingBowlRecipeBuilder;
@@ -3311,7 +3312,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				"bbq_sugar", consumer);
 
 		pot(ModItems.BONE_BROTH.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
-				new Ingredient[] {  Ingredient.of(Items.BONE), Ingredient.of(ExtraDelightTags.MAKES_STOCK) }, "stock",
+				new Ingredient[] { Ingredient.of(Items.BONE), Ingredient.of(ExtraDelightTags.MAKES_STOCK) }, "stock",
 				consumer);
 
 		pot(ExtraDelightItems.GRAVY.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
@@ -3536,17 +3537,17 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(ExtraDelightTags.SWEETENER) },
 				"golden_apple_jam", consumer);
 
-		pot(ExtraDelightItems.JAM.get(), 2, CookingRecipes.SLOW_COOKING, 0.35F, Items.GLASS_BOTTLE,
-				new Ingredient[] {
-						DifferenceIngredient.of(Ingredient.of(ExtraDelightTags.JAMMABLE),
-								Ingredient.of(Items.GOLDEN_APPLE, Items.GLOW_BERRIES, Items.ENCHANTED_GOLDEN_APPLE)),
-						DifferenceIngredient.of(Ingredient.of(ExtraDelightTags.JAMMABLE),
-								Ingredient.of(Items.GOLDEN_APPLE, Items.GLOW_BERRIES, Items.ENCHANTED_GOLDEN_APPLE)),
-						DifferenceIngredient.of(Ingredient.of(ExtraDelightTags.JAMMABLE),
-								Ingredient.of(Items.GOLDEN_APPLE, Items.GLOW_BERRIES, Items.ENCHANTED_GOLDEN_APPLE)),
-						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(ExtraDelightTags.SWEETENER),
-						Ingredient.of(ExtraDelightTags.SWEETENER) },
-				"fruit_jam", consumer);
+//		pot(ExtraDelightItems.JAM.get(), 2, CookingRecipes.SLOW_COOKING, 0.35F, Items.GLASS_BOTTLE,
+//				new Ingredient[] {
+//						DifferenceIngredient.of(Ingredient.of(ExtraDelightTags.JAMMABLE),
+//								Ingredient.of(Items.GOLDEN_APPLE, Items.GLOW_BERRIES, Items.ENCHANTED_GOLDEN_APPLE)),
+//						DifferenceIngredient.of(Ingredient.of(ExtraDelightTags.JAMMABLE),
+//								Ingredient.of(Items.GOLDEN_APPLE, Items.GLOW_BERRIES, Items.ENCHANTED_GOLDEN_APPLE)),
+//						DifferenceIngredient.of(Ingredient.of(ExtraDelightTags.JAMMABLE),
+//								Ingredient.of(Items.GOLDEN_APPLE, Items.GLOW_BERRIES, Items.ENCHANTED_GOLDEN_APPLE)),
+//						Ingredient.of(ExtraDelightTags.SWEETENER), Ingredient.of(ExtraDelightTags.SWEETENER),
+//						Ingredient.of(ExtraDelightTags.SWEETENER) },
+//				"fruit_jam", consumer);
 
 		pot(ExtraDelightItems.SEAWEED_PASTE.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, null, new Ingredient[] {
 				Ingredient.of(Items.DRIED_KELP), Ingredient.of(Items.DRIED_KELP), Ingredient.of(Items.DRIED_KELP) },
@@ -3924,6 +3925,10 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						Ingredient.of(ExtraDelightTags.PROCESSED_ONION), Ingredient.of(ModItems.BACON.get()),
 						Ingredient.of(Items.SUGAR) },
 				"aebleflaesk", consumer);
+
+		DynamicJamRecipeBuilder.cookingPotRecipe(ExtraDelightItems.DYNAMIC_TEST, 1, 1, 1, Items.GLASS_BOTTLE)
+				.addIngredient(Ingredient.of(Items.CHORUS_FRUIT)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+				.build(consumer);
 	}
 
 	private void knifeRecipes(RecipeOutput consumer) {

@@ -12,6 +12,7 @@ import com.lance5057.extradelight.items.dynamicfood.api.IDynamic;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -46,6 +47,18 @@ public class DynamicJam extends Item implements IDynamic {
 			i.add(Minecraft.getInstance().getModelManager().getModel(missing_model));
 
 		return i;
+	}
+
+	@Override
+	public Component getName(ItemStack itemStack) {
+		DynamicItemComponent comp = itemStack.getComponents().get(ExtraDelightComponents.DYNAMIC_FOOD.get());
+		if (comp != null) {
+			if (!comp.getItems().isEmpty())
+				return Component.translatable(comp.getItems().get(0).getDescriptionId()).append(" ")
+						.append(Component.translatable(this.getDescriptionId(itemStack)));
+		}
+
+		return Component.translatable(this.getDescriptionId(itemStack));
 	}
 
 }

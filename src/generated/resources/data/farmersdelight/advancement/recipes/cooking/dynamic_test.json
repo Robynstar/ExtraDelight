@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cooking/fruit_jam"
+        "recipe": "farmersdelight:cooking/dynamic_test"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -15,7 +15,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cooking/fruit_jam"
+      "farmersdelight:cooking/dynamic_test"
     ]
   }
 }
