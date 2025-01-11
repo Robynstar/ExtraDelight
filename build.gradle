@@ -21,6 +21,7 @@ repositories {
 	maven { url "https://modmaven.k-4u.nl" }
 	maven { url "https://maven.tterrag.com/" }
 	maven { url 'https://www.jitpack.io' }
+	maven { url "https://maven.ryanliptak.com/" }
 	flatDir { dirs '../FarmersDelight/build/libs', '../Butchercraft/build/libs' }
 }
 
@@ -85,7 +86,7 @@ configurations {
 dependencies {
 	annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 	
-	implementation 'com.github.vectorwing:FarmersDelight'
+	implementation 'com.github.Lance5057:FarmersDelight:jitpack-test-SNAPSHOT'
 	implementation name: 'butchercraft-2.6.3'
 
 	 // compile against the JEI API but do not include it at runtime
