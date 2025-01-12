@@ -2098,7 +2098,7 @@ public class ExtraDelightItems {
 	public static final DeferredItem<Item> CANDY_BAR_SALAD = ITEMS.register("candy_bar_salad",
 			() -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.CANDY_BAR_SALAD), true));
 
-//	public static final DeferredItem<DynamicJam> DYNAMIC_TEST = ITEMS.register("dynamic_test", () -> new DynamicJam(
-//			new Item.Properties().component(ExtraDelightComponents.DYNAMIC_FOOD.get(), DynamicItemComponent.EMPTY)));
+	public static final DeferredItem<DynamicJam> DYNAMIC_TEST = ITEMS.register("dynamic_test", () -> new DynamicJam(
+			new Item.Properties().component(ExtraDelightComponents.DYNAMIC_FOOD.get(), DynamicItemComponent.EMPTY)));
 
 }

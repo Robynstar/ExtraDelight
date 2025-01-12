@@ -3926,9 +3926,9 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						Ingredient.of(Items.SUGAR) },
 				"aebleflaesk", consumer);
 
-//		DynamicJamRecipeBuilder.cookingPotRecipe(ExtraDelightItems.DYNAMIC_TEST, 1, 1, 1, Items.GLASS_BOTTLE)
-//				.addIngredient(Ingredient.of(Items.CHORUS_FRUIT)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-//				.build(consumer);
+		DynamicJamRecipeBuilder.cookingPotRecipe(ExtraDelightItems.DYNAMIC_TEST, 1, 1, 1, Items.GLASS_BOTTLE)
+				.addIngredient(Ingredient.of(Items.CHORUS_FRUIT)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+				.build(consumer);
 	}
 
 	private void knifeRecipes(RecipeOutput consumer) {

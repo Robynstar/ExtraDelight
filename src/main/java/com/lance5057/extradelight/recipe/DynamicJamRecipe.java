@@ -18,7 +18,8 @@ import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
-import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.level.Level;
+import net.neoforged.neoforge.common.util.RecipeMatcher;
 import net.neoforged.neoforge.items.wrapper.RecipeWrapper;
 import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
 import vectorwing.farmersdelight.common.crafting.CookingPotRecipe;
@@ -31,8 +32,8 @@ public class DynamicJamRecipe extends CookingPotRecipe {
 	}
 
 	@Override
-	public ItemStack assemble(RecipeWrapper inv, HolderLookup.Provider provider) {
-		ItemStack stack = this.getResultItem(provider);
+	public ItemStack getResultItem(HolderLookup.Provider provider) {
+		ItemStack stack = super.getResultItem(provider);
 		if (stack.getItem() instanceof DynamicJam jam) {
 			DynamicItemComponent comp = stack.getComponents().get(ExtraDelightComponents.DYNAMIC_FOOD.get());
 			if (comp != null) {
@@ -42,7 +43,38 @@ public class DynamicJamRecipe extends CookingPotRecipe {
 		} else {
 			ExtraDelight.logger.error("DynamicJamRecipe result not DynamicJam!");
 		}
+		
 		return stack;
+	}
+	
+//	@Override
+//	public ItemStack assemble(RecipeWrapper inv, HolderLookup.Provider provider) {
+//		ItemStack stack = this.getResultItem(provider);
+//		if (stack.getItem() instanceof DynamicJam jam) {
+//			DynamicItemComponent comp = stack.getComponents().get(ExtraDelightComponents.DYNAMIC_FOOD.get());
+//			if (comp != null) {
+//				comp.addItem(stack);
+//			} else
+//				ExtraDelight.logger.error("DynamicJam lost its component!");
+//		} else {
+//			ExtraDelight.logger.error("DynamicJamRecipe result not DynamicJam!");
+//		}
+//		return stack;
+//	}
+	
+	@Override
+	public boolean matches(RecipeWrapper inv, Level level) {
+		java.util.List<ItemStack> inputs = new java.util.ArrayList<>();
+		int i = 0;
+
+		for (int j = 0; j < INPUT_SLOTS; ++j) {
+			ItemStack itemstack = inv.getItem(j);
+			if (!itemstack.isEmpty()) {
+				++i;
+				inputs.add(itemstack);
+			}
+		}
+		return i == this.getIngredients().size() && RecipeMatcher.findMatches(inputs, this.getIngredients()) != null;
 	}
 
 	@Override
@@ -50,10 +82,10 @@ public class DynamicJamRecipe extends CookingPotRecipe {
 		return ExtraDelightRecipes.DYNAMIC_JAM_SERIALIZER.get();
 	}
 
-	@Override
-	public RecipeType<?> getType() {
-		return ExtraDelightRecipes.DYNAMIC_JAM.get();
-	}
+//	@Override
+//	public RecipeType<?> getType() {
+//		return ExtraDelightRecipes.DYNAMIC_JAM.get();
+//	}
 
 	public static class Serializer implements RecipeSerializer<DynamicJamRecipe> {
 		private static final MapCodec<DynamicJamRecipe> CODEC = RecordCodecBuilder.mapCodec(
