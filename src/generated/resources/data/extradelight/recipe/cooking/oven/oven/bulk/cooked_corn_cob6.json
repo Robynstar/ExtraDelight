@@ -1,5 +1,6 @@
 {
   "type": "extradelight:oven",
+  "consumeContainer": false,
   "container": {
     "count": 1,
     "id": "extradelight:sheet"
@@ -8,22 +9,22 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "forge:crops/corn"
+      "tag": "c:crops/corn"
     },
     {
-      "tag": "forge:crops/corn"
+      "tag": "c:crops/corn"
     },
     {
-      "tag": "forge:crops/corn"
+      "tag": "c:crops/corn"
     },
     {
-      "tag": "forge:crops/corn"
+      "tag": "c:crops/corn"
     },
     {
-      "tag": "forge:crops/corn"
+      "tag": "c:crops/corn"
     },
     {
-      "tag": "forge:crops/corn"
+      "tag": "c:crops/corn"
     }
   ],
   "result": {

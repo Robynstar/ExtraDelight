@@ -1,5 +1,6 @@
 {
   "type": "extradelight:mixing_bowl",
+  "fluids": [],
   "ingredients": [
     {
       "item": "minecraft:kelp"
@@ -8,10 +9,10 @@
       "item": "minecraft:kelp"
     },
     {
-      "tag": "forge:fish_flakes"
+      "tag": "c:fish_flakes"
     },
     {
-      "tag": "forge:fish_flakes"
+      "tag": "c:fish_flakes"
     }
   ],
   "result": {

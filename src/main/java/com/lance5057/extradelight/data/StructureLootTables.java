@@ -356,7 +356,20 @@ public class StructureLootTables implements LootTableSubProvider {
 								.add(LootItem.lootTableItem(ModItems.COOKING_POT.get()))
 								.add(LootItem.lootTableItem(Items.GOLD_INGOT))
 								.add(LootItem.lootTableItem(Items.CORNFLOWER))
-								.add(LootItem.lootTableItem(Items.CAKE))));
+								.add(LootItem.lootTableItem(Items.CAKE))
+								.add(LootItem.lootTableItem(ExtraDelightItems.CHOCOLATE_CAKE))
+								.add(LootItem.lootTableItem(ExtraDelightItems.BLOOD_CHOCOLATE_BAR))
+								.add(LootItem.lootTableItem(ExtraDelightItems.MILK_CHOCOLATE_BAR))
+								.add(LootItem.lootTableItem(ExtraDelightItems.DARK_CHOCOLATE_BAR))
+								.add(LootItem.lootTableItem(ExtraDelightItems.WHITE_CHOCOLATE_BAR))
+								.add(LootItem.lootTableItem(ExtraDelightItems.BLOOD_CHOCOLATE_FILLED_BAR))
+								.add(LootItem.lootTableItem(ExtraDelightItems.MILK_CHOCOLATE_FILLED_BAR))
+								.add(LootItem.lootTableItem(ExtraDelightItems.DARK_CHOCOLATE_FILLED_BAR))
+								.add(LootItem.lootTableItem(ExtraDelightItems.WHITE_CHOCOLATE_FILLED_BAR))
+								.add(LootItem.lootTableItem(ExtraDelightItems.BLOOD_CHOCOLATE_TRUFFLE))
+								.add(LootItem.lootTableItem(ExtraDelightItems.MILK_CHOCOLATE_TRUFFLE))
+								.add(LootItem.lootTableItem(ExtraDelightItems.DARK_CHOCOLATE_TRUFFLE))
+								.add(LootItem.lootTableItem(ExtraDelightItems.WHITE_CHOCOLATE_TRUFFLE))));
 
 		t.accept(corn_legendary,
 				LootTable.lootTable()
@@ -374,7 +387,8 @@ public class StructureLootTables implements LootTableSubProvider {
 						.withPool(LootPool.lootPool().name("better").setRolls(UniformGenerator.between(2, 4))
 								.add(LootItem.lootTableItem(Items.GOLD_BLOCK))
 								.add(LootItem.lootTableItem(Items.GOLD_INGOT))
-								.add(LootItem.lootTableItem(Items.GOLDEN_APPLE))));
+								.add(LootItem.lootTableItem(Items.GOLDEN_APPLE))
+								.add(LootItem.lootTableItem(ExtraDelightItems.EASTER_EGG))));
 	}
 
 }

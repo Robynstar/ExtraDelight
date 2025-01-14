@@ -1,11 +1,12 @@
 {
   "type": "extradelight:mixing_bowl",
+  "fluids": [],
   "ingredients": [
     {
       "item": "farmersdelight:tomato_sauce"
     },
     {
-      "item": "farmersdelight:raw_pasta"
+      "item": "extradelight:cooked_pasta"
     },
     {
       "item": "farmersdelight:beef_patty"

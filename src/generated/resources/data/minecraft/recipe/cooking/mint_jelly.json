@@ -7,13 +7,19 @@
   "experience": 0.35,
   "ingredients": [
     {
-      "tag": "forge:mint"
+      "tag": "c:mint"
     },
     {
-      "tag": "forge:mint"
+      "tag": "c:mint"
     },
     {
-      "tag": "forge:mint"
+      "tag": "c:mint"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "extradelight:sweetener"
     },
     {
       "tag": "extradelight:sweetener"
@@ -21,7 +27,7 @@
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "count": 1,
+    "count": 2,
     "id": "extradelight:mint_jelly"
   }
 }

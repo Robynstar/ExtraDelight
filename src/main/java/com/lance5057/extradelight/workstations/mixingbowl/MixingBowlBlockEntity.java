@@ -1,5 +1,6 @@
 package com.lance5057.extradelight.workstations.mixingbowl;
 
+import java.util.List;
 import java.util.Optional;
 
 import javax.annotation.Nonnull;
@@ -10,6 +11,7 @@ import com.lance5057.extradelight.ExtraDelightBlockEntities;
 import com.lance5057.extradelight.ExtraDelightRecipes;
 import com.lance5057.extradelight.util.BlockEntityUtils;
 import com.lance5057.extradelight.workstations.mixingbowl.recipes.MixingBowlRecipe;
+import com.lance5057.extradelight.workstations.mixingbowl.recipes.MixingBowlRecipeWrapper;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
@@ -20,16 +22,24 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.RecipeHolder;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.common.util.Lazy;
-import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
+import net.neoforged.neoforge.fluids.FluidStack;
+import net.neoforged.neoforge.fluids.FluidType;
+import net.neoforged.neoforge.fluids.FluidUtil;
+import net.neoforged.neoforge.fluids.capability.IFluidHandler;
+import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
+import net.neoforged.neoforge.fluids.capability.IFluidHandlerItem;
+import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 import net.neoforged.neoforge.items.IItemHandlerModifiable;
 import net.neoforged.neoforge.items.ItemStackHandler;
-import net.neoforged.neoforge.items.wrapper.RecipeWrapper;
 
 public class MixingBowlBlockEntity extends BlockEntity {
 	public static final String INV_TAG = "inv";
@@ -44,7 +54,7 @@ public class MixingBowlBlockEntity extends BlockEntity {
 
 	public static final String FLUID_TAG = "tank";
 
-	private final FluidTank fluids = createFluidHandler();
+	private final MixingBowlTank fluids = createFluidHandler();
 
 	private int stirs = 0;
 	public boolean complete = false;
@@ -56,9 +66,70 @@ public class MixingBowlBlockEntity extends BlockEntity {
 		super(ExtraDelightBlockEntities.MIXING_BOWL.get(), pPos, pState);
 	}
 
-	private FluidTank createFluidHandler() {
-		// TODO Auto-generated method stub
-		return null;
+	private MixingBowlTank createFluidHandler() {
+		MixingBowlTank tank = new MixingBowlTank(FluidType.BUCKET_VOLUME) {
+			@Override
+			protected void onContentsChanged() {
+				MixingBowlBlockEntity.this.requestModelDataUpdate();
+				MixingBowlBlockEntity.this.getLevel().sendBlockUpdated(MixingBowlBlockEntity.this.getBlockPos(),
+						MixingBowlBlockEntity.this.getBlockState(), MixingBowlBlockEntity.this.getBlockState(),
+						Block.UPDATE_ALL);
+				MixingBowlBlockEntity.this.setChanged();
+			}
+		};
+
+		return tank;
+	}
+
+	public MixingBowlTank getFluidTank() {
+		return fluids;
+	}
+
+	public static void fillInternal(MixingBowlBlockEntity bowl) {
+		ItemStack inputItem = bowl.items.getStackInSlot(LIQUID_IN_SLOT);
+		if (!inputItem.isEmpty()) {
+			if (inputItem.getItem() instanceof BucketItem filledBucket) {
+				int filled = bowl.getFluidTank().fill(new FluidStack(filledBucket.content, FluidType.BUCKET_VOLUME),
+						IFluidHandler.FluidAction.SIMULATE);
+				if (filled == FluidType.BUCKET_VOLUME) {
+					bowl.getFluidTank().fill(new FluidStack(filledBucket.content, FluidType.BUCKET_VOLUME),
+							IFluidHandler.FluidAction.EXECUTE);
+					inputItem.shrink(1);
+					bowl.items.setStackInSlot(LIQUID_IN_SLOT, Items.BUCKET.getDefaultInstance());
+
+				}
+			} else {
+				IFluidHandlerItem fluidHandlerItem = inputItem.getCapability(Capabilities.FluidHandler.ITEM);
+				int filled = FluidUtil.tryFluidTransfer(bowl.getFluidTank(), fluidHandlerItem,
+						bowl.getFluidTank().getFluidAmount(), true).getAmount();
+				if (filled > 0) {
+					bowl.items.setStackInSlot(LIQUID_IN_SLOT, fluidHandlerItem.getContainer());
+
+				}
+			}
+		}
+	}
+
+	public static void drainInternal(MixingBowlBlockEntity bowl) {
+		ItemStack inputItem = bowl.items.getStackInSlot(LIQUID_OUT_SLOT);
+		if (!inputItem.isEmpty()) {
+			if (inputItem.getItem() == Items.BUCKET) {
+				FluidStack stack = bowl.getFluidTank().drain(FluidType.BUCKET_VOLUME,
+						IFluidHandler.FluidAction.SIMULATE);
+				if (stack.getAmount() == FluidType.BUCKET_VOLUME) {
+					bowl.getFluidTank().drain(FluidType.BUCKET_VOLUME, IFluidHandler.FluidAction.EXECUTE);
+					inputItem.shrink(1);
+					bowl.items.setStackInSlot(LIQUID_OUT_SLOT, stack.getFluid().getBucket().getDefaultInstance());
+				}
+			} else {
+				IFluidHandlerItem fluidHandlerItem = inputItem.getCapability(Capabilities.FluidHandler.ITEM);
+				int filled = FluidUtil.tryFluidTransfer(fluidHandlerItem, bowl.getFluidTank(),
+						bowl.getFluidTank().getFluidAmount(), true).getAmount();
+				if (filled > 0) {
+					bowl.items.setStackInSlot(LIQUID_OUT_SLOT, fluidHandlerItem.getContainer());
+				}
+			}
+		}
 	}
 
 	public IItemHandlerModifiable getItemHandler() {
@@ -80,8 +151,13 @@ public class MixingBowlBlockEntity extends BlockEntity {
 				if (slot == LIQUID_IN_SLOT)
 					if (stack.getCapability(Capabilities.FluidHandler.ITEM) != null)
 						return true;
+					else
+						return false;
 				if (slot == LIQUID_OUT_SLOT)
-					return false;
+					if (stack.getCapability(Capabilities.FluidHandler.ITEM) != null)
+						return true;
+					else
+						return false;
 				if (slot == GHOST_SLOT)
 					return false;
 				return true;
@@ -93,6 +169,11 @@ public class MixingBowlBlockEntity extends BlockEntity {
 					zeroProgress();
 					updateInventory();
 				}
+
+				if (slot == LIQUID_IN_SLOT)
+					MixingBowlBlockEntity.fillInternal(MixingBowlBlockEntity.this);
+				if (slot == LIQUID_OUT_SLOT)
+					MixingBowlBlockEntity.drainInternal(MixingBowlBlockEntity.this);
 			}
 
 		};
@@ -123,17 +204,6 @@ public class MixingBowlBlockEntity extends BlockEntity {
 
 		updateInventory();
 	}
-//
-//	public void insertItem(ItemStack in, int slot) {
-//		BlockEntityUtils.Inventory.insertItem(in, items, LIQUID_OUT_SLOT);
-//		this.updateInventory();
-//	}
-//
-//	public ItemStack extractItem(ItemStack out, int slot) {
-//		ItemStack stack = BlockEntityUtils.Inventory.extractItem(items, LIQUID_OUT_SLOT);
-//		this.updateInventory();
-//		return stack;
-//	}
 
 	public int getNextEmptySlot() {
 		for (int i = 0; i < items.getSlots(); ++i) {
@@ -155,10 +225,6 @@ public class MixingBowlBlockEntity extends BlockEntity {
 		this.getLevel().sendBlockUpdated(this.getBlockPos(), this.getBlockState(), this.getBlockState(), 3);
 		this.setChanged();
 	}
-
-//	public ItemStack getInsertedItem() {
-//		return handler.map(inventory -> inventory.getStackInSlot(0)).orElse(ItemStack.EMPTY);
-//	}
 
 	private void setupRecipe() {
 		Optional<RecipeHolder<MixingBowlRecipe>> recipe = this.matchRecipe();
@@ -209,7 +275,7 @@ public class MixingBowlBlockEntity extends BlockEntity {
 		if (nbt.contains(INV_TAG)) {
 			items.deserializeNBT(registries, nbt.getCompound(INV_TAG));
 		}
-
+		this.getFluidTank().readFromNBT(registries, nbt);
 		this.stirs = nbt.getInt("stirs");
 		ItemStack.parse(registries, nbt.getCompound("usedItem")).ifPresent(i -> containerItem = i);
 		this.complete = nbt.getBoolean("complete");
@@ -218,7 +284,7 @@ public class MixingBowlBlockEntity extends BlockEntity {
 	CompoundTag writeNBT(CompoundTag tag, HolderLookup.Provider registries) {
 
 		tag.put(INV_TAG, items.serializeNBT(registries));
-
+		this.getFluidTank().writeToNBT(registries, tag);
 		tag.putInt("stirs", this.stirs);
 
 		tag.put("usedItem", containerItem.saveOptional(registries));
@@ -238,15 +304,6 @@ public class MixingBowlBlockEntity extends BlockEntity {
 		super.saveAdditional(nbt, registries);
 		writeNBT(nbt, registries);
 	}
-
-//	public Optional<RecipeHolder<MixingBowlRecipe>> matchRecipe() {
-//		if (this.level != null) {
-//			return level.getRecipeManager().getRecipeFor(ExtraDelightRecipes.MIXING_BOWL.get(),
-//					new RecipeWrapper(this.items), level);
-//		}
-//		return Optional.empty();
-//
-//	}
 
 	private ItemStack[] getItems() {
 		int s = getLastFilledSlot(items);
@@ -270,8 +327,8 @@ public class MixingBowlBlockEntity extends BlockEntity {
 	protected Optional<RecipeHolder<MixingBowlRecipe>> matchRecipe() {
 		if (level != null) {
 
-			Optional<RecipeHolder<MixingBowlRecipe>> recipe = level.getRecipeManager()
-					.getRecipeFor(ExtraDelightRecipes.MIXING_BOWL.get(), new RecipeWrapper(this.items) {
+			Optional<RecipeHolder<MixingBowlRecipe>> recipe = level.getRecipeManager().getRecipeFor(
+					ExtraDelightRecipes.MIXING_BOWL.get(), new MixingBowlRecipeWrapper(this.items, this.fluids) {
 						@Override
 						public int size() {
 							return 9;
@@ -316,6 +373,7 @@ public class MixingBowlBlockEntity extends BlockEntity {
 				BlockEntityUtils.Inventory.givePlayerItemStack(i, player, level, worldPosition);
 				dropContainers(items, player);
 				clearItems();
+				removeFluids(curRecipe.getFluids());
 				this.stirs = 0;
 //				items.setStackInSlot(CONTAINER_SLOT, i);
 				this.updateInventory();
@@ -327,34 +385,17 @@ public class MixingBowlBlockEntity extends BlockEntity {
 		return InteractionResult.SUCCESS;
 	}
 
+	private void removeFluids(List<SizedFluidIngredient> list) {
+		for (int i = 0; i < list.size(); i++) {
+			fluids.drain(list.get(i), FluidAction.EXECUTE);
+		}
+	}
+
 	public boolean testContainerItem(ItemStack stack) {
 		if (this.containerItem.isEmpty())
 			return true;
 		return this.containerItem.getItem() == stack.getItem();
 	}
-
-//	public InteractionResult scoop(Player player, InteractionHand pHand) {
-//		ItemStack r = items.extractItem(32, 1, false);
-//
-//		if (!player.addItem(r)) {
-//			level.addFreshEntity(new ItemEntity(level, getBlockPos().getX() + 0.5f, getBlockPos().getY() + 0.5f,
-//					getBlockPos().getZ() + 0.5f, r, 0, 0, 0));
-//		}
-//
-//		if (!this.containerItem.isEmpty()) {
-//			ItemStack h = player.getItemInHand(pHand);
-//			h.setCount(h.getCount() - 1);
-//		}
-//
-//		if (items.getStackInSlot(32).isEmpty()) {
-//			this.containerItem = ItemStack.EMPTY;
-//
-//			complete = false;
-//		}
-//
-//		return InteractionResult.SUCCESS;
-//
-//	}
 
 	private void dropContainers(@NotNull IItemHandlerModifiable inv, Player player) {
 		for (int i = 0; i < 9; i++) {

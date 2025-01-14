@@ -1,11 +1,12 @@
 {
   "type": "extradelight:mixing_bowl",
+  "fluids": [],
   "ingredients": [
     {
-      "tag": "forge:alfredo_sauce"
+      "tag": "c:alfredo_sauce"
     },
     {
-      "item": "farmersdelight:raw_pasta"
+      "item": "extradelight:cooked_pasta"
     }
   ],
   "result": {

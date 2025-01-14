@@ -1,5 +1,6 @@
 {
   "type": "extradelight:mixing_bowl",
+  "fluids": [],
   "ingredients": [
     {
       "tag": "c:foods/milk"
@@ -11,7 +12,7 @@
       "item": "minecraft:cocoa_beans"
     },
     {
-      "tag": "forge:mint"
+      "tag": "c:mint"
     },
     {
       "item": "minecraft:ice"

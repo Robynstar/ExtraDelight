@@ -85,13 +85,16 @@ configurations {
 dependencies {
 	annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 	
-	implementation "curse.maven:farmersdelight-398521:5566383"
+	implementation "curse.maven:farmersdelight-398521:5878217"
 
 	 // compile against the JEI API but do not include it at runtime
-    compileOnly "mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"
-    compileOnly "mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}"
+    compileOnly "mezz.jei:jei-1.21.1-common-api:${jei_version}"
+    compileOnly "mezz.jei:jei-1.21.1-neoforge-api:${jei_version}"
     // at runtime, use the full JEI jar for Forge
-    localRuntime "mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}"
+    localRuntime "mezz.jei:jei-1.21.1-neoforge:${jei_version}"
+	
+	compileOnly "vazkii.patchouli:Patchouli:1.21-87-NEOFORGE:api"
+    runtimeOnly "vazkii.patchouli:Patchouli:1.21-87-NEOFORGE"
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

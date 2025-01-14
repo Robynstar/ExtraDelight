@@ -1,23 +1,24 @@
 {
   "type": "extradelight:oven",
+  "consumeContainer": false,
   "container": {
     "count": 1,
-    "id": "extradelight:square_pan"
+    "id": "extradelight:pie_dish"
   },
   "cookingtime": 800,
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "forge:cinnamon/ground"
+      "tag": "c:cinnamon/ground"
     },
     {
       "tag": "c:foods/milk"
     },
     {
-      "tag": "forge:flour"
+      "tag": "c:flour"
     },
     {
-      "tag": "forge:butter"
+      "tag": "c:butter"
     },
     {
       "tag": "extradelight:sweetener"

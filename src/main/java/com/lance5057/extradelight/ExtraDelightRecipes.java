@@ -3,16 +3,18 @@ package com.lance5057.extradelight;
 import java.util.function.Supplier;
 
 import com.lance5057.extradelight.recipe.FeastRecipe;
+import com.lance5057.extradelight.recipe.ShapedWithJarRecipe;
 import com.lance5057.extradelight.recipe.ToolOnBlockRecipe;
+import com.lance5057.extradelight.workstations.chiller.ChillerRecipe;
 import com.lance5057.extradelight.workstations.doughshaping.recipes.DoughShapingRecipe;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackRecipe;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackSerializer;
+import com.lance5057.extradelight.workstations.meltingpot.MeltingPotRecipe;
 import com.lance5057.extradelight.workstations.mixingbowl.recipes.MixingBowlRecipe;
 import com.lance5057.extradelight.workstations.mortar.recipes.MortarRecipe;
 import com.lance5057.extradelight.workstations.oven.recipes.OvenRecipe;
 
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.world.inventory.RecipeBookType;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
@@ -37,6 +39,12 @@ public class ExtraDelightRecipes {
 			() -> registerRecipeType("feast"));
 	public static final Supplier<RecipeType<ToolOnBlockRecipe>> TOOL_ON_BLOCK = RECIPE_TYPES.register("tool_on_block",
 			() -> registerRecipeType("tool_on_block"));
+	public static final Supplier<RecipeType<MeltingPotRecipe>> MELTING_POT = RECIPE_TYPES.register("melting_pot",
+			() -> registerRecipeType("melting_pot"));
+	public static final Supplier<RecipeType<ChillerRecipe>> CHILLER = RECIPE_TYPES.register("chiller",
+			() -> registerRecipeType("chiller"));
+	public static final Supplier<RecipeType<ShapedWithJarRecipe>> SHAPED_JAR = RECIPE_TYPES.register("shaped_jar",
+			() -> registerRecipeType("shaped_jar"));
 
 	// Dynamic Names
 	public static final DeferredHolder<RecipeType<?>, RecipeType<Recipe<?>>> DYNAMIC_SMELT = RECIPE_TYPES
@@ -66,6 +74,8 @@ public class ExtraDelightRecipes {
 			MortarRecipe.Serializer::new);
 	public static final Supplier<RecipeSerializer<?>> MIXING_BOWL_SERIALIZER = RECIPE_SERIALIZERS
 			.register("mixing_bowl", MixingBowlRecipe.Serializer::new);
+	public static final Supplier<RecipeSerializer<?>> MELTING_POT_SERIALIZER = RECIPE_SERIALIZERS
+			.register("melting_pot", MeltingPotRecipe.Serializer::new);
 
 //	public static final Supplier<RecipeSerializer<?>> DYNAMIC_SMELT_SERIALIZER = RECIPE_SERIALIZERS
 //			.register("dynamic_smelt", DynamicNameSmeltingRecipe.Serializer::new);
@@ -81,6 +91,8 @@ public class ExtraDelightRecipes {
 
 	public static final Supplier<RecipeSerializer<?>> TOOL_ON_BLOCK_SERIALIZER = RECIPE_SERIALIZERS
 			.register("tool_on_block", ToolOnBlockRecipe.Serializer::new);
-
-//	public static final RecipeBookType RECIPE_TYPE_OVEN = RecipeBookType.create("OVEN");
+	public static final Supplier<RecipeSerializer<?>> CHILLER_SERIALIZER = RECIPE_SERIALIZERS.register("chiller",
+			ChillerRecipe.Serializer::new);
+	public static final Supplier<RecipeSerializer<?>> SHAPED_JAR_SERIALIZER = RECIPE_SERIALIZERS.register("shaped_jar",
+			ShapedWithJarRecipe.Serializer::new);
 }

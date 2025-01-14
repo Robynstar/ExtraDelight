@@ -1,17 +1,18 @@
 {
   "type": "extradelight:oven",
+  "consumeContainer": false,
   "container": {
     "count": 1,
-    "id": "extradelight:loaf_pan"
+    "id": "extradelight:sheet"
   },
   "cookingtime": 800,
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "forge:flour"
+      "tag": "c:flour"
     },
     {
-      "tag": "forge:butter"
+      "tag": "c:butter"
     }
   ],
   "result": {

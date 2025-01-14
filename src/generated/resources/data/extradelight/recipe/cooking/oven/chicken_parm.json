@@ -1,5 +1,6 @@
 {
   "type": "extradelight:oven",
+  "consumeContainer": false,
   "container": {
     "count": 1,
     "id": "extradelight:tray"
@@ -14,7 +15,7 @@
       "item": "farmersdelight:tomato_sauce"
     },
     {
-      "tag": "forge:cheese"
+      "tag": "c:cheese"
     }
   ],
   "result": {

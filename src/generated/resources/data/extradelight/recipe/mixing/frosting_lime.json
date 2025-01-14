@@ -1,8 +1,9 @@
 {
   "type": "extradelight:mixing_bowl",
+  "fluids": [],
   "ingredients": [
     {
-      "tag": "forge:whipped_cream"
+      "tag": "c:whipped_cream"
     },
     {
       "item": "extradelight:butter"

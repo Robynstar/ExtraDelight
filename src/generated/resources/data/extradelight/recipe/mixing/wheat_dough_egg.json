@@ -1,14 +1,18 @@
 {
   "type": "extradelight:mixing_bowl",
+  "fluids": [],
   "ingredients": [
     {
-      "tag": "forge:flour"
+      "tag": "c:flour"
     },
     {
-      "tag": "forge:flour"
+      "tag": "c:flour"
     },
     {
-      "tag": "forge:flour"
+      "tag": "c:flour"
+    },
+    {
+      "tag": "c:eggs"
     }
   ],
   "result": {

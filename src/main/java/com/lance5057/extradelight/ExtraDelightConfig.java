@@ -11,6 +11,9 @@ public class ExtraDelightConfig {
 	public static final String CATEGORY_MINT_SPREAD = "mint_spread";
 	public static ModConfigSpec.BooleanValue MINT_SPREAD;
 	public static ModConfigSpec.IntValue MINT_SPREAD_RATE;
+	
+	public static final String CATEGORY_SPOOKY = "spooky";
+	public static ModConfigSpec.BooleanValue ALL_YEAR;
 
 	static {
 		ModConfigSpec.Builder Builder = new ModConfigSpec.Builder();
@@ -25,6 +28,10 @@ public class ExtraDelightConfig {
 
 		MINT_SPREAD_RATE = Builder.comment("How fast should mint spread? (Higher number = Slower)")
 				.defineInRange("mintSpreadRate", 6, 1, 100);
+		Builder.pop();
+		
+		Builder.comment("Spooky Things").push(CATEGORY_SPOOKY);
+		ALL_YEAR = Builder.comment("All Year Spooky").define("allYearSpooky", false);
 		Builder.pop();
 
 		spec = Builder.build();

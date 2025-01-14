@@ -45,6 +45,7 @@ public class CandyBowlEntity extends BlockEntity {
 
 	public void insertItem(ItemStack stack) {
 		BlockEntityUtils.Inventory.insertItem(items, stack, NUM_SLOTS);
+
 		this.updateInventory();
 	}
 

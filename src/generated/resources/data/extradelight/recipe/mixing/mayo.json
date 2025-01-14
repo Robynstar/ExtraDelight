@@ -1,5 +1,6 @@
 {
   "type": "extradelight:mixing_bowl",
+  "fluids": [],
   "ingredients": [
     {
       "tag": "c:eggs"
@@ -8,10 +9,10 @@
       "tag": "c:eggs"
     },
     {
-      "tag": "forge:cooking_oil"
+      "tag": "c:cooking_oil"
     },
     {
-      "tag": "forge:vinegar"
+      "tag": "c:vinegar"
     }
   ],
   "result": {

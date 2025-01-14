@@ -1,0 +1,190 @@
+{
+  "parent": "extradelight:food",
+  "criteria": {
+    "apple_chips": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:apple_chips"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bread_roll": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:roll"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "caramel_popcorn": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:caramel_popcorn"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "crackers": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:crackers"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "graham_cracker": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:graham_cracker"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "hard_boiled_egg": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:boiled_egg"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "jerky": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:jerky"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "popcorn": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:popcorn"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "potato_chips": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:potato_chips"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "roasted_pumpkin_seeds": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:roasted_pumpkin_seeds"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "sunflower_seeds": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:sunflower_seeds"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "toast": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:toast"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "trail_mix": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:trail_mix"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "extradelight.advancement.snacks.desc"
+    },
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "extradelight:popcorn"
+    },
+    "title": {
+      "translate": "extradelight.advancement.snacks.name"
+    }
+  },
+  "requirements": [
+    [
+      "sunflower_seeds"
+    ],
+    [
+      "hard_boiled_egg"
+    ],
+    [
+      "potato_chips"
+    ],
+    [
+      "toast"
+    ],
+    [
+      "popcorn"
+    ],
+    [
+      "roasted_pumpkin_seeds"
+    ],
+    [
+      "caramel_popcorn"
+    ],
+    [
+      "crackers"
+    ],
+    [
+      "bread_roll"
+    ],
+    [
+      "graham_cracker"
+    ],
+    [
+      "trail_mix"
+    ],
+    [
+      "jerky"
+    ],
+    [
+      "apple_chips"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

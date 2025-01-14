@@ -1,8 +1,9 @@
 {
   "type": "extradelight:mixing_bowl",
+  "fluids": [],
   "ingredients": [
     {
-      "tag": "forge:cookie_dough/sugar"
+      "tag": "c:cookie_dough/sugar"
     },
     {
       "item": "farmersdelight:pumpkin_slice"

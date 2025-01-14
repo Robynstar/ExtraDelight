@@ -1,5 +1,6 @@
 {
   "type": "extradelight:mixing_bowl",
+  "fluids": [],
   "ingredients": [
     {
       "tag": "c:foods/milk"
@@ -8,7 +9,7 @@
       "tag": "extradelight:sweetener"
     },
     {
-      "tag": "forge:cookie_dough"
+      "tag": "c:cookie_dough"
     },
     {
       "item": "minecraft:ice"

@@ -3,10 +3,10 @@
   "category": "misc",
   "ingredients": [
     {
-      "tag": "forge:bread/sliced"
+      "tag": "c:toast"
     },
     {
-      "tag": "forge:butter"
+      "tag": "c:butter"
     }
   ],
   "result": {

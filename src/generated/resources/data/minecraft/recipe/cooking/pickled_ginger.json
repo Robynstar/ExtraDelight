@@ -1,16 +1,12 @@
 {
   "type": "farmersdelight:cooking",
-  "container": {
-    "count": 1,
-    "id": "minecraft:glass_bottle"
-  },
   "experience": 0.35,
   "ingredients": [
     {
-      "tag": "forge:ginger/sliced"
+      "tag": "c:ginger/sliced"
     },
     {
-      "tag": "forge:vinegar"
+      "tag": "c:vinegar"
     },
     {
       "tag": "extradelight:sweetener"

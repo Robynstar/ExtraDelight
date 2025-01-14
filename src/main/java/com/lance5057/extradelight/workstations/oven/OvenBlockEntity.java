@@ -131,9 +131,10 @@ public class OvenBlockEntity extends SyncedBlockEntity
 	public static void cookingTick(Level level, BlockPos pos, BlockState state, OvenBlockEntity Oven) {
 		boolean isHeated = Oven.isHeated(level, pos);
 		boolean didInventoryChange = false;
+		Optional<RecipeHolder<OvenRecipe>> recipe = Oven.getMatchingRecipe(new RecipeWrapper(Oven.inventory));
 
 		if (isHeated && Oven.hasInput()) {
-			Optional<RecipeHolder<OvenRecipe>> recipe = Oven.getMatchingRecipe(new RecipeWrapper(Oven.inventory));
+
 			if (recipe.isPresent() && Oven.canCook(recipe.get().value())) {
 				didInventoryChange = Oven.processCooking(recipe.get(), Oven);
 			} else {
@@ -149,7 +150,7 @@ public class OvenBlockEntity extends SyncedBlockEntity
 				Oven.moveMealToOutput();
 				didInventoryChange = true;
 			} else if (!Oven.inventory.getStackInSlot(CONTAINER_SLOT).isEmpty()) {
-				Oven.useStoredContainersOnMeal();
+//				Oven.useStoredContainersOnMeal(recipe.get().value().shouldConsumeContainer());
 				didInventoryChange = true;
 			}
 		}
@@ -306,10 +307,11 @@ public class OvenBlockEntity extends SyncedBlockEntity
 
 		cookTime = 0;
 		mealContainerStack = recipe.value().getOutputContainer();
+		ItemStack containerInputStack = inventory.getStackInSlot(CONTAINER_SLOT);
 		ItemStack resultStack = recipe.value().getResultItem(this.level.registryAccess());
-		ItemStack storedMealStack = inventory.getStackInSlot(MEAL_DISPLAY_SLOT);
+		ItemStack storedMealStack = inventory.getStackInSlot(OUTPUT_SLOT);
 		if (storedMealStack.isEmpty()) {
-			inventory.setStackInSlot(MEAL_DISPLAY_SLOT, resultStack.copy());
+			inventory.setStackInSlot(OUTPUT_SLOT, resultStack.copy());
 		} else if (ItemStack.isSameItem(resultStack, storedMealStack)) {
 			storedMealStack.grow(resultStack.getCount());
 		}
@@ -327,6 +329,8 @@ public class OvenBlockEntity extends SyncedBlockEntity
 			}
 			if (!slotStack.isEmpty())
 				slotStack.shrink(1);
+			if(recipe.value().shouldConsumeContainer())
+				containerInputStack.shrink(1);
 		}
 		return true;
 	}
@@ -402,7 +406,7 @@ public class OvenBlockEntity extends SyncedBlockEntity
 		}
 	}
 
-	private void useStoredContainersOnMeal() {
+	private void useStoredContainersOnMeal(boolean b) {
 		ItemStack mealStack = inventory.getStackInSlot(MEAL_DISPLAY_SLOT);
 		ItemStack containerInputStack = inventory.getStackInSlot(CONTAINER_SLOT);
 		ItemStack outputStack = inventory.getStackInSlot(OUTPUT_SLOT);
@@ -411,7 +415,8 @@ public class OvenBlockEntity extends SyncedBlockEntity
 			int smallerStackCount = Math.min(mealStack.getCount(), containerInputStack.getCount());
 			int mealCount = Math.min(smallerStackCount, mealStack.getMaxStackSize() - outputStack.getCount());
 			if (outputStack.isEmpty()) {
-//				containerInputStack.hurt(1, this.level.random, null);
+				if (!this.level.isClientSide && b)
+					containerInputStack.shrink(1);
 				inventory.setStackInSlot(OUTPUT_SLOT, mealStack.split(mealCount));
 			} else if (outputStack.getItem() == mealStack.getItem()) {
 				mealStack.shrink(mealCount);

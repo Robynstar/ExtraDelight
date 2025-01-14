@@ -1,13 +1,21 @@
 package com.lance5057.extradelight.blocks;
 
+import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.blocks.interfaces.IStyleable;
 import com.mojang.serialization.MapCodec;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.network.chat.CommonComponents;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -18,9 +26,12 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
+import java.util.List;
+import java.util.function.Consumer;
+
 public class BakingStoneBlock extends Block implements IStyleable {
 	public static final MapCodec<BakingStoneBlock> CODEC = simpleCodec(BakingStoneBlock::new);
-	protected VoxelShape SHAPE = Block.box(4.0D, 0.0D, 0.0D, 12.0D, 8.0D, 16.0D);
+	protected VoxelShape SHAPE = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 1.0D, 15.0D);
 
 	public static final IntegerProperty STYLE = IntegerProperty.create("style", 0, Styles.values().length-1);
 
@@ -110,5 +121,12 @@ public class BakingStoneBlock extends Block implements IStyleable {
 	@Override
 	public boolean isPatreonStyle(int style) {
 		return false;
+	}
+
+	@Override
+	public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents,
+								TooltipFlag tooltipFlag) {
+		MutableComponent textEmpty = Component.translatable(ExtraDelight.MOD_ID + ".tooltip.styleable");
+		tooltipComponents.add(textEmpty.withStyle(ChatFormatting.AQUA));
 	}
 }

@@ -3,30 +3,30 @@
   "category": "misc",
   "key": {
     "b": {
-      "tag": "forge:butter"
+      "tag": "c:butter"
     },
     "c": {
-      "tag": "forge:cheese"
+      "tag": "c:cheese"
     },
     "e": {
       "tag": "c:foods/cooked_egg"
     },
     "f": {
-      "tag": "forge:flour"
+      "tag": "c:flour"
     },
     "h": [
       {
         "item": "farmersdelight:smoked_ham"
       },
       {
-        "item": "minecraft:porkchop"
+        "item": "minecraft:cooked_porkchop"
       }
     ],
     "m": {
       "tag": "c:foods/milk"
     },
     "t": {
-      "tag": "forge:toast"
+      "tag": "c:toast"
     }
   },
   "pattern": [

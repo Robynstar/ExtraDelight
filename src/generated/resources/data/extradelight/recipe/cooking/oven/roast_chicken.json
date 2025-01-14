@@ -1,5 +1,6 @@
 {
   "type": "extradelight:oven",
+  "consumeContainer": false,
   "container": {
     "count": 1,
     "id": "extradelight:tray"
@@ -11,7 +12,7 @@
       "tag": "extradelight:processed/onion"
     },
     {
-      "tag": "forge:gravy"
+      "tag": "c:gravy"
     },
     {
       "tag": "c:foods/bread"
@@ -29,7 +30,7 @@
       "tag": "extradelight:processed/carrot"
     },
     {
-      "tag": "forge:butter"
+      "tag": "c:butter"
     },
     {
       "tag": "extradelight:processed/potato"

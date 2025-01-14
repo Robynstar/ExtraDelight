@@ -5,8 +5,11 @@ import java.util.Map;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.aesthetics.block.cornhuskdoll.CornHuskDollRenderer;
 import com.lance5057.extradelight.armor.models.CorncobPipeModel;
+import com.lance5057.extradelight.blocks.chocolatebox.ChocolateBoxRenderer;
 import com.lance5057.extradelight.blocks.countercabinet.CounterCabinetRenderer;
 import com.lance5057.extradelight.blocks.countercabinet.CounterCabinetScreen;
+import com.lance5057.extradelight.blocks.funnel.FunnelRenderer;
+import com.lance5057.extradelight.blocks.jar.JarRenderer;
 import com.lance5057.extradelight.blocks.keg.KegRenderer;
 import com.lance5057.extradelight.blocks.sink.SinkCabinetScreen;
 import com.lance5057.extradelight.blocks.sink.SinkRenderer;
@@ -20,8 +23,11 @@ import com.lance5057.extradelight.displays.spice.SpiceRackScreen;
 import com.lance5057.extradelight.displays.wreath.WreathRenderer;
 import com.lance5057.extradelight.displays.wreath.WreathScreen;
 import com.lance5057.extradelight.gui.StyleableScreen;
+import com.lance5057.extradelight.items.jar.JarItemModel;
+import com.lance5057.extradelight.workstations.chiller.ChillerScreen;
 import com.lance5057.extradelight.workstations.doughshaping.DoughShapingScreen;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackRenderer;
+import com.lance5057.extradelight.workstations.meltingpot.MeltingPotScreen;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlRenderer;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlScreen;
 import com.lance5057.extradelight.workstations.mortar.MortarRenderer;
@@ -31,14 +37,21 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.color.item.ItemColor;
+import net.minecraft.client.model.HumanoidModel;
+import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.model.geom.LayerDefinitions;
+import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.renderer.BiomeColors;
+import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.Resource;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.api.distmarker.Dist;
@@ -48,6 +61,8 @@ import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.ModelEvent.RegisterAdditional;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
+import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
+import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, modid = ExtraDelight.MOD_ID, value = Dist.CLIENT)
 public class ExtraDelightClientEvents {
@@ -56,11 +71,6 @@ public class ExtraDelightClientEvents {
 		event.registerLayerDefinition(CorncobPipeModel.LAYER_LOCATION, () -> LayerDefinition
 				.create(CorncobPipeModel.createLayer(LayerDefinitions.INNER_ARMOR_DEFORMATION), 16, 16));
 	}
-
-//	@SubscribeEvent
-//	public static void onRegisterRecipeBookCategories(RegisterRecipeBookCategoriesEvent event) {
-//		OvenRecipeCatagories.init(event);
-//	}
 
 	@SubscribeEvent
 	public static void registerClient(RegisterMenuScreensEvent event) {
@@ -74,6 +84,8 @@ public class ExtraDelightClientEvents {
 		event.register(ExtraDelightContainers.COUNTER_CABINET_MENU.get(), CounterCabinetScreen::new);
 		event.register(ExtraDelightContainers.STYLE_MENU.get(), StyleableScreen::new);
 		event.register(ExtraDelightContainers.MIXING_BOWL_MENU.get(), MixingBowlScreen::new);
+		event.register(ExtraDelightContainers.MELTING_POT_MENU.get(), MeltingPotScreen::new);
+		event.register(ExtraDelightContainers.CHILLER_MENU.get(), ChillerScreen::new);
 	}
 
 	public static void setTERenderers() {
@@ -90,6 +102,9 @@ public class ExtraDelightClientEvents {
 				CounterCabinetRenderer::new);
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.SINK_BLOCK.get(), SinkRenderer::new);
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.KEG.get(), KegRenderer::new);
+		BlockEntityRenderers.register(ExtraDelightBlockEntities.FUNNEL.get(), FunnelRenderer::new);
+		BlockEntityRenderers.register(ExtraDelightBlockEntities.CHOCOLATE_BOX.get(), ChocolateBoxRenderer::new);
+		BlockEntityRenderers.register(ExtraDelightBlockEntities.JAR.get(), JarRenderer::new);
 	}
 
 	@SubscribeEvent
@@ -155,4 +170,26 @@ public class ExtraDelightClientEvents {
 		event.register(itemBlockColourHandler, AestheticBlocks.getRegistryListAsItems(AestheticBlocks.WREATH_ITEMS));
 	}
 
+	@SubscribeEvent
+	public static void registerClientExtensions(RegisterClientExtensionsEvent event) {
+		event.registerItem(new IClientItemExtensions() {
+			@Override
+			public HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack,
+					EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
+				EntityModelSet models = Minecraft.getInstance().getEntityModels();
+				ModelPart root = models.bakeLayer(CorncobPipeModel.LAYER_LOCATION);
+				return new CorncobPipeModel(root);
+			}
+
+		}, ExtraDelightItems.CORN_COB_PIPE.asItem());
+
+		event.registerItem(new IClientItemExtensions() {
+
+			@Override
+			public BlockEntityWithoutLevelRenderer getCustomRenderer() {
+				return JarItemModel.getInstance();
+			}
+		}, ExtraDelightItems.JAR.asItem());
+
+	}
 }

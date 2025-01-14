@@ -1,17 +1,15 @@
 {
   "type": "extradelight:mixing_bowl",
+  "fluids": [],
   "ingredients": [
     {
-      "tag": "forge:flour"
+      "tag": "c:flour"
     },
     {
-      "tag": "forge:flour"
+      "tag": "c:flour"
     },
     {
-      "tag": "forge:flour"
-    },
-    {
-      "item": "minecraft:water_bucket"
+      "tag": "c:flour"
     }
   ],
   "result": {

@@ -10,7 +10,6 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.ParticleUtils;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -65,13 +64,16 @@ public class FruitLeafBlock extends Block {
 			p_222564_.removeBlock(p_222565_, false);
 		}
 
-		int i = p_222563_.getValue(AGE);
-		if (i < 3 && p_222564_.getRawBrightness(p_222565_.above(), 0) >= 9 && net.neoforged.neoforge.common.CommonHooks
-				.canCropGrow(p_222564_, p_222565_, p_222563_, p_222566_.nextInt(5) == 0)) {
-			BlockState blockstate = p_222563_.setValue(AGE, Integer.valueOf(i + 1));
-			p_222564_.setBlock(p_222565_, blockstate, 2);
-			p_222564_.gameEvent(GameEvent.BLOCK_CHANGE, p_222565_, GameEvent.Context.of(blockstate));
-			net.neoforged.neoforge.common.CommonHooks.fireCropGrowPost(p_222564_, p_222565_, p_222563_);
+		if (p_222566_.nextInt(100) % 6 == 0) {
+			int i = p_222563_.getValue(AGE);
+			if (i < 3 && p_222564_.getRawBrightness(p_222565_.above(), 0) >= 9
+					&& net.neoforged.neoforge.common.CommonHooks.canCropGrow(p_222564_, p_222565_, p_222563_,
+							p_222566_.nextInt(5) == 0)) {
+				BlockState blockstate = p_222563_.setValue(AGE, Integer.valueOf(i + 1));
+				p_222564_.setBlock(p_222565_, blockstate, 2);
+				p_222564_.gameEvent(GameEvent.BLOCK_CHANGE, p_222565_, GameEvent.Context.of(blockstate));
+				net.neoforged.neoforge.common.CommonHooks.fireCropGrowPost(p_222564_, p_222565_, p_222563_);
+			}
 		}
 	}
 
@@ -156,7 +158,7 @@ public class FruitLeafBlock extends Block {
 			InteractionHand hand, BlockHitResult result) {
 		if (!level.isClientSide)
 			if (state.getValue(AGE) >= FruitLeafBlock.MAX_AGE) {
-				ItemStack fruit = new ItemStack(this.fruit.get(), level.random.nextInt(3) + 1);
+				ItemStack fruit = new ItemStack(this.fruit.get(), 1);
 				player.getInventory().placeItemBackInInventory(fruit);
 				level.setBlock(pos, state.setValue(AGE, 0), 3);
 			}

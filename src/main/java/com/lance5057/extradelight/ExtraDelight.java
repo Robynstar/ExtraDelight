@@ -14,16 +14,17 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.common.NeoForgeMod;
 
 @Mod(ExtraDelight.MOD_ID)
 public class ExtraDelight {
 	public final static String MOD_ID = "extradelight";
-	public static final String VERSION = "2.0.4";
+	public static final String VERSION = "2.2.1";
 
 	public static Logger logger = LogManager.getLogger();
 
 	public ExtraDelight(IEventBus modEventBus, ModContainer modContainer) {
+		NeoForgeMod.enableMilkFluid();
 		modContainer.registerConfig(ModConfig.Type.COMMON, ExtraDelightConfig.spec);
 
 //		final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -31,6 +32,7 @@ public class ExtraDelight {
 		modEventBus.addListener(this::setupCommon);
 		modEventBus.addListener(ExtraDelightCapabilities::registerCapabilities);
 		modEventBus.addListener(NetworkHandler::setupPackets);
+		modEventBus.addListener(ExtraDelightBlockEntities::addCabinets);
 
 		AestheticBlocks.setup();
 		AestheticBlocks.BLOCKS.register(modEventBus);
@@ -51,10 +53,6 @@ public class ExtraDelight {
 		ExtraDelightWorldGen.FEATURES.register(modEventBus);
 
 		ExtraDelightFeatures.FEATURES.register(modEventBus);
-//		ExtraDelightPlacedFeatures.register(modEventBus);
-//
-//		IEventBus bus = MinecraftForge.EVENT_BUS;
-//		bus.addListener(ExtraDelightEvents::stopDimensionDestruction);
 	}
 
 	public void setupClient(FMLClientSetupEvent event) {
@@ -66,6 +64,7 @@ public class ExtraDelight {
 	}
 
 	public void setupCommon(FMLCommonSetupEvent event) {
-//		event.enqueueWork(CropGeneration::registerWildCropGeneration);
+		ExtraDelightBlocks.setup();
+		ExtraDelightItems.setup();
 	}
 }
