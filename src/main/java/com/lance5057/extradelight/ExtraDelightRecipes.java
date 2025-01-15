@@ -3,6 +3,7 @@ package com.lance5057.extradelight;
 import java.util.function.Supplier;
 
 import com.lance5057.extradelight.recipe.DynamicJamRecipe;
+import com.lance5057.extradelight.recipe.DynamicSandwichRecipe;
 import com.lance5057.extradelight.recipe.FeastRecipe;
 import com.lance5057.extradelight.recipe.ShapedWithJarRecipe;
 import com.lance5057.extradelight.recipe.ToolOnBlockRecipe;
@@ -99,4 +100,6 @@ public class ExtraDelightRecipes {
 			ShapedWithJarRecipe.Serializer::new);
 	public static final Supplier<RecipeSerializer<?>> DYNAMIC_JAM_SERIALIZER = RECIPE_SERIALIZERS
 			.register("dynamic_jam", DynamicJamRecipe.Serializer::new);
+	public static final Supplier<RecipeSerializer<?>> DYNAMIC_SANDWICH_SERIALIZER = RECIPE_SERIALIZERS
+			.register("dynamic_sandwich", DynamicSandwichRecipe.Serializer::new);
 }

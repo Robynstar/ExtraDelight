@@ -26,6 +26,7 @@ import com.lance5057.extradelight.items.ShuckableCorn;
 import com.lance5057.extradelight.items.ToolTipConsumableItem;
 import com.lance5057.extradelight.items.XocolatlItem;
 import com.lance5057.extradelight.items.dynamicfood.DynamicJam;
+import com.lance5057.extradelight.items.dynamicfood.DynamicSandwich;
 import com.lance5057.extradelight.items.dynamicfood.api.DynamicItemComponent;
 import com.lance5057.extradelight.items.jar.JarItem;
 
@@ -2100,5 +2101,8 @@ public class ExtraDelightItems {
 
 	public static final DeferredItem<DynamicJam> DYNAMIC_TEST = ITEMS.register("dynamic_test", () -> new DynamicJam(
 			new Item.Properties().component(ExtraDelightComponents.DYNAMIC_FOOD.get(), DynamicItemComponent.EMPTY)));
+	public static final DeferredItem<DynamicSandwich> DYNAMIC_TEST2 = ITEMS.register("dynamic_test2",
+			() -> new DynamicSandwich(new Item.Properties().component(ExtraDelightComponents.DYNAMIC_FOOD.get(),
+					DynamicItemComponent.EMPTY)));
 
 }
