@@ -1,6 +1,10 @@
 package com.lance5057.extradelight.recipe;
 
+import com.lance5057.extradelight.ExtraDelight;
+import com.lance5057.extradelight.ExtraDelightComponents;
 import com.lance5057.extradelight.ExtraDelightRecipes;
+import com.lance5057.extradelight.items.dynamicfood.DynamicSandwich;
+import com.lance5057.extradelight.items.dynamicfood.api.DynamicItemComponent;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -12,6 +16,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.CraftingBookCategory;
 import net.minecraft.world.item.crafting.CraftingInput;
 import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.crafting.ShapedRecipe;
 import net.minecraft.world.item.crafting.ShapedRecipePattern;
 
@@ -24,13 +29,28 @@ public class DynamicSandwichRecipe extends ShapedRecipe {
 
 	@Override
 	public ItemStack assemble(CraftingInput input, HolderLookup.Provider registries) {
-
-		return this.getResultItem(registries).copy();
+		ItemStack stack = super.getResultItem(registries).copy();
+		if (stack.getItem() instanceof DynamicSandwich) {
+			DynamicItemComponent comp = stack.getComponents().get(ExtraDelightComponents.DYNAMIC_FOOD.get());
+			if (comp != null) {
+				for (ItemStack s : input.items())
+					comp.addItem(s);
+			} else
+				ExtraDelight.logger.error("DynamicSandwich lost its component!");
+		} else {
+			ExtraDelight.logger.error("DynamicSandwichRecipe result not DynamicSandwich!");
+		}
+		return stack;
 	}
 
 	@Override
 	public RecipeSerializer<?> getSerializer() {
 		return ExtraDelightRecipes.DYNAMIC_SANDWICH_SERIALIZER.get();
+	}
+
+	@Override
+	public RecipeType<?> getType() {
+		return ExtraDelightRecipes.DYNAMIC_SANDWICH.get();
 	}
 
 	public static class Serializer implements RecipeSerializer<DynamicSandwichRecipe> {

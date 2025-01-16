@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "item": "minecraft:bread"
+    },
+    "i": {
+      "item": "farmersdelight:ham"
+    }
+  },
+  "pattern": [
+    "b",
+    "i",
+    "b"
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:dynamic_test2"
+  }
+}

@@ -48,6 +48,8 @@ public class ExtraDelightRecipes {
 			() -> registerRecipeType("shaped_jar"));
 	public static final Supplier<RecipeType<DynamicJamRecipe>> DYNAMIC_JAM = RECIPE_TYPES.register("dynamic_jam",
 			() -> registerRecipeType("dynamic_jam"));
+	public static final Supplier<RecipeType<DynamicSandwichRecipe>> DYNAMIC_SANDWICH = RECIPE_TYPES.register("dynamic_sandwich",
+			() -> registerRecipeType("dynamic_jam"));
 
 	// Dynamic Names
 //	public static final DeferredHolder<RecipeType<?>, RecipeType<Recipe<?>>> DYNAMIC_SMELT = RECIPE_TYPES

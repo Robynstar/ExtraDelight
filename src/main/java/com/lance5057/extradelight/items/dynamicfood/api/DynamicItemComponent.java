@@ -202,11 +202,15 @@ public class DynamicItemComponent implements TooltipProvider {
 
 	@Override
 	public void addToTooltip(TooltipContext context, Consumer<Component> tooltipAdder, TooltipFlag tooltipFlag) {
-		NonNullList<ItemStack> i = this.getItems();
-		List<Component> c = List.of();
-		for (ItemStack s : i) {
-			c.add(s.getDisplayName());
-		}
-		tooltipAdder.accept(Component.translatable(ExtraDelight.MOD_ID + ".tooltip.dynamic", c.toArray()));
+		if (this.getItems() != null && !this.getItems().isEmpty()) {
+			NonNullList<ItemStack> i = this.getItems();
+			List<Component> c = new ArrayList<Component>();
+			tooltipAdder.accept(Component.translatable(ExtraDelight.MOD_ID + ".tooltip.dynamic"));
+			for (ItemStack s : i) {
+				tooltipAdder.accept(s.getDisplayName());
+			}
+
+		} else
+			tooltipAdder.accept(Component.translatable(ExtraDelight.MOD_ID + ".tooltip.dynamic.empty"));
 	}
 }
