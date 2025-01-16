@@ -1112,9 +1112,9 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.AEBLEFLAESK, "aebleflaesk");
 		forItem(ExtraDelightItems.CANDY_BAR_SALAD, "candy_bar_salad");
 
-//		getBuilder(ExtraDelightItems.DYNAMIC_TEST.getId().getPath())
-//				.parent(new ModelFile.UncheckedModelFile("item/generated"))
-//				.customLoader(DynamicFoodGeometryLoader::builder);
+		getBuilder(ExtraDelightItems.DYNAMIC_TEST2.getId().getPath())
+				.parent(new ModelFile.UncheckedModelFile("item/generated"))
+				.customLoader(DynamicFoodGeometryLoader::builder);
 
 		AestheticBlocks.itemModel(this);
 	}

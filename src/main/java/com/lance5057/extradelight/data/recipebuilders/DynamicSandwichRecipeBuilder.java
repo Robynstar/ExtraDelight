@@ -9,6 +9,7 @@ import javax.annotation.Nullable;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.lance5057.extradelight.recipe.DynamicSandwichRecipe;
 
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementRequirements;
@@ -23,7 +24,6 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.ShapedRecipe;
 import net.minecraft.world.item.crafting.ShapedRecipePattern;
 import net.minecraft.world.level.ItemLike;
 
@@ -135,9 +135,8 @@ public class DynamicSandwichRecipeBuilder implements RecipeBuilder {
 				.addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id))
 				.rewards(AdvancementRewards.Builder.recipe(id)).requirements(AdvancementRequirements.Strategy.OR);
 		this.criteria.forEach(advancement$builder::addCriterion);
-		ShapedRecipe shapedrecipe = new ShapedRecipe(Objects.requireNonNullElse(this.group, ""),
-				RecipeBuilder.determineBookCategory(this.category), shapedrecipepattern, this.resultStack,
-				this.showNotification);
+		DynamicSandwichRecipe shapedrecipe = new DynamicSandwichRecipe(Objects.requireNonNullElse(this.group, ""),
+				RecipeBuilder.determineBookCategory(this.category), shapedrecipepattern, this.resultStack);
 		recipeOutput.accept(id, shapedrecipe,
 				advancement$builder.build(id.withPrefix("recipes/" + this.category.getFolderName() + "/")));
 	}

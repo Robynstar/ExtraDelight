@@ -961,6 +961,7 @@
   "item.extradelight.dried_chili": "Dried Chili",
   "item.extradelight.dried_corn_husk": "Dried Corn Husk",
   "item.extradelight.dried_fruit": "Dried Fruit",
+  "item.extradelight.dynamic_test2": "Sandwich",
   "item.extradelight.easter_egg": "Easter Egg",
   "item.extradelight.egg_in_the_basket": "Egg in a Basket",
   "item.extradelight.egg_mix": "Egg Mix",
@@ -1304,5 +1305,6 @@
   "itemGroup.extradelight.aesthetics": "Extra Delight Aesthetic Items",
   "itemGroup.extradelight.tab": "Extra Delight",
   "screen.chiller.name": "Chiller",
-  "screen.melting_pot.name": "Melting Pot"
+  "screen.melting_pot.name": "Melting Pot",
+  "tooltip.dynamic.ingredients": "Ingredients"
 }

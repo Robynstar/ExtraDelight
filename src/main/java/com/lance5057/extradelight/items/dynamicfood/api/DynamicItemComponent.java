@@ -32,7 +32,7 @@ public class DynamicItemComponent implements TooltipProvider {
 	public NonNullList<ItemStack> getItems() {
 		return items;
 	}
-
+	
 	public void setItems(NonNullList<ItemStack> items) {
 		this.items = items;
 	}

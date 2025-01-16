@@ -1,5 +1,7 @@
 package com.lance5057.extradelight;
 
+import com.lance5057.extradelight.items.dynamicfood.api.DynamicItemComponent;
+
 import net.minecraft.core.Direction;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
@@ -83,5 +85,9 @@ public class ExtraDelightCapabilities {
 		event.registerBlockEntity(Capabilities.FluidHandler.BLOCK, ExtraDelightBlockEntities.FUNNEL.get(), (o, d) -> {
 			return o.getFluidTank();
 		});
+
+		event.registerItem(Capabilities.ItemHandler.ITEM,
+				(o, d) -> new ComponentItemHandler(o, ExtraDelightComponents.ITEMSTACK_HANDLER.get(), 7),
+				ExtraDelightItems.DYNAMIC_TEST2.get());
 	}
 }

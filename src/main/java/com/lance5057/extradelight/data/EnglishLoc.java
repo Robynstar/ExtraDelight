@@ -69,6 +69,8 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("farmersdelight.tooltip.cookie_dough_milkshake", "Instant Health");
 		this.add("farmersdelight.tooltip.mint_chip_milkshake", "Instant Health");
 
+		this.add("tooltip.dynamic.ingredients", "Ingredients");
+
 		this.add("extradelight.corn_dimension.death", "Be more careful in the cornfield next time...");
 		this.add("extradelight.block.recipefeast.use_container", "Something else is needed");
 
@@ -225,7 +227,7 @@ public class EnglishLoc extends LanguageProvider {
 
 		this.add(ExtraDelight.MOD_ID + ".advancement.frosting.name", "Full Palette");
 		this.add(ExtraDelight.MOD_ID + ".advancement.frosting.desc", "Make every color of frosting.");
-		
+
 		this.add(ExtraDelight.MOD_ID + ".advancement.butcher.name", "Certified Carnivore");
 		this.add(ExtraDelight.MOD_ID + ".advancement.butcher.desc", "Make every Butchercraft meal.");
 
@@ -1175,6 +1177,8 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.TARTE_TATIN_SLICE.get(), "Slice of Tarte Tatin");
 		this.add(ExtraDelightItems.AEBLEFLAESK.get(), "Æbleflæsk");
 		this.add(ExtraDelightItems.CANDY_BAR_SALAD.get(), "Candy Bar Salad");
+
+		this.add(ExtraDelightItems.DYNAMIC_TEST2.get(), "Sandwich");
 
 		AestheticBlocks.EngLoc(this);
 	}

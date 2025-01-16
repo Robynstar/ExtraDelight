@@ -4,19 +4,19 @@ import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightComponents;
 import com.lance5057.extradelight.ExtraDelightRecipes;
 import com.lance5057.extradelight.items.dynamicfood.DynamicSandwich;
-import com.lance5057.extradelight.items.dynamicfood.api.DynamicItemComponent;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.NonNullList;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.component.ItemContainerContents;
 import net.minecraft.world.item.crafting.CraftingBookCategory;
 import net.minecraft.world.item.crafting.CraftingInput;
 import net.minecraft.world.item.crafting.RecipeSerializer;
-import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.crafting.ShapedRecipe;
 import net.minecraft.world.item.crafting.ShapedRecipePattern;
 
@@ -31,12 +31,13 @@ public class DynamicSandwichRecipe extends ShapedRecipe {
 	public ItemStack assemble(CraftingInput input, HolderLookup.Provider registries) {
 		ItemStack stack = super.getResultItem(registries).copy();
 		if (stack.getItem() instanceof DynamicSandwich) {
-			DynamicItemComponent comp = stack.getComponents().get(ExtraDelightComponents.DYNAMIC_FOOD.get());
-			if (comp != null) {
-				for (ItemStack s : input.items())
-					comp.addItem(s);
-			} else
-				ExtraDelight.logger.error("DynamicSandwich lost its component!");
+
+			NonNullList<ItemStack> l = NonNullList.create();
+			for (ItemStack s : input.items())
+				if (s != null && !s.isEmpty())
+					l.add(s);
+
+			stack.set(ExtraDelightComponents.ITEMSTACK_HANDLER.get(), ItemContainerContents.fromItems(l));
 		} else {
 			ExtraDelight.logger.error("DynamicSandwichRecipe result not DynamicSandwich!");
 		}
@@ -48,10 +49,10 @@ public class DynamicSandwichRecipe extends ShapedRecipe {
 		return ExtraDelightRecipes.DYNAMIC_SANDWICH_SERIALIZER.get();
 	}
 
-	@Override
-	public RecipeType<?> getType() {
-		return ExtraDelightRecipes.DYNAMIC_SANDWICH.get();
-	}
+//	@Override
+//	public RecipeType<?> getType() {
+//		return ExtraDelightRecipes.DYNAMIC_SANDWICH.get();
+//	}
 
 	public static class Serializer implements RecipeSerializer<DynamicSandwichRecipe> {
 		public static final MapCodec<DynamicSandwichRecipe> CODEC = RecordCodecBuilder.mapCodec(p_340778_ -> p_340778_
