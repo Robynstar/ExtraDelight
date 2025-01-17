@@ -7,6 +7,9 @@ import java.util.Set;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.joml.Vector3f;
+
+import com.mojang.blaze3d.vertex.PoseStack;
 
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.block.model.BakedQuad;
@@ -16,6 +19,7 @@ import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.client.resources.model.ModelBakery;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.client.ChunkRenderTypeSet;
 import net.neoforged.neoforge.client.model.data.ModelData;
@@ -30,11 +34,12 @@ public class DynamicFoodChildBakedGeometry implements BakedModel {
 	@Override
 	@NotNull
 	@SuppressWarnings("deprecation")
-	public List<BakedQuad> getQuads(@Nullable BlockState pState, @Nullable Direction pDirection,
-			@NotNull RandomSource pRandom) {
+	public List<BakedQuad> getQuads(@Nullable BlockState state, @Nullable Direction side, @NotNull RandomSource rand) {
 		List<BakedQuad> bakedQuads = new ArrayList<>();
+		float x = 0;
 		for (BakedModel bakedModel : childrenModels) {
-			bakedQuads.addAll(bakedModel.getQuads(pState, pDirection, pRandom));
+			bakedQuads.addAll(shiftedQuad(bakedModel.getQuads(state, side, rand), new Vector3f(0, x, 0)));
+			x += -1f;
 		}
 		return bakedQuads;
 	}
@@ -44,10 +49,45 @@ public class DynamicFoodChildBakedGeometry implements BakedModel {
 	public List<BakedQuad> getQuads(@Nullable BlockState state, @Nullable Direction side, @NotNull RandomSource rand,
 			@NotNull ModelData data, @Nullable RenderType renderType) {
 		List<BakedQuad> bakedQuads = new ArrayList<>();
+		int x = 0;
 		for (BakedModel bakedModel : childrenModels) {
 			bakedQuads.addAll(bakedModel.getQuads(state, side, rand, data, renderType));
 		}
 		return bakedQuads;
+	}
+
+	List<BakedQuad> shiftedQuad(List<BakedQuad> quads, Vector3f vec) {
+		List<BakedQuad> newQuads = new ArrayList<BakedQuad>();
+
+		for (BakedQuad q : quads) {
+			newQuads.add(new BakedQuad(shiftedVerts(q.getVertices().clone(), vec), q.getTintIndex(), q.getDirection(),
+					q.getSprite(), q.isShade()));
+		}
+
+		return newQuads;
+	}
+
+	int[] shiftedVerts(int[] verts, Vector3f vec) {
+		for (int i = 0; i < verts.length; i += 2) {
+			float f = Float.intBitsToFloat(verts[i]);
+			f += vec.x;
+			verts[i] = Float.floatToIntBits(f);
+
+			f = Float.intBitsToFloat(verts[i + 1]);
+			f += vec.x;
+			verts[i + 1] = Float.floatToIntBits(f);
+		}
+
+		return verts;
+	}
+
+	@Override
+	public BakedModel applyTransform(ItemDisplayContext transformType, PoseStack poseStack,
+			boolean applyLeftHandTransform) {
+		for (BakedModel bakedModel : childrenModels) {
+			bakedModel.getTransforms().getTransform(transformType).apply(applyLeftHandTransform, poseStack);
+		}
+		return this;
 	}
 
 	@Override

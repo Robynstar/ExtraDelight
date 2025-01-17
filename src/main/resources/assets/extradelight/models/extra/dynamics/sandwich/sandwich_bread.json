@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "extradelight:item/dynamics/sandwich/sandwich_bread"
+    "layer0": "extradelight:item/dynamics/sandwich/bread"
   }
 }

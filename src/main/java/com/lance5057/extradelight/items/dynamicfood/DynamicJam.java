@@ -19,9 +19,9 @@ import net.minecraft.world.item.ItemStack;
 
 public class DynamicJam extends Item implements IDynamic {
 	static final ModelResourceLocation base_model = ModelResourceLocation
-			.standalone(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "extra/jam_jar"));
+			.standalone(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "extra/dynamics/jam/jam_jar"));
 	static final ModelResourceLocation missing_model = ModelResourceLocation
-			.standalone(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "extra/jam_missing"));
+			.standalone(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "extra/dynamics/jam/jam_missing"));
 
 	public DynamicJam(Properties properties) {
 		super(properties);

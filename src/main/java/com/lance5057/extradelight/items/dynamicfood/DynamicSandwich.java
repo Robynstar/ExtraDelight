@@ -21,9 +21,9 @@ import net.minecraft.world.item.component.ItemContainerContents;
 
 public class DynamicSandwich extends Item implements IDynamic {
 	static final ModelResourceLocation base_model = ModelResourceLocation
-			.standalone(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "extra/sandwich_bread"));
+			.standalone(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "extra/dynamics/sandwich/sandwich_bread"));
 	static final ModelResourceLocation missing_model = ModelResourceLocation
-			.standalone(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "extra/empty_sandwich"));
+			.standalone(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "extra/dynamics/sandwich/empty_sandwich"));
 
 	public DynamicSandwich(Properties properties) {
 		super(properties);
@@ -49,6 +49,7 @@ public class DynamicSandwich extends Item implements IDynamic {
 		} else
 			i.add(Minecraft.getInstance().getModelManager().getModel(missing_model));
 
+		i.add(bm);
 		return i;
 	}
 

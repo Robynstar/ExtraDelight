@@ -10,6 +10,7 @@ import net.minecraft.client.resources.model.ModelBaker;
 import net.minecraft.client.resources.model.ModelState;
 import net.neoforged.neoforge.client.model.geometry.IGeometryBakingContext;
 import net.neoforged.neoforge.client.model.geometry.IUnbakedGeometry;
+import net.neoforged.neoforge.client.model.geometry.UnbakedGeometryHelper;
 
 public class DynamicFoodUnbakedGeometry implements IUnbakedGeometry<DynamicFoodUnbakedGeometry> {
 
@@ -21,6 +22,7 @@ public class DynamicFoodUnbakedGeometry implements IUnbakedGeometry<DynamicFoodU
 	@Override
 	public BakedModel bake(IGeometryBakingContext context, ModelBaker baker,
 			Function<Material, TextureAtlasSprite> spriteGetter, ModelState modelState, ItemOverrides overrides) {
+		
 		return new DynamicFoodParentBakedGeometry();
 	}
 }
