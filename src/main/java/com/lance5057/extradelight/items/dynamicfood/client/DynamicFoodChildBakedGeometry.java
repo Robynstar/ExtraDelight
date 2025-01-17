@@ -7,7 +7,7 @@ import java.util.Set;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.joml.Vector3f;
+import org.joml.Quaternionf;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 
@@ -36,10 +36,8 @@ public class DynamicFoodChildBakedGeometry implements BakedModel {
 	@SuppressWarnings("deprecation")
 	public List<BakedQuad> getQuads(@Nullable BlockState state, @Nullable Direction side, @NotNull RandomSource rand) {
 		List<BakedQuad> bakedQuads = new ArrayList<>();
-		float x = 0;
 		for (BakedModel bakedModel : childrenModels) {
-			bakedQuads.addAll(shiftedQuad(bakedModel.getQuads(state, side, rand), new Vector3f(0, x, 0)));
-			x += -1f;
+			bakedQuads.addAll(bakedModel.getQuads(state, side, rand));
 		}
 		return bakedQuads;
 	}
@@ -49,45 +47,10 @@ public class DynamicFoodChildBakedGeometry implements BakedModel {
 	public List<BakedQuad> getQuads(@Nullable BlockState state, @Nullable Direction side, @NotNull RandomSource rand,
 			@NotNull ModelData data, @Nullable RenderType renderType) {
 		List<BakedQuad> bakedQuads = new ArrayList<>();
-		int x = 0;
 		for (BakedModel bakedModel : childrenModels) {
 			bakedQuads.addAll(bakedModel.getQuads(state, side, rand, data, renderType));
 		}
 		return bakedQuads;
-	}
-
-	List<BakedQuad> shiftedQuad(List<BakedQuad> quads, Vector3f vec) {
-		List<BakedQuad> newQuads = new ArrayList<BakedQuad>();
-
-		for (BakedQuad q : quads) {
-			newQuads.add(new BakedQuad(shiftedVerts(q.getVertices().clone(), vec), q.getTintIndex(), q.getDirection(),
-					q.getSprite(), q.isShade()));
-		}
-
-		return newQuads;
-	}
-
-	int[] shiftedVerts(int[] verts, Vector3f vec) {
-		for (int i = 0; i < verts.length; i += 2) {
-			float f = Float.intBitsToFloat(verts[i]);
-			f += vec.x;
-			verts[i] = Float.floatToIntBits(f);
-
-			f = Float.intBitsToFloat(verts[i + 1]);
-			f += vec.x;
-			verts[i + 1] = Float.floatToIntBits(f);
-		}
-
-		return verts;
-	}
-
-	@Override
-	public BakedModel applyTransform(ItemDisplayContext transformType, PoseStack poseStack,
-			boolean applyLeftHandTransform) {
-		for (BakedModel bakedModel : childrenModels) {
-			bakedModel.getTransforms().getTransform(transformType).apply(applyLeftHandTransform, poseStack);
-		}
-		return this;
 	}
 
 	@Override
