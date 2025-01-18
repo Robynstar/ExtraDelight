@@ -22,56 +22,47 @@ public class EDItemGenerator {
 	}
 
 	public EDItemGenerator advancementSnack() {
-		EDAdvancementGenerator.SNACKS.put(item.getRegisteredName(),
-				InventoryChangeTrigger.TriggerInstance.hasItems(item));
+		EDAdvancementGenerator.SNACKS.put(item.getRegisteredName(), item);
 		return this;
 	}
 
 	public EDItemGenerator advancementFeast() {
-		EDAdvancementGenerator.FEASTS.put(item.getRegisteredName(),
-				InventoryChangeTrigger.TriggerInstance.hasItems(item));
+		EDAdvancementGenerator.FEASTS.put(item.getRegisteredName(), item);
 		return this;
 	}
 
 	public EDItemGenerator advancementMeal() {
-		EDAdvancementGenerator.MEALS.put(item.getRegisteredName(),
-				InventoryChangeTrigger.TriggerInstance.hasItems(item));
+		EDAdvancementGenerator.MEALS.put(item.getRegisteredName(), item);
 		return this;
 	}
 
 	public EDItemGenerator advancementDessert() {
-		EDAdvancementGenerator.DESSERTS.put(item.getRegisteredName(),
-				InventoryChangeTrigger.TriggerInstance.hasItems(item));
+		EDAdvancementGenerator.DESSERTS.put(item.getRegisteredName(), item);
 		return this;
 	}
 
 	public EDItemGenerator advancementDrink() {
-		EDAdvancementGenerator.DRINKS.put(item.getRegisteredName(),
-				InventoryChangeTrigger.TriggerInstance.hasItems(item));
+		EDAdvancementGenerator.DRINKS.put(item.getRegisteredName(), item);
 		return this;
 	}
 
 	public EDItemGenerator advancementCandy() {
-		EDAdvancementGenerator.CANDY.put(item.getRegisteredName(),
-				InventoryChangeTrigger.TriggerInstance.hasItems(item));
+		EDAdvancementGenerator.CANDY.put(item.getRegisteredName(), item);
 		return this;
 	}
 
 	public EDItemGenerator advancementCookie() {
-		EDAdvancementGenerator.COOKIES.put(item.getRegisteredName(),
-				InventoryChangeTrigger.TriggerInstance.hasItems(item));
+		EDAdvancementGenerator.COOKIES.put(item.getRegisteredName(), item);
 		return this;
 	}
 
 	public EDItemGenerator advancementButchercraft() {
-		EDAdvancementGenerator.BUTCHERCRAFT.put(item.getRegisteredName(),
-				InventoryChangeTrigger.TriggerInstance.hasItems(item));
+		EDAdvancementGenerator.BUTCHERCRAFT.put(item.getRegisteredName(), item);
 		return this;
 	}
 
 	public EDItemGenerator advancementIngredients() {
-		EDAdvancementGenerator.INGREDIENTS.put(item.getRegisteredName(),
-				InventoryChangeTrigger.TriggerInstance.hasItems(item));
+		EDAdvancementGenerator.INGREDIENTS.put(item.getRegisteredName(), item);
 		return this;
 	}
 

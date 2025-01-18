@@ -15,7 +15,6 @@ import net.minecraft.advancements.Advancement.Builder;
 import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.advancements.AdvancementRequirements;
 import net.minecraft.advancements.AdvancementType;
-import net.minecraft.advancements.Criterion;
 import net.minecraft.advancements.critereon.BlockPredicate;
 import net.minecraft.advancements.critereon.ConsumeItemTrigger;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
@@ -25,23 +24,25 @@ import net.minecraft.advancements.critereon.LocationPredicate;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.common.data.AdvancementProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredItem;
 import vectorwing.farmersdelight.common.registry.ModItems;
 
 public class EDAdvancementGenerator implements AdvancementProvider.AdvancementGenerator {
 
-	public static HashMap<String, Criterion<?>> SNACKS = new HashMap<String, Criterion<?>>();
-	public static HashMap<String, Criterion<?>> FEASTS = new HashMap<String, Criterion<?>>();
-	public static HashMap<String, Criterion<?>> MEALS = new HashMap<String, Criterion<?>>();
-	public static HashMap<String, Criterion<?>> DESSERTS = new HashMap<String, Criterion<?>>();
-	public static HashMap<String, Criterion<?>> DRINKS = new HashMap<String, Criterion<?>>();
-	public static HashMap<String, Criterion<?>> CANDY = new HashMap<String, Criterion<?>>();
-	public static HashMap<String, Criterion<?>> COOKIES = new HashMap<String, Criterion<?>>();
-	public static HashMap<String, Criterion<?>> INGREDIENTS = new HashMap<String, Criterion<?>>();
-	public static HashMap<String, Criterion<?>> BUTCHERCRAFT = new HashMap<String, Criterion<?>>();
+	public static HashMap<String, DeferredItem<Item>> SNACKS = new HashMap<String, DeferredItem<Item>>();
+	public static HashMap<String, DeferredItem<Item>> FEASTS = new HashMap<String, DeferredItem<Item>>();
+	public static HashMap<String, DeferredItem<Item>> MEALS = new HashMap<String, DeferredItem<Item>>();
+	public static HashMap<String, DeferredItem<Item>> DESSERTS = new HashMap<String, DeferredItem<Item>>();
+	public static HashMap<String, DeferredItem<Item>> DRINKS = new HashMap<String, DeferredItem<Item>>();
+	public static HashMap<String, DeferredItem<Item>> CANDY = new HashMap<String, DeferredItem<Item>>();
+	public static HashMap<String, DeferredItem<Item>> COOKIES = new HashMap<String, DeferredItem<Item>>();
+	public static HashMap<String, DeferredItem<Item>> INGREDIENTS = new HashMap<String, DeferredItem<Item>>();
+	public static HashMap<String, DeferredItem<Item>> BUTCHERCRAFT = new HashMap<String, DeferredItem<Item>>();
 
 	@Override
 	public void generate(Provider registries, Consumer<AdvancementHolder> consumer,
@@ -363,12 +364,13 @@ public class EDAdvancementGenerator implements AdvancementProvider.AdvancementGe
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FROSTING_PINK.get()))
 				.save(consumer, ExtraDelight.MOD_ID + ":frosting");
 
-		Builder snacksBuilder = Advancement.Builder.advancement()
-				.display(ExtraDelightItems.POPCORN.get(),
-						Component.translatable(ExtraDelight.MOD_ID + ".advancement.snacks.name"),
-						Component.translatable(ExtraDelight.MOD_ID + ".advancement.snacks.desc"), null,
-						AdvancementType.CHALLENGE, true, true, false)
-				.parent(food).requirements(AdvancementRequirements.Strategy.AND);
+		if (!SNACKS.isEmpty()) {
+			Builder snacksBuilder = Advancement.Builder.advancement()
+					.display(ExtraDelightItems.POPCORN.get(),
+							Component.translatable(ExtraDelight.MOD_ID + ".advancement.snacks.name"),
+							Component.translatable(ExtraDelight.MOD_ID + ".advancement.snacks.desc"), null,
+							AdvancementType.CHALLENGE, true, true, false)
+					.parent(food).requirements(AdvancementRequirements.Strategy.AND);
 //				.addCriterion("sunflower_seeds",
 //						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.SUNFLOWER_SEEDS.get()))
 //				.addCriterion("hard_boiled_egg",
@@ -393,17 +395,20 @@ public class EDAdvancementGenerator implements AdvancementProvider.AdvancementGe
 //				.addCriterion("jerky", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.JERKY.get()))
 //				.addCriterion("apple_chips",
 //						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.APPLE_CHIPS.get()))
-		for (Entry<String, Criterion<?>> entry : SNACKS.entrySet()) {
-			snacksBuilder.addCriterion(entry.getKey(), entry.getValue());
+			for (Entry<String, DeferredItem<Item>> entry : SNACKS.entrySet()) {
+				snacksBuilder.addCriterion(entry.getKey(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(entry.getValue()));
+			}
+			AdvancementHolder snacks = snacksBuilder.save(consumer, ExtraDelight.MOD_ID + ":snacks");
 		}
-		AdvancementHolder snacks = snacksBuilder.save(consumer, ExtraDelight.MOD_ID + ":snacks");
 
-		Builder feastsBuilder = Advancement.Builder.advancement()
-				.display(ExtraDelightItems.MACARONI_CHEESE_FEAST.get(),
-						Component.translatable(ExtraDelight.MOD_ID + ".advancement.feasts.name"),
-						Component.translatable(ExtraDelight.MOD_ID + ".advancement.feasts.desc"), null,
-						AdvancementType.CHALLENGE, true, true, false)
-				.parent(food).requirements(AdvancementRequirements.Strategy.AND);
+		if (!FEASTS.isEmpty()) {
+			Builder feastsBuilder = Advancement.Builder.advancement()
+					.display(ExtraDelightItems.MACARONI_CHEESE_FEAST.get(),
+							Component.translatable(ExtraDelight.MOD_ID + ".advancement.feasts.name"),
+							Component.translatable(ExtraDelight.MOD_ID + ".advancement.feasts.desc"), null,
+							AdvancementType.CHALLENGE, true, true, false)
+					.parent(food).requirements(AdvancementRequirements.Strategy.AND);
 //				.addCriterion("sweet_berry_pie",
 //						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.SWEET_BERRY_PIE_ITEM.get()))
 //				.addCriterion("glow_berry_pie",
@@ -519,17 +524,20 @@ public class EDAdvancementGenerator implements AdvancementProvider.AdvancementGe
 //						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.STUFFED_APPLES_FEAST.get()))
 //				.addCriterion("tarte",
 //						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.TARTE_TATIN_IN_PAN.get()))
-		for (Entry<String, Criterion<?>> entry : FEASTS.entrySet()) {
-			feastsBuilder.addCriterion(entry.getKey(), entry.getValue());
+			for (Entry<String, DeferredItem<Item>> entry : FEASTS.entrySet()) {
+				feastsBuilder.addCriterion(entry.getKey(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(entry.getValue()));
+			}
+			AdvancementHolder feasts = feastsBuilder.save(consumer, ExtraDelight.MOD_ID + ":feasts");
 		}
-		AdvancementHolder feasts = feastsBuilder.save(consumer, ExtraDelight.MOD_ID + ":feasts");
 
-		Builder mealsBuilder = Advancement.Builder.advancement()
-				.display(ExtraDelightItems.RICEBALL_FILLED.get(),
-						Component.translatable(ExtraDelight.MOD_ID + ".advancement.meals.name"),
-						Component.translatable(ExtraDelight.MOD_ID + ".advancement.meals.desc"), null,
-						AdvancementType.CHALLENGE, true, true, false)
-				.parent(food).requirements(AdvancementRequirements.Strategy.AND);
+		if (!MEALS.isEmpty()) {
+			Builder mealsBuilder = Advancement.Builder.advancement()
+					.display(ExtraDelightItems.RICEBALL_FILLED.get(),
+							Component.translatable(ExtraDelight.MOD_ID + ".advancement.meals.name"),
+							Component.translatable(ExtraDelight.MOD_ID + ".advancement.meals.desc"), null,
+							AdvancementType.CHALLENGE, true, true, false)
+					.parent(food).requirements(AdvancementRequirements.Strategy.AND);
 //				.addCriterion("seaweed crisps",
 //						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.SEAWEED_CRISPS.get()))
 //				.addCriterion("seaweed salad",
@@ -725,17 +733,20 @@ public class EDAdvancementGenerator implements AdvancementProvider.AdvancementGe
 //						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.APPLE_SLAW.get()))
 //				.addCriterion("mulligatawny_soup",
 //						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MULLIGATAWNY_SOUP.get()))
-		for (Entry<String, Criterion<?>> entry : MEALS.entrySet()) {
-			mealsBuilder.addCriterion(entry.getKey(), entry.getValue());
+			for (Entry<String, DeferredItem<Item>> entry : MEALS.entrySet()) {
+				mealsBuilder.addCriterion(entry.getKey(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(entry.getValue()));
+			}
+			AdvancementHolder meals = mealsBuilder.save(consumer, ExtraDelight.MOD_ID + ":meals");
 		}
-		AdvancementHolder meals = mealsBuilder.save(consumer, ExtraDelight.MOD_ID + ":meals");
 
-		Builder dessertBuilder = Advancement.Builder.advancement()
-				.display(ExtraDelightItems.CHRISTMAS_PUDDING.get(),
-						Component.translatable(ExtraDelight.MOD_ID + ".advancement.desert.name"),
-						Component.translatable(ExtraDelight.MOD_ID + ".advancement.desert.desc"), null,
-						AdvancementType.CHALLENGE, true, true, false)
-				.parent(food).requirements(AdvancementRequirements.Strategy.AND);
+		if (!DESSERTS.isEmpty()) {
+			Builder dessertBuilder = Advancement.Builder.advancement()
+					.display(ExtraDelightItems.CHRISTMAS_PUDDING.get(),
+							Component.translatable(ExtraDelight.MOD_ID + ".advancement.desert.name"),
+							Component.translatable(ExtraDelight.MOD_ID + ".advancement.desert.desc"), null,
+							AdvancementType.CHALLENGE, true, true, false)
+					.parent(food).requirements(AdvancementRequirements.Strategy.AND);
 //				.addCriterion("sweet_berry_custard",
 //						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.SWEET_BERRY_CUSTARD.get()))
 //				.addCriterion("chocolate_custard",
@@ -905,17 +916,20 @@ public class EDAdvancementGenerator implements AdvancementProvider.AdvancementGe
 //								.hasItems(ExtraDelightItems.STUFFED_APPLE_ICE_CREAM.get()))
 //				.addCriterion("tarte_tatin_slice",
 //						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.TARTE_TATIN_SLICE.get()))
-		for (Entry<String, Criterion<?>> entry : DESSERTS.entrySet()) {
-			dessertBuilder.addCriterion(entry.getKey(), entry.getValue());
+			for (Entry<String, DeferredItem<Item>> entry : DESSERTS.entrySet()) {
+				dessertBuilder.addCriterion(entry.getKey(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(entry.getValue()));
+			}
+			AdvancementHolder desserts = dessertBuilder.save(consumer, ExtraDelight.MOD_ID + ":dessert");
 		}
-		AdvancementHolder desserts = dessertBuilder.save(consumer, ExtraDelight.MOD_ID + ":dessert");
 
-		Builder ingredientsBuilder = Advancement.Builder.advancement()
-				.display(ExtraDelightItems.GRATED_CARROT.get(),
-						Component.translatable(ExtraDelight.MOD_ID + ".advancement.ingredients.name"),
-						Component.translatable(ExtraDelight.MOD_ID + ".advancement.ingredients.desc"), null,
-						AdvancementType.CHALLENGE, true, true, false)
-				.parent(food).requirements(AdvancementRequirements.Strategy.AND);
+		if (!INGREDIENTS.isEmpty()) {
+			Builder ingredientsBuilder = Advancement.Builder.advancement()
+					.display(ExtraDelightItems.GRATED_CARROT.get(),
+							Component.translatable(ExtraDelight.MOD_ID + ".advancement.ingredients.name"),
+							Component.translatable(ExtraDelight.MOD_ID + ".advancement.ingredients.desc"), null,
+							AdvancementType.CHALLENGE, true, true, false)
+					.parent(food).requirements(AdvancementRequirements.Strategy.AND);
 //				.addCriterion("yeast", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.YEAST.get()))
 //				.addCriterion("vinegar",
 //						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.VINEGAR.get()))
@@ -1106,17 +1120,20 @@ public class EDAdvancementGenerator implements AdvancementProvider.AdvancementGe
 //						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FROSTING_MAGENTA.get()))
 //				.addCriterion("pink_frosting",
 //						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.FROSTING_PINK.get()))
-		for (Entry<String, Criterion<?>> entry : INGREDIENTS.entrySet()) {
-			ingredientsBuilder.addCriterion(entry.getKey(), entry.getValue());
+			for (Entry<String, DeferredItem<Item>> entry : INGREDIENTS.entrySet()) {
+				ingredientsBuilder.addCriterion(entry.getKey(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(entry.getValue()));
+			}
+			AdvancementHolder ingredients = ingredientsBuilder.save(consumer, ExtraDelight.MOD_ID + ":ingredients");
 		}
-		AdvancementHolder ingredients = ingredientsBuilder.save(consumer, ExtraDelight.MOD_ID + ":ingredients");
 
-		Builder drinksBuilder = Advancement.Builder.advancement()
-				.display(ExtraDelightItems.SWEET_BERRY_JUICE.get(),
-						Component.translatable(ExtraDelight.MOD_ID + ".advancement.drinks.name"),
-						Component.translatable(ExtraDelight.MOD_ID + ".advancement.drinks.desc"), null,
-						AdvancementType.CHALLENGE, true, true, false)
-				.parent(food).requirements(AdvancementRequirements.Strategy.AND);
+		if (!DRINKS.isEmpty()) {
+			Builder drinksBuilder = Advancement.Builder.advancement()
+					.display(ExtraDelightItems.SWEET_BERRY_JUICE.get(),
+							Component.translatable(ExtraDelight.MOD_ID + ".advancement.drinks.name"),
+							Component.translatable(ExtraDelight.MOD_ID + ".advancement.drinks.desc"), null,
+							AdvancementType.CHALLENGE, true, true, false)
+					.parent(food).requirements(AdvancementRequirements.Strategy.AND);
 //				.addCriterion("glow_berry_juice",
 //						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.GLOW_BERRY_JUICE.get()))
 //				.addCriterion("sweet_berry_juice",
@@ -1158,17 +1175,20 @@ public class EDAdvancementGenerator implements AdvancementProvider.AdvancementGe
 //				.addCriterion("gourmet_hot_chocolate",
 //						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.GOURMET_HOT_CHOCOLATE.get()))
 //				.addCriterion("coffee", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.COFFEE.get()))
-		for (Entry<String, Criterion<?>> entry : DRINKS.entrySet()) {
-			drinksBuilder.addCriterion(entry.getKey(), entry.getValue());
+			for (Entry<String, DeferredItem<Item>> entry : DRINKS.entrySet()) {
+				drinksBuilder.addCriterion(entry.getKey(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(entry.getValue()));
+			}
+			AdvancementHolder drinks = drinksBuilder.save(consumer, ExtraDelight.MOD_ID + ":drinks");
 		}
-		AdvancementHolder drinks = drinksBuilder.save(consumer, ExtraDelight.MOD_ID + ":drinks");
 
-		Builder candyBuilder = Advancement.Builder.advancement()
-				.display(ExtraDelightItems.MINT_CANDY_RED.get(),
-						Component.translatable(ExtraDelight.MOD_ID + ".advancement.candy.name"),
-						Component.translatable(ExtraDelight.MOD_ID + ".advancement.candy.desc"), null,
-						AdvancementType.CHALLENGE, true, true, false)
-				.parent(food).requirements(AdvancementRequirements.Strategy.AND);
+		if (!CANDY.isEmpty()) {
+			Builder candyBuilder = Advancement.Builder.advancement()
+					.display(ExtraDelightItems.MINT_CANDY_RED.get(),
+							Component.translatable(ExtraDelight.MOD_ID + ".advancement.candy.name"),
+							Component.translatable(ExtraDelight.MOD_ID + ".advancement.candy.desc"), null,
+							AdvancementType.CHALLENGE, true, true, false)
+					.parent(food).requirements(AdvancementRequirements.Strategy.AND);
 //				.addCriterion("caramel_candy",
 //						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CARAMEL_CANDY.get()))
 //				.addCriterion("white_candy",
@@ -1317,18 +1337,21 @@ public class EDAdvancementGenerator implements AdvancementProvider.AdvancementGe
 //				.addCriterion("milk_chocolate_dipped_bacon",
 //						InventoryChangeTrigger.TriggerInstance
 //								.hasItems(ExtraDelightItems.MILK_CHOCOLATE_DIPPED_BACON.get()))
-		
-		for (Entry<String, Criterion<?>> entry : CANDY.entrySet()) {
-			candyBuilder.addCriterion(entry.getKey(), entry.getValue());
-		}
-		AdvancementHolder candy = candyBuilder.save(consumer, ExtraDelight.MOD_ID + ":candy");
 
-		Builder cookiesBuilder = Advancement.Builder.advancement()
-				.display(ExtraDelightItems.GINGERBREAD_COOKIE.get(),
-						Component.translatable(ExtraDelight.MOD_ID + ".advancement.cookies.name"),
-						Component.translatable(ExtraDelight.MOD_ID + ".advancement.cookies.desc"), null,
-						AdvancementType.CHALLENGE, true, true, false)
-				.parent(food).requirements(AdvancementRequirements.Strategy.AND);
+			for (Entry<String, DeferredItem<Item>> entry : CANDY.entrySet()) {
+				candyBuilder.addCriterion(entry.getKey(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(entry.getValue()));
+			}
+			AdvancementHolder candy = candyBuilder.save(consumer, ExtraDelight.MOD_ID + ":candy");
+		}
+
+		if (!COOKIES.isEmpty()) {
+			Builder cookiesBuilder = Advancement.Builder.advancement()
+					.display(ExtraDelightItems.GINGERBREAD_COOKIE.get(),
+							Component.translatable(ExtraDelight.MOD_ID + ".advancement.cookies.name"),
+							Component.translatable(ExtraDelight.MOD_ID + ".advancement.cookies.desc"), null,
+							AdvancementType.CHALLENGE, true, true, false)
+					.parent(food).requirements(AdvancementRequirements.Strategy.AND);
 //				.addCriterion("pumpkin_cookie",
 //						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.PUMPKIN_COOKIE.get()))
 //				.addCriterion("sugar_cookie",
@@ -1371,18 +1394,21 @@ public class EDAdvancementGenerator implements AdvancementProvider.AdvancementGe
 //						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.SUGAR_COOKIE_DIAMOND.get()))
 //				.addCriterion("sugar_cookie_emerald",
 //						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.SUGAR_COOKIE_EMERALD.get()))
-		
-		for (Entry<String, Criterion<?>> entry : COOKIES.entrySet()) {
-			cookiesBuilder.addCriterion(entry.getKey(), entry.getValue());
-		}
-		AdvancementHolder cookies = cookiesBuilder.save(consumer, ExtraDelight.MOD_ID + ":cookies");
 
-		Builder butcherBuilder = Advancement.Builder.advancement()
-				.display(ExtraDelightItems.BBQ_RIBS_FEAST_ITEM.get(),
-						Component.translatable(ExtraDelight.MOD_ID + ".advancement.butcher.name"),
-						Component.translatable(ExtraDelight.MOD_ID + ".advancement.butcher.desc"), null,
-						AdvancementType.CHALLENGE, true, true, true)
-				.parent(start).requirements(AdvancementRequirements.Strategy.AND);
+			for (Entry<String, DeferredItem<Item>> entry : COOKIES.entrySet()) {
+				cookiesBuilder.addCriterion(entry.getKey(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(entry.getValue()));
+			}
+			AdvancementHolder cookies = cookiesBuilder.save(consumer, ExtraDelight.MOD_ID + ":cookies");
+		}
+
+		if (!BUTCHERCRAFT.isEmpty()) {
+			Builder butcherBuilder = Advancement.Builder.advancement()
+					.display(ExtraDelightItems.BBQ_RIBS_FEAST_ITEM.get(),
+							Component.translatable(ExtraDelight.MOD_ID + ".advancement.butcher.name"),
+							Component.translatable(ExtraDelight.MOD_ID + ".advancement.butcher.desc"), null,
+							AdvancementType.CHALLENGE, true, true, true)
+					.parent(start).requirements(AdvancementRequirements.Strategy.AND);
 
 //				.addCriterion("SAUSAGE_ROLL",
 //						InventoryChangeTrigger.TriggerInstance
@@ -1489,10 +1515,12 @@ public class EDAdvancementGenerator implements AdvancementProvider.AdvancementGe
 //				.addCriterion("PORK_AND_APPLES",
 //						InventoryChangeTrigger.TriggerInstance
 //								.hasItems(ItemPredicate.Builder.item().of(ExtraDelightItems.PORK_AND_APPLES).build()))
-		for (Entry<String, Criterion<?>> entry : BUTCHERCRAFT.entrySet()) {
-			butcherBuilder.addCriterion(entry.getKey(), entry.getValue());
+			for (Entry<String, DeferredItem<Item>> entry : BUTCHERCRAFT.entrySet()) {
+				butcherBuilder.addCriterion(entry.getKey(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(entry.getValue()));
+			}
+			AdvancementHolder butcher = butcherBuilder.save(consumer, ExtraDelight.MOD_ID + ":butcher");
 		}
-		AdvancementHolder butcher = butcherBuilder.save(consumer, ExtraDelight.MOD_ID + ":butcher");
 
 		AdvancementHolder chiller = Advancement.Builder.advancement()
 				.display(ExtraDelightItems.CHILLER.get(),
