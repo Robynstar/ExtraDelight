@@ -87,7 +87,7 @@ public class ExtraDelightNeoForgeClientEvents {
 			}
 	}
 
-	static Set<DeferredItem<Item>> feasts = Set.of(
+	public static Set<DeferredItem<Item>> feasts = Set.of(
 			// Cakes and Pies
 			ExtraDelightItems.CHEESECAKE_ITEM, ExtraDelightItems.CHOCOLATE_CHEESECAKE_ITEM,
 			ExtraDelightItems.GLOW_BERRY_CHEESECAKE_ITEM, ExtraDelightItems.GLOW_BERRY_PIE_ITEM,
@@ -98,7 +98,7 @@ public class ExtraDelightNeoForgeClientEvents {
 			ExtraDelightItems.MILK_TART_FEAST, ExtraDelightItems.CHOCOLATE_CAKE_BLOCK,
 			ExtraDelightItems.TARTE_TATIN, ExtraDelightItems.MEAT_PIE_BLOCK_ITEM);
 
-	static Set<DeferredItem<Item>> servings = Set.of(ExtraDelightItems.JELLY_WHITE, ExtraDelightItems.JELLY_ORANGE,
+	public static Set<DeferredItem<Item>> servings = Set.of(ExtraDelightItems.JELLY_WHITE, ExtraDelightItems.JELLY_ORANGE,
 			ExtraDelightItems.JELLY_MAGENTA, ExtraDelightItems.JELLY_LIGHT_BLUE, ExtraDelightItems.JELLY_YELLOW,
 			ExtraDelightItems.JELLY_LIME, ExtraDelightItems.JELLY_PINK, ExtraDelightItems.JELLY_GREY,
 			ExtraDelightItems.JELLY_LIGHT_GREY, ExtraDelightItems.JELLY_CYAN, ExtraDelightItems.JELLY_PURPLE,
@@ -127,7 +127,7 @@ public class ExtraDelightNeoForgeClientEvents {
 			ExtraDelightItems.COFFEE_CAKE_SLICE, ExtraDelightItems.MILK_TART_SLICE, ExtraDelightItems.CHOCOLATE_CAKE,
 			ExtraDelightItems.TARTE_TATIN_SLICE);
 
-	static Set<DeferredItem<Item>> butchercraft = Set.of(ExtraDelightItems.SAUSAGE_ROLL, ExtraDelightItems.SOS,
+	public static Set<DeferredItem<Item>> butchercraft = Set.of(ExtraDelightItems.SAUSAGE_ROLL, ExtraDelightItems.SOS,
 			ExtraDelightItems.LIVER_ONIONS, ExtraDelightItems.STUFFED_HEART, ExtraDelightItems.FRIED_BRAINS,
 			ExtraDelightItems.OXTAIL_SOUP, ExtraDelightItems.POT_ROAST_FEAST_ITEM, ExtraDelightItems.POT_ROAST,
 			ExtraDelightItems.BBQ_RIBS_FEAST_ITEM, ExtraDelightItems.BBQ_RIBS, ExtraDelightItems.PULLED_PORK_FEAST_ITEM,

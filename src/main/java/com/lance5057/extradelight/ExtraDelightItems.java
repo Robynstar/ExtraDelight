@@ -29,6 +29,7 @@ import com.lance5057.extradelight.items.dynamicfood.DynamicJam;
 import com.lance5057.extradelight.items.dynamicfood.DynamicSandwich;
 import com.lance5057.extradelight.items.dynamicfood.api.DynamicItemComponent;
 import com.lance5057.extradelight.items.jar.JarItem;
+import com.lance5057.extradelight.util.EDItemGenerator;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.component.DataComponents;
@@ -127,8 +128,8 @@ public class ExtraDelightItems {
 		return new BucketItem(fluid.FLUID.get(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1));
 	}
 
-	public static final DeferredItem<Item> OVEN = ITEMS.register("oven",
-			() -> new BlockItem(ExtraDelightBlocks.OVEN.get(), new Item.Properties()));
+	public static final DeferredItem<Item> OVEN = EDItemGenerator
+			.register("oven", () -> new BlockItem(ExtraDelightBlocks.OVEN.get(), new Item.Properties())).finish();
 
 	public static final DeferredItem<Item> DRYING_RACK = ITEMS.register("drying_rack_item",
 			() -> new BlockItem(ExtraDelightBlocks.DRYING_RACK.get(), new Item.Properties()));
@@ -264,8 +265,8 @@ public class ExtraDelightItems {
 	public static final DeferredItem<Item> GRAVY = ITEMS.register("gravy_boat_item",
 			() -> new Item(new Item.Properties().craftRemainder(Items.BOWL)));
 
-	public static final DeferredItem<Item> SLICED_ONION = ITEMS.register("sliced_onion",
-			() -> new Item(foodItem(EDFoods.SLICED_ONION)));
+	public static final DeferredItem<Item> SLICED_ONION = EDItemGenerator
+			.register("sliced_onion", () -> new Item(foodItem(EDFoods.SLICED_ONION))).advancementIngredients().finish();
 	public static final DeferredItem<Item> SLICED_TOMATO = ITEMS.register("sliced_tomato",
 			() -> new Item(foodItem(EDFoods.SLICED_TOMATO)));
 
