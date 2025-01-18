@@ -4209,131 +4209,93 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 	private void mortarRecipes(RecipeOutput consumer) {
 		// Dyes
 		MortarRecipeBuilder
-				.grind(Ingredient.of(Items.LAPIS_LAZULI), new ItemStack(Items.BLUE_DYE, 2), FluidStack.EMPTY,
-						STANDARD_GRIND)
+				.grind(Ingredient.of(Items.LAPIS_LAZULI, Items.CORNFLOWER),
+						new ItemStack(Items.BLUE_DYE, 2),	FluidStack.EMPTY, STANDARD_GRIND)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.LAPIS_LAZULI))
-				.save(consumer, EDLoc("dye_blue_lapis"));
+				.save(consumer, EDLoc("dye_blue"));
 		MortarRecipeBuilder
-				.grind(Ingredient.of(Items.BONE_MEAL), new ItemStack(Items.WHITE_DYE, 2), FluidStack.EMPTY,
-						STANDARD_GRIND)
+				.grind(Ingredient.of(Items.BONE_MEAL, Items.LILY_OF_THE_VALLEY),
+						new ItemStack(Items.WHITE_DYE, 2), FluidStack.EMPTY, STANDARD_GRIND)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.BONE_MEAL))
-				.save(consumer, EDLoc("dye_white_bone_meal"));
+				.save(consumer, EDLoc("dye_white"));
 		MortarRecipeBuilder
-				.grind(Ingredient.of(Items.LILY_OF_THE_VALLEY), new ItemStack(Items.WHITE_DYE, 2), FluidStack.EMPTY,
-						STANDARD_GRIND)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.LILY_OF_THE_VALLEY))
-				.save(consumer, EDLoc("dye_white_lily"));
-		MortarRecipeBuilder
-				.grind(Ingredient.of(Items.ORANGE_TULIP), new ItemStack(Items.ORANGE_DYE, 2), FluidStack.EMPTY,
-						STANDARD_GRIND)
+				.grind(Ingredient.of(Items.ORANGE_TULIP, Items.TORCHFLOWER),
+						new ItemStack(Items.ORANGE_DYE, 2), FluidStack.EMPTY,	STANDARD_GRIND)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.ORANGE_TULIP))
-				.save(consumer, EDLoc("dye_orange_tulip"));
+				.save(consumer, EDLoc("dye_orange"));
 		MortarRecipeBuilder
 				.grind(Ingredient.of(Items.ALLIUM), new ItemStack(Items.MAGENTA_DYE, 2), FluidStack.EMPTY,
 						STANDARD_GRIND)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.ALLIUM))
-				.save(consumer, EDLoc("dye_magenta_allium"));
+				.save(consumer, EDLoc("dye_magenta"));
 		MortarRecipeBuilder
 				.grind(Ingredient.of(Items.LILAC), new ItemStack(Items.MAGENTA_DYE, 3), FluidStack.EMPTY,
 						STANDARD_GRIND)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.LILAC))
-				.save(consumer, EDLoc("dye_magenta_lilac"));
+				.save(consumer, EDLoc("dye_magenta_three"));
 		MortarRecipeBuilder
 				.grind(Ingredient.of(Items.BLUE_ORCHID), new ItemStack(Items.LIGHT_BLUE_DYE, 2), FluidStack.EMPTY,
 						STANDARD_GRIND)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.BLUE_ORCHID))
-				.save(consumer, EDLoc("dye_light_blue_orchid"));
+				.save(consumer, EDLoc("dye_light_blue"));
 		MortarRecipeBuilder
 				.grind(Ingredient.of(Items.DANDELION), new ItemStack(Items.YELLOW_DYE, 2), FluidStack.EMPTY,
 						STANDARD_GRIND)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.DANDELION))
-				.save(consumer, EDLoc("dye_yellow_dandelion"));
+				.save(consumer, EDLoc("dye_yellow"));
 		MortarRecipeBuilder
 				.grind(Ingredient.of(Items.SUNFLOWER), new ItemStack(Items.YELLOW_DYE, 3), FluidStack.EMPTY,
 						STANDARD_GRIND)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.SUNFLOWER))
-				.save(consumer, EDLoc("dye_yellow_sunflower"));
+				.save(consumer, EDLoc("dye_yellow_three"));
 		MortarRecipeBuilder
 				.grind(Ingredient.of(Items.SEA_PICKLE), new ItemStack(Items.LIME_DYE, 2), FluidStack.EMPTY,
 						STANDARD_GRIND)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.SEA_PICKLE))
-				.save(consumer, EDLoc("dye_lime_pickle"));
+				.save(consumer, EDLoc("dye_lime"));
 		MortarRecipeBuilder
 				.grind(Ingredient.of(Items.PINK_TULIP), new ItemStack(Items.PINK_DYE, 2), FluidStack.EMPTY,
 						STANDARD_GRIND)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.PINK_TULIP))
-				.save(consumer, EDLoc("dye_pink_tulip"));
+				.save(consumer, EDLoc("dye_pink"));
 		MortarRecipeBuilder
 				.grind(Ingredient.of(Items.PEONY), new ItemStack(Items.PINK_DYE, 3), FluidStack.EMPTY, STANDARD_GRIND)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.PEONY))
-				.save(consumer, EDLoc("dye_pink_peony"));
+				.save(consumer, EDLoc("dye_pink_three"));
 		MortarRecipeBuilder
-				.grind(Ingredient.of(Items.OXEYE_DAISY), new ItemStack(Items.LIGHT_GRAY_DYE, 2), FluidStack.EMPTY,
-						STANDARD_GRIND)
+				.grind(Ingredient.of(Items.OXEYE_DAISY, Items.AZURE_BLUET, Items.WHITE_TULIP),
+						new ItemStack(Items.LIGHT_GRAY_DYE, 2), FluidStack.EMPTY,	STANDARD_GRIND)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.OXEYE_DAISY))
-				.save(consumer, EDLoc("dye_light_gray_oxeye"));
-		MortarRecipeBuilder
-				.grind(Ingredient.of(Items.AZURE_BLUET), new ItemStack(Items.LIGHT_GRAY_DYE, 2), FluidStack.EMPTY,
-						STANDARD_GRIND)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.AZURE_BLUET))
-				.save(consumer, EDLoc("dye_light_gray_bluet"));
-		MortarRecipeBuilder
-				.grind(Ingredient.of(Items.WHITE_TULIP), new ItemStack(Items.LIGHT_GRAY_DYE, 2), FluidStack.EMPTY,
-						STANDARD_GRIND)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHITE_TULIP))
-				.save(consumer, EDLoc("dye_light_gray_tulip"));
-		MortarRecipeBuilder
-				.grind(Ingredient.of(Items.CORNFLOWER), new ItemStack(Items.BLUE_DYE, 2), FluidStack.EMPTY,
-						STANDARD_GRIND)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.CORNFLOWER))
-				.save(consumer, EDLoc("dye_blue_cornflower"));
+				.save(consumer, EDLoc("dye_light_gray"));
 		MortarRecipeBuilder
 				.grind(Ingredient.of(Items.COCOA_BEANS), new ItemStack(Items.BROWN_DYE, 2), FluidStack.EMPTY,
 						STANDARD_GRIND)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.COCOA_BEANS))
-				.save(consumer, EDLoc("dye_brown_cocoa"));
+				.save(consumer, EDLoc("dye_brown"));
 		MortarRecipeBuilder
 				.grind(Ingredient.of(Items.CACTUS), new ItemStack(Items.GREEN_DYE, 2), FluidStack.EMPTY, STANDARD_GRIND)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.CACTUS))
-				.save(consumer, EDLoc("dye_green_cactus"));
+				.save(consumer, EDLoc("dye_green"));
 		MortarRecipeBuilder
-				.grind(Ingredient.of(Items.RED_TULIP), new ItemStack(Items.RED_DYE, 2), FluidStack.EMPTY,
-						STANDARD_GRIND)
+				.grind(Ingredient.of(Items.RED_TULIP, Items.BEETROOT, Items.POPPY),
+						new ItemStack(Items.RED_DYE, 2), FluidStack.EMPTY, STANDARD_GRIND)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.RED_TULIP))
-				.save(consumer, EDLoc("dye_red_tulip"));
+				.save(consumer, EDLoc("dye_red"));
 		MortarRecipeBuilder
-				.grind(Ingredient.of(Items.BEETROOT), new ItemStack(Items.RED_DYE, 2), FluidStack.EMPTY, STANDARD_GRIND)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.BEETROOT))
-				.save(consumer, EDLoc("dye_red_beet"));
-		MortarRecipeBuilder
-				.grind(Ingredient.of(Items.POPPY), new ItemStack(Items.RED_DYE, 2), FluidStack.EMPTY, STANDARD_GRIND)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.POPPY))
-				.save(consumer, EDLoc("dye_red_poppy"));
-		MortarRecipeBuilder
-				.grind(Ingredient.of(Items.ROSE_BUSH), new ItemStack(Items.RED_DYE, 4), FluidStack.EMPTY,
+				.grind(Ingredient.of(Items.ROSE_BUSH), new ItemStack(Items.RED_DYE, 3), FluidStack.EMPTY,
 						STANDARD_GRIND)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.ROSE_BUSH))
-				.save(consumer, EDLoc("dye_red_rose"));
+				.save(consumer, EDLoc("dye_red_three"));
 		MortarRecipeBuilder
-				.grind(Ingredient.of(Items.INK_SAC), new ItemStack(Items.BLACK_DYE, 2), FluidStack.EMPTY,
+				.grind(Ingredient.of(Items.INK_SAC, Items.WITHER_ROSE), new ItemStack(Items.BLACK_DYE, 2), FluidStack.EMPTY,
 						STANDARD_GRIND)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.INK_SAC))
-				.save(consumer, EDLoc("dye_black_ink"));
-		MortarRecipeBuilder
-				.grind(Ingredient.of(Items.WITHER_ROSE), new ItemStack(Items.BLACK_DYE, 2), FluidStack.EMPTY,
-						STANDARD_GRIND)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.WITHER_ROSE))
-				.save(consumer, EDLoc("dye_black_wither_rose"));
-		MortarRecipeBuilder
-				.grind(Ingredient.of(Items.TORCHFLOWER), new ItemStack(Items.ORANGE_DYE, 2), FluidStack.EMPTY,
-						STANDARD_GRIND)
-				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.TORCHFLOWER))
-				.save(consumer, EDLoc("dye_orange_torchflower"));
+				.save(consumer, EDLoc("dye_black"));
 		MortarRecipeBuilder
 				.grind(Ingredient.of(Items.PITCHER_PLANT), new ItemStack(Items.CYAN_DYE, 2), FluidStack.EMPTY,
 						STANDARD_GRIND)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.PITCHER_PLANT))
-				.save(consumer, EDLoc("dye_cyan_pitcher_plant"));
+				.save(consumer, EDLoc("dye_cyan"));
 
 		MortarRecipeBuilder
 				.grind(Ingredient.of(Items.BONE), new ItemStack(Items.BONE_MEAL, 4), FluidStack.EMPTY, LONG_GRIND)
