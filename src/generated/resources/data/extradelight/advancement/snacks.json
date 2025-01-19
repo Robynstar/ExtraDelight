@@ -1,7 +1,7 @@
 {
   "parent": "extradelight:food",
   "criteria": {
-    "apple_chips": {
+    "extradelight:apple_chips": {
       "conditions": {
         "items": [
           {
@@ -11,47 +11,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "bread_roll": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:roll"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "caramel_popcorn": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:caramel_popcorn"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "crackers": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:crackers"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "graham_cracker": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:graham_cracker"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "hard_boiled_egg": {
+    "extradelight:boiled_egg": {
       "conditions": {
         "items": [
           {
@@ -61,7 +21,37 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "jerky": {
+    "extradelight:caramel_popcorn": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:caramel_popcorn"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:crackers": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:crackers"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:graham_cracker": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:graham_cracker"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:jerky": {
       "conditions": {
         "items": [
           {
@@ -71,7 +61,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "popcorn": {
+    "extradelight:popcorn": {
       "conditions": {
         "items": [
           {
@@ -81,7 +71,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "potato_chips": {
+    "extradelight:potato_chips": {
       "conditions": {
         "items": [
           {
@@ -91,7 +81,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "roasted_pumpkin_seeds": {
+    "extradelight:roasted_pumpkin_seeds": {
       "conditions": {
         "items": [
           {
@@ -101,7 +91,17 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "sunflower_seeds": {
+    "extradelight:roll": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:roll"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:sunflower_seeds": {
       "conditions": {
         "items": [
           {
@@ -111,7 +111,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "toast": {
+    "extradelight:toast": {
       "conditions": {
         "items": [
           {
@@ -121,7 +121,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "trail_mix": {
+    "extradelight:trail_mix": {
       "conditions": {
         "items": [
           {
@@ -147,43 +147,43 @@
   },
   "requirements": [
     [
-      "sunflower_seeds"
+      "extradelight:apple_chips"
     ],
     [
-      "hard_boiled_egg"
+      "extradelight:potato_chips"
     ],
     [
-      "potato_chips"
+      "extradelight:boiled_egg"
     ],
     [
-      "toast"
+      "extradelight:jerky"
     ],
     [
-      "popcorn"
+      "extradelight:crackers"
     ],
     [
-      "roasted_pumpkin_seeds"
+      "extradelight:caramel_popcorn"
     ],
     [
-      "caramel_popcorn"
+      "extradelight:roll"
     ],
     [
-      "crackers"
+      "extradelight:popcorn"
     ],
     [
-      "bread_roll"
+      "extradelight:trail_mix"
     ],
     [
-      "graham_cracker"
+      "extradelight:toast"
     ],
     [
-      "trail_mix"
+      "extradelight:sunflower_seeds"
     ],
     [
-      "jerky"
+      "extradelight:roasted_pumpkin_seeds"
     ],
     [
-      "apple_chips"
+      "extradelight:graham_cracker"
     ]
   ],
   "sends_telemetry_event": true

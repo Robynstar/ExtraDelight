@@ -86,8 +86,8 @@ public class ExtraDelightCapabilities {
 			return o.getFluidTank();
 		});
 
-		event.registerItem(Capabilities.ItemHandler.ITEM,
-				(o, d) -> new ComponentItemHandler(o, ExtraDelightComponents.ITEMSTACK_HANDLER.get(), 7),
-				ExtraDelightItems.DYNAMIC_TEST2.get());
+//		event.registerItem(Capabilities.ItemHandler.ITEM,
+//				(o, d) -> new ComponentItemHandler(o, ExtraDelightComponents.ITEMSTACK_HANDLER.get(), 7),
+//				ExtraDelightItems.DYNAMIC_TEST2.get());
 	}
 }

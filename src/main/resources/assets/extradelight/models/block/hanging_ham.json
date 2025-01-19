@@ -1,6 +1,7 @@
 {
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
+	"render_type": "cutout",
 	"textures": {
 		"1": "farmersdelight:block/rope",
 		"particle": "extradelight:block/ham",

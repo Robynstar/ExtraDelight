@@ -1,7 +1,7 @@
 {
   "parent": "extradelight:food",
   "criteria": {
-    "apple_milkshake": {
+    "extradelight:apple_milkshake": {
       "conditions": {
         "items": [
           {
@@ -11,7 +11,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "cactus_juice": {
+    "extradelight:cactus_juice": {
       "conditions": {
         "items": [
           {
@@ -21,7 +21,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "chocolate_milk": {
+    "extradelight:chocolate_milk": {
       "conditions": {
         "items": [
           {
@@ -31,7 +31,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "chocolate_milkshake": {
+    "extradelight:chocolate_milkshake": {
       "conditions": {
         "items": [
           {
@@ -41,7 +41,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "coffee": {
+    "extradelight:coffee": {
       "conditions": {
         "items": [
           {
@@ -51,7 +51,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "cookie_dough_milkshake": {
+    "extradelight:cookie_dough_milkshake": {
       "conditions": {
         "items": [
           {
@@ -61,7 +61,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "eggnog": {
+    "extradelight:eggnog": {
       "conditions": {
         "items": [
           {
@@ -71,7 +71,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "ginger_beer": {
+    "extradelight:ginger_beer": {
       "conditions": {
         "items": [
           {
@@ -81,17 +81,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "glass_of_punch": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:punch"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "glow_berry_juice": {
+    "extradelight:glow_berry_juice": {
       "conditions": {
         "items": [
           {
@@ -101,7 +91,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "glow_berry_milkshake": {
+    "extradelight:glow_berry_milkshake": {
       "conditions": {
         "items": [
           {
@@ -111,7 +101,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "gourmet_hot_chocolate": {
+    "extradelight:gourmet_hot_chocolate": {
       "conditions": {
         "items": [
           {
@@ -121,7 +111,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "honey_milkshake": {
+    "extradelight:honey_milkshake": {
       "conditions": {
         "items": [
           {
@@ -131,7 +121,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "horchata": {
+    "extradelight:horchata": {
       "conditions": {
         "items": [
           {
@@ -141,7 +131,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "milkshake": {
+    "extradelight:milkshake": {
       "conditions": {
         "items": [
           {
@@ -151,7 +141,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "mint_chip_milkshake": {
+    "extradelight:mint_chip_milkshake": {
       "conditions": {
         "items": [
           {
@@ -161,7 +151,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "pumpkin_milkshake": {
+    "extradelight:pumpkin_milkshake": {
       "conditions": {
         "items": [
           {
@@ -171,7 +161,17 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "sweet_berry_juice": {
+    "extradelight:punch": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:punch"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:sweet_berry_juice": {
       "conditions": {
         "items": [
           {
@@ -181,7 +181,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "sweet_berry_milkeshake": {
+    "extradelight:sweet_berry_milkshake": {
       "conditions": {
         "items": [
           {
@@ -191,7 +191,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "tea": {
+    "extradelight:tea": {
       "conditions": {
         "items": [
           {
@@ -201,7 +201,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "tomato_juice": {
+    "extradelight:tomato_juice": {
       "conditions": {
         "items": [
           {
@@ -211,7 +211,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "xocolatl": {
+    "extradelight:xocolati": {
       "conditions": {
         "items": [
           {
@@ -237,70 +237,70 @@
   },
   "requirements": [
     [
-      "glow_berry_juice"
+      "extradelight:glow_berry_milkshake"
     ],
     [
-      "sweet_berry_juice"
+      "extradelight:honey_milkshake"
     ],
     [
-      "tomato_juice"
+      "extradelight:apple_milkshake"
     ],
     [
-      "cactus_juice"
+      "extradelight:xocolati"
     ],
     [
-      "tea"
+      "extradelight:coffee"
     ],
     [
-      "milkshake"
+      "extradelight:pumpkin_milkshake"
     ],
     [
-      "chocolate_milkshake"
+      "extradelight:mint_chip_milkshake"
     ],
     [
-      "glow_berry_milkshake"
+      "extradelight:chocolate_milk"
     ],
     [
-      "sweet_berry_milkeshake"
+      "extradelight:eggnog"
     ],
     [
-      "pumpkin_milkshake"
+      "extradelight:glow_berry_juice"
     ],
     [
-      "honey_milkshake"
+      "extradelight:tea"
     ],
     [
-      "apple_milkshake"
+      "extradelight:punch"
     ],
     [
-      "cookie_dough_milkshake"
+      "extradelight:sweet_berry_milkshake"
     ],
     [
-      "mint_chip_milkshake"
+      "extradelight:tomato_juice"
     ],
     [
-      "chocolate_milk"
+      "extradelight:horchata"
     ],
     [
-      "eggnog"
+      "extradelight:gourmet_hot_chocolate"
     ],
     [
-      "ginger_beer"
+      "extradelight:sweet_berry_juice"
     ],
     [
-      "horchata"
+      "extradelight:chocolate_milkshake"
     ],
     [
-      "glass_of_punch"
+      "extradelight:cactus_juice"
     ],
     [
-      "xocolatl"
+      "extradelight:milkshake"
     ],
     [
-      "gourmet_hot_chocolate"
+      "extradelight:ginger_beer"
     ],
     [
-      "coffee"
+      "extradelight:cookie_dough_milkshake"
     ]
   ],
   "sends_telemetry_event": true

@@ -1,6 +1,7 @@
 package com.lance5057.extradelight.data;
 
 import com.lance5057.extradelight.ExtraDelight;
+import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.items.dynamicfood.client.DynamicFoodGeometryLoader;
@@ -1112,9 +1113,16 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.AEBLEFLAESK, "aebleflaesk");
 		forItem(ExtraDelightItems.CANDY_BAR_SALAD, "candy_bar_salad");
 
-		getBuilder(ExtraDelightItems.DYNAMIC_TEST2.getId().getPath())
-				.parent(new ModelFile.UncheckedModelFile("item/generated"))
-				.customLoader(DynamicFoodGeometryLoader::builder);
+//		getBuilder(ExtraDelightItems.DYNAMIC_TEST2.getId().getPath())
+//				.parent(new ModelFile.UncheckedModelFile("item/generated"))
+//				.customLoader(DynamicFoodGeometryLoader::builder);
+		
+		forBlockItem(ExtraDelightItems.HANGING_ONION, "hanging_onion");
+		forBlockItem(ExtraDelightItems.HANGING_MINT,"hanging_mint");
+		forBlockItem(ExtraDelightItems.HANGING_HAM,"hanging_ham");
+		forBlockItem(ExtraDelightItems.HANGING_CHILI,"hanging_chili");
+		forBlockItem(ExtraDelightItems.HANGING_DRIED_CHILI,"hanging_dried_chili");
+		forBlockItem(ExtraDelightItems.HANGING_CORN, "hanging_corn");
 
 		AestheticBlocks.itemModel(this);
 	}

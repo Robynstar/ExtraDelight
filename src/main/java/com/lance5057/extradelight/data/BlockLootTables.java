@@ -89,11 +89,11 @@ public class BlockLootTables extends BlockLootSubProvider {
 			dropSelf(b.get());
 		for (DeferredBlock<Block> b : AestheticBlocks.BOWS)
 			dropSelf(b.get());
-//
-//		for (DeferredBlock<Block> b : AestheticBlocks.GINGHAM_BLOCKS)
-//			dropSelf(b.get());
-//		for (DeferredBlock<Block> b : AestheticBlocks.GINGHAM_CARPET_BLOCKS)
-//			dropSelf(b.get());
+
+		for (DeferredBlock<Block> b : AestheticBlocks.GINGHAM_BLOCKS)
+			dropSelf(b.get());
+		for (DeferredBlock<Block> b : AestheticBlocks.GINGHAM_CARPET_BLOCKS)
+			dropSelf(b.get());
 
 		this.dropSelf(ExtraDelightBlocks.OVEN.get());
 		this.dropSelf(ExtraDelightBlocks.DOUGH_SHAPING.get());
@@ -494,6 +494,13 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropOther(ExtraDelightBlocks.PORK_AND_APPLES_FEAST.get(), Items.AIR);
 		this.dropOther(ExtraDelightBlocks.STUFFED_APPLES_FEAST.get(), Items.AIR);
 		this.add(ExtraDelightBlocks.TARTE_TATIN.get(), noDrop());
+
+		this.dropSelf(ExtraDelightBlocks.HANGING_ONIONS.get());
+		this.dropSelf(ExtraDelightBlocks.HANGING_CHILI.get());
+		this.dropSelf(ExtraDelightBlocks.HANGING_CORN.get());
+		this.dropSelf(ExtraDelightBlocks.HANGING_DRIED_CHILI.get());
+		this.dropSelf(ExtraDelightBlocks.HANGING_HAM.get());
+		this.dropSelf(ExtraDelightBlocks.HANGING_MINT.get());
 	}
 
 	protected void createFruitLeavesDrop(Block leaves, Block sapling, Item fruit) {

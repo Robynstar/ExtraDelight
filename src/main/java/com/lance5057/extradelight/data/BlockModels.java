@@ -7,6 +7,7 @@ import com.lance5057.extradelight.blocks.BakingStoneBlock;
 import com.lance5057.extradelight.blocks.ChocolateStyleBlock;
 import com.lance5057.extradelight.blocks.FrostableBlock;
 import com.lance5057.extradelight.blocks.FruitLeafBlock;
+import com.lance5057.extradelight.blocks.HangingBlock;
 import com.lance5057.extradelight.blocks.HorizontalPanBlock;
 import com.lance5057.extradelight.blocks.RecipeFeastBlock;
 import com.lance5057.extradelight.blocks.RecipeFondueFeastBlock;
@@ -30,14 +31,17 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.material.MapColor;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredBlock;
 import vectorwing.farmersdelight.common.block.CabinetBlock;
 import vectorwing.farmersdelight.common.block.FeastBlock;
 import vectorwing.farmersdelight.common.block.PieBlock;
@@ -550,7 +554,21 @@ public class BlockModels extends BlockStateProvider {
 		this.recipeFeastBlock(ExtraDelightBlocks.PORK_AND_APPLES_FEAST.get());
 		this.recipeFeastBlock(ExtraDelightBlocks.STUFFED_APPLES_FEAST.get());
 		pieLikeBlock(ExtraDelightBlocks.TARTE_TATIN.get(), "tarte_tatin");
-
+		
+		
+		this.simpleBlock(ExtraDelightBlocks.HANGING_ONIONS.get(),
+				models().getExistingFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/hanging_onions")));
+		this.simpleBlock(ExtraDelightBlocks.HANGING_MINT.get(),
+				models().getExistingFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/hanging_mint")));
+		this.simpleBlock(ExtraDelightBlocks.HANGING_HAM.get(),
+				models().getExistingFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/hanging_ham")));
+		this.simpleBlock(ExtraDelightBlocks.HANGING_CHILI.get(),
+				models().getExistingFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/hanging_chili")));
+		this.simpleBlock(ExtraDelightBlocks.HANGING_DRIED_CHILI.get(),
+				models().getExistingFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/hanging_dried_chili")));
+		this.simpleBlock(ExtraDelightBlocks.HANGING_CORN.get(),
+				models().getExistingFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/hanging_corn")));
+		
 		AestheticBlocks.blockModel(this);
 	}
 

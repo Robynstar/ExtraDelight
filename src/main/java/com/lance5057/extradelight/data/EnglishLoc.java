@@ -1178,7 +1178,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.AEBLEFLAESK.get(), "Æbleflæsk");
 		this.add(ExtraDelightItems.CANDY_BAR_SALAD.get(), "Candy Bar Salad");
 
-		this.add(ExtraDelightItems.DYNAMIC_TEST2.get(), "Sandwich");
+//		this.add(ExtraDelightItems.DYNAMIC_TEST2.get(), "Sandwich");
 
 		AestheticBlocks.EngLoc(this);
 	}

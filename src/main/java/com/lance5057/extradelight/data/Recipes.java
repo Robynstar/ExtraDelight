@@ -3245,11 +3245,11 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.TARTE_TATIN.get()))
 				.save(consumer, EDLoc("tarte_tatin_slice"));
 
-		DynamicSandwichRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.DYNAMIC_TEST2).pattern("b")
-				.pattern("i").pattern("b").define('b', Items.BREAD).define('i', ModItems.HAM.get())
-				.unlockedBy(getName(),
-						InventoryChangeTrigger.TriggerInstance.hasItems(Items.BREAD))
-				.save(consumer, EDLoc("dynamic_sandwich_test"));
+//		DynamicSandwichRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.DYNAMIC_TEST2).pattern("b")
+//				.pattern("i").pattern("b").define('b', Items.BREAD).define('i', ModItems.HAM.get())
+//				.unlockedBy(getName(),
+//						InventoryChangeTrigger.TriggerInstance.hasItems(Items.BREAD))
+//				.save(consumer, EDLoc("dynamic_sandwich_test"));
 	}
 
 	private void bucket(String name, RecipeOutput consumer, ItemLike fullBucket, ItemLike emptyItem,
@@ -3933,9 +3933,9 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						Ingredient.of(Items.SUGAR) },
 				"aebleflaesk", consumer);
 
-		DynamicJamRecipeBuilder.cookingPotRecipe(ExtraDelightItems.DYNAMIC_TEST, 1, 1, 1, Items.GLASS_BOTTLE)
-				.addIngredient(Ingredient.of(Items.CHORUS_FRUIT)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-				.build(consumer);
+//		DynamicJamRecipeBuilder.cookingPotRecipe(ExtraDelightItems.DYNAMIC_TEST, 1, 1, 1, Items.GLASS_BOTTLE)
+//				.addIngredient(Ingredient.of(Items.CHORUS_FRUIT)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+//				.build(consumer);
 	}
 
 	private void knifeRecipes(RecipeOutput consumer) {
