@@ -445,4 +445,8 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> TOAST_OR_BREAD_SLICE = modTag("toast_or_bread_slice");
 
 	public static final TagKey<Item> CUSTARD = neoforgeItemTag("foods/custard");
+
+	public static final TagKey<Item> COCOA_POWDER = neoforgeItemTag("cocoa/powder");
+	public static final TagKey<Item> NUT_BUTTER_COOKIE_DOUGH = neoforgeItemTag("cookie_dough/nut_butter");
+	public static final TagKey<Item> CHOCOLATE_COOKIE_DOUGH = neoforgeItemTag("cookie_dough/chocolate");
 }

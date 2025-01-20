@@ -285,12 +285,15 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.PUMPKIN_COOKIE_DOUGH).add(ExtraDelightItems.PUMPKIN_COOKIE_DOUGH.get());
 		tag(ExtraDelightTags.SWEET_BERRY_COOKIE_DOUGH).add(ExtraDelightItems.SWEET_BERRY_COOKIE_DOUGH.get());
 		tag(ExtraDelightTags.CHOCOLATE_CHIP_COOKIE_DOUGH).add(ExtraDelightItems.CHOCOLATE_CHIP_COOKIE_DOUGH.get());
+		tag(ExtraDelightTags.NUT_BUTTER_COOKIE_DOUGH).add(ExtraDelightItems.NUT_BUTTER_COOKIE_DOUGH.get());
+		tag(ExtraDelightTags.CHOCOLATE_COOKIE_DOUGH).add(ExtraDelightItems.CHOCOLATE_COOKIE_DOUGH.get());
 
 		tag(ExtraDelightTags.COOKIE_DOUGH).add(ExtraDelightItems.APPLE_COOKIE_DOUGH.get(),
 				ExtraDelightItems.CHOCOLATE_CHIP_COOKIE_DOUGH.get(), ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get(),
 				ExtraDelightItems.GLOW_BERRY_COOKIE_DOUGH.get(), ExtraDelightItems.HONEY_COOKIE_DOUGH.get(),
 				ExtraDelightItems.PUMPKIN_COOKIE_DOUGH.get(), ExtraDelightItems.SUGAR_COOKIE_DOUGH.get(),
-				ExtraDelightItems.SWEET_BERRY_COOKIE_DOUGH.get());
+				ExtraDelightItems.SWEET_BERRY_COOKIE_DOUGH.get(), ExtraDelightItems.NUT_BUTTER_COOKIE_DOUGH.get(),
+				ExtraDelightItems.CHOCOLATE_COOKIE_DOUGH.get());
 
 		tag(ExtraDelightTags.FROSTING_BLACK).add(ExtraDelightItems.FROSTING_BLACK.get());
 		tag(ExtraDelightTags.FROSTING_BLUE).add(ExtraDelightItems.FROSTING_BLUE.get());
@@ -464,7 +467,8 @@ public class EDItemTags extends ItemTagsProvider {
 				ExtraDelightItems.GINGERBREAD_SWORD.get());
 		tag(ExtraDelightTags.COOKIE)
 				.add(ExtraDelightItems.APPLE_COOKIE.get(), ExtraDelightItems.GLOW_BERRY_COOKIE.get(),
-						ExtraDelightItems.PUMPKIN_COOKIE.get())
+						ExtraDelightItems.PUMPKIN_COOKIE.get(), ExtraDelightItems.NUT_BUTTER_COOKIE.get(),
+						ExtraDelightItems.CHOCOLATE_COOKIE.get())
 				.addTag(ExtraDelightTags.SUGAR_COOKIE).addTag(ExtraDelightTags.GINGERBREAD_COOKIE);
 		tag(ExtraDelightTags.COFFEE_CHERRIES).add(ExtraDelightItems.COFFEE_CHERRIES.get());
 		tag(ExtraDelightTags.GROUND_COFFEE_BEANS).add(ExtraDelightItems.GROUND_COFFEE.get());
@@ -501,5 +505,7 @@ public class EDItemTags extends ItemTagsProvider {
 				ExtraDelightItems.CARAMEL_CUSTARD.get(), ExtraDelightItems.CHOCOLATE_CUSTARD.get(),
 				ModItems.GLOW_BERRY_CUSTARD.get(), ExtraDelightItems.HONEY_CUSTARD.get(),
 				ExtraDelightItems.PUMPKIN_CUSTARD.get(), ExtraDelightItems.SWEET_BERRY_CUSTARD.get());
+
+		tag(ExtraDelightTags.COCOA_POWDER).add(ExtraDelightItems.COCOA_POWDER.get());
 	}
 }

@@ -1132,7 +1132,7 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.GLOW_BERRY_CRATE, "glow_berry_crate");
 		forBlockItem(ExtraDelightItems.GOLDEN_APPLE_CRATE, "golden_apple_crate");
 		forBlockItem(ExtraDelightItems.GOLDEN_CARROT_CRATE_BLOCK, "golden_carrot_crate");
-		forBlockItem(ExtraDelightItems.MARSHMALLOW_ROOT_CRATE, "mallow_root_crate");
+		forBlockItem(ExtraDelightItems.MALLOW_ROOT_CRATE, "mallow_root_crate");
 		forBlockItem(ExtraDelightItems.RED_MUSHROOM_CRATE, "red_mushroom_crate");
 		forBlockItem(ExtraDelightItems.SWEET_BERRY_CRATE, "sweet_berry_crate");
 
@@ -1150,7 +1150,7 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.GROUND_CINNAMON_BLOCK_ITEM, "ground_cinnamon_block");
 		forBlockItem(ExtraDelightItems.HAZELNUT_IN_SHELL_SACK, "shell_hazelnut_sack");
 		forBlockItem(ExtraDelightItems.HAZELNUT_SACK, "hazelnut_sack");
-		forBlockItem(ExtraDelightItems.MARSHMALLOW_POWDER_SACK, "mallow_powder_sack");
+		forBlockItem(ExtraDelightItems.MALLOW_POWDER_SACK, "mallow_powder_sack");
 		forBlockItem(ExtraDelightItems.MINT_SACK, "mint_sack");
 		forBlockItem(ExtraDelightItems.PEANUT_IN_SHELL_SACK, "peanut_in_shell_sack");
 		forBlockItem(ExtraDelightItems.PEANUT_SACK, "peanut_sack");
@@ -1162,6 +1162,7 @@ public class ItemModels extends ItemModelProvider {
 
 		forItem(ExtraDelightItems.SLICED_CHILI, "sliced_chili_pepper");
 		forItem(ExtraDelightItems.JALAPENO_STUFFED_POTATO, "jalapeno_stuffed_potato");
+		forItem(ExtraDelightItems.JALAPENO_POPPER, "jalapeno_popper");
 		forItem(ExtraDelightItems.CHILI_CHEESE_CORNBREAD_MUFFIN, "chili_cheese_cornbread_muffin");
 		forItem(ExtraDelightItems.CHILI_CON_CARNE, "chili_con_carne");
 		forItem(ExtraDelightItems.WHITE_CHILI, "white_chili");
@@ -1191,6 +1192,7 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.PANFORTE, "panforte");
 		forItem(ExtraDelightItems.GRASSHOPPER_PIE, "grasshopper_pie");
 		forItem(ExtraDelightItems.MISSISSIPPI_MUD_PIE, "mississippi_mud_pie");
+		forItem(ExtraDelightItems.BACON_EGG_PIE, "bacon_egg_pie");
 
 		getBuilder(ExtraDelightItems.CHILI_CON_CARNE_FEAST.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile(
