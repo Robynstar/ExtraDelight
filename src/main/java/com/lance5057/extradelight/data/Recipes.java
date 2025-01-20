@@ -1426,7 +1426,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 		mixing(new ItemStack(ExtraDelightItems.MINT_CHIP_ICE_CREAM.get(), 1), LONG_GRIND, new ItemStack(Items.BOWL),
 				new Ingredient[] { Ingredient.of(CommonTags.FOODS_MILK), Ingredient.of(ExtraDelightTags.SWEETENER),
-						Ingredient.of(Items.COCOA_BEANS), Ingredient.of(ExtraDelightTags.MINT),
+						Ingredient.of(ExtraDelightTags.CHOCOLATE_CHIPS), Ingredient.of(ExtraDelightTags.MINT),
 						Ingredient.of(Items.ICE) },
 				new SizedFluidIngredient[] {}, consumer, "mint_chip_ice_cream");
 
@@ -1531,7 +1531,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		mixing(new ItemStack(ExtraDelightItems.MINT_CHIP_MILKSHAKE.get(), 1), STANDARD_GRIND,
 				new ItemStack(Items.GLASS_BOTTLE),
 				new Ingredient[] { Ingredient.of(CommonTags.FOODS_MILK),
-						Ingredient.of(ExtraDelightItems.ICE_CREAM.get()), Ingredient.of(Items.COCOA_BEANS),
+						Ingredient.of(ExtraDelightItems.ICE_CREAM.get()), Ingredient.of(ExtraDelightTags.CHOCOLATE_CHIPS),
 						Ingredient.of(ExtraDelightTags.MINT) },
 				new SizedFluidIngredient[] {}, consumer, "mint_chip_milkshake");
 
@@ -1562,12 +1562,12 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		mixing(new ItemStack(ExtraDelightItems.CHOCOLATE_CHIP_COOKIE_DOUGH.get(), 1), STANDARD_GRIND, ItemStack.EMPTY,
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.FLOUR), Ingredient.of(ExtraDelightTags.SWEETENER),
 						Ingredient.of(ExtraDelightTags.BUTTER), Ingredient.of(Tags.Items.EGGS),
-						Ingredient.of(Items.COCOA_BEANS) },
+						Ingredient.of(ExtraDelightTags.CHOCOLATE_CHIPS) },
 				new SizedFluidIngredient[] {}, consumer, "chocolate_chip_cookie_dough");
 
 		mixing(new ItemStack(ExtraDelightItems.CHOCOLATE_CHIP_COOKIE_DOUGH.get(), 1), STANDARD_GRIND, ItemStack.EMPTY,
 				new Ingredient[] { Ingredient.of(ExtraDelightTags.SUGAR_COOKIE_DOUGH),
-						Ingredient.of(Items.COCOA_BEANS) },
+						Ingredient.of(ExtraDelightTags.CHOCOLATE_CHIPS) },
 				new SizedFluidIngredient[] {}, consumer, "chocolate_chip_cookie_dough_sugar");
 
 		mixing(new ItemStack(ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get(), 1), STANDARD_GRIND, ItemStack.EMPTY,
