@@ -14,6 +14,7 @@ import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.blocks.FruitLeafBlock;
 import com.lance5057.extradelight.blocks.HorizontalPanBlock;
+import com.lance5057.extradelight.blocks.RecipeFeastBlock;
 import com.lance5057.extradelight.blocks.crops.ChiliCrop;
 import com.lance5057.extradelight.blocks.crops.CoffeeBush;
 import com.lance5057.extradelight.blocks.crops.GingerCrop;
@@ -31,7 +32,9 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CropBlock;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
@@ -45,6 +48,8 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemCondition.Build
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.neoforged.neoforge.registries.DeferredBlock;
+import vectorwing.farmersdelight.common.block.PieBlock;
+import vectorwing.farmersdelight.common.registry.ModBlocks;
 import vectorwing.farmersdelight.common.registry.ModItems;
 
 public class BlockLootTables extends BlockLootSubProvider {
@@ -501,6 +506,40 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(ExtraDelightBlocks.HANGING_DRIED_CHILI.get());
 		this.dropSelf(ExtraDelightBlocks.HANGING_HAM.get());
 		this.dropSelf(ExtraDelightBlocks.HANGING_MINT.get());
+		
+		this.dropSelf(ExtraDelightBlocks.CHILI_CRATE.get());
+		this.dropSelf(ExtraDelightBlocks.CHILI_POWDER_SACK.get());
+		this.dropOther(ExtraDelightBlocks.CHILI_CON_CARNE_FEAST.get(), Items.AIR);
+		this.dropOther(ExtraDelightBlocks.WHITE_CHILI_FEAST.get(), Items.AIR);
+
+		this.dropSelf(ExtraDelightBlocks.PEANUT_IN_SHELL_SACK.get());
+		this.dropSelf(ExtraDelightBlocks.PEANUT_SACK.get());
+		this.dropSelf(ExtraDelightBlocks.ROASTED_PEANUT_SACK.get());
+		this.dropSelf(ExtraDelightBlocks.NUT_BUTTER_COOKIE_BLOCK.get());
+
+		this.dropSelf(ExtraDelightBlocks.HAZELNUT_IN_SHELL_SACK.get());
+		this.dropSelf(ExtraDelightBlocks.HAZELNUT_SACK.get());
+		this.dropSelf(ExtraDelightBlocks.ROASTED_HAZELNUT_SACK.get());
+		this.dropOther(ExtraDelightBlocks.MISSISSIPPI_MUD_PIE.get(), Items.AIR);
+
+		this.dropSelf(ExtraDelightBlocks.MALLOW_ROOT_CRATE.get());
+		this.dropSelf(ExtraDelightBlocks.MALLOW_POWDER_SACK.get());
+		this.dropSelf(ExtraDelightBlocks.GRASSHOPPER_PIE.get());
+		this.dropOther(ExtraDelightBlocks.MARSHMALLOW_SLICE_FEAST.get(), Items.AIR);
+
+		this.dropSelf(ExtraDelightBlocks.COFFEE_CHERRY_CRATE.get());
+		this.dropSelf(ExtraDelightBlocks.GREEN_COFFEE_BEAN_SACK.get());
+		this.dropSelf(ExtraDelightBlocks.COFFEE_BEAN_SACK.get());
+		this.dropSelf(ExtraDelightBlocks.ROASTED_COFFEE_BEAN_SACK.get());
+
+		this.dropSelf(ExtraDelightBlocks.COCOA_BEAN_SACK.get());
+		this.dropSelf(ExtraDelightBlocks.ROASTED_COCOA_BEAN_SACK.get());
+		this.dropSelf(ExtraDelightBlocks.COCOA_SOLIDS_SACK.get());
+		this.dropSelf(ExtraDelightBlocks.COCOA_POWDER_SACK.get());
+		this.dropSelf(ExtraDelightBlocks.CHOCOLATE_COOKIE_BLOCK.get());
+		
+		this.dropOther(ExtraDelightBlocks.BACON_EGG_PIE.get(), Items.AIR);
+		this.dropOther(ExtraDelightBlocks.PANFORTE.get(), Items.AIR);
 	}
 
 	protected void createFruitLeavesDrop(Block leaves, Block sapling, Item fruit) {

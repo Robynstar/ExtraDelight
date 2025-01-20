@@ -151,11 +151,31 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:chocolate_cookie_dough": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:chocolate_cookie_dough"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:cocoa_butter_bottle": {
       "conditions": {
         "items": [
           {
             "items": "extradelight:cocoa_butter_bottle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:cocoa_powder": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:cocoa_powder"
           }
         ]
       },
@@ -761,6 +781,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:nut_butter_cookie_dough": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:nut_butter_cookie_dough"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:omelette_mix": {
       "conditions": {
         "items": [
@@ -856,6 +886,16 @@
         "items": [
           {
             "items": "extradelight:sliced_apple"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:sliced_chili": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:sliced_chili"
           }
         ]
       },
@@ -1002,6 +1042,9 @@
       "extradelight:alfredo_sauce"
     ],
     [
+      "extradelight:chocolate_cookie_dough"
+    ],
+    [
       "extradelight:bread_slice"
     ],
     [
@@ -1012,6 +1055,9 @@
     ],
     [
       "extradelight:sliced_potato"
+    ],
+    [
+      "extradelight:nut_butter_cookie_dough"
     ],
     [
       "extradelight:furikake"
@@ -1054,6 +1100,9 @@
     ],
     [
       "extradelight:frosting_light_blue"
+    ],
+    [
+      "extradelight:sliced_chili"
     ],
     [
       "extradelight:cocoa_butter_bottle"
@@ -1270,6 +1319,9 @@
     ],
     [
       "extradelight:jam"
+    ],
+    [
+      "extradelight:cocoa_powder"
     ],
     [
       "extradelight:mallow_powder"

@@ -1,0 +1,6 @@
+{
+  "parent": "extradelight:block/chili_con_carne_stage0",
+  "textures": {
+    "1": "extradelight:block/chili_con_carne"
+  }
+}

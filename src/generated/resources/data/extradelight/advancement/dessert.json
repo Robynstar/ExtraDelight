@@ -1,6 +1,16 @@
 {
   "parent": "extradelight:food",
   "criteria": {
+    "extradelight:affogato": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:affogato"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:apple_cheesecake_slice": {
       "conditions": {
         "items": [
@@ -191,6 +201,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:chocolate_cookie": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:chocolate_cookie"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:chocolate_custard": {
       "conditions": {
         "items": [
@@ -356,6 +376,16 @@
         "items": [
           {
             "items": "extradelight:glow_berry_popsicle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:grasshopper_pie_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:grasshopper_pie_slice"
           }
         ]
       },
@@ -591,6 +621,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:marshmallow_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:marshmallow_slice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:milk_tart_slice": {
       "conditions": {
         "items": [
@@ -606,6 +646,16 @@
         "items": [
           {
             "items": "extradelight:mint_chip_ice_cream"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:mississippi_mud_pie_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:mississippi_mud_pie_slice"
           }
         ]
       },
@@ -656,6 +706,46 @@
         "items": [
           {
             "items": "extradelight:muffin_sweet_berry"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:nut_butter_custard": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:nut_butter_custard"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:nut_butter_ice_cream": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:nut_butter_ice_cream"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:nut_butter_milkshake": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:nut_butter_milkshake"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:panforte_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:panforte_slice"
           }
         ]
       },
@@ -716,6 +806,16 @@
         "items": [
           {
             "items": "extradelight:rice_pudding"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:rocky_road": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:rocky_road"
           }
         ]
       },
@@ -883,7 +983,13 @@
       "extradelight:rombosse"
     ],
     [
+      "extradelight:nut_butter_milkshake"
+    ],
+    [
       "extradelight:brownie"
+    ],
+    [
+      "extradelight:marshmallow_slice"
     ],
     [
       "extradelight:cinnamon_popsicle"
@@ -895,7 +1001,13 @@
       "extradelight:crisp_rice_treat"
     ],
     [
+      "extradelight:mississippi_mud_pie_slice"
+    ],
+    [
       "extradelight:chocolate_ice_cream"
+    ],
+    [
+      "extradelight:affogato"
     ],
     [
       "extradelight:rice_pudding"
@@ -926,6 +1038,12 @@
     ],
     [
       "extradelight:jelly_orange"
+    ],
+    [
+      "extradelight:panforte_slice"
+    ],
+    [
+      "extradelight:chocolate_cookie"
     ],
     [
       "extradelight:candy_apple"
@@ -997,6 +1115,9 @@
       "extradelight:muffin_apple"
     ],
     [
+      "extradelight:nut_butter_custard"
+    ],
+    [
       "extradelight:jelly_brown"
     ],
     [
@@ -1022,6 +1143,12 @@
     ],
     [
       "extradelight:chocolate_custard"
+    ],
+    [
+      "extradelight:grasshopper_pie_slice"
+    ],
+    [
+      "extradelight:rocky_road"
     ],
     [
       "extradelight:dirt_cake"
@@ -1076,6 +1203,9 @@
     ],
     [
       "extradelight:caramel_apple"
+    ],
+    [
+      "extradelight:nut_butter_ice_cream"
     ],
     [
       "extradelight:sticky_toffee_pudding_slice"

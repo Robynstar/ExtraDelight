@@ -111,6 +111,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:nut_butter_cookie": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:nut_butter_cookie"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:pumpkin_cookie": {
       "conditions": {
         "items": [
@@ -288,6 +298,9 @@
     ],
     [
       "extradelight:pumpkin_cookie"
+    ],
+    [
+      "extradelight:nut_butter_cookie"
     ]
   ],
   "sends_telemetry_event": true

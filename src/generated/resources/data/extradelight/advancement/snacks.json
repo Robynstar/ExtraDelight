@@ -31,6 +31,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:cinnamon_toast": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:cinnamon_toast"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:crackers": {
       "conditions": {
         "items": [
@@ -184,6 +194,9 @@
     ],
     [
       "extradelight:graham_cracker"
+    ],
+    [
+      "extradelight:cinnamon_toast"
     ]
   ],
   "sends_telemetry_event": true

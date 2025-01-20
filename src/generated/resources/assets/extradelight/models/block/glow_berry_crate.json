@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "extradelight:block/crates/spruce_crate_bottom",
+    "east": "extradelight:block/glow_berry_crate_side",
+    "north": "extradelight:block/glow_berry_crate_side",
+    "south": "extradelight:block/glow_berry_crate_side",
+    "up": "extradelight:block/glow_berry_crate_top",
+    "west": "extradelight:block/glow_berry_crate_side"
+  }
+}

@@ -41,6 +41,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:bacon_egg_pie_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:bacon_egg_pie_slice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:bacon_egg_sandwich": {
       "conditions": {
         "items": [
@@ -66,6 +76,16 @@
         "items": [
           {
             "items": "extradelight:beet_mint_salad"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:borscht": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:borscht"
           }
         ]
       },
@@ -221,6 +241,26 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:chili_cheese_cornbread_muffin": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:chili_cheese_cornbread_muffin"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:chili_con_carne": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:chili_con_carne"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:congee": {
       "conditions": {
         "items": [
@@ -351,6 +391,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:currywurst": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:currywurst"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:egg_in_the_basket": {
       "conditions": {
         "items": [
@@ -376,6 +426,16 @@
         "items": [
           {
             "items": "extradelight:egg_salad_sandwich"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:fat_potatoes": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:fat_potatoes"
           }
         ]
       },
@@ -571,11 +631,31 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:hazelnut_soup": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:hazelnut_soup"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:hotdish": {
       "conditions": {
         "items": [
           {
             "items": "extradelight:hotdish"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:jalapeno_stuffed_potato": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:jalapeno_stuffed_potato"
           }
         ]
       },
@@ -721,6 +801,26 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:onion_bhaji": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:onion_bhaji"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:onion_soup": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:onion_soup"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:pasta_alfredo": {
       "conditions": {
         "items": [
@@ -796,6 +896,16 @@
         "items": [
           {
             "items": "extradelight:potato_au_gratin"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:potato_salad": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:potato_salad"
           }
         ]
       },
@@ -980,6 +1090,16 @@
         ]
       },
       "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:white_chili": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:white_chili"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     }
   },
   "display": {
@@ -998,6 +1118,9 @@
   "requirements": [
     [
       "extradelight:cactus_salad"
+    ],
+    [
+      "extradelight:onion_bhaji"
     ],
     [
       "extradelight:rabbit_stew_rice"
@@ -1036,6 +1159,9 @@
       "extradelight:french_fries"
     ],
     [
+      "extradelight:bacon_egg_pie_slice"
+    ],
+    [
       "extradelight:cooked_cactus"
     ],
     [
@@ -1066,6 +1192,9 @@
       "extradelight:meat_pie_slice"
     ],
     [
+      "extradelight:onion_soup"
+    ],
+    [
       "extradelight:seaweed_salad"
     ],
     [
@@ -1079,6 +1208,9 @@
     ],
     [
       "extradelight:apple_slaw"
+    ],
+    [
+      "extradelight:currywurst"
     ],
     [
       "extradelight:peanut_butter_jelly"
@@ -1121,6 +1253,9 @@
     ],
     [
       "extradelight:corn_flakes_cereal"
+    ],
+    [
+      "extradelight:jalapeno_stuffed_potato"
     ],
     [
       "extradelight:cream_corn"
@@ -1168,6 +1303,9 @@
       "extradelight:golden_jam_toast"
     ],
     [
+      "extradelight:potato_salad"
+    ],
+    [
       "extradelight:bacon_egg_sandwich"
     ],
     [
@@ -1193,6 +1331,12 @@
     ],
     [
       "extradelight:macaroni_cheese"
+    ],
+    [
+      "extradelight:chili_cheese_cornbread_muffin"
+    ],
+    [
+      "extradelight:borscht"
     ],
     [
       "extradelight:chicken_fried_steak"
@@ -1231,6 +1375,9 @@
       "extradelight:furikake_rice"
     ],
     [
+      "extradelight:fat_potatoes"
+    ],
+    [
       "extradelight:egg_salad"
     ],
     [
@@ -1255,6 +1402,9 @@
       "extradelight:curry_rice"
     ],
     [
+      "extradelight:white_chili"
+    ],
+    [
       "extradelight:carrot_soup"
     ],
     [
@@ -1270,6 +1420,9 @@
       "extradelight:scrambled_eggs"
     ],
     [
+      "extradelight:hazelnut_soup"
+    ],
+    [
       "extradelight:congee"
     ],
     [
@@ -1277,6 +1430,9 @@
     ],
     [
       "extradelight:beef_stew_rice"
+    ],
+    [
+      "extradelight:chili_con_carne"
     ],
     [
       "extradelight:corn_fritters"
