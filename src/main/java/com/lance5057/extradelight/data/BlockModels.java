@@ -609,6 +609,7 @@ public class BlockModels extends BlockStateProvider {
 
 		recipeFeastBlock(ExtraDelightBlocks.MARSHMALLOW_SLICE_FEAST.get(), "marshmallow_slice");
 		this.simpleBlock(ExtraDelightBlocks.CHOCOLATE_COOKIE_BLOCK.get());
+		this.simpleBlock(ExtraDelightBlocks.NUT_BUTTER_COOKIE_BLOCK.get());
 		this.pieBlock(ExtraDelightBlocks.BACON_EGG_PIE.get(), "bacon_egg_pie");
 		pieLikeBlock(ExtraDelightBlocks.PANFORTE.get(), "panforte");
 

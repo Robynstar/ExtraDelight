@@ -1061,7 +1061,12 @@ public class ExtraDelightBlocks {
 	public static final DeferredBlock<Block> HANGING_ONIONS = BLOCKS.register("hanging_onions", () -> new HangingBlock(
 			Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES).mapColor(MapColor.TERRACOTTA_YELLOW)));
 	public static final DeferredBlock<Block> HANGING_MINT = BLOCKS.register("hanging_mint", () -> new HangingBlock(
-			Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES).mapColor(MapColor.TERRACOTTA_YELLOW)));
+			Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES).mapColor(MapColor.TERRACOTTA_YELLOW)) {
+		@Override
+		public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+			return Block.box(4.0D, 8.0D, 4.0D, 12.0D, 16.0D, 12.0D);
+		}
+	});
 	public static final DeferredBlock<Block> HANGING_HAM = BLOCKS.register("hanging_ham", () -> new HangingBlock(
 			Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES).mapColor(MapColor.TERRACOTTA_YELLOW)));
 	public static final DeferredBlock<Block> HANGING_CHILI = BLOCKS.register("hanging_chili", () -> new HangingBlock(
@@ -1108,9 +1113,8 @@ public class ExtraDelightBlocks {
 
 	public static final DeferredBlock<Block> MALLOW_ROOT_CRATE = BLOCKS.register("mallow_root_crate", () -> new Block(
 			Block.Properties.ofFullCopy(ModBlocks.BEETROOT_CRATE.get()).mapColor(MapColor.TERRACOTTA_YELLOW)));
-	public static final DeferredBlock<Block> MALLOW_POWDER_SACK = BLOCKS.register("mallow_powder_sack",
-			() -> new Block(
-					Block.Properties.ofFullCopy(ModBlocks.RICE_BAG.get()).mapColor(MapColor.TERRACOTTA_YELLOW)));
+	public static final DeferredBlock<Block> MALLOW_POWDER_SACK = BLOCKS.register("mallow_powder_sack", () -> new Block(
+			Block.Properties.ofFullCopy(ModBlocks.RICE_BAG.get()).mapColor(MapColor.TERRACOTTA_YELLOW)));
 	public static final DeferredBlock<Block> GRASSHOPPER_PIE = ExtraDelightBlocks.BLOCKS.register("grasshopper_pie",
 			() -> new PieBlock(Block.Properties.ofFullCopy(Blocks.CAKE), ExtraDelightItems.GRASSHOPPER_PIE_SLICE));
 	public static final DeferredBlock<RecipeFeastBlock> MARSHMALLOW_SLICE_FEAST = BLOCKS.register("marshmallow_slice",
@@ -1144,5 +1148,11 @@ public class ExtraDelightBlocks {
 	public static final DeferredBlock<Block> BACON_EGG_PIE = ExtraDelightBlocks.BLOCKS.register("bacon_egg_pie",
 			() -> new PieBlock(Block.Properties.ofFullCopy(Blocks.CAKE), ExtraDelightItems.BACON_EGG_PIE_SLICE));
 	public static final DeferredBlock<Block> PANFORTE = ExtraDelightBlocks.BLOCKS.register("panforte",
-			() -> new PieBlock(Block.Properties.ofFullCopy(Blocks.CAKE), ExtraDelightItems.PANFORTE_SLICE));
+			() -> new PieBlock(Block.Properties.ofFullCopy(Blocks.CAKE), ExtraDelightItems.PANFORTE_SLICE) {
+				@Override
+				public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos,
+						CollisionContext context) {
+					return Block.box(2.0D, 0.0D, 2.0D, 14.0D, 3.0D, 14.0D);
+				}
+			});
 }

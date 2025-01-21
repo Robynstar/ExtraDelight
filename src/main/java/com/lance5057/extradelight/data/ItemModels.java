@@ -1207,6 +1207,7 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.MARSHMALLOW_SLICE_FEAST,
 				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/marshmallow_slice_stage0"));
 		forBlockItem(ExtraDelightItems.CHOCOLATE_COOKIE_BLOCK, "chocolate_cookie_block");
+		forBlockItem(ExtraDelightItems.NUT_BUTTER_COOKIE_BLOCK, "nut_butter_cookie_block");
 
 		AestheticBlocks.itemModel(this);
 	}

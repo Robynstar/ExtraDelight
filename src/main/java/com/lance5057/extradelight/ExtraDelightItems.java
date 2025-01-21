@@ -829,38 +829,70 @@ public class ExtraDelightItems {
 			.register("haggis_block_item", () -> new BlockItem(ExtraDelightBlocks.HAGGIS.get(), new Item.Properties()))
 			.advancementButchercraft().finish();
 
-	public static final DeferredItem<Item> JELLY_WHITE_FEAST_ITEM = EDItemGenerator.register("jelly_white_block_item",
-			() -> new BlockItem(ExtraDelightBlocks.JELLY_WHITE.get(), new Item.Properties())).advancementFeast().finish();
-	public static final DeferredItem<Item> JELLY_ORANGE_FEAST_ITEM = EDItemGenerator.register("jelly_orange_block_item",
-			() -> new BlockItem(ExtraDelightBlocks.JELLY_ORANGE.get(), new Item.Properties())).advancementFeast().finish();
-	public static final DeferredItem<Item> JELLY_MAGENTA_FEAST_ITEM = EDItemGenerator.register("jelly_magenta_block_item",
-			() -> new BlockItem(ExtraDelightBlocks.JELLY_MAGENTA.get(), new Item.Properties())).advancementFeast().finish();
-	public static final DeferredItem<Item> JELLY_LIGHT_BLUE_FEAST_ITEM = EDItemGenerator.register("jelly_light_blue_block_item",
-			() -> new BlockItem(ExtraDelightBlocks.JELLY_LIGHT_BLUE.get(), new Item.Properties())).advancementFeast().finish();
-	public static final DeferredItem<Item> JELLY_YELLOW_FEAST_ITEM = EDItemGenerator.register("jelly_yellow_block_item",
-			() -> new BlockItem(ExtraDelightBlocks.JELLY_YELLOW.get(), new Item.Properties())).advancementFeast().finish();
-	public static final DeferredItem<Item> JELLY_LIME_FEAST_ITEM = EDItemGenerator.register("jelly_lime_block_item",
-			() -> new BlockItem(ExtraDelightBlocks.JELLY_LIME.get(), new Item.Properties())).advancementFeast().finish();
-	public static final DeferredItem<Item> JELLY_PINK_FEAST_ITEM = EDItemGenerator.register("jelly_pink_block_item",
-			() -> new BlockItem(ExtraDelightBlocks.JELLY_PINK.get(), new Item.Properties())).advancementFeast().finish();
-	public static final DeferredItem<Item> JELLY_GREY_FEAST_ITEM = EDItemGenerator.register("jelly_grey_block_item",
-			() -> new BlockItem(ExtraDelightBlocks.JELLY_GREY.get(), new Item.Properties())).advancementFeast().finish();
-	public static final DeferredItem<Item> JELLY_LIGHT_GREY_FEAST_ITEM = EDItemGenerator.register("jelly_light_grey_block_item",
-			() -> new BlockItem(ExtraDelightBlocks.JELLY_LIGHT_GREY.get(), new Item.Properties())).advancementFeast().finish();
-	public static final DeferredItem<Item> JELLY_CYAN_FEAST_ITEM = EDItemGenerator.register("jelly_cyan_block_item",
-			() -> new BlockItem(ExtraDelightBlocks.JELLY_CYAN.get(), new Item.Properties())).advancementFeast().finish();
-	public static final DeferredItem<Item> JELLY_PURPLE_FEAST_ITEM = EDItemGenerator.register("jelly_purple_block_item",
-			() -> new BlockItem(ExtraDelightBlocks.JELLY_PURPLE.get(), new Item.Properties())).advancementFeast().finish();
-	public static final DeferredItem<Item> JELLY_BLUE_FEAST_ITEM = EDItemGenerator.register("jelly_blue_block_item",
-			() -> new BlockItem(ExtraDelightBlocks.JELLY_BLUE.get(), new Item.Properties())).advancementFeast().finish();
-	public static final DeferredItem<Item> JELLY_BROWN_FEAST_ITEM = EDItemGenerator.register("jelly_brown_block_item",
-			() -> new BlockItem(ExtraDelightBlocks.JELLY_BROWN.get(), new Item.Properties())).advancementFeast().finish();
-	public static final DeferredItem<Item> JELLY_GREEN_FEAST_ITEM = EDItemGenerator.register("jelly_green_block_item",
-			() -> new BlockItem(ExtraDelightBlocks.JELLY_GREEN.get(), new Item.Properties())).advancementFeast().finish();
-	public static final DeferredItem<Item> JELLY_RED_FEAST_ITEM = EDItemGenerator.register("jelly_red_block_item",
-			() -> new BlockItem(ExtraDelightBlocks.JELLY_RED.get(), new Item.Properties())).advancementFeast().finish();
-	public static final DeferredItem<Item> JELLY_BLACK_FEAST_ITEM = EDItemGenerator.register("jelly_black_block_item",
-			() -> new BlockItem(ExtraDelightBlocks.JELLY_BLACK.get(), new Item.Properties())).advancementFeast().finish();
+	public static final DeferredItem<Item> JELLY_WHITE_FEAST_ITEM = EDItemGenerator
+			.register("jelly_white_block_item",
+					() -> new BlockItem(ExtraDelightBlocks.JELLY_WHITE.get(), new Item.Properties()))
+			.advancementFeast().finish();
+	public static final DeferredItem<Item> JELLY_ORANGE_FEAST_ITEM = EDItemGenerator
+			.register("jelly_orange_block_item",
+					() -> new BlockItem(ExtraDelightBlocks.JELLY_ORANGE.get(), new Item.Properties()))
+			.advancementFeast().finish();
+	public static final DeferredItem<Item> JELLY_MAGENTA_FEAST_ITEM = EDItemGenerator
+			.register("jelly_magenta_block_item",
+					() -> new BlockItem(ExtraDelightBlocks.JELLY_MAGENTA.get(), new Item.Properties()))
+			.advancementFeast().finish();
+	public static final DeferredItem<Item> JELLY_LIGHT_BLUE_FEAST_ITEM = EDItemGenerator
+			.register("jelly_light_blue_block_item",
+					() -> new BlockItem(ExtraDelightBlocks.JELLY_LIGHT_BLUE.get(), new Item.Properties()))
+			.advancementFeast().finish();
+	public static final DeferredItem<Item> JELLY_YELLOW_FEAST_ITEM = EDItemGenerator
+			.register("jelly_yellow_block_item",
+					() -> new BlockItem(ExtraDelightBlocks.JELLY_YELLOW.get(), new Item.Properties()))
+			.advancementFeast().finish();
+	public static final DeferredItem<Item> JELLY_LIME_FEAST_ITEM = EDItemGenerator
+			.register("jelly_lime_block_item",
+					() -> new BlockItem(ExtraDelightBlocks.JELLY_LIME.get(), new Item.Properties()))
+			.advancementFeast().finish();
+	public static final DeferredItem<Item> JELLY_PINK_FEAST_ITEM = EDItemGenerator
+			.register("jelly_pink_block_item",
+					() -> new BlockItem(ExtraDelightBlocks.JELLY_PINK.get(), new Item.Properties()))
+			.advancementFeast().finish();
+	public static final DeferredItem<Item> JELLY_GREY_FEAST_ITEM = EDItemGenerator
+			.register("jelly_grey_block_item",
+					() -> new BlockItem(ExtraDelightBlocks.JELLY_GREY.get(), new Item.Properties()))
+			.advancementFeast().finish();
+	public static final DeferredItem<Item> JELLY_LIGHT_GREY_FEAST_ITEM = EDItemGenerator
+			.register("jelly_light_grey_block_item",
+					() -> new BlockItem(ExtraDelightBlocks.JELLY_LIGHT_GREY.get(), new Item.Properties()))
+			.advancementFeast().finish();
+	public static final DeferredItem<Item> JELLY_CYAN_FEAST_ITEM = EDItemGenerator
+			.register("jelly_cyan_block_item",
+					() -> new BlockItem(ExtraDelightBlocks.JELLY_CYAN.get(), new Item.Properties()))
+			.advancementFeast().finish();
+	public static final DeferredItem<Item> JELLY_PURPLE_FEAST_ITEM = EDItemGenerator
+			.register("jelly_purple_block_item",
+					() -> new BlockItem(ExtraDelightBlocks.JELLY_PURPLE.get(), new Item.Properties()))
+			.advancementFeast().finish();
+	public static final DeferredItem<Item> JELLY_BLUE_FEAST_ITEM = EDItemGenerator
+			.register("jelly_blue_block_item",
+					() -> new BlockItem(ExtraDelightBlocks.JELLY_BLUE.get(), new Item.Properties()))
+			.advancementFeast().finish();
+	public static final DeferredItem<Item> JELLY_BROWN_FEAST_ITEM = EDItemGenerator
+			.register("jelly_brown_block_item",
+					() -> new BlockItem(ExtraDelightBlocks.JELLY_BROWN.get(), new Item.Properties()))
+			.advancementFeast().finish();
+	public static final DeferredItem<Item> JELLY_GREEN_FEAST_ITEM = EDItemGenerator
+			.register("jelly_green_block_item",
+					() -> new BlockItem(ExtraDelightBlocks.JELLY_GREEN.get(), new Item.Properties()))
+			.advancementFeast().finish();
+	public static final DeferredItem<Item> JELLY_RED_FEAST_ITEM = EDItemGenerator
+			.register("jelly_red_block_item",
+					() -> new BlockItem(ExtraDelightBlocks.JELLY_RED.get(), new Item.Properties()))
+			.advancementFeast().finish();
+	public static final DeferredItem<Item> JELLY_BLACK_FEAST_ITEM = EDItemGenerator
+			.register("jelly_black_block_item",
+					() -> new BlockItem(ExtraDelightBlocks.JELLY_BLACK.get(), new Item.Properties()))
+			.advancementFeast().finish();
 
 	public static final DeferredItem<Item> JERKY = EDItemGenerator
 			.register("jerky", () -> new Item(foodItem(EDFoods.JERKY))).advancementSnack().finish();
@@ -2594,8 +2626,9 @@ public class ExtraDelightItems {
 	public static final DeferredItem<Item> TARTE_TATIN_SLICE = EDItemGenerator
 			.register("tarte_tatin_slice", () -> new ToolTipConsumableItem(foodItem(EDFoods.TARTE_TATIN_SLICE), true))
 			.advancementDessert().finish();
-	public static final DeferredItem<Item> AEBLEFLAESK = EDItemGenerator.register("aebleflaesk",
-			() -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.AEBLEFLAESK), true)).advancementMeal().finish();
+	public static final DeferredItem<Item> AEBLEFLAESK = EDItemGenerator
+			.register("aebleflaesk", () -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.AEBLEFLAESK), true))
+			.advancementMeal().finish();
 	public static final DeferredItem<Item> CANDY_BAR_SALAD = EDItemGenerator
 			.register("candy_bar_salad",
 					() -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.CANDY_BAR_SALAD), true))
@@ -2631,13 +2664,17 @@ public class ExtraDelightItems {
 			.register("chili_cheese_cornbread_muffin",
 					() -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.CHILI), true))
 			.advancementMeal().finish();
-	public static final DeferredItem<Item> CHILI_CON_CARNE_FEAST = EDItemGenerator.register("chili_con_carne_feast",
-			() -> new BlockItem(ExtraDelightBlocks.CHILI_CON_CARNE_FEAST.get(), new Item.Properties())).advancementFeast().finish();
+	public static final DeferredItem<Item> CHILI_CON_CARNE_FEAST = EDItemGenerator
+			.register("chili_con_carne_feast",
+					() -> new BlockItem(ExtraDelightBlocks.CHILI_CON_CARNE_FEAST.get(), new Item.Properties()))
+			.advancementFeast().finish();
 	public static final DeferredItem<Item> CHILI_CON_CARNE = EDItemGenerator
 			.register("chili_con_carne", () -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.CHILI), true))
 			.advancementMeal().finish();
-	public static final DeferredItem<Item> WHITE_CHILI_FEAST = EDItemGenerator.register("white_chili_feast",
-			() -> new BlockItem(ExtraDelightBlocks.WHITE_CHILI_FEAST.get(), new Item.Properties())).advancementFeast().finish();
+	public static final DeferredItem<Item> WHITE_CHILI_FEAST = EDItemGenerator
+			.register("white_chili_feast",
+					() -> new BlockItem(ExtraDelightBlocks.WHITE_CHILI_FEAST.get(), new Item.Properties()))
+			.advancementFeast().finish();
 	public static final DeferredItem<Item> WHITE_CHILI = EDItemGenerator
 			.register("white_chili", () -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.CHILI), true))
 			.advancementMeal().finish();
@@ -2663,6 +2700,8 @@ public class ExtraDelightItems {
 	public static final DeferredItem<Item> NUT_BUTTER_CUSTARD = EDItemGenerator
 			.register("nut_butter_custard", () -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.CHILI), true))
 			.advancementDessert().finish();
+	public static final DeferredItem<Item> NUT_BUTTER_COOKIE_BLOCK = ITEMS.register("nut_butter_cookie_block",
+			() -> new BlockItem(ExtraDelightBlocks.NUT_BUTTER_COOKIE_BLOCK.get(), new Item.Properties()));
 
 	public static final DeferredItem<Item> HAZELNUT_IN_SHELL_SACK = ITEMS.register("hazelnut_in_shell_sack",
 			() -> new BlockItem(ExtraDelightBlocks.HAZELNUT_IN_SHELL_SACK.get(), new Item.Properties()));
@@ -2670,8 +2709,10 @@ public class ExtraDelightItems {
 			() -> new BlockItem(ExtraDelightBlocks.HAZELNUT_SACK.get(), new Item.Properties()));
 	public static final DeferredItem<Item> ROASTED_HAZELNUT_SACK = ITEMS.register("roasted_hazelnut_sack",
 			() -> new BlockItem(ExtraDelightBlocks.ROASTED_HAZELNUT_SACK.get(), new Item.Properties()));
-	public static final DeferredItem<Item> MISSISSIPPI_MUD_PIE = EDItemGenerator.register("mississippi_mud_pie",
-			() -> new BlockItem(ExtraDelightBlocks.MISSISSIPPI_MUD_PIE.get(), new Item.Properties())).advancementFeast().finish();
+	public static final DeferredItem<Item> MISSISSIPPI_MUD_PIE = EDItemGenerator
+			.register("mississippi_mud_pie",
+					() -> new BlockItem(ExtraDelightBlocks.MISSISSIPPI_MUD_PIE.get(), new Item.Properties()))
+			.advancementFeast().finish();
 	public static final DeferredItem<Item> MISSISSIPPI_MUD_PIE_SLICE = EDItemGenerator
 			.register("mississippi_mud_pie_slice",
 					() -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.CHILI), true))
@@ -2684,10 +2725,14 @@ public class ExtraDelightItems {
 			() -> new BlockItem(ExtraDelightBlocks.MALLOW_ROOT_CRATE.get(), new Item.Properties()));
 	public static final DeferredItem<Item> MALLOW_POWDER_SACK = ITEMS.register("mallow_powder_sack",
 			() -> new BlockItem(ExtraDelightBlocks.MALLOW_POWDER_SACK.get(), new Item.Properties()));
-	public static final DeferredItem<Item> GRASSHOPPER_PIE = EDItemGenerator.register("grasshopper_pie",
-			() -> new BlockItem(ExtraDelightBlocks.GRASSHOPPER_PIE.get(), new Item.Properties())).advancementFeast().finish();
-	public static final DeferredItem<Item> MARSHMALLOW_SLICE_FEAST = EDItemGenerator.register("marshmallow_slice_feast",
-			() -> new BlockItem(ExtraDelightBlocks.MARSHMALLOW_SLICE_FEAST.get(), new Item.Properties())).advancementFeast().finish();
+	public static final DeferredItem<Item> GRASSHOPPER_PIE = EDItemGenerator
+			.register("grasshopper_pie",
+					() -> new BlockItem(ExtraDelightBlocks.GRASSHOPPER_PIE.get(), new Item.Properties()))
+			.advancementFeast().finish();
+	public static final DeferredItem<Item> MARSHMALLOW_SLICE_FEAST = EDItemGenerator
+			.register("marshmallow_slice_feast",
+					() -> new BlockItem(ExtraDelightBlocks.MARSHMALLOW_SLICE_FEAST.get(), new Item.Properties()))
+			.advancementFeast().finish();
 	public static final DeferredItem<Item> GRASSHOPPER_PIE_SLICE = EDItemGenerator
 			.register("grasshopper_pie_slice", () -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.CHILI), true))
 			.advancementDessert().finish();
@@ -2736,8 +2781,10 @@ public class ExtraDelightItems {
 	public static final DeferredItem<Item> ONION_SOUP = EDItemGenerator
 			.register("onion_soup", () -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.CHILI), true))
 			.advancementMeal().finish();
-	public static final DeferredItem<Item> BACON_EGG_PIE = EDItemGenerator.register("bacon_egg_pie",
-			() -> new BlockItem(ExtraDelightBlocks.BACON_EGG_PIE.get(), new Item.Properties())).advancementFeast().finish();
+	public static final DeferredItem<Item> BACON_EGG_PIE = EDItemGenerator
+			.register("bacon_egg_pie",
+					() -> new BlockItem(ExtraDelightBlocks.BACON_EGG_PIE.get(), new Item.Properties()))
+			.advancementFeast().finish();
 	public static final DeferredItem<Item> BACON_EGG_PIE_SLICE = EDItemGenerator
 			.register("bacon_egg_pie_slice", () -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.CHILI), true))
 			.advancementMeal().finish();
@@ -2750,8 +2797,9 @@ public class ExtraDelightItems {
 	public static final DeferredItem<Item> CINNAMON_TOAST = EDItemGenerator
 			.register("cinnamon_toast", () -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.CHILI), true))
 			.advancementSnack().finish();
-	public static final DeferredItem<Item> PANFORTE = EDItemGenerator.register("panforte",
-			() -> new BlockItem(ExtraDelightBlocks.PANFORTE.get(), new Item.Properties())).advancementFeast().finish();
+	public static final DeferredItem<Item> PANFORTE = EDItemGenerator
+			.register("panforte", () -> new BlockItem(ExtraDelightBlocks.PANFORTE.get(), new Item.Properties()))
+			.advancementFeast().finish();
 	public static final DeferredItem<Item> PANFORTE_SLICE = EDItemGenerator
 			.register("panforte_slice", () -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.CHILI), true))
 			.advancementDessert().finish();

@@ -297,7 +297,7 @@ public class ExtraDelightTags {
 
 	public static final TagKey<Item> CANDY_BOWL_VALID = modTag("candy_bowl_valid");
 	public static final TagKey<Item> CHOCOLATE_BOX_VALID = modTag("chocolate_box_valid");
-	
+
 	public static final TagKey<Item> COOKIE_DOUGH = neoforgeItemTag("cookie_dough");
 	public static final TagKey<Item> GINGERBREAD_COOKIE_DOUGH = neoforgeItemTag("cookie_dough/gingerbread");
 	public static final TagKey<Item> SUGAR_COOKIE_DOUGH = neoforgeItemTag("cookie_dough/sugar");
@@ -343,6 +343,7 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> CINNAMON_STICK = neoforgeItemTag("cinnamon/stick");
 
 	public static final TagKey<Item> CHILI = neoforgeItemTag("crops/chili");
+	public static final TagKey<Item> PROCESSED_CHILI = neoforgeItemTag("processed/chili");
 	public static final TagKey<Item> DRIED_CHILI = neoforgeItemTag("crops/chili/dried");
 	public static final TagKey<Item> CHILI_SEEDS = neoforgeItemTag("seeds/chili");
 

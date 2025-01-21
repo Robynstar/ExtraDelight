@@ -11,8 +11,6 @@ import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.data.recipebuilders.ChillerRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.DryingRackRecipeBuilder;
-import com.lance5057.extradelight.data.recipebuilders.DynamicJamRecipeBuilder;
-import com.lance5057.extradelight.data.recipebuilders.DynamicSandwichRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.FeastRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MeltingPotRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MixingBowlRecipeBuilder;
@@ -1036,6 +1034,12 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						ExtraDelightItems.STUFFED_APPLES_FEAST.get())
 				.unlockedBy("has_feast", has(ExtraDelightItems.STUFFED_APPLES_FEAST.get()))
 				.save(consumer, EDLoc("stuffed_apple_ice_cream_feast"));
+
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.BOWL), new ItemStack(ExtraDelightItems.CHILI_CON_CARNE.get()),
+						ExtraDelightItems.CHILI_CON_CARNE_FEAST.get())
+				.unlockedBy("has_feast", has(ExtraDelightItems.CHILI_CON_CARNE_FEAST.get()))
+				.save(consumer, EDLoc("chili_con_carne_feast"));
 	}
 
 	private void doughShapeRecipes(RecipeOutput consumer) {
@@ -1531,8 +1535,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		mixing(new ItemStack(ExtraDelightItems.MINT_CHIP_MILKSHAKE.get(), 1), STANDARD_GRIND,
 				new ItemStack(Items.GLASS_BOTTLE),
 				new Ingredient[] { Ingredient.of(CommonTags.FOODS_MILK),
-						Ingredient.of(ExtraDelightItems.ICE_CREAM.get()), Ingredient.of(ExtraDelightTags.CHOCOLATE_CHIPS),
-						Ingredient.of(ExtraDelightTags.MINT) },
+						Ingredient.of(ExtraDelightItems.ICE_CREAM.get()),
+						Ingredient.of(ExtraDelightTags.CHOCOLATE_CHIPS), Ingredient.of(ExtraDelightTags.MINT) },
 				new SizedFluidIngredient[] {}, consumer, "mint_chip_milkshake");
 
 		mixing(new ItemStack(ExtraDelightItems.MINT_CHIP_MILKSHAKE.get(), 1), STANDARD_GRIND,
@@ -3245,11 +3249,88 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.TARTE_TATIN.get()))
 				.save(consumer, EDLoc("tarte_tatin_slice"));
 
-//		DynamicSandwichRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.DYNAMIC_TEST2).pattern("b")
-//				.pattern("i").pattern("b").define('b', Items.BREAD).define('i', ModItems.HAM.get())
-//				.unlockedBy(getName(),
-//						InventoryChangeTrigger.TriggerInstance.hasItems(Items.BREAD))
-//				.save(consumer, EDLoc("dynamic_sandwich_test"));
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ExtraDelightItems.HANGING_CHILI.get()).pattern("ccc")
+				.pattern("crc").pattern("ccc").define('c', ExtraDelightItems.CHILI.get())
+				.define('r', ModItems.ROPE.get())
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CHILI.get()))
+				.save(consumer, EDLoc("hanging_chili"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ExtraDelightItems.HANGING_DRIED_CHILI.get())
+				.pattern("ccc").pattern("crc").pattern("ccc").define('c', ExtraDelightItems.DRIED_CHILI.get())
+				.define('r', ModItems.ROPE.get())
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.DRIED_CHILI.get()))
+				.save(consumer, EDLoc("hanging_dried_chili"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ExtraDelightItems.HANGING_MINT.get()).pattern("c c")
+				.pattern(" r ").pattern("c c").define('c', ExtraDelightItems.MINT.get())
+				.define('r', ModItems.ROPE.get())
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MINT.get()))
+				.save(consumer, EDLoc("hanging_mint"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ExtraDelightItems.HANGING_HAM.get()).pattern("r")
+				.pattern("c").define('c', ModItems.HAM.get()).define('r', ModItems.ROPE.get())
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.HAM.get()))
+				.save(consumer, EDLoc("hanging_ham"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ExtraDelightItems.HANGING_CORN.get()).pattern("ccc")
+				.pattern("crc").pattern("ccc").define('c', ExtraDelightItems.CORN_ON_COB.get())
+				.define('r', ModItems.ROPE.get())
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CORN_ON_COB.get()))
+				.save(consumer, EDLoc("hanging_corn"));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ExtraDelightItems.HANGING_ONION.get()).pattern("ccc")
+				.pattern("crc").pattern("ccc").define('c', ModItems.ONION.get()).define('r', ModItems.ROPE.get())
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.ONION.get()))
+				.save(consumer, EDLoc("hanging_onion"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.CHILI, 8)
+				.requires(ExtraDelightItems.HANGING_CHILI)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.HANGING_CHILI))
+				.save(consumer, EDLoc("hanging_chili_takedown"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.DRIED_CHILI, 8)
+				.requires(ExtraDelightItems.HANGING_DRIED_CHILI)
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.HANGING_DRIED_CHILI))
+				.save(consumer, EDLoc("hanging_dried_chili_takedown"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.MINT, 4)
+				.requires(ExtraDelightItems.HANGING_MINT)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.HANGING_MINT))
+				.save(consumer, EDLoc("hanging_mint_takedown"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.CORN_ON_COB, 8)
+				.requires(ExtraDelightItems.HANGING_CORN)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.HANGING_CORN))
+				.save(consumer, EDLoc("hanging_corn_takedown"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.ONION.get(), 8)
+				.requires(ExtraDelightItems.HANGING_ONION)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.HANGING_ONION))
+				.save(consumer, EDLoc("hanging_onion_takedown"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.HAM.get(), 1)
+				.requires(ExtraDelightItems.HANGING_HAM)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.HANGING_HAM))
+				.save(consumer, EDLoc("hanging_ham_takedown"));
+
+		bundleItem9(Ingredient.of(ExtraDelightTags.CHILI), ExtraDelightItems.CHILI_CRATE.get(),
+				ExtraDelightItems.CHILI.get(), consumer, "chili");
+		bundleItem9(Ingredient.of(ExtraDelightTags.CHILI_POWDER), ExtraDelightItems.CHILI_POWDER_SACK.get(),
+				ExtraDelightItems.CHILI_POWDER.get(), consumer, "chili_powder");
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.JALAPENO_STUFFED_POTATO.get(), 1)
+				.requires(ModItems.STUFFED_POTATO.get()).requires(ExtraDelightTags.PROCESSED_CHILI)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CHILI))
+				.save(consumer, EDLoc("jalapeno_stuffed_potato"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.JALAPENO_STUFFED_POTATO.get(), 1)
+				.requires(Items.BAKED_POTATO).requires(Items.MILK_BUCKET).requires(CommonTags.FOODS_COOKED_BEEF)
+				.requires(ExtraDelightTags.PROCESSED_CHILI)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CHILI))
+				.save(consumer, EDLoc("jalapeno_stuffed_potato_full"));
 	}
 
 	private void bucket(String name, RecipeOutput consumer, ItemLike fullBucket, ItemLike emptyItem,
@@ -3933,6 +4014,13 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						Ingredient.of(Items.SUGAR) },
 				"aebleflaesk", consumer);
 
+		pot(ExtraDelightItems.CHILI_CON_CARNE_FEAST.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F,
+				ModItems.TOMATO_SAUCE.get(),
+				new Ingredient[] { Ingredient.of(ModItems.TOMATO_SAUCE.get()), Ingredient.of(ModItems.BONE_BROTH.get()),
+						Ingredient.of(ExtraDelightTags.MEAT_COOKED), Ingredient.of(ExtraDelightTags.CHILI_POWDER),
+						Ingredient.of(ExtraDelightTags.PROCESSED_VEG), Ingredient.of(ExtraDelightTags.PROCESSED_VEG) },
+				"chili_con_carne", consumer);
+
 //		DynamicJamRecipeBuilder.cookingPotRecipe(ExtraDelightItems.DYNAMIC_TEST, 1, 1, 1, Items.GLASS_BOTTLE)
 //				.addIngredient(Ingredient.of(Items.CHORUS_FRUIT)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
 //				.build(consumer);
@@ -4204,23 +4292,27 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.cuttingRecipe(Ingredient.of(ExtraDelightItems.TARTE_TATIN.get()),
 						Ingredient.of(CommonTags.TOOLS_KNIFE), ExtraDelightItems.TARTE_TATIN_SLICE.get(), 4)
 				.build(consumer, EDLoc("cutting/" + "tarte_tatin_knife"));
+
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ExtraDelightItems.CHILI.get()),
+				Ingredient.of(CommonTags.TOOLS_KNIFE), ExtraDelightItems.SLICED_CHILI.get(), 3)
+				.build(consumer, EDLoc("cutting/" + "chili_knife"));
 	}
 
 	private void mortarRecipes(RecipeOutput consumer) {
 		// Dyes
 		MortarRecipeBuilder
-				.grind(Ingredient.of(Items.LAPIS_LAZULI, Items.CORNFLOWER),
-						new ItemStack(Items.BLUE_DYE, 2),	FluidStack.EMPTY, STANDARD_GRIND)
+				.grind(Ingredient.of(Items.LAPIS_LAZULI, Items.CORNFLOWER), new ItemStack(Items.BLUE_DYE, 2),
+						FluidStack.EMPTY, STANDARD_GRIND)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.LAPIS_LAZULI))
 				.save(consumer, EDLoc("dye_blue"));
 		MortarRecipeBuilder
-				.grind(Ingredient.of(Items.BONE_MEAL, Items.LILY_OF_THE_VALLEY),
-						new ItemStack(Items.WHITE_DYE, 2), FluidStack.EMPTY, STANDARD_GRIND)
+				.grind(Ingredient.of(Items.BONE_MEAL, Items.LILY_OF_THE_VALLEY), new ItemStack(Items.WHITE_DYE, 2),
+						FluidStack.EMPTY, STANDARD_GRIND)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.BONE_MEAL))
 				.save(consumer, EDLoc("dye_white"));
 		MortarRecipeBuilder
-				.grind(Ingredient.of(Items.ORANGE_TULIP, Items.TORCHFLOWER),
-						new ItemStack(Items.ORANGE_DYE, 2), FluidStack.EMPTY,	STANDARD_GRIND)
+				.grind(Ingredient.of(Items.ORANGE_TULIP, Items.TORCHFLOWER), new ItemStack(Items.ORANGE_DYE, 2),
+						FluidStack.EMPTY, STANDARD_GRIND)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.ORANGE_TULIP))
 				.save(consumer, EDLoc("dye_orange"));
 		MortarRecipeBuilder
@@ -4264,7 +4356,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.save(consumer, EDLoc("dye_pink_three"));
 		MortarRecipeBuilder
 				.grind(Ingredient.of(Items.OXEYE_DAISY, Items.AZURE_BLUET, Items.WHITE_TULIP),
-						new ItemStack(Items.LIGHT_GRAY_DYE, 2), FluidStack.EMPTY,	STANDARD_GRIND)
+						new ItemStack(Items.LIGHT_GRAY_DYE, 2), FluidStack.EMPTY, STANDARD_GRIND)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.OXEYE_DAISY))
 				.save(consumer, EDLoc("dye_light_gray"));
 		MortarRecipeBuilder
@@ -4277,8 +4369,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.CACTUS))
 				.save(consumer, EDLoc("dye_green"));
 		MortarRecipeBuilder
-				.grind(Ingredient.of(Items.RED_TULIP, Items.BEETROOT, Items.POPPY),
-						new ItemStack(Items.RED_DYE, 2), FluidStack.EMPTY, STANDARD_GRIND)
+				.grind(Ingredient.of(Items.RED_TULIP, Items.BEETROOT, Items.POPPY), new ItemStack(Items.RED_DYE, 2),
+						FluidStack.EMPTY, STANDARD_GRIND)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.RED_TULIP))
 				.save(consumer, EDLoc("dye_red"));
 		MortarRecipeBuilder
@@ -4287,8 +4379,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.ROSE_BUSH))
 				.save(consumer, EDLoc("dye_red_three"));
 		MortarRecipeBuilder
-				.grind(Ingredient.of(Items.INK_SAC, Items.WITHER_ROSE), new ItemStack(Items.BLACK_DYE, 2), FluidStack.EMPTY,
-						STANDARD_GRIND)
+				.grind(Ingredient.of(Items.INK_SAC, Items.WITHER_ROSE), new ItemStack(Items.BLACK_DYE, 2),
+						FluidStack.EMPTY, STANDARD_GRIND)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(Items.INK_SAC))
 				.save(consumer, EDLoc("dye_black"));
 		MortarRecipeBuilder
@@ -5164,6 +5256,22 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.FRUIT_APPLE)
 				.addIngredient(ExtraDelightTags.FRUIT_APPLE).addIngredient(ExtraDelightTags.FRUIT_APPLE)
 				.unlockedByAnyIngredient(Items.APPLE, ModItems.SKILLET.get()).build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(new ItemStack(ExtraDelightItems.JALAPENO_POPPER.get(), 2), NORMAL_COOKING, MEDIUM_EXP,
+						new ItemStack(ExtraDelightItems.TRAY.get()), true)
+				.addIngredient(ExtraDelightTags.CHILI).addIngredient(ExtraDelightTags.CHILI)
+				.addIngredient(ExtraDelightTags.CHEESE).addIngredient(CommonTags.FOODS_RAW_BACON)
+				.unlockedByAnyIngredient(ExtraDelightItems.CHILI).build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(new ItemStack(ExtraDelightItems.CHILI_CHEESE_CORNBREAD_MUFFIN.get(), 6), NORMAL_COOKING,
+						MEDIUM_EXP, new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()), true)
+				.addIngredient(ExtraDelightTags.CORN_MEAL).addIngredient(ExtraDelightTags.FLOUR)
+				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(ExtraDelightItems.BUTTER.get())
+				.addIngredient(ExtraDelightItems.EGG_MIX.get()).addIngredient(ExtraDelightTags.CHEESE)
+				.addIngredient(ExtraDelightTags.PROCESSED_CHILI)
+				.unlockedByAnyIngredient(ExtraDelightItems.CORN_MEAL.get()).build(consumer);
 	}
 
 	private void bulkBake(ItemLike mainResult, Ingredient in, RecipeOutput consumer, ItemLike pan, String name) {
