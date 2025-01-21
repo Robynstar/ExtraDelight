@@ -731,16 +731,6 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "extradelight:nut_butter_milkshake": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:nut_butter_milkshake"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "extradelight:panforte_slice": {
       "conditions": {
         "items": [
@@ -981,9 +971,6 @@
     ],
     [
       "extradelight:rombosse"
-    ],
-    [
-      "extradelight:nut_butter_milkshake"
     ],
     [
       "extradelight:brownie"

@@ -1,6 +1,16 @@
 {
   "parent": "extradelight:food",
   "criteria": {
+    "extradelight:aebleflaesk": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:aebleflaesk"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:apple_fritters": {
       "conditions": {
         "items": [
@@ -651,6 +661,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:jalapeno_popper": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:jalapeno_popper"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:jalapeno_stuffed_potato": {
       "conditions": {
         "items": [
@@ -1120,6 +1140,9 @@
       "extradelight:cactus_salad"
     ],
     [
+      "extradelight:jalapeno_popper"
+    ],
+    [
       "extradelight:onion_bhaji"
     ],
     [
@@ -1331,6 +1354,9 @@
     ],
     [
       "extradelight:macaroni_cheese"
+    ],
+    [
+      "extradelight:aebleflaesk"
     ],
     [
       "extradelight:chili_cheese_cornbread_muffin"

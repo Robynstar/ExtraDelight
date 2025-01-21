@@ -151,6 +151,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:nut_butter_milkshake": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:nut_butter_milkshake"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:pumpkin_milkshake": {
       "conditions": {
         "items": [
@@ -259,6 +269,9 @@
     ],
     [
       "extradelight:chocolate_milk"
+    ],
+    [
+      "extradelight:nut_butter_milkshake"
     ],
     [
       "extradelight:eggnog"
