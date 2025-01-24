@@ -397,7 +397,8 @@ public class ExtraDelightBlocks {
 					true, pan));
 
 	public static final DeferredBlock<RecipeFeastBlock> STUFFING = BLOCKS.register("stuffing",
-			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.COLOR_BROWN),
+			() -> new RecipeFeastBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(0.8F)
+					.sound(SoundType.LANTERN).mapColor(MapColor.COLOR_BROWN),
 					true, pot));
 
 	public static final DeferredBlock<RecipeFeastBlock> POTATO_AU_GRATIN = BLOCKS.register("potato_au_gratin",
@@ -634,7 +635,7 @@ public class ExtraDelightBlocks {
 			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.STONE),
 					Block.box(3.5D, 0.0D, 1.5D, 12.5D, 2.0D, 14.5D), Block.box(1.5D, 0.0D, 3.5D, 14.5D, 2.0D, 12.5D)));
 	public static final DeferredBlock<HorizontalPanBlock> SERVING_POT_BLOCK = BLOCKS.register("serving_pot",
-			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK),
+			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.LANTERN),
 					Block.box(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 13.0D),
 					Block.box(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 13.0D)));
 	public static final DeferredBlock<HorizontalPanBlock> BAR_MOLD = BLOCKS.register("bar_mold",
@@ -1082,10 +1083,12 @@ public class ExtraDelightBlocks {
 	public static final DeferredBlock<Block> CHILI_POWDER_SACK = BLOCKS.register("chili_powder_sack", () -> new Block(
 			Block.Properties.ofFullCopy(ModBlocks.RICE_BAG.get()).mapColor(MapColor.TERRACOTTA_YELLOW)));
 	public static final DeferredBlock<RecipeFeastBlock> CHILI_CON_CARNE_FEAST = BLOCKS.register("chili_con_carne",
-			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.COLOR_BROWN),
+			() -> new RecipeFeastBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(0.8F)
+					.sound(SoundType.LANTERN).mapColor(MapColor.COLOR_BROWN),
 					true, pot));
 	public static final DeferredBlock<RecipeFeastBlock> WHITE_CHILI_FEAST = BLOCKS.register("white_chili",
-			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.COLOR_BROWN),
+			() -> new RecipeFeastBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(0.8F)
+					.sound(SoundType.LANTERN).mapColor(MapColor.COLOR_BROWN),
 					true, pot));
 
 	public static final DeferredBlock<Block> PEANUT_IN_SHELL_SACK = BLOCKS.register("peanut_in_shell_sack",
@@ -1118,7 +1121,7 @@ public class ExtraDelightBlocks {
 	public static final DeferredBlock<Block> GRASSHOPPER_PIE = ExtraDelightBlocks.BLOCKS.register("grasshopper_pie",
 			() -> new PieBlock(Block.Properties.ofFullCopy(Blocks.CAKE), ExtraDelightItems.GRASSHOPPER_PIE_SLICE));
 	public static final DeferredBlock<RecipeFeastBlock> MARSHMALLOW_SLICE_FEAST = BLOCKS.register("marshmallow_slice",
-			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.COLOR_BROWN),
+			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.COLOR_PINK),
 					true, pan));
 
 	public static final DeferredBlock<Block> COFFEE_CHERRY_CRATE = BLOCKS.register("coffee_cherry_crate",

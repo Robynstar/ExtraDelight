@@ -179,17 +179,17 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropOther(ExtraDelightBlocks.JELLY_BLACK.get(), Items.BOWL);
 
 		this.dropOther(ExtraDelightBlocks.MEAT_PIE_BLOCK.get(), Items.AIR);
-		this.dropOther(ExtraDelightBlocks.MACARONI_CHEESE.get(), Items.AIR);
+		this.dropOther(ExtraDelightBlocks.MACARONI_CHEESE.get(), ExtraDelightItems.SERVING_POT);
 		this.dropOther(ExtraDelightBlocks.HOTDISH.get(), ExtraDelightItems.SQUARE_PAN);
 		this.dropOther(ExtraDelightBlocks.LASAGNA.get(), ExtraDelightItems.SQUARE_PAN);
 
-		this.dropOther(ExtraDelightBlocks.BEEF_STEW.get(), Items.BOWL);
-		this.dropOther(ExtraDelightBlocks.CHICKEN_STEW.get(), Items.BOWL);
-		this.dropOther(ExtraDelightBlocks.FISH_STEW.get(), Items.BOWL);
-		this.dropOther(ExtraDelightBlocks.LAMB_STEW.get(), Items.BOWL);
-		this.dropOther(ExtraDelightBlocks.PORK_STEW.get(), Items.BOWL);
-		this.dropOther(ExtraDelightBlocks.RABBIT_STEW.get(), Items.BOWL);
-		this.dropOther(ExtraDelightBlocks.CURRY.get(), Items.BOWL);
+		this.dropOther(ExtraDelightBlocks.BEEF_STEW.get(), ExtraDelightItems.SERVING_POT);
+		this.dropOther(ExtraDelightBlocks.CHICKEN_STEW.get(), ExtraDelightItems.SERVING_POT);
+		this.dropOther(ExtraDelightBlocks.FISH_STEW.get(), ExtraDelightItems.SERVING_POT);
+		this.dropOther(ExtraDelightBlocks.LAMB_STEW.get(), ExtraDelightItems.SERVING_POT);
+		this.dropOther(ExtraDelightBlocks.PORK_STEW.get(), ExtraDelightItems.SERVING_POT);
+		this.dropOther(ExtraDelightBlocks.RABBIT_STEW.get(), ExtraDelightItems.SERVING_POT);
+		this.dropOther(ExtraDelightBlocks.CURRY.get(), ExtraDelightItems.SERVING_POT);
 		this.dropOther(ExtraDelightBlocks.SALAD.get(), Items.BOWL);
 
 		this.dropOther(ExtraDelightBlocks.CORN_BOTTOM.get(), ExtraDelightItems.CORN_SEEDS.get());
@@ -206,7 +206,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropOther(ExtraDelightBlocks.PUMPKIN_PIE.get(), Items.AIR);
 		this.dropOther(ExtraDelightBlocks.PUMPKIN_ROLL.get(), Items.AIR);
 		this.dropOther(ExtraDelightBlocks.APPLE_CRISP.get(), ExtraDelightItems.SQUARE_PAN);
-		this.dropOther(ExtraDelightBlocks.STUFFING.get(), Items.BOWL);
+		this.dropOther(ExtraDelightBlocks.STUFFING.get(), ExtraDelightItems.SERVING_POT);
 		this.dropOther(ExtraDelightBlocks.POTATO_AU_GRATIN.get(), ExtraDelightItems.SQUARE_PAN);
 
 		this.dropSelf(ExtraDelightBlocks.FLOUR_SACK.get());
@@ -294,7 +294,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropOther(ExtraDelightBlocks.MINT_LAMB.get(), Items.BOWL);
 		this.dropOther(ExtraDelightBlocks.CHARCUTERIE_BOARD.get(), Items.BOWL);
 		this.dropOther(ExtraDelightBlocks.MILK_TART.get(), Items.AIR);
-		this.dropOther(ExtraDelightBlocks.PUNCH.get(), Items.AIR);
+		this.dropOther(ExtraDelightBlocks.PUNCH.get(), Items.BOWL);
 		this.dropOther(ExtraDelightBlocks.CHRISTMAS_PUDDING.get(), Items.AIR);
 
 		this.dropSelf(ExtraDelightBlocks.MINT_CROP.get());
@@ -509,8 +509,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 		
 		this.dropSelf(ExtraDelightBlocks.CHILI_CRATE.get());
 		this.dropSelf(ExtraDelightBlocks.CHILI_POWDER_SACK.get());
-		this.dropOther(ExtraDelightBlocks.CHILI_CON_CARNE_FEAST.get(), Items.AIR);
-		this.dropOther(ExtraDelightBlocks.WHITE_CHILI_FEAST.get(), Items.AIR);
+		this.dropOther(ExtraDelightBlocks.CHILI_CON_CARNE_FEAST.get(), ExtraDelightItems.SERVING_POT);
+		this.dropOther(ExtraDelightBlocks.WHITE_CHILI_FEAST.get(), ExtraDelightItems.SERVING_POT);
 
 		this.dropSelf(ExtraDelightBlocks.PEANUT_IN_SHELL_SACK.get());
 		this.dropSelf(ExtraDelightBlocks.PEANUT_SACK.get());
@@ -525,7 +525,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(ExtraDelightBlocks.MALLOW_ROOT_CRATE.get());
 		this.dropSelf(ExtraDelightBlocks.MALLOW_POWDER_SACK.get());
 		this.dropSelf(ExtraDelightBlocks.GRASSHOPPER_PIE.get());
-		this.dropOther(ExtraDelightBlocks.MARSHMALLOW_SLICE_FEAST.get(), Items.AIR);
+		this.dropOther(ExtraDelightBlocks.MARSHMALLOW_SLICE_FEAST.get(), ExtraDelightItems.SQUARE_PAN);
 
 		this.dropSelf(ExtraDelightBlocks.COFFEE_CHERRY_CRATE.get());
 		this.dropSelf(ExtraDelightBlocks.GREEN_COFFEE_BEAN_SACK.get());

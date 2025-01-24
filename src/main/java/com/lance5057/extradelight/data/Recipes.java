@@ -3496,37 +3496,37 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				new Ingredient[] { Ingredient.of(Items.MILK_BUCKET), Ingredient.of(ExtraDelightTags.VINEGAR) },
 				"cheese_vinegar", consumer);
 
-		pot(ExtraDelightItems.BEEF_STEW_FEAST.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
+		pot(ExtraDelightItems.BEEF_STEW_FEAST.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, ExtraDelightItems.SERVING_POT,
 				new Ingredient[] { Ingredient.of(Items.BEEF), Ingredient.of(Items.CARROT), Ingredient.of(Items.POTATO),
 						Ingredient.of(CommonTags.CROPS_ONION), Ingredient.of(ModItems.BONE_BROTH.get()),
 						Ingredient.of(ExtraDelightTags.FLOUR) },
 				"beef_stew", consumer);
 
-		pot(ExtraDelightItems.PORK_STEW_FEAST.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
+		pot(ExtraDelightItems.PORK_STEW_FEAST.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, ExtraDelightItems.SERVING_POT,
 				new Ingredient[] { Ingredient.of(Items.PORKCHOP), Ingredient.of(Items.CARROT),
 						Ingredient.of(Items.POTATO), Ingredient.of(CommonTags.CROPS_ONION),
 						Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(ExtraDelightTags.FLOUR) },
 				"pork_stew", consumer);
 
-		pot(ExtraDelightItems.LAMB_STEW_FEAST.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
+		pot(ExtraDelightItems.LAMB_STEW_FEAST.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, ExtraDelightItems.SERVING_POT,
 				new Ingredient[] { Ingredient.of(Items.MUTTON), Ingredient.of(Items.CARROT),
 						Ingredient.of(Items.POTATO), Ingredient.of(CommonTags.CROPS_ONION),
 						Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(ExtraDelightTags.FLOUR) },
 				"mutton_stew", consumer);
 
-		pot(ExtraDelightItems.RABBIT_STEW_FEAST.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
+		pot(ExtraDelightItems.RABBIT_STEW_FEAST.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, ExtraDelightItems.SERVING_POT,
 				new Ingredient[] { Ingredient.of(Items.RABBIT), Ingredient.of(Items.CARROT),
 						Ingredient.of(Items.POTATO), Ingredient.of(CommonTags.CROPS_ONION),
 						Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(ExtraDelightTags.FLOUR) },
 				"rabbit_stew", consumer);
 
-		pot(ExtraDelightItems.CHICKEN_STEW_FEAST.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
+		pot(ExtraDelightItems.CHICKEN_STEW_FEAST.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, ExtraDelightItems.SERVING_POT,
 				new Ingredient[] { Ingredient.of(Items.CHICKEN), Ingredient.of(Items.CARROT),
 						Ingredient.of(Items.POTATO), Ingredient.of(CommonTags.CROPS_ONION),
 						Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(ExtraDelightTags.FLOUR) },
 				"chicken_stew", consumer);
 
-		pot(ExtraDelightItems.FISH_STEW_FEAST.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
+		pot(ExtraDelightItems.FISH_STEW_FEAST.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, ExtraDelightItems.SERVING_POT,
 				new Ingredient[] { Ingredient.of(CommonTags.FOODS_SAFE_RAW_FISH), Ingredient.of(Items.CARROT),
 						Ingredient.of(Items.POTATO), Ingredient.of(CommonTags.CROPS_ONION),
 						Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(ExtraDelightTags.FLOUR) },
@@ -3728,7 +3728,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						Ingredient.of(ExtraDelightTags.FLOUR), Ingredient.of(ExtraDelightTags.FRYING_OIL) },
 				"seaweed_crisps", consumer);
 
-		pot(ExtraDelightItems.MACARONI_CHEESE_FEAST.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, Items.BOWL,
+		pot(ExtraDelightItems.MACARONI_CHEESE_FEAST.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F, ExtraDelightItems.SERVING_POT,
 				new Ingredient[] { Ingredient.of(ExtraDelightItems.MACARONI.get()),
 						Ingredient.of(ExtraDelightItems.MACARONI.get()), Ingredient.of(ExtraDelightTags.BUTTER),
 						Ingredient.of(CommonTags.FOODS_MILK), Ingredient.of(ExtraDelightTags.CHEESE),
@@ -3752,7 +3752,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						Ingredient.of(CommonTags.CROPS_RICE), Ingredient.of(ExtraDelightTags.PROCESSED_ONION) },
 				"mushroom_risotto", consumer);
 
-		pot(ExtraDelightItems.CURRY_FEAST.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, Items.BOWL,
+		pot(ExtraDelightItems.CURRY_FEAST.get(), 1, CookingRecipes.SLOW_COOKING, 0.35F, ExtraDelightItems.SERVING_POT,
 				new Ingredient[] { Ingredient.of(CommonTags.FOODS_RAW_CHICKEN),
 						Ingredient.of(ExtraDelightItems.CURRY_POWDER.get()), Ingredient.of(ModItems.BONE_BROTH.get()),
 						Ingredient.of(CommonTags.CROPS_ONION) },
@@ -3859,7 +3859,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						Ingredient.of(ExtraDelightTags.SWEETENER) },
 				"caramel_custard", consumer);
 
-		pot(ExtraDelightItems.STUFFING_FEAST.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL,
+		pot(ExtraDelightItems.STUFFING_FEAST.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, ExtraDelightItems.SERVING_POT,
 				new Ingredient[] { Ingredient.of(ExtraDelightItems.CROUTONS.get()),
 						Ingredient.of(ExtraDelightTags.BUTTER), Ingredient.of(ModItems.BONE_BROTH.get()),
 						Ingredient.of(ExtraDelightTags.PROCESSED_ONION), Ingredient.of(Tags.Items.EGGS) },

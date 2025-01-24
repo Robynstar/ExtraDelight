@@ -476,7 +476,7 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.PEANUTS_IN_SHELL).add(ExtraDelightItems.PEANUTS_IN_SHELL.get());
 
 		tag(ExtraDelightTags.TEA_INGREDIENTS).addTag(ExtraDelightTags.MINT).addTag(ExtraDelightTags.PROCESSED_GINGER)
-				.add(ExtraDelightItems.CORN_SILK.get());
+				.add(ExtraDelightItems.CORN_SILK.get()).addTag(ExtraDelightTags.MALLOWROOT);
 
 		tag(ExtraDelightTags.BUTTERSCOTCH).add(ExtraDelightItems.BUTTERSCOTCH.get());
 
