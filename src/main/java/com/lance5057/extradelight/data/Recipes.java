@@ -284,6 +284,14 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						ExtraDelightItems.MUFFIN_TIN.toStack(),
 						new FluidStack(ExtraDelightFluids.MARSHMALLOW_FLUFF.FLUID.get(), 250))
 				.build(consumer, "fluff_to_marshmallow");
+
+		ChillerRecipeBuilder
+				.chill(ExtraDelightItems.MISSISSIPPI_MUD_PIE.toStack(1), NORMAL_COOKING, SMALL_EXP,
+						ExtraDelightItems.PIE_DISH.toStack(),
+						new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), false)
+				.addIngredient(ModItems.PIE_CRUST.get()).addIngredient(ExtraDelightItems.CHOCOLATE_CUSTARD.get())
+				.addIngredient(ExtraDelightItems.MARSHMALLOW_FLUFF_BOTTLE.get())
+				.addIngredient(ExtraDelightTags.ROASTED_NUTS).build(consumer, "mississippi_mud_pie");
 	}
 
 	private void meltingRecipes(RecipeOutput consumer) {
@@ -1040,6 +1048,12 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						ExtraDelightItems.CHILI_CON_CARNE_FEAST.get())
 				.unlockedBy("has_feast", has(ExtraDelightItems.CHILI_CON_CARNE_FEAST.get()))
 				.save(consumer, EDLoc("chili_con_carne_feast"));
+
+		FeastRecipeBuilder
+				.feast(Ingredient.of(Items.BOWL), new ItemStack(ExtraDelightItems.WHITE_CHILI.get()),
+						ExtraDelightItems.WHITE_CHILI_FEAST.get())
+				.unlockedBy("has_feast", has(ExtraDelightItems.WHITE_CHILI_FEAST.get()))
+				.save(consumer, EDLoc("white_chili_feast"));
 	}
 
 	private void doughShapeRecipes(RecipeOutput consumer) {
@@ -1251,6 +1265,8 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		SimpleCookingRecipeBuilder.smoking(of, RecipeCategory.FOOD, item, MEDIUM_EXP, SMOKER_COOKING)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(item))
 				.save(consumer, EDLoc("smoking/" + name + "_smoke"));
+
+//		bulkBake(item, of, consumer, ExtraDelightItems.SHEET.get(), name, 1);
 	}
 
 //	private void dynamicCooking(Ingredient of, @NotNull Item item, RecipeOutput consumer, String name) {
@@ -1839,6 +1855,35 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						Ingredient.of(ExtraDelightTags.CUSTARD), Ingredient.of(ExtraDelightItems.CARAMEL_SAUCE.get()),
 						Ingredient.of(ExtraDelightTags.MARSHMALLOW) },
 				new SizedFluidIngredient[] {}, consumer, "candy_bar_salad_bottles");
+
+		mixing(new ItemStack(ExtraDelightItems.NUT_BUTTER_COOKIE_DOUGH.get(), 1), STANDARD_GRIND, ItemStack.EMPTY,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.FLOUR), Ingredient.of(ExtraDelightTags.SWEETENER),
+						Ingredient.of(ExtraDelightTags.BUTTER), Ingredient.of(Tags.Items.EGGS),
+						Ingredient.of(ExtraDelightItems.PEANUT_BUTTER_BOTTLE) },
+				new SizedFluidIngredient[] {}, consumer, "nut_butter_cookie_dough");
+
+		mixing(new ItemStack(ExtraDelightItems.NUT_BUTTER_COOKIE_DOUGH.get(), 1), STANDARD_GRIND, ItemStack.EMPTY,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.SUGAR_COOKIE_DOUGH),
+						Ingredient.of(ExtraDelightItems.PEANUT_BUTTER_BOTTLE) },
+				new SizedFluidIngredient[] {}, consumer, "nut_butter_cookie_dough_sugar");
+
+		mixing(new ItemStack(ExtraDelightItems.NUT_BUTTER_ICE_CREAM.get(), 1), LONG_GRIND, new ItemStack(Items.BOWL),
+				new Ingredient[] { Ingredient.of(CommonTags.FOODS_MILK), Ingredient.of(ExtraDelightTags.SWEETENER),
+						Ingredient.of(ExtraDelightItems.PEANUT_BUTTER_BOTTLE), Ingredient.of(Items.ICE) },
+				new SizedFluidIngredient[] {}, consumer, "nut_butter_ice_cream");
+
+		mixing(new ItemStack(ExtraDelightItems.NUT_BUTTER_MILKSHAKE.get(), 1), STANDARD_GRIND,
+				new ItemStack(Items.GLASS_BOTTLE),
+				new Ingredient[] { Ingredient.of(CommonTags.FOODS_MILK),
+						Ingredient.of(ExtraDelightItems.ICE_CREAM.get()),
+						Ingredient.of(ExtraDelightItems.PEANUT_BUTTER_BOTTLE) },
+				new SizedFluidIngredient[] {}, consumer, "nut_butter_milkshake");
+
+		mixing(new ItemStack(ExtraDelightItems.NUT_BUTTER_MILKSHAKE.get(), 1), STANDARD_GRIND,
+				new ItemStack(Items.GLASS_BOTTLE),
+				new Ingredient[] { Ingredient.of(CommonTags.FOODS_MILK),
+						Ingredient.of(ExtraDelightItems.NUT_BUTTER_ICE_CREAM.get()) },
+				new SizedFluidIngredient[] {}, consumer, "nut_butter_milkshake_ice_cream");
 	}
 
 	private void mixing(@NotNull ItemStack output, int grind, ItemStack container, Ingredient[] ingredients,
@@ -3331,6 +3376,26 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.requires(ExtraDelightTags.PROCESSED_CHILI)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CHILI))
 				.save(consumer, EDLoc("jalapeno_stuffed_potato_full"));
+
+		bundleItem9(Ingredient.of(ExtraDelightTags.PEANUTS_IN_SHELL), ExtraDelightItems.PEANUT_IN_SHELL_SACK.get(),
+				ExtraDelightItems.PEANUTS_IN_SHELL.get(), consumer, "peanut_in_shell");
+		bundleItem9(Ingredient.of(ExtraDelightTags.PEANUTS), ExtraDelightItems.PEANUT_SACK.get(),
+				ExtraDelightItems.PEANUTS.get(), consumer, "peanut");
+		bundleItem9(Ingredient.of(ExtraDelightTags.ROASTED_PEANUTS), ExtraDelightItems.ROASTED_PEANUT_SACK.get(),
+				ExtraDelightItems.ROASTED_PEANUTS.get(), consumer, "roasted_peanut");
+
+		bundleItem9(Ingredient.of(ExtraDelightTags.HAZELNUTS_IN_SHELL), ExtraDelightItems.HAZELNUT_IN_SHELL_SACK.get(),
+				ExtraDelightItems.HAZELNUTS_IN_SHELL.get(), consumer, "hazelnut_in_shell");
+		bundleItem9(Ingredient.of(ExtraDelightTags.HAZELNUTS), ExtraDelightItems.HAZELNUT_SACK.get(),
+				ExtraDelightItems.HAZELNUTS.get(), consumer, "hazelnut");
+		bundleItem9(Ingredient.of(ExtraDelightTags.ROASTED_HAZELNUTS), ExtraDelightItems.ROASTED_HAZELNUT_SACK.get(),
+				ExtraDelightItems.ROASTED_HAZELNUTS.get(), consumer, "roasted_hazelnut");
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ExtraDelightItems.MISSISSIPPI_MUD_PIE.get()).pattern("ff ")
+				.pattern("ff ").define('f', ExtraDelightItems.MISSISSIPPI_MUD_PIE_SLICE.get())
+				.unlockedBy(getName(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MISSISSIPPI_MUD_PIE.get()))
+				.save(consumer, EDLoc("mississippi_mud_pie_slice"));
 	}
 
 	private void bucket(String name, RecipeOutput consumer, ItemLike fullBucket, ItemLike emptyItem,
@@ -4015,11 +4080,24 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				"aebleflaesk", consumer);
 
 		pot(ExtraDelightItems.CHILI_CON_CARNE_FEAST.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F,
-				ModItems.TOMATO_SAUCE.get(),
+				ExtraDelightItems.SERVING_POT,
 				new Ingredient[] { Ingredient.of(ModItems.TOMATO_SAUCE.get()), Ingredient.of(ModItems.BONE_BROTH.get()),
 						Ingredient.of(ExtraDelightTags.MEAT_COOKED), Ingredient.of(ExtraDelightTags.CHILI_POWDER),
 						Ingredient.of(ExtraDelightTags.PROCESSED_VEG), Ingredient.of(ExtraDelightTags.PROCESSED_VEG) },
 				"chili_con_carne", consumer);
+
+		pot(ExtraDelightItems.WHITE_CHILI_FEAST.get(), 1, CookingRecipes.NORMAL_COOKING, 0.35F,
+				ExtraDelightItems.SERVING_POT,
+				new Ingredient[] { Ingredient.of(CommonTags.FOODS_MILK), Ingredient.of(ModItems.BONE_BROTH.get()),
+						Ingredient.of(CommonTags.FOODS_COOKED_CHICKEN), Ingredient.of(ExtraDelightTags.PROCESSED_CHILI),
+						Ingredient.of(ExtraDelightTags.PROCESSED_VEG), Ingredient.of(ExtraDelightTags.PROCESSED_VEG) },
+				"white_chili", consumer);
+
+		pot(ExtraDelightItems.NUT_BUTTER_CUSTARD.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.GLASS_BOTTLE,
+				new Ingredient[] { Ingredient.of(ExtraDelightItems.PEANUT_BUTTER_BOTTLE),
+						Ingredient.of(CommonTags.FOODS_MILK), Ingredient.of(Tags.Items.EGGS),
+						Ingredient.of(ExtraDelightTags.SWEETENER) },
+				"nut_butter_custard", consumer);
 
 //		DynamicJamRecipeBuilder.cookingPotRecipe(ExtraDelightItems.DYNAMIC_TEST, 1, 1, 1, Items.GLASS_BOTTLE)
 //				.addIngredient(Ingredient.of(Items.CHORUS_FRUIT)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
@@ -4296,6 +4374,11 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ExtraDelightItems.CHILI.get()),
 				Ingredient.of(CommonTags.TOOLS_KNIFE), ExtraDelightItems.SLICED_CHILI.get(), 3)
 				.build(consumer, EDLoc("cutting/" + "chili_knife"));
+
+		CuttingBoardRecipeBuilder
+				.cuttingRecipe(Ingredient.of(ExtraDelightItems.MISSISSIPPI_MUD_PIE.get()),
+						Ingredient.of(CommonTags.TOOLS_KNIFE), ExtraDelightItems.MISSISSIPPI_MUD_PIE_SLICE.get(), 4)
+				.build(consumer, EDLoc("cutting/" + "mississippi_pie_knife"));
 	}
 
 	private void mortarRecipes(RecipeOutput consumer) {
@@ -5272,6 +5355,20 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.addIngredient(ExtraDelightItems.EGG_MIX.get()).addIngredient(ExtraDelightTags.CHEESE)
 				.addIngredient(ExtraDelightTags.PROCESSED_CHILI)
 				.unlockedByAnyIngredient(ExtraDelightItems.CORN_MEAL.get()).build(consumer);
+
+		OvenRecipeBuilder.OvenRecipe(new ItemStack(ExtraDelightItems.NUT_BUTTER_COOKIE.get(), 8), FAST_COOKING,
+				MEDIUM_EXP, new ItemStack(ExtraDelightItems.SHEET.get()), false).addIngredient(
+						ExtraDelightItems.NUT_BUTTER_COOKIE_DOUGH.get())/* .setRecipeBookTab(OvenRecipeBookTab.MEALS) */
+				.unlockedByAnyIngredient(ExtraDelightItems.NUT_BUTTER_COOKIE_DOUGH).build(consumer);
+
+		OvenRecipeBuilder
+				.OvenRecipe(new ItemStack(ExtraDelightItems.NUT_BUTTER_COOKIE_BLOCK.get(), 4), FAST_COOKING, MEDIUM_EXP,
+						new ItemStack(ExtraDelightItems.SHEET.get()), false)
+				.addIngredient(ExtraDelightItems.NUT_BUTTER_COOKIE_DOUGH.get())
+				.addIngredient(ExtraDelightItems.NUT_BUTTER_COOKIE_DOUGH.get())
+				.addIngredient(ExtraDelightItems.NUT_BUTTER_COOKIE_DOUGH.get())
+				.addIngredient(ExtraDelightItems.NUT_BUTTER_COOKIE_DOUGH.get())
+				.unlockedByAnyIngredient(ExtraDelightItems.NUT_BUTTER_COOKIE_DOUGH).build(consumer);
 	}
 
 	private void bulkBake(ItemLike mainResult, Ingredient in, RecipeOutput consumer, ItemLike pan, String name) {

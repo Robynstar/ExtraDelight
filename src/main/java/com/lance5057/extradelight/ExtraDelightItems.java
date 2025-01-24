@@ -7,6 +7,7 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
+import com.lance5057.extradelight.aesthetics.HelmetBlockItem;
 import com.lance5057.extradelight.armor.CorncobPipe;
 import com.lance5057.extradelight.armor.EDArmorMaterial;
 import com.lance5057.extradelight.data.MiscLootTables;
@@ -190,7 +191,7 @@ public class ExtraDelightItems {
 	public static final DeferredItem<Item> MUFFIN_TIN = ITEMS.register("muffin_tin",
 			() -> new BlockItem(ExtraDelightBlocks.MUFFIN_TIN_BLOCK.get(), new Item.Properties()));
 	public static final DeferredItem<Item> SERVING_POT = ITEMS.register("serving_pot",
-			() -> new BlockItem(ExtraDelightBlocks.SERVING_POT_BLOCK.get(), new Item.Properties()));
+			() -> new HelmetBlockItem(ExtraDelightBlocks.SERVING_POT_BLOCK.get(), new Item.Properties()));
 
 	public static final DeferredItem<Item> GRATER = ITEMS.register("grater",
 			() -> new Item(new Item.Properties().durability(250)));

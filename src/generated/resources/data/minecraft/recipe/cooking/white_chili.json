@@ -7,16 +7,16 @@
   "experience": 0.35,
   "ingredients": [
     {
-      "item": "farmersdelight:tomato_sauce"
+      "tag": "c:foods/milk"
     },
     {
       "item": "farmersdelight:bone_broth"
     },
     {
-      "tag": "c:meat/cooked"
+      "tag": "c:foods/cooked_chicken"
     },
     {
-      "tag": "c:chili/powder"
+      "tag": "c:processed/chili"
     },
     {
       "tag": "extradelight:processed/vegetable"
@@ -28,6 +28,6 @@
   "recipe_book_tab": "meals",
   "result": {
     "count": 1,
-    "id": "extradelight:chili_con_carne_feast"
+    "id": "extradelight:white_chili_feast"
   }
 }

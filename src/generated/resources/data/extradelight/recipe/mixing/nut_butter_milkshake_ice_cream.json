@@ -1,0 +1,21 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "fluids": [],
+  "ingredients": [
+    {
+      "tag": "c:foods/milk"
+    },
+    {
+      "item": "extradelight:nut_butter_ice_cream"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:nut_butter_milkshake"
+  },
+  "stirs": 4,
+  "usedItem": {
+    "count": 1,
+    "id": "minecraft:glass_bottle"
+  }
+}
