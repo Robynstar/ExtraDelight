@@ -283,6 +283,7 @@ public class AestheticBlocks {
 				bsp.horizontalBlock(WREATHS.get(i).get(), bsp.models()
 						.withExistingParent(WOOD.values()[i].toString() + "_wreath_block", bsp.modLoc("block/wreath"))
 						.texture("all", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_leaves"))
+						.texture("particle", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_leaves"))
 						.renderType("cutout"));
 
 			String s = WOOD.values()[i].toString();
@@ -310,6 +311,7 @@ public class AestheticBlocks {
 								.withExistingParent(EXTRA_LEAVES.values()[j].toString() + "_wreath_block",
 										bsp.modLoc("block/wreath"))
 								.texture("all", bsp.mcLoc("block/" + EXTRA_LEAVES.values()[j].toString() + "_leaves"))
+								.texture("particle", bsp.mcLoc("block/" + EXTRA_LEAVES.values()[j].toString() + "_leaves"))
 								.renderType("cutout"));
 			} else {
 				bsp.horizontalBlock(WREATHS.get(WOOD.values().length + j - 2).get(),
@@ -320,6 +322,10 @@ public class AestheticBlocks {
 										ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 												"block/crops/fruit/" + EXTRA_LEAVES.values()[j].toString() + "/"
 														+ EXTRA_LEAVES.values()[j].toString() + "_leaves"))
+								.texture("particle",
+										ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+										"block/crops/fruit/" + EXTRA_LEAVES.values()[j].toString() + "/"
+												+ EXTRA_LEAVES.values()[j].toString() + "_leaves"))
 								.renderType("cutout"));
 			}
 		}
