@@ -4099,6 +4099,12 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						Ingredient.of(ExtraDelightTags.SWEETENER) },
 				"nut_butter_custard", consumer);
 
+		pot(ExtraDelightItems.HAZELNUT_SOUP.get(), 1, CookingRecipes.NORMAL_COOKING, 1.0F, Items.GLASS_BOTTLE,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.ROASTED_HAZELNUTS),
+						Ingredient.of(CommonTags.FOODS_MILK), Ingredient.of(ExtraDelightTags.PROCESSED_ONION),
+						Ingredient.of(ExtraDelightTags.PROCESSED_POTATO), Ingredient.of(ExtraDelightTags.BUTTER) },
+				"nut_butter_custard", consumer);
+		
 //		DynamicJamRecipeBuilder.cookingPotRecipe(ExtraDelightItems.DYNAMIC_TEST, 1, 1, 1, Items.GLASS_BOTTLE)
 //				.addIngredient(Ingredient.of(Items.CHORUS_FRUIT)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
 //				.build(consumer);

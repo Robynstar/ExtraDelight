@@ -643,7 +643,7 @@ public class ExtraDelightItems {
 			.advancementFeast().finish();
 
 	public static final DeferredItem<Item> SAUSAGE_ROLL = EDItemGenerator
-			.register("sausage_roll", () -> new Item(stack16FoodItem(EDFoods.SAUSAGE_ROLL))).advancementButchercraft()
+			.register("sausage_roll", () -> new Item(stack16FoodItem(EDFoods.SAUSAGE_ROLL))).advancementButchercraft().butchercraftToolTip()
 			.finish();
 	public static final DeferredItem<Item> SOS = EDItemGenerator
 			.register("sos", () -> new Item(stack16FoodItem(EDFoods.SOS))).advancementButchercraft().finish();

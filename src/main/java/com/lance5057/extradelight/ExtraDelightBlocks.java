@@ -383,8 +383,8 @@ public class ExtraDelightBlocks {
 				public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos,
 						CollisionContext context) {
 					switch (state.getValue(PieBlock.FACING)) {
-					case Direction.EAST:
-					case Direction.WEST:
+					case EAST:
+					case WEST:
 						return Block.box(2.0D, 0.0D, 4.5D, 14.0D, 7.0D, 11.5D);
 					default:
 						return Block.box(4.5D, 0.0D, 2.0D, 11.5D, 7.0D, 14.0D);
