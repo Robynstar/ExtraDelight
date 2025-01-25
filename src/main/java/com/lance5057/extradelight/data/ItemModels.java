@@ -1141,13 +1141,14 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.COCOA_BEAN_SACK, "cocoa_beans_sack");
 		forBlockItem(ExtraDelightItems.COCOA_POWDER_SACK, "cocoa_powder_sack");
 		forBlockItem(ExtraDelightItems.COCOA_SOLIDS_SACK, "cocoa_solids_sack");
-		forBlockItem(ExtraDelightItems.COFFEE_BEAN_SACK, "coffee_sack");
+		forBlockItem(ExtraDelightItems.COFFEE_BEAN_SACK, "coffee_bean_sack");
 		forBlockItem(ExtraDelightItems.CORN_SILK_SACK, "corn_silk_sack");
 		forBlockItem(ExtraDelightItems.CORN_SACK, "corn_sack");
 		forBlockItem(ExtraDelightItems.CORNMEAL_SACK, "cornmeal_sack");
 		forBlockItem(ExtraDelightItems.FLOUR_SACK, "flour_sack");
 		forBlockItem(ExtraDelightItems.GREEN_COFFEE_BEAN_SACK, "green_coffee_sack");
-		forBlockItem(ExtraDelightItems.GROUND_CINNAMON_BLOCK_ITEM, "ground_cinnamon_block");
+		forBlockItem(ExtraDelightItems.GROUND_CINNAMON_BLOCK_ITEM, "cinnamon_sack");
+		forBlockItem(ExtraDelightItems.GROUND_COFFEE_SACK, "ground_coffee_sack");
 		forBlockItem(ExtraDelightItems.HAZELNUT_IN_SHELL_SACK, "shell_hazelnut_sack");
 		forBlockItem(ExtraDelightItems.HAZELNUT_SACK, "hazelnut_sack");
 		forBlockItem(ExtraDelightItems.MALLOW_POWDER_SACK, "mallow_powder_sack");
@@ -1157,7 +1158,6 @@ public class ItemModels extends ItemModelProvider {
 		forBlockItem(ExtraDelightItems.ROASTED_COCOA_BEAN_SACK, "roasted_cocoa_beans_sack");
 		forBlockItem(ExtraDelightItems.ROASTED_HAZELNUT_SACK, "roasted_hazelnut_sack");
 		forBlockItem(ExtraDelightItems.ROASTED_PEANUT_SACK, "roasted_peanut_sack");
-		forBlockItem(ExtraDelightItems.ROASTED_COFFEE_BEAN_SACK, "roasted_coffee_sack");
 		forBlockItem(ExtraDelightItems.SUGAR_SACK, "sugar_sack");
 
 		forItem(ExtraDelightItems.SLICED_CHILI, "sliced_chili_pepper");

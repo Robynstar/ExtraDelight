@@ -583,13 +583,13 @@ public class BlockModels extends BlockStateProvider {
 		this.sackBlock(ExtraDelightBlocks.COCOA_BEAN_SACK.get(), "cocoa_beans", "blue");
 		this.sackBlock(ExtraDelightBlocks.COCOA_POWDER_SACK.get(), "cocoa_powder", "gray");
 		this.sackBlock(ExtraDelightBlocks.COCOA_SOLIDS_SACK.get(), "cocoa_solids", "light_blue");
-		this.sackBlock(ExtraDelightBlocks.COFFEE_BEAN_SACK.get(), "coffee_beans", "light_blue");
+		this.sackBlock(ExtraDelightBlocks.COFFEE_BEAN_SACK.get(), "coffee_bean", "light_gray");
 		this.sackBlock(ExtraDelightBlocks.CORN_SILK_SACK.get(), "corn_silk", "yellow");
 		this.sackBlock(ExtraDelightBlocks.CORN_SACK.get(), "corn", "green");
 		this.sackBlock(ExtraDelightBlocks.CORNMEAL_SACK.get(), "cornmeal", "green");
 		this.sackBlock(ExtraDelightBlocks.FLOUR_SACK.get(), "flour", "brown");
 		this.sackBlock(ExtraDelightBlocks.GREEN_COFFEE_BEAN_SACK.get(), "green_coffee_beans", "white");
-		this.sackBlock(ExtraDelightBlocks.GROUND_CINNAMON_SACK.get(), "cinnamon", "red");
+		this.sackBlock(ExtraDelightBlocks.GROUND_CINNAMON_SACK.get(), "ground_cinnamon", "red");
 		this.sackBlock(ExtraDelightBlocks.HAZELNUT_IN_SHELL_SACK.get(), "hazelnut_in_shell", "pink");
 		this.sackBlock(ExtraDelightBlocks.HAZELNUT_SACK.get(), "hazelnut", "magenta");
 		this.sackBlock(ExtraDelightBlocks.MALLOW_POWDER_SACK.get(), "mallow_powder", "black");
@@ -599,8 +599,8 @@ public class BlockModels extends BlockStateProvider {
 		this.sackBlock(ExtraDelightBlocks.ROASTED_COCOA_BEAN_SACK.get(), "roasted_cocoa_beans", "cyan");
 		this.sackBlock(ExtraDelightBlocks.ROASTED_HAZELNUT_SACK.get(), "roasted_hazelnut", "purple");
 		this.sackBlock(ExtraDelightBlocks.ROASTED_PEANUT_SACK.get(), "roasted_peanut", "blue");
-		this.sackBlock(ExtraDelightBlocks.ROASTED_COFFEE_BEAN_SACK.get(), "roasted_coffee_beans", "light_gray");
 		this.sackBlock(ExtraDelightBlocks.SUGAR_SACK.get(), "sugar", "blue");
+		this.sackBlock(ExtraDelightBlocks.GROUND_COFFEE_SACK.get(), "ground_coffee", "gray");
 
 		this.stewBlock(ExtraDelightBlocks.CHILI_CON_CARNE_FEAST.get(), "chili_con_carne");
 		this.stewBlock(ExtraDelightBlocks.WHITE_CHILI_FEAST.get(), "white_chili");
@@ -1069,6 +1069,7 @@ public class BlockModels extends BlockStateProvider {
 				new ConfiguredModel(this.models().cube(type + "_sack", modLoc("block/bags/" + color + "_bag_bottom"),
 						modLoc("block/" + type + "_bag_top"), modLoc("block/bags/" + color + "_bag_side_tied"),
 						modLoc("block/bags/" + color + "_bag_side"), modLoc("block/bags/" + color + "_bag_side"),
-						modLoc("block/bags/" + color + "_bag_side"))));
+						modLoc("block/bags/" + color + "_bag_side"))
+						.texture("particle", modLoc("block/" + type + "_bag_top"))));
 	}
 }

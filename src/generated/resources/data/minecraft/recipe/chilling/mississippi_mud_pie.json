@@ -3,7 +3,7 @@
   "consumeContainer": false,
   "container": {
     "count": 1,
-    "id": "extradelight:pie_dish"
+    "id": "farmersdelight:pie_crust"
   },
   "cookingtime": 800,
   "experience": 0.35,
@@ -13,9 +13,6 @@
   },
   "ingredients": [
     {
-      "item": "farmersdelight:pie_crust"
-    },
-    {
       "item": "extradelight:chocolate_custard"
     },
     {
@@ -23,6 +20,9 @@
     },
     {
       "tag": "c:nuts/cooked"
+    },
+    {
+      "tag": "c:chocolate/chips"
     }
   ],
   "result": {

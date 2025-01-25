@@ -506,7 +506,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(ExtraDelightBlocks.HANGING_DRIED_CHILI.get());
 		this.dropSelf(ExtraDelightBlocks.HANGING_HAM.get());
 		this.dropSelf(ExtraDelightBlocks.HANGING_MINT.get());
-		
+
 		this.dropSelf(ExtraDelightBlocks.CHILI_CRATE.get());
 		this.dropSelf(ExtraDelightBlocks.CHILI_POWDER_SACK.get());
 		this.dropOther(ExtraDelightBlocks.CHILI_CON_CARNE_FEAST.get(), ExtraDelightItems.SERVING_POT);
@@ -530,14 +530,14 @@ public class BlockLootTables extends BlockLootSubProvider {
 		this.dropSelf(ExtraDelightBlocks.COFFEE_CHERRY_CRATE.get());
 		this.dropSelf(ExtraDelightBlocks.GREEN_COFFEE_BEAN_SACK.get());
 		this.dropSelf(ExtraDelightBlocks.COFFEE_BEAN_SACK.get());
-		this.dropSelf(ExtraDelightBlocks.ROASTED_COFFEE_BEAN_SACK.get());
+		this.dropSelf(ExtraDelightBlocks.GROUND_COFFEE_SACK.get());
 
 		this.dropSelf(ExtraDelightBlocks.COCOA_BEAN_SACK.get());
 		this.dropSelf(ExtraDelightBlocks.ROASTED_COCOA_BEAN_SACK.get());
 		this.dropSelf(ExtraDelightBlocks.COCOA_SOLIDS_SACK.get());
 		this.dropSelf(ExtraDelightBlocks.COCOA_POWDER_SACK.get());
 		this.dropSelf(ExtraDelightBlocks.CHOCOLATE_COOKIE_BLOCK.get());
-		
+
 		this.dropOther(ExtraDelightBlocks.BACON_EGG_PIE.get(), Items.AIR);
 		this.dropOther(ExtraDelightBlocks.PANFORTE.get(), Items.AIR);
 	}
