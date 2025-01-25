@@ -88,72 +88,10 @@ public class ExtraDelightNeoForgeClientEvents {
 			}
 	}
 
-	public static Set<DeferredItem<Item>> feasts = new HashSet<DeferredItem<Item>>(
-			// Cakes and Pies
-//			ExtraDelightItems.CHEESECAKE_ITEM, ExtraDelightItems.CHOCOLATE_CHEESECAKE_ITEM,
-//			ExtraDelightItems.GLOW_BERRY_CHEESECAKE_ITEM, ExtraDelightItems.GLOW_BERRY_PIE_ITEM,
-//			ExtraDelightItems.HONEY_CHEESECAKE_ITEM, ExtraDelightItems.PUMPKIN_CHEESECAKE_ITEM,
-//			ExtraDelightItems.SWEET_BERRY_PIE_ITEM, ExtraDelightItems.QUICHE, ExtraDelightItems.CARAMEL_CHEESECAKE_ITEM,
-//			ExtraDelightItems.PUMPKIN_PIE_ITEM, ExtraDelightItems.PUMPKIN_ROLL_FEAST,
-//			ExtraDelightItems.APPLE_CHEESECAKE_ITEM, ExtraDelightItems.COFFEE_CAKE_FEAST,
-//			ExtraDelightItems.MILK_TART_FEAST, ExtraDelightItems.CHOCOLATE_CAKE_BLOCK,
-//			ExtraDelightItems.TARTE_TATIN, ExtraDelightItems.MEAT_PIE_BLOCK_ITEM
-			);
+	public static Set<DeferredItem<Item>> feasts = new HashSet<DeferredItem<Item>>();
 
-	public static Set<DeferredItem<Item>> servings = new HashSet<DeferredItem<Item>>(
-//			ExtraDelightItems.JELLY_WHITE, ExtraDelightItems.JELLY_ORANGE,
-//			ExtraDelightItems.JELLY_MAGENTA, ExtraDelightItems.JELLY_LIGHT_BLUE, ExtraDelightItems.JELLY_YELLOW,
-//			ExtraDelightItems.JELLY_LIME, ExtraDelightItems.JELLY_PINK, ExtraDelightItems.JELLY_GREY,
-//			ExtraDelightItems.JELLY_LIGHT_GREY, ExtraDelightItems.JELLY_CYAN, ExtraDelightItems.JELLY_PURPLE,
-//			ExtraDelightItems.JELLY_BLUE, ExtraDelightItems.JELLY_BROWN, ExtraDelightItems.JELLY_GREEN,
-//			ExtraDelightItems.JELLY_RED, ExtraDelightItems.JELLY_BLACK, ExtraDelightItems.SALISBURY_STEAK,
-//			ExtraDelightItems.MASHED_POTATO_GRAVY, ExtraDelightItems.PORK_STEW, ExtraDelightItems.PORK_STEW_RICE,
-//			ExtraDelightItems.LAMB_STEW, ExtraDelightItems.LAMB_STEW_RICE, ExtraDelightItems.CHICKEN_STEW,
-//			ExtraDelightItems.CHICKEN_STEW_RICE, ExtraDelightItems.BEEF_STEW_RICE, ExtraDelightItems.RABBIT_STEW_RICE,
-//			ExtraDelightItems.FISH_STEW_RICE, ExtraDelightItems.CURRY, ExtraDelightItems.MACARONI_CHEESE,
-//			ExtraDelightItems.MEAT_LOAF, ExtraDelightItems.LASAGNA, ExtraDelightItems.HOTDISH, ExtraDelightItems.HASH,
-//			ExtraDelightItems.POT_ROAST, ExtraDelightItems.BBQ_RIBS, ExtraDelightItems.PULLED_PORK_SANDWICH,
-//			ExtraDelightItems.RACK_LAMB, ExtraDelightItems.STIRFRY, ExtraDelightItems.BEEF_WELLINGTON,
-//			ExtraDelightItems.HAGGIS, ExtraDelightItems.CORNBREAD, ExtraDelightItems.CORN_PUDDING,
-//			ExtraDelightItems.APPLE_CRISP, ExtraDelightItems.STUFFING, ExtraDelightItems.POTATO_AU_GRATIN,
-//			ExtraDelightItems.CINNAMON_ROLL, ExtraDelightItems.MINT_LAMB, ExtraDelightItems.CHARCUTERIE_BOARD,
-//			ExtraDelightItems.CHRISTMAS_PUDDING, ExtraDelightItems.PUNCH, ExtraDelightItems.BROWNIE,
-//			ExtraDelightItems.BLONDIE, ExtraDelightItems.FUDGE_SLICE, ExtraDelightItems.STICKY_TOFFEE_PUDDING_SLICE,
-//			ExtraDelightItems.CRISP_RICE_TREAT, ExtraDelightItems.SCOTCHAROO, ExtraDelightItems.BLACK_FOREST_TRIFLE,
-//			ExtraDelightItems.PORK_AND_APPLES, ExtraDelightItems.STUFFED_APPLE,
-//			ExtraDelightItems.STUFFED_APPLE_ICE_CREAM,
-//			// Cakes and Pies
-//			ExtraDelightItems.CHEESECAKE_SLICE, ExtraDelightItems.CHOCOLATE_CHEESECAKE_SLICE,
-//			ExtraDelightItems.GLOW_BERRY_CHEESECAKE_SLICE, ExtraDelightItems.GLOW_BERRY_PIE_SLICE,
-//			ExtraDelightItems.HONEY_CHEESECAKE_SLICE, ExtraDelightItems.PUMPKIN_CHEESECAKE_SLICE,
-//			ExtraDelightItems.SWEET_BERRY_PIE_SLICE, ExtraDelightItems.QUICHE_SLICE,
-//			ExtraDelightItems.CARAMEL_CHEESECAKE_SLICE, ExtraDelightItems.PUMPKIN_PIE_SLICE,
-//			ExtraDelightItems.PUMPKIN_ROLL, ExtraDelightItems.APPLE_CHEESECAKE_SLICE, ExtraDelightItems.MONKEY_BREAD,
-//			ExtraDelightItems.COFFEE_CAKE_SLICE, ExtraDelightItems.MILK_TART_SLICE, ExtraDelightItems.CHOCOLATE_CAKE,
-//			ExtraDelightItems.TARTE_TATIN_SLICE
-			);
+	public static Set<DeferredItem<Item>> servings = new HashSet<DeferredItem<Item>>();
 
-	public static Set<DeferredItem<Item>> butchercraft = new HashSet<DeferredItem<Item>>(
-//			ExtraDelightItems.SAUSAGE_ROLL, ExtraDelightItems.SOS,
-//			ExtraDelightItems.LIVER_ONIONS, ExtraDelightItems.STUFFED_HEART, ExtraDelightItems.FRIED_BRAINS,
-//			ExtraDelightItems.OXTAIL_SOUP, ExtraDelightItems.POT_ROAST_FEAST_ITEM, ExtraDelightItems.POT_ROAST,
-//			ExtraDelightItems.BBQ_RIBS_FEAST_ITEM, ExtraDelightItems.BBQ_RIBS, ExtraDelightItems.PULLED_PORK_FEAST_ITEM,
-//			ExtraDelightItems.PULLED_PORK_SANDWICH, ExtraDelightItems.RACK_LAMB_FEAST_ITEM, ExtraDelightItems.RACK_LAMB,
-//			ExtraDelightItems.BEEF_WELLINGTON_FEAST_ITEM, ExtraDelightItems.BEEF_WELLINGTON,
-//			ExtraDelightItems.HAGGIS_FEAST_ITEM, ExtraDelightItems.HAGGIS, ExtraDelightItems.MINT_LAMB_FEAST,
-//			ExtraDelightItems.MINT_LAMB, ExtraDelightItems.BLOOD_CHOCOLATE_BLOCK,
-//			ExtraDelightItems.BLOOD_CHOCOLATE_FENCE, ExtraDelightItems.BLOOD_CHOCOLATE_FENCE_GATE,
-//			ExtraDelightItems.BLOOD_CHOCOLATE_STAIRS, ExtraDelightItems.BLOOD_CHOCOLATE_DOOR,
-//			ExtraDelightItems.BLOOD_CHOCOLATE_TRAPDOOR, ExtraDelightItems.BLOOD_CHOCOLATE_SLAB,
-//			ExtraDelightItems.BLOOD_CHOCOLATE_PILLAR, ExtraDelightItems.BLOOD_CHOCOLATE_BAR,
-//			ExtraDelightItems.BLOOD_CHOCOLATE_CHIPS, ExtraDelightItems.BLOOD_CHOCOLATE_FILLED_BAR,
-//			ExtraDelightItems.BLOOD_CHOCOLATE_TRUFFLE, ExtraDelightItems.BLOOD_CHOCOLATE_FONDUE_BLOCK,
-//			ExtraDelightItems.BLOOD_CHOCOLATE_DIPPED_SWEET_BERRY, ExtraDelightItems.BLOOD_CHOCOLATE_DIPPED_GLOW_BERRY,
-//			ExtraDelightItems.BLOOD_CHOCOLATE_DIPPED_APPLE_SLICE, ExtraDelightItems.BLOOD_CHOCOLATE_DIPPED_MARSHMALLOW,
-//			ExtraDelightItems.BLOOD_CHOCOLATE_DIPPED_GRAHAM_CRACKER, ExtraDelightItems.BLOOD_CHOCOLATE_DIPPED_BACON,
-//			ExtraDelightItems.BLOOD_CHOCOLATE_DIPPED_COFFEE_BEAN, ExtraDelightItems.BLOOD_CHOCOLATE_SYRUP_BOTTLE,
-//			ExtraDelightItems.BLOOD_CHOCOLATE_SYRUP_FLUID_BUCKET,
-//			ExtraDelightItems.PORK_AND_APPLES_FEAST, ExtraDelightItems.PORK_AND_APPLES
-			);
+	public static Set<DeferredItem<Item>> butchercraft = new HashSet<DeferredItem<Item>>();
 
 }
