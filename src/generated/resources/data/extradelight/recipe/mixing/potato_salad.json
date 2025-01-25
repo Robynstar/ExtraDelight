@@ -1,0 +1,24 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "fluids": [],
+  "ingredients": [
+    {
+      "item": "minecraft:baked_potato"
+    },
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "tag": "c:condiments/mayonnaise"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "id": "extradelight:potato_salad"
+  },
+  "stirs": 8,
+  "usedItem": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  }
+}

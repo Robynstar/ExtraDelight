@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "extradelight:block/cinnamon_sack"
+      "model": "extradelight:block/ground_cinnamon_sack"
     }
   }
 }

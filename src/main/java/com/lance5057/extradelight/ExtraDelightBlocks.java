@@ -398,8 +398,7 @@ public class ExtraDelightBlocks {
 
 	public static final DeferredBlock<RecipeFeastBlock> STUFFING = BLOCKS.register("stuffing",
 			() -> new RecipeFeastBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(0.8F)
-					.sound(SoundType.LANTERN).mapColor(MapColor.COLOR_BROWN),
-					true, pot));
+					.sound(SoundType.LANTERN).mapColor(MapColor.COLOR_BROWN), true, pot));
 
 	public static final DeferredBlock<RecipeFeastBlock> POTATO_AU_GRATIN = BLOCKS.register("potato_au_gratin",
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.COLOR_BROWN),
@@ -636,8 +635,7 @@ public class ExtraDelightBlocks {
 					Block.box(3.5D, 0.0D, 1.5D, 12.5D, 2.0D, 14.5D), Block.box(1.5D, 0.0D, 3.5D, 14.5D, 2.0D, 12.5D)));
 	public static final DeferredBlock<HorizontalPanBlock> SERVING_POT_BLOCK = BLOCKS.register("serving_pot",
 			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.LANTERN),
-					Block.box(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 13.0D),
-					Block.box(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 13.0D)));
+					Block.box(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 13.0D), Block.box(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 13.0D)));
 	public static final DeferredBlock<HorizontalPanBlock> BAR_MOLD = BLOCKS.register("bar_mold",
 			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK),
 					Block.box(1.0D, 0.0D, 0.0D, 15.0D, 2.0D, 16.0D), Block.box(0.0D, 0.0D, 1.0D, 16.0D, 2.0D, 15.0D)));
@@ -1084,12 +1082,10 @@ public class ExtraDelightBlocks {
 			Block.Properties.ofFullCopy(ModBlocks.RICE_BAG.get()).mapColor(MapColor.TERRACOTTA_YELLOW)));
 	public static final DeferredBlock<RecipeFeastBlock> CHILI_CON_CARNE_FEAST = BLOCKS.register("chili_con_carne",
 			() -> new RecipeFeastBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(0.8F)
-					.sound(SoundType.LANTERN).mapColor(MapColor.COLOR_BROWN),
-					true, pot));
+					.sound(SoundType.LANTERN).mapColor(MapColor.COLOR_BROWN), true, pot));
 	public static final DeferredBlock<RecipeFeastBlock> WHITE_CHILI_FEAST = BLOCKS.register("white_chili",
 			() -> new RecipeFeastBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(0.8F)
-					.sound(SoundType.LANTERN).mapColor(MapColor.COLOR_BROWN),
-					true, pot));
+					.sound(SoundType.LANTERN).mapColor(MapColor.COLOR_BROWN), true, pot));
 
 	public static final DeferredBlock<Block> PEANUT_IN_SHELL_SACK = BLOCKS.register("peanut_in_shell_sack",
 			() -> new Block(
@@ -1130,11 +1126,10 @@ public class ExtraDelightBlocks {
 	public static final DeferredBlock<Block> GREEN_COFFEE_BEAN_SACK = BLOCKS.register("green_coffee_beans_sack",
 			() -> new Block(
 					Block.Properties.ofFullCopy(ModBlocks.RICE_BAG.get()).mapColor(MapColor.TERRACOTTA_YELLOW)));
-	public static final DeferredBlock<Block> COFFEE_BEAN_SACK = BLOCKS.register("coffee_beans_sack", () -> new Block(
+	public static final DeferredBlock<Block> COFFEE_BEAN_SACK = BLOCKS.register("coffee_bean_sack", () -> new Block(
 			Block.Properties.ofFullCopy(ModBlocks.RICE_BAG.get()).mapColor(MapColor.TERRACOTTA_YELLOW)));
-	public static final DeferredBlock<Block> ROASTED_COFFEE_BEAN_SACK = BLOCKS.register("roasted_coffee_beans_sack",
-			() -> new Block(
-					Block.Properties.ofFullCopy(ModBlocks.RICE_BAG.get()).mapColor(MapColor.TERRACOTTA_YELLOW)));
+	public static final DeferredBlock<Block> GROUND_COFFEE_SACK = BLOCKS.register("ground_coffee_sack", () -> new Block(
+			Block.Properties.ofFullCopy(ModBlocks.RICE_BAG.get()).mapColor(MapColor.TERRACOTTA_YELLOW)));
 
 	public static final DeferredBlock<Block> COCOA_BEAN_SACK = BLOCKS.register("cocoa_beans_sack", () -> new Block(
 			Block.Properties.ofFullCopy(ModBlocks.RICE_BAG.get()).mapColor(MapColor.TERRACOTTA_YELLOW)));
