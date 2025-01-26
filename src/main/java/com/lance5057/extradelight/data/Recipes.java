@@ -3509,6 +3509,13 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.unlockedBy(getName(),
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.GROUND_CINNAMON))
 				.save(consumer, EDLoc("cinnamon_toast"));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ExtraDelightItems.CURRYWURST.get(), 2)
+				.requires(ExtraDelightTags.BREAD_SLICE).requires(ExtraDelightTags.BREAD_SLICE)
+				.requires(ExtraDelightItems.KETCHUP).requires(ExtraDelightItems.CURRY_POWDER)
+				.requires(ExtraDelightTags.SAUSAGE_COOKED).requires(ExtraDelightTags.SAUSAGE_COOKED)
+				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CURRY_POWDER))
+				.save(consumer, EDLoc("currywurst"));
 	}
 
 	private void bucket(String name, RecipeOutput consumer, ItemLike fullBucket, ItemLike emptyItem,
@@ -4239,6 +4246,18 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 						Ingredient.of(ExtraDelightTags.PROCESSED_ONION), Ingredient.of(ExtraDelightTags.FLOUR),
 						Ingredient.of(ExtraDelightItems.CURRY_POWDER), Ingredient.of(ExtraDelightTags.COOKING_OIL) },
 				"onion_bhaji", consumer);
+
+		pot(ExtraDelightItems.PAMONHA.get(), 2, CookingRecipes.NORMAL_COOKING, 1.0F, null,
+				new Ingredient[] { Ingredient.of(ExtraDelightTags.CORN_KERNELS),
+						Ingredient.of(ExtraDelightTags.CORN_KERNELS), Ingredient.of(CommonTags.FOODS_MILK),
+						Ingredient.of(ExtraDelightItems.CORN_HUSK) },
+				"pamonha", consumer);
+
+		pot(ExtraDelightItems.BORSCHT.get(), 4, CookingRecipes.NORMAL_COOKING, 1.0F, Items.BOWL, new Ingredient[] {
+				Ingredient.of(ModItems.BONE_BROTH.get()), Ingredient.of(Items.BEETROOT), Ingredient.of(Items.CARROT),
+				Ingredient.of(CommonTags.FOODS_CABBAGE), Ingredient.of(ExtraDelightTags.PROCESSED_POTATO),
+				Ingredient.of(ExtraDelightItems.SLICED_TOMATO, ModItems.TOMATO_SAUCE.get(), ModItems.TOMATO.get()) },
+				"borscht", consumer);
 
 //		DynamicJamRecipeBuilder.cookingPotRecipe(ExtraDelightItems.DYNAMIC_TEST, 1, 1, 1, Items.GLASS_BOTTLE)
 //				.addIngredient(Ingredient.of(Items.CHORUS_FRUIT)).setRecipeBookTab(CookingPotRecipeBookTab.MEALS)

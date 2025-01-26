@@ -85,7 +85,10 @@ public class DryingRackBlockEntity extends BlockEntity {
 			@Override
 			@NotNull
 			public ItemStack extractItem(int slot, int amount, boolean simulate) {
-				this.getBlockEntity().cookingTime[slot] = 0;
+				if (!simulate) {
+					this.getBlockEntity().cookingProgress[slot] = 0;
+					this.getBlockEntity().cookingTime[slot] = 0;
+				}
 				return super.extractItem(slot, amount, simulate);
 			}
 

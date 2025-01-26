@@ -1193,6 +1193,7 @@ public class ItemModels extends ItemModelProvider {
 		forItem(ExtraDelightItems.GRASSHOPPER_PIE, "grasshopper_pie");
 		forItem(ExtraDelightItems.MISSISSIPPI_MUD_PIE, "mississippi_mud_pie");
 		forItem(ExtraDelightItems.BACON_EGG_PIE, "bacon_egg_pie");
+		forItem(ExtraDelightItems.PAMONHA, "pamonha");
 
 		getBuilder(ExtraDelightItems.CHILI_CON_CARNE_FEAST.getId().getPath())
 				.parent(new ModelFile.UncheckedModelFile(

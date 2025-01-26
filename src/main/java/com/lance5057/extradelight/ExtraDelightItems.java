@@ -8,14 +8,13 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 import com.lance5057.extradelight.aesthetics.HelmetBlockItem;
-import com.lance5057.extradelight.armor.CorncobPipe;
-import com.lance5057.extradelight.armor.EDArmorMaterial;
 import com.lance5057.extradelight.data.MiscLootTables;
 import com.lance5057.extradelight.fluids.FluidRegistration;
 import com.lance5057.extradelight.food.EDFoods;
 import com.lance5057.extradelight.items.CactusJuiceItem;
 import com.lance5057.extradelight.items.CoffeeItem;
 import com.lance5057.extradelight.items.CornSilkTeaItem;
+import com.lance5057.extradelight.items.CorncobPipe;
 import com.lance5057.extradelight.items.FrostingItem;
 import com.lance5057.extradelight.items.GlowberryFoodItem;
 import com.lance5057.extradelight.items.GlowberryJuiceItem;
@@ -1229,7 +1228,7 @@ public class ExtraDelightItems {
 			() -> new BlockItem(ExtraDelightBlocks.CORN_SACK.get(), new Item.Properties()));
 
 	public static final DeferredItem<Item> CORN_COB_PIPE = ITEMS.register("corn_cob_pipe",
-			() -> new CorncobPipe(EDArmorMaterial.CORN_COB, new Item.Properties()));
+			() -> new CorncobPipe(new Item.Properties()));
 
 	// Winter start!
 	public static final DeferredItem<Item> CINNAMON_LOG = ITEMS.register("cinnamon_log",
@@ -2809,6 +2808,9 @@ public class ExtraDelightItems {
 			.advancementMeal().finish();
 	public static final DeferredItem<Item> BORSCHT = EDItemGenerator
 			.register("borscht", () -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.CHILI), true))
+			.advancementMeal().finish();
+	public static final DeferredItem<Item> PAMONHA = EDItemGenerator
+			.register("pamonha", () -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.CHILI), true))
 			.advancementMeal().finish();
 
 //	public static final DeferredItem<DynamicJam> DYNAMIC_TEST = ITEMS.register("dynamic_test", () -> new DynamicJam(

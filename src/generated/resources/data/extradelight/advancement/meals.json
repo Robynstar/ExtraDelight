@@ -841,6 +841,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight:pamonha": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pamonha"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight:pasta_alfredo": {
       "conditions": {
         "items": [
@@ -1216,6 +1226,9 @@
     ],
     [
       "extradelight:onion_soup"
+    ],
+    [
+      "extradelight:pamonha"
     ],
     [
       "extradelight:seaweed_salad"
