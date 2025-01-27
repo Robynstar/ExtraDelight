@@ -419,6 +419,7 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.ROASTED_PEANUTS).add(ExtraDelightItems.ROASTED_PEANUTS.get());
 		tag(ExtraDelightTags.PEANUTS).add(ExtraDelightItems.PEANUTS.get());
 
+		tag(ExtraDelightTags.HAZELNUTS_IN_SHELL).add(ExtraDelightItems.HAZELNUTS_IN_SHELL.get());
 		tag(ExtraDelightTags.HAZELNUTS).add(ExtraDelightItems.HAZELNUTS.get());
 		tag(ExtraDelightTags.ROASTED_HAZELNUTS).add(ExtraDelightItems.ROASTED_HAZELNUTS.get());
 
@@ -522,5 +523,8 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ItemTags.PIG_FOOD).add(ExtraDelightItems.CORN_COB.get(), ExtraDelightItems.GINGER.get(),
 				ExtraDelightItems.MALLOW_ROOT.get());
 		tag(ItemTags.SHEEP_FOOD).add(ExtraDelightItems.CORN_HUSK.get(), ExtraDelightItems.DRIED_CORN_HUSK.get());
+
+		tag(ExtraDelightTags.PROCESSED_CHILI).add(ExtraDelightItems.CHILI.get(), ExtraDelightItems.SLICED_CHILI.get());
+
 	}
 }

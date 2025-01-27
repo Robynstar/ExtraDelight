@@ -311,7 +311,8 @@ public class AestheticBlocks {
 								.withExistingParent(EXTRA_LEAVES.values()[j].toString() + "_wreath_block",
 										bsp.modLoc("block/wreath"))
 								.texture("all", bsp.mcLoc("block/" + EXTRA_LEAVES.values()[j].toString() + "_leaves"))
-								.texture("particle", bsp.mcLoc("block/" + EXTRA_LEAVES.values()[j].toString() + "_leaves"))
+								.texture("particle",
+										bsp.mcLoc("block/" + EXTRA_LEAVES.values()[j].toString() + "_leaves"))
 								.renderType("cutout"));
 			} else {
 				bsp.horizontalBlock(WREATHS.get(WOOD.values().length + j - 2).get(),
@@ -324,8 +325,8 @@ public class AestheticBlocks {
 														+ EXTRA_LEAVES.values()[j].toString() + "_leaves"))
 								.texture("particle",
 										ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
-										"block/crops/fruit/" + EXTRA_LEAVES.values()[j].toString() + "/"
-												+ EXTRA_LEAVES.values()[j].toString() + "_leaves"))
+												"block/crops/fruit/" + EXTRA_LEAVES.values()[j].toString() + "/"
+														+ EXTRA_LEAVES.values()[j].toString() + "_leaves"))
 								.renderType("cutout"));
 			}
 		}
@@ -583,6 +584,29 @@ public class AestheticBlocks {
 									.get(ResourceLocation.fromNamespaceAndPath("minecraft", dye + "_wool")))
 					.unlockedBy(dye + "_bow", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHITE_WOOL))
 					.save(consumer);
+
+			ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GINGHAM_ITEMS.get(dye.ordinal()).get(), 4)
+					.pattern("cw").pattern("wc")
+					.define('c',
+							BuiltInRegistries.ITEM
+									.get(ResourceLocation.fromNamespaceAndPath("minecraft", dye + "_wool")))
+					.define('w', Items.WHITE_WOOL)
+					.unlockedBy(dye + "_gingham", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHITE_WOOL))
+					.save(consumer);
+
+			ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GINGHAM_CARPET_ITEMS.get(dye.ordinal()).get(), 4)
+					.pattern("cw").pattern("wc")
+					.define('c',
+							BuiltInRegistries.ITEM
+									.get(ResourceLocation.fromNamespaceAndPath("minecraft", dye + "_carpet")))
+					.define('w', Items.WHITE_CARPET).unlockedBy(dye + "_gingham_carpet",
+							InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHITE_CARPET))
+					.save(consumer);
+
+			ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GINGHAM_CARPET_ITEMS.get(dye.ordinal()).get(), 3)
+					.pattern("cc").define('c', GINGHAM_ITEMS.get(i)).unlockedBy(dye + "_gingham_carpet_from_block",
+							InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHITE_WOOL))
+					.save(consumer, dye + "_gingham_carpet_from_block");
 		}
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, CORN_HUSK_DOLL.get()).pattern(" c ").pattern(" s ")
