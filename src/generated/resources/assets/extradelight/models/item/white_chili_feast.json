@@ -1,0 +1,6 @@
+{
+  "parent": "extradelight:block/white_chili_stage0",
+  "textures": {
+    "1": "extradelight:block/white_chili"
+  }
+}

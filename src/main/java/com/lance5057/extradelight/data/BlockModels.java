@@ -63,8 +63,8 @@ public class BlockModels extends BlockStateProvider {
 
 		this.mortarStyleBlock(ExtraDelightBlocks.MORTAR_STONE.get());
 
-		this.simpleBlock(ExtraDelightBlocks.COOKING_OIL.get(), models()
-				.withExistingParent("cooking_oil", mcLoc("block/carpet")).texture("wool", modLoc("block/cooking_oil")));
+//		this.simpleBlock(ExtraDelightBlocks.COOKING_OIL.get(), models()
+//				.withExistingParent("cooking_oil", mcLoc("block/carpet")).texture("wool", modLoc("block/cooking_oil")));
 
 		pieBlock(ExtraDelightBlocks.SWEET_BERRY_PIE.get(), "sweet_berry_pie");
 		pieBlock(ExtraDelightBlocks.GLOW_BERRY_PIE.get(), "glow_berry_pie");
@@ -551,6 +551,68 @@ public class BlockModels extends BlockStateProvider {
 		this.recipeFeastBlock(ExtraDelightBlocks.STUFFED_APPLES_FEAST.get());
 		pieLikeBlock(ExtraDelightBlocks.TARTE_TATIN.get(), "tarte_tatin");
 
+		this.simpleBlock(ExtraDelightBlocks.HANGING_ONIONS.get(), models()
+				.getExistingFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/hanging_onions")));
+		this.simpleBlock(ExtraDelightBlocks.HANGING_MINT.get(), models()
+				.getExistingFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/hanging_mint")));
+		this.simpleBlock(ExtraDelightBlocks.HANGING_HAM.get(), models()
+				.getExistingFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/hanging_ham")));
+		this.simpleBlock(ExtraDelightBlocks.HANGING_CHILI.get(), models()
+				.getExistingFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/hanging_chili")));
+		this.simpleBlock(ExtraDelightBlocks.HANGING_DRIED_CHILI.get(), models().getExistingFile(
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/hanging_dried_chili")));
+		this.simpleBlock(ExtraDelightBlocks.HANGING_CORN.get(), models()
+				.getExistingFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/hanging_corn")));
+
+		this.crateBlock(ExtraDelightBlocks.CHILI_CRATE.get(), "chili", "spruce");
+		this.crateBlock(ExtraDelightBlocks.APPLE_CRATE.get(), "apple", "oak");
+		this.crateBlock(ExtraDelightBlocks.BROWN_MUSHROOM_CRATE.get(), "brown_mushroom", "spruce");
+		this.crateBlock(ExtraDelightBlocks.COFFEE_CHERRY_CRATE.get(), "coffee_cherry", "spruce");
+		this.crateBlock(ExtraDelightBlocks.CORN_CRATE.get(), "corn", "spruce");
+		this.crateBlock(ExtraDelightBlocks.EGG_CRATE.get(), "egg", "spruce");
+		this.crateBlock(ExtraDelightBlocks.GINGER_CRATE.get(), "ginger", "spruce");
+		this.crateBlock(ExtraDelightBlocks.GLOW_BERRY_CRATE.get(), "glow_berry", "spruce");
+		this.crateBlock(ExtraDelightBlocks.GOLDEN_APPLE_CRATE.get(), "golden_apple", "spruce");
+		this.crateBlock(ExtraDelightBlocks.GOLDEN_CARROT_CRATE.get(), "golden_carrot", "spruce");
+		this.crateBlock(ExtraDelightBlocks.MALLOW_ROOT_CRATE.get(), "mallow_root", "spruce");
+		this.crateBlock(ExtraDelightBlocks.RED_MUSHROOM_CRATE.get(), "red_mushroom", "spruce");
+		this.crateBlock(ExtraDelightBlocks.SWEET_BERRY_CRATE.get(), "sweet_berry", "spruce");
+
+		this.sackBlock(ExtraDelightBlocks.BREADCRUMB_SACK.get(), "breadcrumb", "lime");
+		this.sackBlock(ExtraDelightBlocks.CHILI_POWDER_SACK.get(), "chili_powder", "green");
+		this.sackBlock(ExtraDelightBlocks.COCOA_BEAN_SACK.get(), "cocoa_beans", "blue");
+		this.sackBlock(ExtraDelightBlocks.COCOA_POWDER_SACK.get(), "cocoa_powder", "gray");
+		this.sackBlock(ExtraDelightBlocks.COCOA_SOLIDS_SACK.get(), "cocoa_solids", "light_blue");
+		this.sackBlock(ExtraDelightBlocks.COFFEE_BEAN_SACK.get(), "coffee_bean", "light_gray");
+		this.sackBlock(ExtraDelightBlocks.CORN_SILK_SACK.get(), "corn_silk", "yellow");
+		this.sackBlock(ExtraDelightBlocks.CORN_SACK.get(), "corn", "green");
+		this.sackBlock(ExtraDelightBlocks.CORNMEAL_SACK.get(), "cornmeal", "green");
+		this.sackBlock(ExtraDelightBlocks.FLOUR_SACK.get(), "flour", "brown");
+		this.sackBlock(ExtraDelightBlocks.GREEN_COFFEE_BEAN_SACK.get(), "green_coffee_beans", "white");
+		this.sackBlock(ExtraDelightBlocks.GROUND_CINNAMON_SACK.get(), "ground_cinnamon", "red");
+		this.sackBlock(ExtraDelightBlocks.HAZELNUT_IN_SHELL_SACK.get(), "hazelnut_in_shell", "pink");
+		this.sackBlock(ExtraDelightBlocks.HAZELNUT_SACK.get(), "hazelnut", "magenta");
+		this.sackBlock(ExtraDelightBlocks.MALLOW_POWDER_SACK.get(), "mallow_powder", "black");
+		this.sackBlock(ExtraDelightBlocks.MINT_SACK.get(), "mint", "red");
+		this.sackBlock(ExtraDelightBlocks.PEANUT_IN_SHELL_SACK.get(), "peanut_in_shell", "light_blue");
+		this.sackBlock(ExtraDelightBlocks.PEANUT_SACK.get(), "peanut", "cyan");
+		this.sackBlock(ExtraDelightBlocks.ROASTED_COCOA_BEAN_SACK.get(), "roasted_cocoa_beans", "cyan");
+		this.sackBlock(ExtraDelightBlocks.ROASTED_HAZELNUT_SACK.get(), "roasted_hazelnut", "purple");
+		this.sackBlock(ExtraDelightBlocks.ROASTED_PEANUT_SACK.get(), "roasted_peanut", "blue");
+		this.sackBlock(ExtraDelightBlocks.SUGAR_SACK.get(), "sugar", "blue");
+		this.sackBlock(ExtraDelightBlocks.GROUND_COFFEE_SACK.get(), "ground_coffee", "gray");
+
+		this.stewBlock(ExtraDelightBlocks.CHILI_CON_CARNE_FEAST.get(), "chili_con_carne");
+		this.stewBlock(ExtraDelightBlocks.WHITE_CHILI_FEAST.get(), "white_chili");
+		this.pieBlock(ExtraDelightBlocks.MISSISSIPPI_MUD_PIE.get(), "mississippi_mud_pie", "mississippi_mud_pie");
+		this.pieBlock(ExtraDelightBlocks.GRASSHOPPER_PIE.get(), "grasshopper_pie", "mississippi_mud_pie");
+
+		recipeFeastBlock(ExtraDelightBlocks.MARSHMALLOW_SLICE_FEAST.get(), "marshmallow_slice");
+		this.simpleBlock(ExtraDelightBlocks.CHOCOLATE_COOKIE_BLOCK.get());
+		this.simpleBlock(ExtraDelightBlocks.NUT_BUTTER_COOKIE_BLOCK.get());
+		this.pieBlock(ExtraDelightBlocks.BACON_EGG_PIE.get(), "bacon_egg_pie");
+		pieLikeBlock(ExtraDelightBlocks.PANFORTE.get(), "panforte");
+
 		AestheticBlocks.blockModel(this);
 	}
 
@@ -664,7 +726,7 @@ public class BlockModels extends BlockStateProvider {
 			return ConfiguredModel.builder().modelFile(model).build();
 		});
 	}
-	
+
 	public void vanillaFruitLeafBlock(VanillaFruitLeafBlock block, String name) {
 		getVariantBuilder(block).forAllStates(state -> {
 			int age = state.getValue(VanillaFruitLeafBlock.AGE);
@@ -760,6 +822,22 @@ public class BlockModels extends BlockStateProvider {
 //					.texture("side", "farmersdelight:block/pie_side")
 							.texture("top", modLoc("block/" + prefix + "_top"))
 							.texture("inner", modLoc("block/" + prefix + "_inner")))
+					.rotationY(((int) state.getValue(PieBlock.FACING).toYRot() + 180) % 360).build();
+		});
+	}
+
+	public void pieBlock(Block block, String prefix, String crust) {
+		getVariantBuilder(block).forAllStates(state -> {
+			int bites = state.getValue(PieBlock.BITES);
+			String suffix = bites > 0 ? "_slice" + bites : "";
+			return ConfiguredModel.builder().modelFile(models()
+					.withExistingParent(BuiltInRegistries.BLOCK.getKey(block).getPath() + suffix,
+							modLoc("block/pie" + suffix))
+					.texture("particle", modLoc("block/" + prefix + "_top"))
+					.texture("bottom", modLoc("block/" + crust + "_bottom"))
+					.texture("side", modLoc("block/" + crust + "_side"))
+					.texture("top", modLoc("block/" + prefix + "_top"))
+					.texture("inner", modLoc("block/" + prefix + "_inner")))
 					.rotationY(((int) state.getValue(PieBlock.FACING).toYRot() + 180) % 360).build();
 		});
 	}
@@ -976,5 +1054,22 @@ public class BlockModels extends BlockStateProvider {
 							"block/" + woodType + "_cabinet_front" + suffix),
 					ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/" + woodType + "_cabinet_top"));
 		});
+	}
+
+	public void crateBlock(Block block, String type, String woodType) {
+		simpleBlock(block,
+				new ConfiguredModel(this.models().cube(type + "_crate",
+						modLoc("block/crates/" + woodType + "_crate_bottom"), modLoc("block/" + type + "_crate_top"),
+						modLoc("block/" + type + "_crate_side"), modLoc("block/" + type + "_crate_side"),
+						modLoc("block/" + type + "_crate_side"), modLoc("block/" + type + "_crate_side"))));
+	}
+
+	public void sackBlock(Block block, String type, String color) {
+		simpleBlock(block,
+				new ConfiguredModel(this.models().cube(type + "_sack", modLoc("block/bags/" + color + "_bag_bottom"),
+						modLoc("block/" + type + "_bag_top"), modLoc("block/bags/" + color + "_bag_side_tied"),
+						modLoc("block/bags/" + color + "_bag_side"), modLoc("block/bags/" + color + "_bag_side"),
+						modLoc("block/bags/" + color + "_bag_side"))
+						.texture("particle", modLoc("block/" + type + "_bag_top"))));
 	}
 }

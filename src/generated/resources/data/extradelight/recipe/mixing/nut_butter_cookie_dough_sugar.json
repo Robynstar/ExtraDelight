@@ -1,0 +1,17 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "fluids": [],
+  "ingredients": [
+    {
+      "tag": "c:cookie_dough/sugar"
+    },
+    {
+      "item": "extradelight:peanut_butter_bottle"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:nut_butter_cookie_dough"
+  },
+  "stirs": 4
+}

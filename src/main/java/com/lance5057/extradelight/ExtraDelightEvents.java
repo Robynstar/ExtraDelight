@@ -19,4 +19,8 @@ public class ExtraDelightEvents {
 				builder -> builder.set(ExtraDelightComponents.CHILL.value(), new ChillComponent(100)));
 	}
 
+//	@SubscribeEvent
+//	static void registerRegistries(NewRegistryEvent event) {
+//	    event.register(PieceTypes.PIECE_REGISTRY);
+//	}
 }

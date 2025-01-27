@@ -1,7 +1,7 @@
 {
   "parent": "extradelight:start",
   "criteria": {
-    "BBQ_RIBS": {
+    "extradelight:bbq_ribs": {
       "conditions": {
         "items": [
           {
@@ -11,7 +11,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "BBQ_RIBS_FEAST_ITEM": {
+    "extradelight:bbq_ribs_block_item": {
       "conditions": {
         "items": [
           {
@@ -21,7 +21,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "BEEF_WELLINGTON": {
+    "extradelight:beef_wellington": {
       "conditions": {
         "items": [
           {
@@ -31,7 +31,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "BEEF_WELLINGTON_FEAST_ITEM": {
+    "extradelight:beef_wellington_block_item": {
       "conditions": {
         "items": [
           {
@@ -41,7 +41,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "BLOOD_CHOCOLATE_BAR": {
+    "extradelight:blood_chocolate_bar": {
       "conditions": {
         "items": [
           {
@@ -51,7 +51,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "BLOOD_CHOCOLATE_CHIPS": {
+    "extradelight:blood_chocolate_chips": {
       "conditions": {
         "items": [
           {
@@ -61,7 +61,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "BLOOD_CHOCOLATE_DIPPED_APPLE_SLICE": {
+    "extradelight:blood_chocolate_dipped_apple_slice": {
       "conditions": {
         "items": [
           {
@@ -71,7 +71,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "BLOOD_CHOCOLATE_DIPPED_BACON": {
+    "extradelight:blood_chocolate_dipped_bacon": {
       "conditions": {
         "items": [
           {
@@ -81,7 +81,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "BLOOD_CHOCOLATE_DIPPED_COFFEE_BEAN": {
+    "extradelight:blood_chocolate_dipped_coffee_bean": {
       "conditions": {
         "items": [
           {
@@ -91,7 +91,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "BLOOD_CHOCOLATE_DIPPED_GLOW_BERRY": {
+    "extradelight:blood_chocolate_dipped_glow_berry": {
       "conditions": {
         "items": [
           {
@@ -101,7 +101,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "BLOOD_CHOCOLATE_DIPPED_GRAHAM_CRACKER": {
+    "extradelight:blood_chocolate_dipped_graham_cracker": {
       "conditions": {
         "items": [
           {
@@ -111,7 +111,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "BLOOD_CHOCOLATE_DIPPED_MARSHMALLOW": {
+    "extradelight:blood_chocolate_dipped_marshmallow": {
       "conditions": {
         "items": [
           {
@@ -121,7 +121,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "BLOOD_CHOCOLATE_DIPPED_SWEET_BERRY": {
+    "extradelight:blood_chocolate_dipped_sweet_berry": {
       "conditions": {
         "items": [
           {
@@ -131,7 +131,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "BLOOD_CHOCOLATE_FILLED_BAR": {
+    "extradelight:blood_chocolate_filled_bar": {
       "conditions": {
         "items": [
           {
@@ -141,7 +141,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "BLOOD_CHOCOLATE_FONDUE_BLOCK": {
+    "extradelight:blood_chocolate_fondue_block": {
       "conditions": {
         "items": [
           {
@@ -151,7 +151,17 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "BLOOD_CHOCOLATE_TRUFFLE": {
+    "extradelight:blood_chocolate_syrup_bottle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:blood_chocolate_syrup_bottle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:blood_chocolate_truffle": {
       "conditions": {
         "items": [
           {
@@ -161,7 +171,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "FRIED_BRAINS": {
+    "extradelight:fried_brains": {
       "conditions": {
         "items": [
           {
@@ -171,7 +181,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "HAGGIS": {
+    "extradelight:haggis": {
       "conditions": {
         "items": [
           {
@@ -181,7 +191,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "HAGGIS_FEAST_ITEM": {
+    "extradelight:haggis_block_item": {
       "conditions": {
         "items": [
           {
@@ -191,7 +201,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "LIVER_ONIONS": {
+    "extradelight:liver_onions": {
       "conditions": {
         "items": [
           {
@@ -201,7 +211,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "MINT_LAMB": {
+    "extradelight:mint_lamb": {
       "conditions": {
         "items": [
           {
@@ -211,7 +221,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "MINT_LAMB_FEAST": {
+    "extradelight:mint_lamb_feast": {
       "conditions": {
         "items": [
           {
@@ -221,7 +231,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "OXTAIL_SOUP": {
+    "extradelight:oxtail_soup": {
       "conditions": {
         "items": [
           {
@@ -231,7 +241,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "PORK_AND_APPLES": {
+    "extradelight:pork_and_apples": {
       "conditions": {
         "items": [
           {
@@ -241,7 +251,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "PORK_AND_APPLES_FEAST": {
+    "extradelight:pork_and_apples_feast": {
       "conditions": {
         "items": [
           {
@@ -251,17 +261,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "POT_ROAST": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:potroast"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "POT_ROAST_FEAST_ITEM": {
+    "extradelight:pot_roast_block_item": {
       "conditions": {
         "items": [
           {
@@ -271,7 +271,17 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "PULLED_PORK_FEAST_ITEM": {
+    "extradelight:potroast": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:potroast"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:pulled_pork_block_item": {
       "conditions": {
         "items": [
           {
@@ -281,7 +291,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "PULLED_PORK_SANDWICH": {
+    "extradelight:pulled_pork_sandwich": {
       "conditions": {
         "items": [
           {
@@ -291,7 +301,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "RACK_LAMB": {
+    "extradelight:rack_lamb": {
       "conditions": {
         "items": [
           {
@@ -301,7 +311,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "RACK_LAMB_FEAST_ITEM": {
+    "extradelight:rack_lamb_block_item": {
       "conditions": {
         "items": [
           {
@@ -311,7 +321,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "SAUSAGE_ROLL": {
+    "extradelight:sausage_roll": {
       "conditions": {
         "items": [
           {
@@ -321,7 +331,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "SOS": {
+    "extradelight:sos": {
       "conditions": {
         "items": [
           {
@@ -331,21 +341,11 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "STUFFED_HEART": {
+    "extradelight:stuffed_heart": {
       "conditions": {
         "items": [
           {
             "items": "extradelight:stuffed_heart"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "liquid_blood_chocolate": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:blood_chocolate_syrup_bottle"
           }
         ]
       },
@@ -368,109 +368,109 @@
   },
   "requirements": [
     [
-      "SAUSAGE_ROLL"
+      "extradelight:pork_and_apples"
     ],
     [
-      "SOS"
+      "extradelight:blood_chocolate_dipped_apple_slice"
     ],
     [
-      "LIVER_ONIONS"
+      "extradelight:blood_chocolate_chips"
     ],
     [
-      "STUFFED_HEART"
+      "extradelight:rack_lamb_block_item"
     ],
     [
-      "FRIED_BRAINS"
+      "extradelight:blood_chocolate_filled_bar"
     ],
     [
-      "OXTAIL_SOUP"
+      "extradelight:blood_chocolate_truffle"
     ],
     [
-      "POT_ROAST_FEAST_ITEM"
+      "extradelight:haggis_block_item"
     ],
     [
-      "POT_ROAST"
+      "extradelight:bbq_ribs_block_item"
     ],
     [
-      "BBQ_RIBS_FEAST_ITEM"
+      "extradelight:bbq_ribs"
     ],
     [
-      "BBQ_RIBS"
+      "extradelight:blood_chocolate_dipped_marshmallow"
     ],
     [
-      "PULLED_PORK_FEAST_ITEM"
+      "extradelight:beef_wellington"
     ],
     [
-      "PULLED_PORK_SANDWICH"
+      "extradelight:fried_brains"
     ],
     [
-      "RACK_LAMB_FEAST_ITEM"
+      "extradelight:mint_lamb_feast"
     ],
     [
-      "RACK_LAMB"
+      "extradelight:blood_chocolate_dipped_coffee_bean"
     ],
     [
-      "BEEF_WELLINGTON_FEAST_ITEM"
+      "extradelight:pot_roast_block_item"
     ],
     [
-      "BEEF_WELLINGTON"
+      "extradelight:pulled_pork_block_item"
     ],
     [
-      "HAGGIS_FEAST_ITEM"
+      "extradelight:mint_lamb"
     ],
     [
-      "HAGGIS"
+      "extradelight:blood_chocolate_dipped_glow_berry"
     ],
     [
-      "MINT_LAMB_FEAST"
+      "extradelight:potroast"
     ],
     [
-      "MINT_LAMB"
+      "extradelight:beef_wellington_block_item"
     ],
     [
-      "liquid_blood_chocolate"
+      "extradelight:stuffed_heart"
     ],
     [
-      "BLOOD_CHOCOLATE_BAR"
+      "extradelight:blood_chocolate_fondue_block"
     ],
     [
-      "BLOOD_CHOCOLATE_CHIPS"
+      "extradelight:sausage_roll"
     ],
     [
-      "BLOOD_CHOCOLATE_FILLED_BAR"
+      "extradelight:pulled_pork_sandwich"
     ],
     [
-      "BLOOD_CHOCOLATE_TRUFFLE"
+      "extradelight:blood_chocolate_bar"
     ],
     [
-      "BLOOD_CHOCOLATE_FONDUE_BLOCK"
+      "extradelight:haggis"
     ],
     [
-      "BLOOD_CHOCOLATE_DIPPED_SWEET_BERRY"
+      "extradelight:sos"
     ],
     [
-      "BLOOD_CHOCOLATE_DIPPED_GLOW_BERRY"
+      "extradelight:blood_chocolate_dipped_bacon"
     ],
     [
-      "BLOOD_CHOCOLATE_DIPPED_APPLE_SLICE"
+      "extradelight:blood_chocolate_dipped_graham_cracker"
     ],
     [
-      "BLOOD_CHOCOLATE_DIPPED_MARSHMALLOW"
+      "extradelight:oxtail_soup"
     ],
     [
-      "BLOOD_CHOCOLATE_DIPPED_GRAHAM_CRACKER"
+      "extradelight:blood_chocolate_dipped_sweet_berry"
     ],
     [
-      "BLOOD_CHOCOLATE_DIPPED_BACON"
+      "extradelight:rack_lamb"
     ],
     [
-      "BLOOD_CHOCOLATE_DIPPED_COFFEE_BEAN"
+      "extradelight:blood_chocolate_syrup_bottle"
     ],
     [
-      "PORK_AND_APPLES_FEAST"
+      "extradelight:pork_and_apples_feast"
     ],
     [
-      "PORK_AND_APPLES"
+      "extradelight:liver_onions"
     ]
   ],
   "sends_telemetry_event": true

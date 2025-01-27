@@ -69,6 +69,8 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.BEEF_STEW.get(), ExtraDelightBlocks.PORK_STEW.get(),
 				ExtraDelightBlocks.LAMB_STEW.get(), ExtraDelightBlocks.RABBIT_STEW.get(),
 				ExtraDelightBlocks.CHICKEN_STEW.get(), ExtraDelightBlocks.FISH_STEW.get(),
+				ExtraDelightBlocks.CHILI_CON_CARNE_FEAST.get(), ExtraDelightBlocks.WHITE_CHILI_FEAST.get(),
+				ExtraDelightBlocks.STUFFING.get(),
 
 				ExtraDelightBlocks.SHEET_BLOCK.get(), ExtraDelightBlocks.LOAF_PAN_BLOCK.get(),
 				ExtraDelightBlocks.SQUARE_PAN_BLOCK.get(), ExtraDelightBlocks.SERVING_POT_BLOCK.get(),
@@ -119,12 +121,12 @@ public class EDBlockTags extends BlockTagsProvider {
 				ExtraDelightBlocks.CURRY.get(), ExtraDelightBlocks.MACARONI_CHEESE.get(),
 				ExtraDelightBlocks.LASAGNA.get(), ExtraDelightBlocks.HOTDISH.get(), ExtraDelightBlocks.HASH_FEAST.get(),
 				ExtraDelightBlocks.CORNBREAD.get(), ExtraDelightBlocks.CORN_PUDDING.get(),
-				ExtraDelightBlocks.APPLE_CRISP.get(), ExtraDelightBlocks.STUFFING.get(),
+				ExtraDelightBlocks.APPLE_CRISP.get(),
 				ExtraDelightBlocks.POTATO_AU_GRATIN.get(), ExtraDelightBlocks.CINNAMON_ROLLS.get(),
 				ExtraDelightBlocks.PUNCH.get(), ExtraDelightBlocks.BROWNIES.get(), ExtraDelightBlocks.BLONDIES.get(),
 				ExtraDelightBlocks.FUDGE.get(), ExtraDelightBlocks.CRISP_RICE_TREATS.get(),
 				ExtraDelightBlocks.SCOTCHAROOS.get(), ExtraDelightBlocks.BLACK_FOREST_TRIFLE.get(),
-				ExtraDelightBlocks.STUFFED_APPLES_FEAST.get(),
+				ExtraDelightBlocks.STUFFED_APPLES_FEAST.get(), ExtraDelightBlocks.MARSHMALLOW_SLICE_FEAST.get(),
 
 				// Feasts on plates
 				ExtraDelightBlocks.MEATLOAF_FEAST.get(), ExtraDelightBlocks.POT_ROAST_FEAST.get(),
@@ -208,6 +210,10 @@ public class EDBlockTags extends BlockTagsProvider {
 
 		tag(ExtraDelightTags.COLD_SOURCES).add(Blocks.ICE, Blocks.BLUE_ICE, Blocks.FROSTED_ICE, Blocks.PACKED_ICE,
 					Blocks.SNOW_BLOCK, Blocks.POWDER_SNOW_CAULDRON);
+
+		tag(BlockTags.BEE_GROWABLES).add(ExtraDelightBlocks.CHILI_CROP.get(), ExtraDelightBlocks.CORN_BOTTOM.get(),
+				ExtraDelightBlocks.CORN_TOP.get(), ExtraDelightBlocks.GINGER_CROP.get(),
+				ExtraDelightBlocks.MALLOW_ROOT_CROP.get(), ExtraDelightBlocks.PEANUT_CROP.get());
 		}
 
 	protected void makeMineableWithAxe(DeferredBlock<Block> blockDeferredBlock) {

@@ -1,17 +1,17 @@
 {
   "parent": "extradelight:food",
   "criteria": {
-    "alfredo pasta": {
+    "extradelight:aebleflaesk": {
       "conditions": {
         "items": [
           {
-            "items": "extradelight:pasta_alfredo"
+            "items": "extradelight:aebleflaesk"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "apple fritters": {
+    "extradelight:apple_fritters": {
       "conditions": {
         "items": [
           {
@@ -21,7 +21,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "apple_slaw": {
+    "extradelight:apple_slaw": {
       "conditions": {
         "items": [
           {
@@ -31,7 +31,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "bacon cheeseburger": {
+    "extradelight:bacon_cheeseburger": {
       "conditions": {
         "items": [
           {
@@ -41,7 +41,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "bacon egg and cheese sandwich": {
+    "extradelight:bacon_egg_cheese_sandwich": {
       "conditions": {
         "items": [
           {
@@ -51,7 +51,17 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "bacon egg sandwich": {
+    "extradelight:bacon_egg_pie_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:bacon_egg_pie_slice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:bacon_egg_sandwich": {
       "conditions": {
         "items": [
           {
@@ -61,7 +71,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "beef stew with rice": {
+    "extradelight:beef_stew_rice": {
       "conditions": {
         "items": [
           {
@@ -71,7 +81,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "beet mint salad": {
+    "extradelight:beet_mint_salad": {
       "conditions": {
         "items": [
           {
@@ -81,67 +91,17 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "bowl of corn flakes": {
+    "extradelight:borscht": {
       "conditions": {
         "items": [
           {
-            "items": "extradelight:corn_flakes_cereal"
+            "items": "extradelight:borscht"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "bowl of hash": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:hash"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "bowl of mashed potatoes with gravy": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:mashed_potato_gravy"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "bowl of puffed rice": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:crisp_rice_cereal"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "bowl of stirfry": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:stirfry"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "bowl of stuffing": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:stuffing"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "buttered pasta": {
+    "extradelight:buttered_pasta": {
       "conditions": {
         "items": [
           {
@@ -151,7 +111,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "buttered toast": {
+    "extradelight:buttered_toast": {
       "conditions": {
         "items": [
           {
@@ -161,7 +121,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "cactus and eggs": {
+    "extradelight:cactus_eggs": {
       "conditions": {
         "items": [
           {
@@ -171,7 +131,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "cactus salad": {
+    "extradelight:cactus_salad": {
       "conditions": {
         "items": [
           {
@@ -181,7 +141,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "cactus soup": {
+    "extradelight:cactus_soup": {
       "conditions": {
         "items": [
           {
@@ -191,7 +151,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "carrot salad": {
+    "extradelight:carrot_salad": {
       "conditions": {
         "items": [
           {
@@ -201,7 +161,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "carrot soup": {
+    "extradelight:carrot_soup": {
       "conditions": {
         "items": [
           {
@@ -211,527 +171,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "cheese sandwich": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:cheese_sandwich"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "cheeseburger": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:cheeseburger"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "chef salad": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:salad"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "chicken alfredo pasta": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:chicken_alfredo"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "chicken fried steak": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:chicken_fried_steak"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "chicken parmesan": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:chicken_parm"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "chicken stew": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:chicken_stew"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "chicken stew with rice": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:chicken_stew_rice"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "congee": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:congee"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "cooked cactus paddle": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:cooked_cactus"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "corn chowder": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:corn_chowder"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "corn fritters": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:corn_fritters"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "creamed corn": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:cream_corn"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "croque madam": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:croque_madame"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "croque monsieur": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:croque_monsieur"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "curry": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:curry"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "curry rice": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:curry_rice"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "egg in a basket": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:egg_in_the_basket"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "egg salad": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:egg_salad"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "egg salad sandwich": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:egg_salad_sandwich"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "filled riceball": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:riceball_filled"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "fish cakes": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:fish_cakes"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "fish n' chips": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:fish_chips"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "fish salad": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:fish_salad"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "fish salad sandwich": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:fish_salad_sandwich"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "fish soup": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:fish_soup"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "fish stew with rice": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:fish_stew_rice"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "fluffer nutter": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:fluffer_nutter"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "french fries": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:french_fries"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "fried chicken": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:fried_chicken"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "fried fish": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:fried_fish"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "fried mushrooms": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:fried_mushrooms"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "furikake rice": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:furikake_rice"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "glazed carrot": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:glazed_carrot"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "glowing jam on bread": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:glow_jam_toast"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "golden jam on bread": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:golden_jam_toast"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "grilled cheese": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:grilled_cheese"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "grilled corn on the cob": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:grilled_corn_on_cob"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "hashbrowns": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:hashbrowns"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "hotdish": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:hotdish"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "jam on bread": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:jam_toast"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "lasagna": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:lasanga"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "lugaw": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:lugaw"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "mac and cheese": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:macaroni_cheese"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "meat loaf sandwich": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:meatloaf_sandwich"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "mulligatawny_soup": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:mulligatawny_soup"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "mushroom and swiss burger": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:mushroom_burger"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "mushroom risotto": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:mushroom_risotto"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "mutton stew": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:lamb_stew"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "mutton stew with rice": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:lamb_stew_rice"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "omelette": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:omelette"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "pbj": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:peanut_butter_jelly"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "plate of charcuterie": {
+    "extradelight:charcuterie_board": {
       "conditions": {
         "items": [
           {
@@ -741,7 +181,147 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "plate of corn pudding": {
+    "extradelight:cheese_sandwich": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:cheese_sandwich"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:cheeseburger": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:cheeseburger"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:chicken_alfredo": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:chicken_alfredo"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:chicken_fried_steak": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:chicken_fried_steak"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:chicken_parm": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:chicken_parm"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:chicken_stew": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:chicken_stew"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:chicken_stew_rice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:chicken_stew_rice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:chili_cheese_cornbread_muffin": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:chili_cheese_cornbread_muffin"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:chili_con_carne": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:chili_con_carne"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:congee": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:congee"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:cooked_cactus": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:cooked_cactus"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:corn_chowder": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:corn_chowder"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:corn_flakes_cereal": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:corn_flakes_cereal"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:corn_fritters": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:corn_fritters"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:corn_pudding": {
       "conditions": {
         "items": [
           {
@@ -751,147 +331,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "plate of meat loaf": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:meatloaf"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "plate of potatoes au gratin": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:potato_au_gratin"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "plate of salisbury steak": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:salisbury_steak"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "pork stew": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:pork_stew"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "pork stew with rice": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:pork_stew_rice"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "pork tenderloin": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:pork_tenderloin"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "potato soup": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:potato_soup"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "rabbit stew with rice": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:rabbit_stew_rice"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "riceball": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:riceball"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "roast apple": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:roasted_apple"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "roasted carrot": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:roasted_carrot"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "scrambled eggs": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:scrambled_eggs"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "seaweed crisps": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:seaweed_crisps"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "seaweed salad": {
-      "conditions": {
-        "items": [
-          {
-            "items": "extradelight:seaweed_salad"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "slice of cornbread": {
+    "extradelight:cornbread": {
       "conditions": {
         "items": [
           {
@@ -901,7 +341,417 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "slice of meat pie": {
+    "extradelight:cream_corn": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:cream_corn"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:crisp_rice_cereal": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:crisp_rice_cereal"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:croque_madame": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:croque_madame"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:croque_monsieur": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:croque_monsieur"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:curry": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:curry"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:curry_rice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:curry_rice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:currywurst": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:currywurst"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:egg_in_the_basket": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:egg_in_the_basket"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:egg_salad": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:egg_salad"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:egg_salad_sandwich": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:egg_salad_sandwich"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:fat_potatoes": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:fat_potatoes"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:fish_cakes": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:fish_cakes"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:fish_chips": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:fish_chips"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:fish_salad": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:fish_salad"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:fish_salad_sandwich": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:fish_salad_sandwich"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:fish_soup": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:fish_soup"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:fish_stew_rice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:fish_stew_rice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:fluffer_nutter": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:fluffer_nutter"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:french_fries": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:french_fries"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:fried_chicken": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:fried_chicken"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:fried_fish": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:fried_fish"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:fried_mushrooms": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:fried_mushrooms"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:furikake_rice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:furikake_rice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:glazed_carrot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:glazed_carrot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:glow_jam_toast": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:glow_jam_toast"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:golden_jam_toast": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:golden_jam_toast"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:grilled_cheese": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:grilled_cheese"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:grilled_corn_on_cob": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:grilled_corn_on_cob"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:hash": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:hash"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:hashbrowns": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:hashbrowns"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:hazelnut_soup": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:hazelnut_soup"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:hotdish": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:hotdish"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:jalapeno_popper": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:jalapeno_popper"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:jalapeno_stuffed_potato": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:jalapeno_stuffed_potato"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:jam_toast": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:jam_toast"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:lamb_stew": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:lamb_stew"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:lamb_stew_rice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:lamb_stew_rice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:lasanga": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:lasanga"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:lugaw": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:lugaw"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:macaroni_cheese": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:macaroni_cheese"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:mashed_potato_gravy": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:mashed_potato_gravy"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:meat_pie_slice": {
       "conditions": {
         "items": [
           {
@@ -911,57 +761,107 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "slice of quiche": {
+    "extradelight:meatloaf": {
       "conditions": {
         "items": [
           {
-            "items": "extradelight:quiche_slice"
+            "items": "extradelight:meatloaf"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "stewed apples": {
+    "extradelight:meatloaf_sandwich": {
       "conditions": {
         "items": [
           {
-            "items": "extradelight:stewed_apples"
+            "items": "extradelight:meatloaf_sandwich"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "stuffed cactus": {
+    "extradelight:mulligatawny_soup": {
       "conditions": {
         "items": [
           {
-            "items": "extradelight:stuffed_cactus"
+            "items": "extradelight:mulligatawny_soup"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "stuffed mushrooms": {
+    "extradelight:mushroom_burger": {
       "conditions": {
         "items": [
           {
-            "items": "extradelight:stuffed_mushrooms"
+            "items": "extradelight:mushroom_burger"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "tenderloin sandwich": {
+    "extradelight:mushroom_risotto": {
       "conditions": {
         "items": [
           {
-            "items": "extradelight:pork_tenderloin_sandwich"
+            "items": "extradelight:mushroom_risotto"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "tomato pasta": {
+    "extradelight:omelette": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:omelette"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:onion_bhaji": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:onion_bhaji"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:onion_soup": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:onion_soup"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:pamonha": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pamonha"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:pasta_alfredo": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pasta_alfredo"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:pasta_tomato": {
       "conditions": {
         "items": [
           {
@@ -971,11 +871,261 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "tomato soup": {
+    "extradelight:peanut_butter_jelly": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:peanut_butter_jelly"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:pork_stew": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pork_stew"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:pork_stew_rice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pork_stew_rice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:pork_tenderloin": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pork_tenderloin"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:pork_tenderloin_sandwich": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:pork_tenderloin_sandwich"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:potato_au_gratin": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:potato_au_gratin"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:potato_salad": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:potato_salad"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:potato_soup": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:potato_soup"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:quiche_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:quiche_slice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:rabbit_stew_rice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:rabbit_stew_rice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:riceball": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:riceball"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:riceball_filled": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:riceball_filled"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:roasted_apple": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:roasted_apple"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:roasted_carrot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:roasted_carrot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:salad": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:salad"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:salisbury_steak": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:salisbury_steak"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:scrambled_eggs": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:scrambled_eggs"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:seaweed_crisps": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:seaweed_crisps"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:seaweed_salad": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:seaweed_salad"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:stewed_apples": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:stewed_apples"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:stirfry": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:stirfry"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:stuffed_cactus": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:stuffed_cactus"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:stuffed_mushrooms": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:stuffed_mushrooms"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:stuffing": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:stuffing"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:tomato_soup": {
       "conditions": {
         "items": [
           {
             "items": "extradelight:tomato_soup"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:white_chili": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:white_chili"
           }
         ]
       },
@@ -997,298 +1147,343 @@
   },
   "requirements": [
     [
-      "seaweed crisps"
+      "extradelight:cactus_salad"
     ],
     [
-      "seaweed salad"
+      "extradelight:jalapeno_popper"
     ],
     [
-      "scrambled eggs"
+      "extradelight:onion_bhaji"
     ],
     [
-      "omelette"
+      "extradelight:rabbit_stew_rice"
     ],
     [
-      "slice of quiche"
+      "extradelight:chicken_alfredo"
     ],
     [
-      "egg in a basket"
+      "extradelight:lasanga"
     ],
     [
-      "egg salad"
+      "extradelight:bacon_egg_cheese_sandwich"
     ],
     [
-      "jam on bread"
+      "extradelight:corn_pudding"
     ],
     [
-      "glowing jam on bread"
+      "extradelight:fish_soup"
     ],
     [
-      "golden jam on bread"
+      "extradelight:fried_chicken"
     ],
     [
-      "hashbrowns"
+      "extradelight:hash"
     ],
     [
-      "french fries"
+      "extradelight:potato_au_gratin"
     ],
     [
-      "roasted carrot"
+      "extradelight:chicken_stew_rice"
     ],
     [
-      "glazed carrot"
+      "extradelight:stirfry"
     ],
     [
-      "carrot salad"
+      "extradelight:french_fries"
     ],
     [
-      "roast apple"
+      "extradelight:bacon_egg_pie_slice"
     ],
     [
-      "potato soup"
+      "extradelight:cooked_cactus"
     ],
     [
-      "tomato soup"
+      "extradelight:buttered_toast"
     ],
     [
-      "fish soup"
+      "extradelight:croque_madame"
     ],
     [
-      "carrot soup"
+      "extradelight:riceball"
     ],
     [
-      "egg salad sandwich"
+      "extradelight:curry"
     ],
     [
-      "plate of salisbury steak"
+      "extradelight:cactus_eggs"
     ],
     [
-      "bowl of mashed potatoes with gravy"
+      "extradelight:grilled_corn_on_cob"
     ],
     [
-      "pork stew"
+      "extradelight:fish_chips"
     ],
     [
-      "mutton stew"
+      "extradelight:fried_mushrooms"
     ],
     [
-      "chicken stew"
+      "extradelight:meat_pie_slice"
     ],
     [
-      "curry"
+      "extradelight:onion_soup"
     ],
     [
-      "beef stew with rice"
+      "extradelight:pamonha"
     ],
     [
-      "pork stew with rice"
+      "extradelight:seaweed_salad"
     ],
     [
-      "mutton stew with rice"
+      "extradelight:egg_in_the_basket"
     ],
     [
-      "rabbit stew with rice"
+      "extradelight:fish_stew_rice"
     ],
     [
-      "chicken stew with rice"
+      "extradelight:pasta_alfredo"
     ],
     [
-      "fish stew with rice"
+      "extradelight:apple_slaw"
     ],
     [
-      "curry rice"
+      "extradelight:currywurst"
     ],
     [
-      "fried fish"
+      "extradelight:peanut_butter_jelly"
     ],
     [
-      "chicken fried steak"
+      "extradelight:pasta_tomato"
     ],
     [
-      "pork tenderloin"
+      "extradelight:jam_toast"
     ],
     [
-      "tenderloin sandwich"
+      "extradelight:lugaw"
     ],
     [
-      "fried chicken"
+      "extradelight:mulligatawny_soup"
     ],
     [
-      "cheese sandwich"
+      "extradelight:seaweed_crisps"
     ],
     [
-      "grilled cheese"
+      "extradelight:fish_cakes"
     ],
     [
-      "bowl of hash"
+      "extradelight:corn_chowder"
     ],
     [
-      "plate of meat loaf"
+      "extradelight:cornbread"
     ],
     [
-      "meat loaf sandwich"
+      "extradelight:apple_fritters"
     ],
     [
-      "slice of meat pie"
+      "extradelight:egg_salad_sandwich"
     ],
     [
-      "bowl of stirfry"
+      "extradelight:salisbury_steak"
     ],
     [
-      "mac and cheese"
+      "extradelight:salad"
     ],
     [
-      "lasagna"
+      "extradelight:corn_flakes_cereal"
     ],
     [
-      "hotdish"
+      "extradelight:jalapeno_stuffed_potato"
     ],
     [
-      "furikake rice"
+      "extradelight:cream_corn"
     ],
     [
-      "fish cakes"
+      "extradelight:fluffer_nutter"
     ],
     [
-      "fish n' chips"
+      "extradelight:hotdish"
     ],
     [
-      "fried mushrooms"
+      "extradelight:fish_salad"
     ],
     [
-      "mushroom risotto"
+      "extradelight:carrot_salad"
     ],
     [
-      "stuffed mushrooms"
+      "extradelight:fish_salad_sandwich"
     ],
     [
-      "mushroom and swiss burger"
+      "extradelight:glow_jam_toast"
     ],
     [
-      "bacon egg sandwich"
+      "extradelight:lamb_stew"
     ],
     [
-      "bacon egg and cheese sandwich"
+      "extradelight:meatloaf"
     ],
     [
-      "buttered toast"
+      "extradelight:omelette"
     ],
     [
-      "chef salad"
+      "extradelight:stewed_apples"
     ],
     [
-      "tomato pasta"
+      "extradelight:pork_stew"
     ],
     [
-      "alfredo pasta"
+      "extradelight:pork_tenderloin_sandwich"
     ],
     [
-      "chicken alfredo pasta"
+      "extradelight:stuffing"
     ],
     [
-      "chicken parmesan"
+      "extradelight:golden_jam_toast"
     ],
     [
-      "cheeseburger"
+      "extradelight:potato_salad"
     ],
     [
-      "bacon cheeseburger"
+      "extradelight:bacon_egg_sandwich"
     ],
     [
-      "riceball"
+      "extradelight:cheeseburger"
     ],
     [
-      "filled riceball"
+      "extradelight:stuffed_cactus"
     ],
     [
-      "fish salad"
+      "extradelight:hashbrowns"
     ],
     [
-      "fish salad sandwich"
+      "extradelight:quiche_slice"
     ],
     [
-      "buttered pasta"
+      "extradelight:tomato_soup"
     ],
     [
-      "cooked cactus paddle"
+      "extradelight:roasted_apple"
     ],
     [
-      "cactus and eggs"
+      "extradelight:mushroom_burger"
     ],
     [
-      "cactus soup"
+      "extradelight:macaroni_cheese"
     ],
     [
-      "cactus salad"
+      "extradelight:aebleflaesk"
     ],
     [
-      "stuffed cactus"
+      "extradelight:chili_cheese_cornbread_muffin"
     ],
     [
-      "corn chowder"
+      "extradelight:borscht"
     ],
     [
-      "creamed corn"
+      "extradelight:chicken_fried_steak"
     ],
     [
-      "corn fritters"
+      "extradelight:stuffed_mushrooms"
     ],
     [
-      "grilled corn on the cob"
+      "extradelight:lamb_stew_rice"
     ],
     [
-      "stewed apples"
+      "extradelight:beet_mint_salad"
     ],
     [
-      "apple fritters"
+      "extradelight:mashed_potato_gravy"
     ],
     [
-      "slice of cornbread"
+      "extradelight:riceball_filled"
     ],
     [
-      "plate of corn pudding"
+      "extradelight:meatloaf_sandwich"
     ],
     [
-      "bowl of stuffing"
+      "extradelight:fried_fish"
     ],
     [
-      "plate of potatoes au gratin"
+      "extradelight:roasted_carrot"
     ],
     [
-      "congee"
+      "extradelight:glazed_carrot"
     ],
     [
-      "lugaw"
+      "extradelight:pork_stew_rice"
     ],
     [
-      "beet mint salad"
+      "extradelight:furikake_rice"
     ],
     [
-      "croque monsieur"
+      "extradelight:fat_potatoes"
     ],
     [
-      "croque madam"
+      "extradelight:egg_salad"
     ],
     [
-      "plate of charcuterie"
+      "extradelight:chicken_parm"
     ],
     [
-      "bowl of puffed rice"
+      "extradelight:mushroom_risotto"
     ],
     [
-      "bowl of corn flakes"
+      "extradelight:pork_tenderloin"
     ],
     [
-      "fluffer nutter"
+      "extradelight:cheese_sandwich"
     ],
     [
-      "pbj"
+      "extradelight:potato_soup"
     ],
     [
-      "apple_slaw"
+      "extradelight:cactus_soup"
     ],
     [
-      "mulligatawny_soup"
+      "extradelight:curry_rice"
+    ],
+    [
+      "extradelight:white_chili"
+    ],
+    [
+      "extradelight:carrot_soup"
+    ],
+    [
+      "extradelight:bacon_cheeseburger"
+    ],
+    [
+      "extradelight:chicken_stew"
+    ],
+    [
+      "extradelight:grilled_cheese"
+    ],
+    [
+      "extradelight:scrambled_eggs"
+    ],
+    [
+      "extradelight:hazelnut_soup"
+    ],
+    [
+      "extradelight:congee"
+    ],
+    [
+      "extradelight:buttered_pasta"
+    ],
+    [
+      "extradelight:beef_stew_rice"
+    ],
+    [
+      "extradelight:chili_con_carne"
+    ],
+    [
+      "extradelight:corn_fritters"
+    ],
+    [
+      "extradelight:charcuterie_board"
+    ],
+    [
+      "extradelight:crisp_rice_cereal"
+    ],
+    [
+      "extradelight:croque_monsieur"
     ]
   ],
   "sends_telemetry_event": true

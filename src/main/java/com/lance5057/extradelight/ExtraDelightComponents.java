@@ -3,6 +3,7 @@ package com.lance5057.extradelight;
 import java.util.function.Supplier;
 
 import com.lance5057.extradelight.items.components.ChillComponent;
+import com.lance5057.extradelight.items.dynamicfood.api.DynamicItemComponent;
 
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.world.item.component.ItemContainerContents;
@@ -27,4 +28,9 @@ public class ExtraDelightComponents {
 			.register("itemstack_handler",
 					() -> DataComponentType.<ItemContainerContents>builder().persistent(ItemContainerContents.CODEC)
 							.networkSynchronized(ItemContainerContents.STREAM_CODEC).cacheEncoding().build());
+
+	public static final DeferredHolder<DataComponentType<?>, DataComponentType<DynamicItemComponent>> DYNAMIC_FOOD = COMPONENTS
+			.register("dynamic_food",
+					() -> DataComponentType.<DynamicItemComponent>builder().persistent(DynamicItemComponent.CODEC)
+							.networkSynchronized(DynamicItemComponent.STREAM_CODEC).cacheEncoding().build());
 }

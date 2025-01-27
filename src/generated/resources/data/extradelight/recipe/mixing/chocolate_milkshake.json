@@ -9,13 +9,7 @@
       "item": "extradelight:ice_cream"
     },
     {
-      "item": "minecraft:cocoa_beans"
-    },
-    {
-      "item": "minecraft:cocoa_beans"
-    },
-    {
-      "item": "minecraft:cocoa_beans"
+      "tag": "c:cocoa/powder"
     }
   ],
   "result": {

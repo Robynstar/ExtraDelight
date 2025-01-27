@@ -198,7 +198,7 @@ public class ExtraDelightFluids {
 			FLUID_TYPES, FLUIDS);
 
 	public static FluidRegistration COFFEE = new FluidRegistration("coffee",
-			() -> new BasicFluid(0x512e13, 0x512e13,
+			() -> new BasicFluid(0xff512e13, 0xff512e13,
 					BasicFluid.Properties.create().supportsBoating(true).canHydrate(false).temperature(1300))
 					.setNearDistance(-1000),
 			ExtraDelightBlocks.COFFEE_FLUID_BLOCK, ExtraDelightItems.COFFEE_FLUID_BUCKET, FLUID_TYPES, FLUIDS);

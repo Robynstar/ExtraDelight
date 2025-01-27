@@ -2,6 +2,8 @@ package com.lance5057.extradelight;
 
 import java.util.function.Supplier;
 
+import com.lance5057.extradelight.recipe.DynamicJamRecipe;
+import com.lance5057.extradelight.recipe.DynamicSandwichRecipe;
 import com.lance5057.extradelight.recipe.FeastRecipe;
 import com.lance5057.extradelight.recipe.ShapedWithJarRecipe;
 import com.lance5057.extradelight.recipe.ToolOnBlockRecipe;
@@ -18,7 +20,6 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
-import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class ExtraDelightRecipes {
@@ -45,14 +46,18 @@ public class ExtraDelightRecipes {
 			() -> registerRecipeType("chiller"));
 	public static final Supplier<RecipeType<ShapedWithJarRecipe>> SHAPED_JAR = RECIPE_TYPES.register("shaped_jar",
 			() -> registerRecipeType("shaped_jar"));
+	public static final Supplier<RecipeType<DynamicJamRecipe>> DYNAMIC_JAM = RECIPE_TYPES.register("dynamic_jam",
+			() -> registerRecipeType("dynamic_jam"));
+	public static final Supplier<RecipeType<DynamicSandwichRecipe>> DYNAMIC_SANDWICH = RECIPE_TYPES.register("dynamic_sandwich",
+			() -> registerRecipeType("dynamic_jam"));
 
 	// Dynamic Names
-	public static final DeferredHolder<RecipeType<?>, RecipeType<Recipe<?>>> DYNAMIC_SMELT = RECIPE_TYPES
-			.register("dynamic_smelt", () -> registerRecipeType("dynamic_smelt"));
-	public static final DeferredHolder<RecipeType<?>, RecipeType<Recipe<?>>> DYNAMIC_SMOKE = RECIPE_TYPES
-			.register("dynamic_smoke", () -> registerRecipeType("dynamic_smoke"));
-	public static final DeferredHolder<RecipeType<?>, RecipeType<Recipe<?>>> DYNAMIC_CAMPFIRE = RECIPE_TYPES
-			.register("dynamic_campfire", () -> registerRecipeType("dynamic_campfire"));
+//	public static final DeferredHolder<RecipeType<?>, RecipeType<Recipe<?>>> DYNAMIC_SMELT = RECIPE_TYPES
+//			.register("dynamic_smelt", () -> registerRecipeType("dynamic_smelt"));
+//	public static final DeferredHolder<RecipeType<?>, RecipeType<Recipe<?>>> DYNAMIC_SMOKE = RECIPE_TYPES
+//			.register("dynamic_smoke", () -> registerRecipeType("dynamic_smoke"));
+//	public static final DeferredHolder<RecipeType<?>, RecipeType<Recipe<?>>> DYNAMIC_CAMPFIRE = RECIPE_TYPES
+//			.register("dynamic_campfire", () -> registerRecipeType("dynamic_campfire"));
 
 	public static <T extends Recipe<?>> RecipeType<T> registerRecipeType(final String identifier) {
 		return new RecipeType<>() {
@@ -95,4 +100,8 @@ public class ExtraDelightRecipes {
 			ChillerRecipe.Serializer::new);
 	public static final Supplier<RecipeSerializer<?>> SHAPED_JAR_SERIALIZER = RECIPE_SERIALIZERS.register("shaped_jar",
 			ShapedWithJarRecipe.Serializer::new);
+	public static final Supplier<RecipeSerializer<?>> DYNAMIC_JAM_SERIALIZER = RECIPE_SERIALIZERS
+			.register("dynamic_jam", DynamicJamRecipe.Serializer::new);
+	public static final Supplier<RecipeSerializer<?>> DYNAMIC_SANDWICH_SERIALIZER = RECIPE_SERIALIZERS
+			.register("dynamic_sandwich", DynamicSandwichRecipe.Serializer::new);
 }

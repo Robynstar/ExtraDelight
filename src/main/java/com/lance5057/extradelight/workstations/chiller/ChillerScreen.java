@@ -32,7 +32,7 @@ public class ChillerScreen extends AbstractContainerScreen<ChillerMenu> {
 		addRenderableOnly(new FluidStackWidget(this.leftPos + 43, this.topPos + 13, 16, 71, menu::getFluidTank));
 		addRenderableOnly(new FluidStackWidget(this.leftPos + 126, this.topPos + 73, 16, 11, menu::getDripTray));
 	}
-	
+
 	@Override
 	public void render(GuiGraphics gui, final int mouseX, final int mouseY, float partialTicks) {
 		super.render(gui, mouseX, mouseY, partialTicks);
@@ -59,8 +59,15 @@ public class ChillerScreen extends AbstractContainerScreen<ChillerMenu> {
 //		 Render progress arrow
 		int l = this.menu.tileEntity.getCookTimeTotal();
 		int m = this.menu.tileEntity.getCookTime();
-		ms.blit(BACKGROUND_TEXTURE, this.leftPos + 101, this.topPos +  42, PROGRESS_ARROW.x, PROGRESS_ARROW.y,
+		ms.blit(BACKGROUND_TEXTURE, this.leftPos + 101, this.topPos + 42, PROGRESS_ARROW.x, PROGRESS_ARROW.y,
 				m != 0 && l != 0 ? m * 24 / l : 0, PROGRESS_ARROW.height);
+
+		int n = this.menu.tileEntity.getChilltime();
+		int o = this.menu.tileEntity.getChillDuration();
+
+		int p = o != 0 && n != 0 ? -(n * 12 / o) : -HEAT_ICON.height;
+
+		ms.blit(BACKGROUND_TEXTURE, this.leftPos + 128, this.topPos + 28-p, HEAT_ICON.x , HEAT_ICON.y-p, HEAT_ICON.width, HEAT_ICON.height);
 	}
 
 }

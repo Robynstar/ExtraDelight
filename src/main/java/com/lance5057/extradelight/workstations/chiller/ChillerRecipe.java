@@ -170,7 +170,7 @@ public class ChillerRecipe implements Recipe<ChillerRecipeWrapper> {
 							nonNullList.addAll(ingredients);
 							return nonNullList;
 						}, ingredients -> ingredients).forGetter(ChillerRecipe::getIngredients),
-						FluidStack.CODEC.fieldOf("fluid").forGetter(r -> r.fluid),
+						FluidStack.OPTIONAL_CODEC.fieldOf("fluid").forGetter(r -> r.fluid),
 						ItemStack.CODEC.fieldOf("result").forGetter(r -> r.output),
 
 						ItemStack.CODEC.lenientOptionalFieldOf("container", ItemStack.EMPTY)
@@ -190,7 +190,7 @@ public class ChillerRecipe implements Recipe<ChillerRecipeWrapper> {
 			for (int j = 0; j < inputItemsIn.size(); ++j) {
 				inputItemsIn.set(j, Ingredient.CONTENTS_STREAM_CODEC.decode(buffer));
 			}
-			FluidStack fluid = FluidStack.STREAM_CODEC.decode(buffer);
+			FluidStack fluid = FluidStack.OPTIONAL_STREAM_CODEC.decode(buffer);
 
 			ItemStack outputIn = ItemStack.STREAM_CODEC.decode(buffer);
 			ItemStack container = ItemStack.OPTIONAL_STREAM_CODEC.decode(buffer);
@@ -210,7 +210,7 @@ public class ChillerRecipe implements Recipe<ChillerRecipeWrapper> {
 				Ingredient.CONTENTS_STREAM_CODEC.encode(buffer, ingredient);
 			}
 
-			FluidStack.STREAM_CODEC.encode(buffer, recipe.fluid);
+			FluidStack.OPTIONAL_STREAM_CODEC.encode(buffer, recipe.fluid);
 
 			ItemStack.STREAM_CODEC.encode(buffer, recipe.output);
 			ItemStack.OPTIONAL_STREAM_CODEC.encode(buffer, recipe.container);

@@ -69,14 +69,32 @@ public class RecipeFeastBlock extends Block {
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
 		if (SHAPES.length > 1)
-			return state.getValue(SERVINGS) == 0 ? SHAPES[0]
-					: Shapes.joinUnoptimized(SHAPES[0], rotateShape(state), BooleanOp.OR);
+			return Shapes.joinUnoptimized(SHAPES[0], rotateShape(state), BooleanOp.OR);
 		else
 			return SHAPES[0];
 	}
 
 	private VoxelShape rotateShape(BlockState state) {
-		if (SHAPES.length > 2)
+		if (SHAPES.length > 4) {
+			boolean l = state.getValue(SERVINGS) == 0;
+			switch (state.getValue(FACING)) {
+			case EAST:
+			case WEST:
+				if (l)
+					return SHAPES[2];
+				else
+					return SHAPES[4];
+			case SOUTH:
+			case NORTH:
+			default:
+				if (l)
+					return SHAPES[1];
+				else
+					return SHAPES[3];
+			}
+		}
+
+		else if (SHAPES.length > 2) {
 			switch (state.getValue(FACING)) {
 			case EAST:
 			case WEST:
@@ -86,7 +104,8 @@ public class RecipeFeastBlock extends Block {
 			default:
 				return SHAPES[1];
 			}
-		return SHAPES[1];
+		}
+		return SHAPES[0];
 	}
 
 	public Optional<RecipeHolder<FeastRecipe>> matchRecipe(Level level, ItemStack... itemstack) {
@@ -144,8 +163,7 @@ public class RecipeFeastBlock extends Block {
 				level.playSound(null, pos, SoundEvents.ARMOR_EQUIP_GENERIC.value(), SoundSource.BLOCKS, 1.0F, 1.0F);
 				return ItemInteractionResult.SUCCESS;
 			}
-		}
-		else
+		} else
 			player.displayClientMessage(Component.translatable("extradelight.block.recipefeast.use_container"), true);
 
 		return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;

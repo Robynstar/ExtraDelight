@@ -13,9 +13,9 @@
           }
         },
         "foliage_placer": {
-          "type": "minecraft:fancy_foliage_placer",
+          "type": "extradelight:fruit_leaf",
           "height": 3,
-          "offset": 3,
+          "offset": 0,
           "radius": 2
         },
         "foliage_provider": {
@@ -25,7 +25,8 @@
             "Properties": {
               "age": "0",
               "distance": "7",
-              "persistent": "false"
+              "persistent": "false",
+              "sterile": "false"
             }
           }
         },
@@ -33,13 +34,13 @@
         "ignore_vines": false,
         "minimum_size": {
           "type": "minecraft:two_layers_feature_size",
-          "limit": 1,
-          "lower_size": 0,
+          "limit": 3,
+          "lower_size": 2,
           "upper_size": 3
         },
         "trunk_placer": {
           "type": "minecraft:straight_trunk_placer",
-          "base_height": 2,
+          "base_height": 4,
           "height_rand_a": 0,
           "height_rand_b": 2
         },

@@ -35,6 +35,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.CarpetBlock;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.PipeBlock;
 import net.minecraft.world.level.block.SoundType;
@@ -66,6 +67,7 @@ public class AestheticBlocks {
 	public static enum WOOD {
 		oak, dark_oak, spruce, birch, jungle, acacia, crimson, warped, mangrove, cinnamon, cherry, bamboo, fruit
 	};
+
 	public static enum EXTRA_LEAVES {
 		azalea, flowering_azalea, hazelnut, apple
 	};
@@ -79,6 +81,8 @@ public class AestheticBlocks {
 
 	public static final List<DeferredBlock<Block>> WALLPAPER_BLOCKS = new ArrayList<DeferredBlock<Block>>();
 	public static final List<DeferredBlock<Block>> MOLDED_WALLPAPER_BLOCKS = new ArrayList<DeferredBlock<Block>>();
+	public static final List<DeferredBlock<Block>> GINGHAM_BLOCKS = new ArrayList<DeferredBlock<Block>>();
+	public static final List<DeferredBlock<Block>> GINGHAM_CARPET_BLOCKS = new ArrayList<DeferredBlock<Block>>();
 
 	public static final List<DeferredItem<Item>> STEP_STOOL_ITEMS = new ArrayList<DeferredItem<Item>>();
 	public static final List<DeferredItem<Item>> SPICE_RACKS_ITEMS = new ArrayList<DeferredItem<Item>>();
@@ -89,6 +93,8 @@ public class AestheticBlocks {
 
 	public static final List<DeferredItem<Item>> WALLPAPER_ITEMS = new ArrayList<DeferredItem<Item>>();
 	public static final List<DeferredItem<Item>> MOLDED_WALLPAPER_ITEMS = new ArrayList<DeferredItem<Item>>();
+	public static final List<DeferredItem<Item>> GINGHAM_ITEMS = new ArrayList<DeferredItem<Item>>();
+	public static final List<DeferredItem<Item>> GINGHAM_CARPET_ITEMS = new ArrayList<DeferredItem<Item>>();
 
 	public static final DeferredHolder<Block, CornHuskDollBlock> CORN_HUSK_DOLL = BLOCKS.register("corn_husk_doll",
 			() -> new CornHuskDollBlock());
@@ -178,16 +184,14 @@ public class AestheticBlocks {
 				blocks.add(b);
 				items.add(t);
 			}
-			else if (w.toString() == "fruit") {
-				for(EXTRA_LEAVES f : EXTRA_LEAVES.values()) {
-					DeferredBlock<Block> b = BLOCKS.register(f.toString() + "_" + name, block);
-					DeferredItem<Item> t = ITEMS.register(f.toString() + "_" + name,
-							() -> new HelmetBlockItem(b.get(), new Item.Properties()));
+		}
+		for (EXTRA_LEAVES f : EXTRA_LEAVES.values()) {
+			DeferredBlock<Block> b = BLOCKS.register(f.toString() + "_" + name, block);
+			DeferredItem<Item> t = ITEMS.register(f.toString() + "_" + name,
+					() -> new HelmetBlockItem(b.get(), new Item.Properties()));
 
-					blocks.add(b);
-					items.add(t);
-				}
-			}
+			blocks.add(b);
+			items.add(t);
 		}
 	}
 
@@ -228,34 +232,12 @@ public class AestheticBlocks {
 		registerAllColorsHelm("ribbon_bow",
 				() -> new RibbonBlock(Properties.ofFullCopy(Blocks.BLACK_WOOL).noOcclusion().noCollission()), BOWS,
 				BOW_ITEMS);
-	}
 
-//	public static void loot(BlockLootSubProvider bl) {
-//		for (DeferredBlock<Block> b : STEP_STOOLS)
-//			bl..dropSelf(b.get());
-//		for (DeferredBlock<Block> b : SPICE_RACKS)
-//			bl.dropSelf(b.get());
-//		for (DeferredBlock<Block> b : SPICE_RACKS_FULL)
-//			bl.dropSelf(b.get());
-//		for (DeferredBlock<Block> b : KNIFE_BLOCKS)
-//			bl.dropSelf(b.get());
-//		for (DeferredBlock<Block> b : CABINETS)
-//			bl.dropSelf(b.get());
-//		for (DeferredBlock<Block> b : DRIED_CORN_FENCE)
-//			bl.dropSelf(b.get());
-//
-//		for (DeferredBlock<Block> b : WALLPAPER_BLOCKS)
-//			bl.dropSelf(b.get());
-//		for (DeferredBlock<Block> b : MOLDED_WALLPAPER_BLOCKS)
-//			bl.dropSelf(b.get());
-//
-//		bl.dropSelf(CORN_HUSK_DOLL.get());
-//
-//		for (DeferredBlock<Block> b : WREATHS)
-//			bl.dropSelf(b.get());
-//		for (DeferredBlock<Block> b : BOWS)
-//			bl.dropSelf(b.get());
-//	}
+		registerAllColors("gingham", () -> new Block(Properties.ofFullCopy(Blocks.BLACK_WOOL)), GINGHAM_BLOCKS,
+				GINGHAM_ITEMS);
+		registerAllColors("gingham_carpet", () -> new CarpetBlock(Properties.ofFullCopy(Blocks.BLACK_CARPET)),
+				GINGHAM_CARPET_BLOCKS, GINGHAM_CARPET_ITEMS);
+	}
 
 	public static void blockModel(BlockStateProvider bsp) {
 		for (int i = 0; i < WOOD.values().length; i++) {
@@ -301,21 +283,8 @@ public class AestheticBlocks {
 				bsp.horizontalBlock(WREATHS.get(i).get(), bsp.models()
 						.withExistingParent(WOOD.values()[i].toString() + "_wreath_block", bsp.modLoc("block/wreath"))
 						.texture("all", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_leaves"))
+						.texture("particle", bsp.mcLoc("block/" + WOOD.values()[i].toString() + "_leaves"))
 						.renderType("cutout"));
-			else if (WOOD.values()[i].toString() == "fruit")
-				for (int j = 0; j < EXTRA_LEAVES.values().length; j++) {
-					if (EXTRA_LEAVES.values()[j].toString() == "azalea" || EXTRA_LEAVES.values()[j].toString() == "flowering_azalea") {
-						bsp.horizontalBlock(WREATHS.get(WOOD.values().length + j - 2).get(), bsp.models()
-								.withExistingParent(EXTRA_LEAVES.values()[j].toString() + "_wreath_block", bsp.modLoc("block/wreath"))
-								.texture("all", bsp.mcLoc("block/" + EXTRA_LEAVES.values()[j].toString() + "_leaves"))
-								.renderType("cutout"));
-					} else {
-						bsp.horizontalBlock(WREATHS.get(WOOD.values().length + j - 2).get(), bsp.models()
-								.withExistingParent(EXTRA_LEAVES.values()[j].toString() + "_wreath_block", bsp.modLoc("block/wreath"))
-								.texture("all", ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/crops/fruit/" + EXTRA_LEAVES.values()[j].toString() + "/" + EXTRA_LEAVES.values()[j].toString() + "_leaves"))
-								.renderType("cutout"));
-					}
-				}
 
 			String s = WOOD.values()[i].toString();
 
@@ -334,6 +303,34 @@ public class AestheticBlocks {
 			});
 		}
 
+		for (int j = 0; j < EXTRA_LEAVES.values().length; j++) {
+			if (EXTRA_LEAVES.values()[j].toString() == "azalea"
+					|| EXTRA_LEAVES.values()[j].toString() == "flowering_azalea") {
+				bsp.horizontalBlock(WREATHS.get(WOOD.values().length + j - 2).get(),
+						bsp.models()
+								.withExistingParent(EXTRA_LEAVES.values()[j].toString() + "_wreath_block",
+										bsp.modLoc("block/wreath"))
+								.texture("all", bsp.mcLoc("block/" + EXTRA_LEAVES.values()[j].toString() + "_leaves"))
+								.texture("particle",
+										bsp.mcLoc("block/" + EXTRA_LEAVES.values()[j].toString() + "_leaves"))
+								.renderType("cutout"));
+			} else {
+				bsp.horizontalBlock(WREATHS.get(WOOD.values().length + j - 2).get(),
+						bsp.models()
+								.withExistingParent(EXTRA_LEAVES.values()[j].toString() + "_wreath_block",
+										bsp.modLoc("block/wreath"))
+								.texture("all",
+										ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+												"block/crops/fruit/" + EXTRA_LEAVES.values()[j].toString() + "/"
+														+ EXTRA_LEAVES.values()[j].toString() + "_leaves"))
+								.texture("particle",
+										ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+												"block/crops/fruit/" + EXTRA_LEAVES.values()[j].toString() + "/"
+														+ EXTRA_LEAVES.values()[j].toString() + "_leaves"))
+								.renderType("cutout"));
+			}
+		}
+
 		for (int i = 0; i < DyeColor.values().length; i++) {
 			bsp.simpleBlock(WALLPAPER_BLOCKS.get(i).get());
 			bsp.directionalBlock(BOWS.get(i).get(), bsp.models()
@@ -342,6 +339,13 @@ public class AestheticBlocks {
 							bsp.modLoc("block/ribbon/" + DyeColor.values()[i].toString().toLowerCase() + "_ribbon"))
 					.texture("particle",
 							bsp.modLoc("block/ribbon/" + DyeColor.values()[i].toString().toLowerCase() + "_ribbon")));
+
+			bsp.simpleBlock(GINGHAM_BLOCKS.get(i).get(),
+					bsp.models().cubeAll("gingham_" + DyeColor.values()[i].toString(),
+							bsp.modLoc("block/gingham/" + DyeColor.values()[i].toString())));
+			bsp.simpleBlock(GINGHAM_CARPET_BLOCKS.get(i).get(),
+					bsp.models().carpet("gingham_carpet_" + DyeColor.values()[i].toString(),
+							bsp.modLoc("block/gingham/" + DyeColor.values()[i].toString())));
 		}
 
 		for (int i = 0; i < WOOD.values().length; i++) {
@@ -425,18 +429,20 @@ public class AestheticBlocks {
 						.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/wreath")))
 						.texture("all", tmp.mcLoc("block/" + WOOD.values()[i].toString() + "_leaves"));
 			}
-			else if (WOOD.values()[i].toString() == "fruit") {
-				for (int j = 0; j < EXTRA_LEAVES.values().length; j++) {
-					if (EXTRA_LEAVES.values()[j].toString() == "azalea" || EXTRA_LEAVES.values()[j].toString() == "flowering_azalea") {
-						tmp.getBuilder(WREATHS.get(WOOD.values().length + j - 2).getId().getPath())
-								.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/wreath")))
-								.texture("all", tmp.mcLoc("block/" + EXTRA_LEAVES.values()[j].toString() + "_leaves"));
-					} else {
-						tmp.getBuilder(WREATHS.get(WOOD.values().length + j - 2).getId().getPath())
-								.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/wreath")))
-								.texture("all", ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/crops/fruit/" + EXTRA_LEAVES.values()[j].toString() + "/" + EXTRA_LEAVES.values()[j].toString() + "_leaves"));
-					}
-				}
+		}
+
+		for (int j = 0; j < EXTRA_LEAVES.values().length; j++) {
+			if (EXTRA_LEAVES.values()[j].toString() == "azalea"
+					|| EXTRA_LEAVES.values()[j].toString() == "flowering_azalea") {
+				tmp.getBuilder(WREATHS.get(WOOD.values().length + j - 2).getId().getPath())
+						.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/wreath")))
+						.texture("all", tmp.mcLoc("block/" + EXTRA_LEAVES.values()[j].toString() + "_leaves"));
+			} else {
+				tmp.getBuilder(WREATHS.get(WOOD.values().length + j - 2).getId().getPath())
+						.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/wreath"))).texture("all",
+								ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+										"block/crops/fruit/" + EXTRA_LEAVES.values()[j].toString() + "/"
+												+ EXTRA_LEAVES.values()[j].toString() + "_leaves"));
 			}
 		}
 
@@ -449,6 +455,16 @@ public class AestheticBlocks {
 			tmp.getBuilder(BOWS.get(i).getId().getPath())
 					.parent(new ModelFile.UncheckedModelFile(tmp.modLoc("block/ribbon_bow")))
 					.texture("0", tmp.modLoc("block/ribbon/" + DyeColor.values()[i].toString() + "_ribbon"));
+
+			tmp.getBuilder(GINGHAM_ITEMS.get(i).getId().getPath())
+					.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+							"block/" + BuiltInRegistries.BLOCK
+									.getKey(((BlockItem) GINGHAM_ITEMS.get(i).get()).getBlock()).getPath())));
+
+			tmp.getBuilder(GINGHAM_CARPET_ITEMS.get(i).getId().getPath())
+					.parent(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
+							"block/" + BuiltInRegistries.BLOCK
+									.getKey(((BlockItem) GINGHAM_CARPET_ITEMS.get(i).get()).getBlock()).getPath())));
 		}
 
 		for (int i = 0; i < WOOD.values().length; i++) {
@@ -481,13 +497,6 @@ public class AestheticBlocks {
 			if (WOOD.values()[i].toString() != "fruit" && WOOD.values()[i].toString() != "bamboo") {
 				lp.add(WREATHS.get(i).get(), w + " Wreath");
 			}
-			else if (WOOD.values()[i].toString() == "fruit") {
-				for (int j = 0; j < EXTRA_LEAVES.values().length; j++) {
-					String f = EXTRA_LEAVES.values()[j].toString();
-					f = WordUtils.capitalize(f.replace('_', ' '));
-					lp.add(WREATHS.get(WOOD.values().length + j - 2).get(), f + " Wreath");
-				}
-			}
 
 			for (int j = 0; j < DyeColor.values().length; j++) {
 				int o = (i * DyeColor.values().length) + j;
@@ -497,6 +506,11 @@ public class AestheticBlocks {
 				lp.add(MOLDED_WALLPAPER_ITEMS.get(o).get(), w + " Molded " + d + " Wallpaper");
 			}
 		}
+		for (int j = 0; j < EXTRA_LEAVES.values().length; j++) {
+			String f = EXTRA_LEAVES.values()[j].toString();
+			f = WordUtils.capitalize(f.replace('_', ' '));
+			lp.add(WREATHS.get(WOOD.values().length + j - 2).get(), f + " Wreath");
+		}
 
 		for (int i = 0; i < DyeColor.values().length; i++) {
 			String w = DyeColor.values()[i].toString();
@@ -504,12 +518,15 @@ public class AestheticBlocks {
 
 			lp.add(WALLPAPER_ITEMS.get(i).get(), w + " Wallpaper");
 			lp.add(BOWS.get(i).get(), w + " Bow");
+			lp.add(GINGHAM_ITEMS.get(i).get(), w + " Gingham");
+			lp.add(GINGHAM_CARPET_ITEMS.get(i).get(), w + " Gingham Carpet");
 		}
 
 		lp.add(CORN_HUSK_DOLL.get(), "Corn Husk Doll");
 	}
 
-	// oak, dark_oak, spruce, birch, jungle, acacia, crimson, warped, mangrove, cherry, bamboo
+	// oak, dark_oak, spruce, birch, jungle, acacia, crimson, warped, mangrove,
+	// cherry, bamboo
 	// cinnamon, fruit
 	public static void Recipes(RecipeOutput consumer) {
 		woodRecipe(consumer, Items.ACACIA_SLAB, Items.ACACIA_TRAPDOOR, Items.ACACIA_FENCE, Items.ACACIA_LEAVES,
@@ -567,6 +584,29 @@ public class AestheticBlocks {
 									.get(ResourceLocation.fromNamespaceAndPath("minecraft", dye + "_wool")))
 					.unlockedBy(dye + "_bow", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHITE_WOOL))
 					.save(consumer);
+
+			ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GINGHAM_ITEMS.get(dye.ordinal()).get(), 4)
+					.pattern("cw").pattern("wc")
+					.define('c',
+							BuiltInRegistries.ITEM
+									.get(ResourceLocation.fromNamespaceAndPath("minecraft", dye + "_wool")))
+					.define('w', Items.WHITE_WOOL)
+					.unlockedBy(dye + "_gingham", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHITE_WOOL))
+					.save(consumer);
+
+			ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GINGHAM_CARPET_ITEMS.get(dye.ordinal()).get(), 4)
+					.pattern("cw").pattern("wc")
+					.define('c',
+							BuiltInRegistries.ITEM
+									.get(ResourceLocation.fromNamespaceAndPath("minecraft", dye + "_carpet")))
+					.define('w', Items.WHITE_CARPET).unlockedBy(dye + "_gingham_carpet",
+							InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHITE_CARPET))
+					.save(consumer);
+
+			ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GINGHAM_CARPET_ITEMS.get(dye.ordinal()).get(), 3)
+					.pattern("cc").define('c', GINGHAM_ITEMS.get(i)).unlockedBy(dye + "_gingham_carpet_from_block",
+							InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHITE_WOOL))
+					.save(consumer, dye + "_gingham_carpet_from_block");
 		}
 
 		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, CORN_HUSK_DOLL.get()).pattern(" c ").pattern(" s ")

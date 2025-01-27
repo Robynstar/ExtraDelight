@@ -2,6 +2,7 @@ package com.lance5057.extradelight.data;
 
 import java.util.concurrent.CompletableFuture;
 
+import net.minecraft.tags.BlockTags;
 import org.jetbrains.annotations.Nullable;
 
 import com.lance5057.extradelight.ExtraDelightItems;
@@ -285,12 +286,15 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.PUMPKIN_COOKIE_DOUGH).add(ExtraDelightItems.PUMPKIN_COOKIE_DOUGH.get());
 		tag(ExtraDelightTags.SWEET_BERRY_COOKIE_DOUGH).add(ExtraDelightItems.SWEET_BERRY_COOKIE_DOUGH.get());
 		tag(ExtraDelightTags.CHOCOLATE_CHIP_COOKIE_DOUGH).add(ExtraDelightItems.CHOCOLATE_CHIP_COOKIE_DOUGH.get());
+		tag(ExtraDelightTags.NUT_BUTTER_COOKIE_DOUGH).add(ExtraDelightItems.NUT_BUTTER_COOKIE_DOUGH.get());
+		tag(ExtraDelightTags.CHOCOLATE_COOKIE_DOUGH).add(ExtraDelightItems.CHOCOLATE_COOKIE_DOUGH.get());
 
 		tag(ExtraDelightTags.COOKIE_DOUGH).add(ExtraDelightItems.APPLE_COOKIE_DOUGH.get(),
 				ExtraDelightItems.CHOCOLATE_CHIP_COOKIE_DOUGH.get(), ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get(),
 				ExtraDelightItems.GLOW_BERRY_COOKIE_DOUGH.get(), ExtraDelightItems.HONEY_COOKIE_DOUGH.get(),
 				ExtraDelightItems.PUMPKIN_COOKIE_DOUGH.get(), ExtraDelightItems.SUGAR_COOKIE_DOUGH.get(),
-				ExtraDelightItems.SWEET_BERRY_COOKIE_DOUGH.get());
+				ExtraDelightItems.SWEET_BERRY_COOKIE_DOUGH.get(), ExtraDelightItems.NUT_BUTTER_COOKIE_DOUGH.get(),
+				ExtraDelightItems.CHOCOLATE_COOKIE_DOUGH.get());
 
 		tag(ExtraDelightTags.FROSTING_BLACK).add(ExtraDelightItems.FROSTING_BLACK.get());
 		tag(ExtraDelightTags.FROSTING_BLUE).add(ExtraDelightItems.FROSTING_BLUE.get());
@@ -415,6 +419,7 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.ROASTED_PEANUTS).add(ExtraDelightItems.ROASTED_PEANUTS.get());
 		tag(ExtraDelightTags.PEANUTS).add(ExtraDelightItems.PEANUTS.get());
 
+		tag(ExtraDelightTags.HAZELNUTS_IN_SHELL).add(ExtraDelightItems.HAZELNUTS_IN_SHELL.get());
 		tag(ExtraDelightTags.HAZELNUTS).add(ExtraDelightItems.HAZELNUTS.get());
 		tag(ExtraDelightTags.ROASTED_HAZELNUTS).add(ExtraDelightItems.ROASTED_HAZELNUTS.get());
 
@@ -464,7 +469,8 @@ public class EDItemTags extends ItemTagsProvider {
 				ExtraDelightItems.GINGERBREAD_SWORD.get());
 		tag(ExtraDelightTags.COOKIE)
 				.add(ExtraDelightItems.APPLE_COOKIE.get(), ExtraDelightItems.GLOW_BERRY_COOKIE.get(),
-						ExtraDelightItems.PUMPKIN_COOKIE.get())
+						ExtraDelightItems.PUMPKIN_COOKIE.get(), ExtraDelightItems.NUT_BUTTER_COOKIE.get(),
+						ExtraDelightItems.CHOCOLATE_COOKIE.get())
 				.addTag(ExtraDelightTags.SUGAR_COOKIE).addTag(ExtraDelightTags.GINGERBREAD_COOKIE);
 		tag(ExtraDelightTags.COFFEE_CHERRIES).add(ExtraDelightItems.COFFEE_CHERRIES.get());
 		tag(ExtraDelightTags.GROUND_COFFEE_BEANS).add(ExtraDelightItems.GROUND_COFFEE.get());
@@ -472,7 +478,7 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.PEANUTS_IN_SHELL).add(ExtraDelightItems.PEANUTS_IN_SHELL.get());
 
 		tag(ExtraDelightTags.TEA_INGREDIENTS).addTag(ExtraDelightTags.MINT).addTag(ExtraDelightTags.PROCESSED_GINGER)
-				.add(ExtraDelightItems.CORN_SILK.get());
+				.add(ExtraDelightItems.CORN_SILK.get()).addTag(ExtraDelightTags.MALLOWROOT);
 
 		tag(ExtraDelightTags.BUTTERSCOTCH).add(ExtraDelightItems.BUTTERSCOTCH.get());
 
@@ -501,5 +507,24 @@ public class EDItemTags extends ItemTagsProvider {
 				ExtraDelightItems.CARAMEL_CUSTARD.get(), ExtraDelightItems.CHOCOLATE_CUSTARD.get(),
 				ModItems.GLOW_BERRY_CUSTARD.get(), ExtraDelightItems.HONEY_CUSTARD.get(),
 				ExtraDelightItems.PUMPKIN_CUSTARD.get(), ExtraDelightItems.SWEET_BERRY_CUSTARD.get());
+
+		tag(ExtraDelightTags.COCOA_POWDER).add(ExtraDelightItems.COCOA_POWDER.get());
+
+		tag(ItemTags.CAMEL_FOOD).add(ExtraDelightItems.CACTUS.get());
+		tag(ItemTags.CHICKEN_FOOD).add(ExtraDelightItems.CORN_SEEDS.get(), ExtraDelightItems.CHILI_SEEDS.get(),
+				ExtraDelightItems.HAZELNUTS.get(), ExtraDelightItems.PEANUTS.get(),
+				ExtraDelightItems.SUNFLOWER_SEEDS.get());
+		tag(ItemTags.COW_FOOD).add(ExtraDelightItems.CORN_HUSK.get(), ExtraDelightItems.DRIED_CORN_HUSK.get());
+		tag(ItemTags.FROG_FOOD).add(ExtraDelightItems.AGAR_AGAR.get());
+		tag(ItemTags.LLAMA_FOOD).add(ExtraDelightItems.CORN_HUSK_BUNDLE.get(), ExtraDelightItems.DRIED_CORN_HUSK_BUNDLE.get());
+		tag(ItemTags.PARROT_FOOD).add(ExtraDelightItems.CORN_SEEDS.get(), ExtraDelightItems.CHILI_SEEDS.get(),
+				ExtraDelightItems.HAZELNUTS.get(), ExtraDelightItems.PEANUTS.get(),
+				ExtraDelightItems.SUNFLOWER_SEEDS.get());
+		tag(ItemTags.PIG_FOOD).add(ExtraDelightItems.CORN_COB.get(), ExtraDelightItems.GINGER.get(),
+				ExtraDelightItems.MALLOW_ROOT.get());
+		tag(ItemTags.SHEEP_FOOD).add(ExtraDelightItems.CORN_HUSK.get(), ExtraDelightItems.DRIED_CORN_HUSK.get());
+
+		tag(ExtraDelightTags.PROCESSED_CHILI).add(ExtraDelightItems.CHILI.get(), ExtraDelightItems.SLICED_CHILI.get());
+
 	}
 }

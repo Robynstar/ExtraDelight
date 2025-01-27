@@ -4,13 +4,15 @@ import java.util.Optional;
 
 import javax.annotation.Nonnull;
 
+import org.jetbrains.annotations.NotNull;
+
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
 import com.lance5057.extradelight.ExtraDelightComponents;
 import com.lance5057.extradelight.ExtraDelightRecipes;
 import com.lance5057.extradelight.items.components.ChillComponent;
-import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlockEntity;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
@@ -38,6 +40,7 @@ import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
 import net.neoforged.neoforge.fluids.capability.IFluidHandlerItem;
 import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 import net.neoforged.neoforge.items.ItemStackHandler;
+import vectorwing.farmersdelight.common.utility.ItemUtils;
 
 public class ChillerBlockEntity extends BlockEntity {
 	public static final int INGREDIENT_SLOTS = 4;
@@ -63,6 +66,12 @@ public class ChillerBlockEntity extends BlockEntity {
 	}
 
 	private int chilltime;
+	private int chillDuration;
+
+	public int getChilltime() {
+		return chilltime;
+	}
+
 	private ResourceLocation lastRecipeID;
 	private boolean checkNewRecipe;
 	private final CachedCheck<ChillerRecipeWrapper, ChillerRecipe> quickCheck = RecipeManager
@@ -202,7 +211,9 @@ public class ChillerBlockEntity extends BlockEntity {
 				ItemStack result = recipeholder.value().getResultItem(level.registryAccess()).copy();
 				ItemStack test = chiller.inventory.insertItem(OUTPUT_SLOT, result, true);
 				if (test.isEmpty()) {
+					dropContainers(state, chiller, level);
 					subtractItems(chiller, recipeholder.value().shouldConsumeContainer());
+
 					chiller.fluid.drain(recipeholder.value().getFluid(), FluidAction.EXECUTE);
 
 					chiller.inventory.insertItem(OUTPUT_SLOT, result, false);
@@ -228,6 +239,7 @@ public class ChillerBlockEntity extends BlockEntity {
 
 					ChillComponent time = ice.get(ExtraDelightComponents.CHILL.get());
 					chiller.chilltime = time.time();
+					chiller.chillDuration = time.time();
 
 					ice.shrink(1);
 					return true;
@@ -246,6 +258,19 @@ public class ChillerBlockEntity extends BlockEntity {
 		}
 		for (int j = 0; j < 4; j++)
 			i.getStackInSlot(j).shrink(1);
+	}
+
+	private static void dropContainers(BlockState state, @NotNull ChillerBlockEntity chiller, Level level) {
+		Direction direction = state.getValue(ChillerBlock.FACING).getCounterClockWise();
+		double x = chiller.worldPosition.getX() + 0.5 + (direction.getStepX() * 0.25);
+		double y = chiller.worldPosition.getY() + 0.7;
+		double z = chiller.worldPosition.getZ() + 0.5 + (direction.getStepZ() * 0.25);
+
+		for (int i = 0; i < 4; i++) {
+			ItemUtils.spawnItemEntity(level, chiller.inventory.getStackInSlot(i).getCraftingRemainingItem(), x, y, z,
+					direction.getStepX() * 0.08F, 0.25F, direction.getStepZ() * 0.08F);
+
+		}
 	}
 
 	@Override
@@ -283,6 +308,9 @@ public class ChillerBlockEntity extends BlockEntity {
 
 		this.cookTime = nbt.getInt("cooktime");
 		this.cookTimeTotal = nbt.getInt("cookprogress");
+
+		this.chillDuration = nbt.getInt("chillduration");
+		this.chilltime = nbt.getInt("chilltime");
 	}
 
 	CompoundTag writeNBT(CompoundTag tag, HolderLookup.Provider registries) {
@@ -293,6 +321,9 @@ public class ChillerBlockEntity extends BlockEntity {
 
 		tag.putInt("cooktime", this.cookTime);
 		tag.putInt("cookprogress", cookTimeTotal);
+
+		tag.putInt("chillduration", this.chillDuration);
+		tag.putInt("chilltime", this.chilltime);
 
 		return tag;
 	}
@@ -378,6 +409,10 @@ public class ChillerBlockEntity extends BlockEntity {
 		this.getLevel().sendBlockUpdated(this.getBlockPos(), this.getBlockState(), this.getBlockState(),
 				Block.UPDATE_ALL);
 		this.setChanged();
+	}
+
+	public int getChillDuration() {
+		return chillDuration;
 	}
 
 }

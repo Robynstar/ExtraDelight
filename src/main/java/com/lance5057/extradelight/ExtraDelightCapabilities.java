@@ -1,5 +1,7 @@
 package com.lance5057.extradelight;
 
+import com.lance5057.extradelight.items.dynamicfood.api.DynamicItemComponent;
+
 import net.minecraft.core.Direction;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
@@ -18,6 +20,8 @@ public class ExtraDelightCapabilities {
 				(o, d) -> o.getItemHandler());
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ExtraDelightBlockEntities.MIXING_BOWL.get(),
 				(o, d) -> o.getItemHandler());
+		event.registerBlockEntity(Capabilities.FluidHandler.BLOCK, ExtraDelightBlockEntities.MIXING_BOWL.get(),
+				(o, d) -> o.getFluidTank());
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ExtraDelightBlockEntities.MORTAR.get(),
 				(o, d) -> o.getItemHandler());
 		event.registerBlockEntity(Capabilities.FluidHandler.BLOCK, ExtraDelightBlockEntities.MORTAR.get(),
@@ -36,6 +40,8 @@ public class ExtraDelightCapabilities {
 				(o, d) -> o.getItemHandler());
 
 		event.registerBlockEntity(Capabilities.FluidHandler.BLOCK, ExtraDelightBlockEntities.TAP.get(),
+				(o, d) -> o.getFluidHandler());
+		event.registerBlockEntity(Capabilities.FluidHandler.BLOCK, ExtraDelightBlockEntities.SINK_BLOCK.get(),
 				(o, d) -> o.getFluidHandler());
 
 		event.registerBlockEntity(Capabilities.FluidHandler.BLOCK, ExtraDelightBlockEntities.MELTING_POT.get(),
@@ -79,5 +85,9 @@ public class ExtraDelightCapabilities {
 		event.registerBlockEntity(Capabilities.FluidHandler.BLOCK, ExtraDelightBlockEntities.FUNNEL.get(), (o, d) -> {
 			return o.getFluidTank();
 		});
+
+//		event.registerItem(Capabilities.ItemHandler.ITEM,
+//				(o, d) -> new ComponentItemHandler(o, ExtraDelightComponents.ITEMSTACK_HANDLER.get(), 7),
+//				ExtraDelightItems.DYNAMIC_TEST2.get());
 	}
 }

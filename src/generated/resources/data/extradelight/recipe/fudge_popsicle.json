@@ -6,7 +6,7 @@
       "item": "minecraft:stick"
     },
     "c": {
-      "item": "minecraft:cocoa_beans"
+      "tag": "c:cocoa/powder"
     },
     "i": {
       "item": "minecraft:ice"

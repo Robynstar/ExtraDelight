@@ -1,7 +1,19 @@
 package com.lance5057.extradelight;
 
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
-import com.lance5057.extradelight.blocks.*;
+import com.lance5057.extradelight.blocks.BakingStoneBlock;
+import com.lance5057.extradelight.blocks.ChocolateStyleBlock;
+import com.lance5057.extradelight.blocks.FrostableBlock;
+import com.lance5057.extradelight.blocks.FruitLeafBlock;
+import com.lance5057.extradelight.blocks.HangingBlock;
+import com.lance5057.extradelight.blocks.HorizontalPanBlock;
+import com.lance5057.extradelight.blocks.JellyBlock;
+import com.lance5057.extradelight.blocks.RecipeFeastBlock;
+import com.lance5057.extradelight.blocks.RecipeFondueFeastBlock;
+import com.lance5057.extradelight.blocks.StrippableLog;
+import com.lance5057.extradelight.blocks.TapBlock;
+import com.lance5057.extradelight.blocks.VanillaFruitLeafBlock;
+import com.lance5057.extradelight.blocks.YeastPotBlock;
 import com.lance5057.extradelight.blocks.chocolatebox.ChocolateBoxBlock;
 import com.lance5057.extradelight.blocks.crops.ChiliCrop;
 import com.lance5057.extradelight.blocks.crops.CoffeeBush;
@@ -29,10 +41,12 @@ import com.lance5057.extradelight.workstations.mortar.MortarBlock;
 import com.lance5057.extradelight.workstations.oven.OvenBlock;
 import com.lance5057.extradelight.worldgen.features.trees.ExtraDelightTreeGrowers;
 
+import net.minecraft.core.BlockPos;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ButtonBlock;
@@ -61,6 +75,7 @@ import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
+import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.ItemAbilities;
@@ -154,9 +169,9 @@ public class ExtraDelightBlocks {
 
 	public static final DeferredBlock<Block> FLOUR = BLOCKS.register("flour", () -> new CarpetBlock(
 			Properties.ofFullCopy(Blocks.MOSS_BLOCK).strength(0.1F, 0.0F).sound(SoundType.WOOL).noOcclusion()));
-	public static final DeferredBlock<Block> COOKING_OIL = BLOCKS.register("cooking_oil",
-			() -> new CarpetBlock(Properties.ofFullCopy(Blocks.YELLOW_CARPET).strength(0.1F, 0.0F)
-					.sound(SoundType.SLIME_BLOCK).noOcclusion().friction(0.98f)));
+//	public static final DeferredBlock<Block> COOKING_OIL = BLOCKS.register("cooking_oil",
+//			() -> new CarpetBlock(Properties.ofFullCopy(Blocks.YELLOW_CARPET).strength(0.1F, 0.0F)
+//					.sound(SoundType.SLIME_BLOCK).noOcclusion().friction(0.98f)));
 	public static final DeferredBlock<Block> BREADCRUMBS = BLOCKS.register("breadcrumbs", () -> new CarpetBlock(
 			Properties.ofFullCopy(Blocks.MOSS_BLOCK).strength(0.1F, 0.0F).sound(SoundType.WOOL).noOcclusion()));
 	public static final DeferredBlock<Block> CORNMEAL = BLOCKS.register("cornmeal", () -> new CarpetBlock(
@@ -336,7 +351,7 @@ public class ExtraDelightBlocks {
 
 	public static final DeferredBlock<RecipeFeastBlock> SALAD = BLOCKS.register("salad_block",
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.COLOR_GREEN),
-					true, Block.box(3.5D, 0.0D, 2.0D, 14.5D, 4.0D, 13.0D)));
+					true, Block.box(2.5D, 0.0D, 2.5D, 13.5D, 4.0D, 13.5D)));
 
 //Halloween Start
 	public static final DeferredBlock<CornBottom> CORN_BOTTOM = BLOCKS.register("corn_bottom",
@@ -362,15 +377,27 @@ public class ExtraDelightBlocks {
 
 	public static final DeferredBlock<PieBlock> PUMPKIN_ROLL = BLOCKS.register("pumpkin_roll",
 			() -> new PieBlock(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.COLOR_BROWN),
-					ExtraDelightItems.PUMPKIN_ROLL));
+					ExtraDelightItems.TARTE_TATIN_SLICE) {
+				@Override
+				public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos,
+						CollisionContext context) {
+					switch (state.getValue(PieBlock.FACING)) {
+					case EAST:
+					case WEST:
+						return Block.box(2.0D, 0.0D, 4.5D, 14.0D, 7.0D, 11.5D);
+					default:
+						return Block.box(4.5D, 0.0D, 2.0D, 11.5D, 7.0D, 14.0D);
+					}
+				}
+			});
 
 	public static final DeferredBlock<RecipeFeastBlock> APPLE_CRISP = BLOCKS.register("apple_crisp",
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.COLOR_BROWN),
 					true, pan));
 
 	public static final DeferredBlock<RecipeFeastBlock> STUFFING = BLOCKS.register("stuffing",
-			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.COLOR_BROWN),
-					true, pot));
+			() -> new RecipeFeastBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(0.8F)
+					.sound(SoundType.LANTERN).mapColor(MapColor.COLOR_BROWN), true, pot));
 
 	public static final DeferredBlock<RecipeFeastBlock> POTATO_AU_GRATIN = BLOCKS.register("potato_au_gratin",
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.COLOR_BROWN),
@@ -565,12 +592,19 @@ public class ExtraDelightBlocks {
 	public static final DeferredBlock<RecipeFeastBlock> PUNCH = BLOCKS.register("punch",
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.GLASS).mapColor(MapColor.COLOR_PINK), true,
 					Block.box(2.0D, 0.0D, 2.0D, 14.0D, 5.0D, 14.0D)));
-	public static final DeferredBlock<Block> MILK_TART = ExtraDelightBlocks.BLOCKS.register("milk_tart",
-			() -> new PieBlock(Block.Properties.ofFullCopy(Blocks.CAKE), ExtraDelightItems.MILK_TART_SLICE));
+	public static final DeferredBlock<PieBlock> MILK_TART = ExtraDelightBlocks.BLOCKS.register("milk_tart",
+			() -> new PieBlock(Block.Properties.ofFullCopy(Blocks.CAKE), ExtraDelightItems.MILK_TART_SLICE) {
+				@Override
+				public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos,
+						CollisionContext context) {
+					return Block.box(2.0D, 0.0D, 2.0D, 14.0D, 2.0D, 14.0D);
+				}
+			});
 	public static final DeferredBlock<RecipeFeastBlock> MINT_LAMB = BLOCKS.register("mint_lamb",
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.COLOR_BROWN),
-					true, Block.box(0.0D, 0.0D, 4.0D, 16.0D, 1.0D, 12.0D),
-					Block.box(0.0D, 1.0D, 4.0D, 16.0D, 4.0D, 12.0D)));
+					true, Block.box(0.0D, 0.0D, 0.0D, 0.0D, 0.0D, 0.0D),
+					Block.box(4.0D, 0.0D, 0.0D, 12.0D, 1.0D, 16.0D), Block.box(0.0D, 0.0D, 4.0D, 16.0D, 1.0D, 12.0D),
+					Block.box(4.0D, 0.0D, 0.0D, 12.0D, 4.0D, 16.0D), Block.box(0.0D, 0.0D, 4.0D, 16.0D, 4.0D, 12.0D)));
 	public static final DeferredBlock<RecipeFeastBlock> CHARCUTERIE_BOARD = BLOCKS.register("charcuterie_board",
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.COLOR_BROWN),
 					true, plate, Block.box(1.0D, 1.0D, 1.0D, 15.0D, 5.0D, 15.0D)));
@@ -599,9 +633,8 @@ public class ExtraDelightBlocks {
 			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.STONE),
 					Block.box(3.5D, 0.0D, 1.5D, 12.5D, 2.0D, 14.5D), Block.box(1.5D, 0.0D, 3.5D, 14.5D, 2.0D, 12.5D)));
 	public static final DeferredBlock<HorizontalPanBlock> SERVING_POT_BLOCK = BLOCKS.register("serving_pot",
-			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK),
-					Block.box(2.0D, 0.0D, 2.0D, 14.0D, 10.0D, 14.0D),
-					Block.box(2.0D, 0.0D, 2.0D, 14.0D, 10.0D, 14.0D)));
+			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.LANTERN),
+					Block.box(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 13.0D), Block.box(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 13.0D)));
 	public static final DeferredBlock<HorizontalPanBlock> BAR_MOLD = BLOCKS.register("bar_mold",
 			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK),
 					Block.box(1.0D, 0.0D, 0.0D, 15.0D, 2.0D, 16.0D), Block.box(0.0D, 0.0D, 1.0D, 16.0D, 2.0D, 15.0D)));
@@ -924,7 +957,8 @@ public class ExtraDelightBlocks {
 			() -> new CakeBlock(Block.Properties.ofFullCopy(Blocks.CAKE)));
 	public static final DeferredBlock<RecipeFeastBlock> FUDGE = BLOCKS.register("fudge",
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.BROWN_WOOL).mapColor(MapColor.COLOR_BROWN),
-					true, Block.box(1.0D, 0.0D, 0.0D, 15.0D, 2.0D, 16.0D)));
+					true, Block.box(0.0D, 0.0D, 0.0D, 0.0D, 0.0D, 0.0D),
+					Block.box(0.0D, 0.0D, 1.0D, 16.0D, 2.0D, 15.0D), Block.box(1.0D, 0.0D, 0.0D, 15.0D, 2.0D, 16.0D)));
 	public static final DeferredBlock<RecipeFeastBlock> STICKY_TOFFEE_PUDDING = BLOCKS.register("sticky_toffee_pudding",
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.BROWN_WOOL).mapColor(MapColor.COLOR_BROWN),
 					true, stand));
@@ -939,17 +973,25 @@ public class ExtraDelightBlocks {
 					true, Block.box(2.0D, 2.0D, 2.0D, 14.0D, 7.0D, 14.0D)));
 
 	public static final DeferredBlock<RecipeFondueFeastBlock> MILK_CHOCOLATE_FONDUE = BLOCKS
-			.register("milk_chocolate_fondue", () -> new RecipeFondueFeastBlock(
-					Block.Properties.ofFullCopy(Blocks.BROWN_WOOL).mapColor(MapColor.COLOR_BROWN), true, fondue));
+			.register("milk_chocolate_fondue",
+					() -> new RecipeFondueFeastBlock(
+							Block.Properties.ofFullCopy(Blocks.BROWN_WOOL).mapColor(MapColor.COLOR_BROWN), true,
+							fondue));
 	public static final DeferredBlock<RecipeFondueFeastBlock> DARK_CHOCOLATE_FONDUE = BLOCKS
-			.register("dark_chocolate_fondue", () -> new RecipeFondueFeastBlock(
-					Block.Properties.ofFullCopy(Blocks.BROWN_WOOL).mapColor(MapColor.COLOR_BROWN), true, fondue));
+			.register("dark_chocolate_fondue",
+					() -> new RecipeFondueFeastBlock(
+							Block.Properties.ofFullCopy(Blocks.BROWN_WOOL).mapColor(MapColor.COLOR_BROWN), true,
+							fondue));
 	public static final DeferredBlock<RecipeFondueFeastBlock> WHITE_CHOCOLATE_FONDUE = BLOCKS
-			.register("white_chocolate_fondue", () -> new RecipeFondueFeastBlock(
-					Block.Properties.ofFullCopy(Blocks.BROWN_WOOL).mapColor(MapColor.COLOR_BROWN), true, fondue));
+			.register("white_chocolate_fondue",
+					() -> new RecipeFondueFeastBlock(
+							Block.Properties.ofFullCopy(Blocks.BROWN_WOOL).mapColor(MapColor.COLOR_BROWN), true,
+							fondue));
 	public static final DeferredBlock<RecipeFondueFeastBlock> BLOOD_CHOCOLATE_FONDUE = BLOCKS
-			.register("blood_chocolate_fondue", () -> new RecipeFondueFeastBlock(
-					Block.Properties.ofFullCopy(Blocks.BROWN_WOOL).mapColor(MapColor.COLOR_BROWN), true, fondue));
+			.register("blood_chocolate_fondue",
+					() -> new RecipeFondueFeastBlock(
+							Block.Properties.ofFullCopy(Blocks.BROWN_WOOL).mapColor(MapColor.COLOR_BROWN), true,
+							fondue));
 
 	public static final DeferredBlock<LiquidBlock> COCOA_BUTTER_FLUID_BLOCK = BLOCKS.register(
 			"cocoa_butter_fluid_block",
@@ -994,8 +1036,7 @@ public class ExtraDelightBlocks {
 					Block.Properties.ofFullCopy(ModBlocks.BEETROOT_CRATE.get()).mapColor(MapColor.TERRACOTTA_YELLOW)));
 
 	public static final DeferredBlock<VanillaFruitLeafBlock> APPLE_LEAVES = BLOCKS.register("apple_leaves",
-			() -> new VanillaFruitLeafBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES),
-					Items.APPLE));
+			() -> new VanillaFruitLeafBlock(Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES), Items.APPLE));
 	public static final DeferredBlock<SaplingBlock> APPLE_SAPLING = BLOCKS.register("apple_sapling",
 			() -> new SaplingBlock(ExtraDelightTreeGrowers.APPLE,
 					Block.Properties.ofFullCopy(Blocks.DARK_OAK_SAPLING)));
@@ -1006,6 +1047,109 @@ public class ExtraDelightBlocks {
 	public static final DeferredBlock<RecipeFeastBlock> STUFFED_APPLES_FEAST = BLOCKS.register("stuffed_apples",
 			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.COLOR_BROWN),
 					true, pan));
-	public static final DeferredBlock<Block> TARTE_TATIN = ExtraDelightBlocks.BLOCKS.register("tarte_tatin",
-			() -> new PieBlock(Block.Properties.ofFullCopy(Blocks.CAKE), ExtraDelightItems.TARTE_TATIN_SLICE));
+	public static final DeferredBlock<PieBlock> TARTE_TATIN = ExtraDelightBlocks.BLOCKS.register("tarte_tatin",
+			() -> new PieBlock(Block.Properties.ofFullCopy(Blocks.CAKE), ExtraDelightItems.TARTE_TATIN_SLICE) {
+				@Override
+				public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos,
+						CollisionContext context) {
+					return Block.box(2.0D, 0.0D, 2.0D, 14.0D, 3.0D, 14.0D);
+				}
+			});
+
+	public static final DeferredBlock<Block> HANGING_ONIONS = BLOCKS.register("hanging_onions", () -> new HangingBlock(
+			Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES).mapColor(MapColor.WOOD)));
+	public static final DeferredBlock<Block> HANGING_MINT = BLOCKS.register("hanging_mint", () -> new HangingBlock(
+			Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES).mapColor(MapColor.PLANT)) {
+		@Override
+		public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+			return Block.box(4.0D, 8.0D, 4.0D, 12.0D, 16.0D, 12.0D);
+		}
+	});
+	public static final DeferredBlock<Block> HANGING_HAM = BLOCKS.register("hanging_ham", () -> new HangingBlock(
+			Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES).mapColor(MapColor.TERRACOTTA_ORANGE)));
+	public static final DeferredBlock<Block> HANGING_CHILI = BLOCKS.register("hanging_chili", () -> new HangingBlock(
+			Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES).mapColor(MapColor.CRIMSON_NYLIUM)));
+	public static final DeferredBlock<Block> HANGING_DRIED_CHILI = BLOCKS.register("hanging_dried_chili",
+			() -> new HangingBlock(
+					Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES).mapColor(MapColor.TERRACOTTA_RED)));
+	public static final DeferredBlock<Block> HANGING_CORN = BLOCKS.register("hanging_corn", () -> new HangingBlock(
+			Block.Properties.ofFullCopy(Blocks.ACACIA_LEAVES).mapColor(MapColor.TERRACOTTA_YELLOW)));
+
+	public static final DeferredBlock<Block> CHILI_CRATE = BLOCKS.register("chili_crate", () -> new Block(
+			Block.Properties.ofFullCopy(ModBlocks.BEETROOT_CRATE.get()).mapColor(MapColor.CRIMSON_NYLIUM)));
+	public static final DeferredBlock<Block> CHILI_POWDER_SACK = BLOCKS.register("chili_powder_sack", () -> new Block(
+			Block.Properties.ofFullCopy(ModBlocks.RICE_BAG.get()).mapColor(MapColor.TERRACOTTA_RED)));
+	public static final DeferredBlock<RecipeFeastBlock> CHILI_CON_CARNE_FEAST = BLOCKS.register("chili_con_carne",
+			() -> new RecipeFeastBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(0.8F)
+					.sound(SoundType.LANTERN).mapColor(MapColor.NETHER), true, pot));
+	public static final DeferredBlock<RecipeFeastBlock> WHITE_CHILI_FEAST = BLOCKS.register("white_chili",
+			() -> new RecipeFeastBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(0.8F)
+					.sound(SoundType.LANTERN).mapColor(MapColor.RAW_IRON), true, pot));
+
+	public static final DeferredBlock<Block> PEANUT_IN_SHELL_SACK = BLOCKS.register("peanut_in_shell_sack",
+			() -> new Block(
+					Block.Properties.ofFullCopy(ModBlocks.RICE_BAG.get()).mapColor(MapColor.DIRT)));
+	public static final DeferredBlock<Block> PEANUT_SACK = BLOCKS.register("peanut_sack", () -> new Block(
+			Block.Properties.ofFullCopy(ModBlocks.RICE_BAG.get()).mapColor(MapColor.COLOR_ORANGE)));
+	public static final DeferredBlock<Block> ROASTED_PEANUT_SACK = BLOCKS.register("roasted_peanut_sack",
+			() -> new Block(
+					Block.Properties.ofFullCopy(ModBlocks.RICE_BAG.get()).mapColor(MapColor.TERRACOTTA_ORANGE)));
+	public static final DeferredBlock<Block> NUT_BUTTER_COOKIE_BLOCK = BLOCKS.register("nut_butter_cookie_block",
+			() -> new Block(Block.Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
+
+	public static final DeferredBlock<Block> HAZELNUT_IN_SHELL_SACK = BLOCKS.register("hazelnut_in_shell_sack",
+			() -> new Block(
+					Block.Properties.ofFullCopy(ModBlocks.RICE_BAG.get()).mapColor(MapColor.DIRT)));
+	public static final DeferredBlock<Block> HAZELNUT_SACK = BLOCKS.register("hazelnut_sack", () -> new Block(
+			Block.Properties.ofFullCopy(ModBlocks.RICE_BAG.get()).mapColor(MapColor.COLOR_ORANGE)));
+	public static final DeferredBlock<Block> ROASTED_HAZELNUT_SACK = BLOCKS.register("roasted_hazelnut_sack",
+			() -> new Block(
+					Block.Properties.ofFullCopy(ModBlocks.RICE_BAG.get()).mapColor(MapColor.TERRACOTTA_ORANGE)));
+	public static final DeferredBlock<Block> MISSISSIPPI_MUD_PIE = ExtraDelightBlocks.BLOCKS.register(
+			"mississippi_mud_pie",
+			() -> new PieBlock(Block.Properties.ofFullCopy(Blocks.CAKE), ExtraDelightItems.MISSISSIPPI_MUD_PIE_SLICE));
+
+	public static final DeferredBlock<Block> MALLOW_ROOT_CRATE = BLOCKS.register("mallow_root_crate", () -> new Block(
+			Block.Properties.ofFullCopy(ModBlocks.BEETROOT_CRATE.get()).mapColor(MapColor.WOOD)));
+	public static final DeferredBlock<Block> MALLOW_POWDER_SACK = BLOCKS.register("mallow_powder_sack", () -> new Block(
+			Block.Properties.ofFullCopy(ModBlocks.RICE_BAG.get()).mapColor(MapColor.QUARTZ)));
+	public static final DeferredBlock<Block> GRASSHOPPER_PIE = ExtraDelightBlocks.BLOCKS.register("grasshopper_pie",
+			() -> new PieBlock(Block.Properties.ofFullCopy(Blocks.CAKE), ExtraDelightItems.GRASSHOPPER_PIE_SLICE));
+	public static final DeferredBlock<RecipeFeastBlock> MARSHMALLOW_SLICE_FEAST = BLOCKS.register("marshmallow_slice",
+			() -> new RecipeFeastBlock(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).mapColor(MapColor.COLOR_PINK),
+					true, pan));
+
+	public static final DeferredBlock<Block> COFFEE_CHERRY_CRATE = BLOCKS.register("coffee_cherry_crate",
+			() -> new Block(
+					Block.Properties.ofFullCopy(ModBlocks.BEETROOT_CRATE.get()).mapColor(MapColor.COLOR_YELLOW)));
+	public static final DeferredBlock<Block> GREEN_COFFEE_BEAN_SACK = BLOCKS.register("green_coffee_beans_sack",
+			() -> new Block(
+					Block.Properties.ofFullCopy(ModBlocks.RICE_BAG.get()).mapColor(MapColor.COLOR_GREEN)));
+	public static final DeferredBlock<Block> COFFEE_BEAN_SACK = BLOCKS.register("coffee_bean_sack", () -> new Block(
+			Block.Properties.ofFullCopy(ModBlocks.RICE_BAG.get()).mapColor(MapColor.COLOR_BROWN)));
+	public static final DeferredBlock<Block> GROUND_COFFEE_SACK = BLOCKS.register("ground_coffee_sack", () -> new Block(
+			Block.Properties.ofFullCopy(ModBlocks.RICE_BAG.get()).mapColor(MapColor.TERRACOTTA_RED)));
+
+	public static final DeferredBlock<Block> COCOA_BEAN_SACK = BLOCKS.register("cocoa_beans_sack", () -> new Block(
+			Block.Properties.ofFullCopy(ModBlocks.RICE_BAG.get()).mapColor(MapColor.TERRACOTTA_BROWN)));
+	public static final DeferredBlock<Block> ROASTED_COCOA_BEAN_SACK = BLOCKS.register("roasted_cocoa_beans_sack",
+			() -> new Block(
+					Block.Properties.ofFullCopy(ModBlocks.RICE_BAG.get()).mapColor(MapColor.COLOR_RED)));
+	public static final DeferredBlock<Block> COCOA_SOLIDS_SACK = BLOCKS.register("cocoa_solids_sack", () -> new Block(
+			Block.Properties.ofFullCopy(ModBlocks.RICE_BAG.get()).mapColor(MapColor.CRIMSON_HYPHAE)));
+	public static final DeferredBlock<Block> COCOA_POWDER_SACK = BLOCKS.register("cocoa_powder_sack", () -> new Block(
+			Block.Properties.ofFullCopy(ModBlocks.RICE_BAG.get()).mapColor(MapColor.TERRACOTTA_BROWN)));
+	public static final DeferredBlock<Block> CHOCOLATE_COOKIE_BLOCK = BLOCKS.register("chocolate_cookie_block",
+			() -> new Block(Block.Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
+
+	public static final DeferredBlock<Block> BACON_EGG_PIE = ExtraDelightBlocks.BLOCKS.register("bacon_egg_pie",
+			() -> new PieBlock(Block.Properties.ofFullCopy(Blocks.CAKE), ExtraDelightItems.BACON_EGG_PIE_SLICE));
+	public static final DeferredBlock<Block> PANFORTE = ExtraDelightBlocks.BLOCKS.register("panforte",
+			() -> new PieBlock(Block.Properties.ofFullCopy(Blocks.CAKE), ExtraDelightItems.PANFORTE_SLICE) {
+				@Override
+				public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos,
+						CollisionContext context) {
+					return Block.box(2.0D, 0.0D, 2.0D, 14.0D, 3.0D, 14.0D);
+				}
+			});
 }

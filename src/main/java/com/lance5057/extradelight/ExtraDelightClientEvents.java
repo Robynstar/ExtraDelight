@@ -4,7 +4,6 @@ import java.util.Map;
 
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.aesthetics.block.cornhuskdoll.CornHuskDollRenderer;
-import com.lance5057.extradelight.armor.models.CorncobPipeModel;
 import com.lance5057.extradelight.blocks.chocolatebox.ChocolateBoxRenderer;
 import com.lance5057.extradelight.blocks.countercabinet.CounterCabinetRenderer;
 import com.lance5057.extradelight.blocks.countercabinet.CounterCabinetScreen;
@@ -23,6 +22,7 @@ import com.lance5057.extradelight.displays.spice.SpiceRackScreen;
 import com.lance5057.extradelight.displays.wreath.WreathRenderer;
 import com.lance5057.extradelight.displays.wreath.WreathScreen;
 import com.lance5057.extradelight.gui.StyleableScreen;
+import com.lance5057.extradelight.items.dynamicfood.client.DynamicFoodGeometryLoader;
 import com.lance5057.extradelight.items.jar.JarItemModel;
 import com.lance5057.extradelight.workstations.chiller.ChillerScreen;
 import com.lance5057.extradelight.workstations.doughshaping.DoughShapingScreen;
@@ -37,27 +37,19 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.color.item.ItemColor;
-import net.minecraft.client.model.HumanoidModel;
-import net.minecraft.client.model.geom.EntityModelSet;
-import net.minecraft.client.model.geom.LayerDefinitions;
-import net.minecraft.client.model.geom.ModelPart;
-import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.Resource;
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.ModelEvent;
 import net.neoforged.neoforge.client.event.ModelEvent.RegisterAdditional;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
@@ -66,11 +58,6 @@ import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsE
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, modid = ExtraDelight.MOD_ID, value = Dist.CLIENT)
 public class ExtraDelightClientEvents {
-	@SubscribeEvent
-	public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
-		event.registerLayerDefinition(CorncobPipeModel.LAYER_LOCATION, () -> LayerDefinition
-				.create(CorncobPipeModel.createLayer(LayerDefinitions.INNER_ARMOR_DEFORMATION), 16, 16));
-	}
 
 	@SubscribeEvent
 	public static void registerClient(RegisterMenuScreensEvent event) {
@@ -172,16 +159,6 @@ public class ExtraDelightClientEvents {
 
 	@SubscribeEvent
 	public static void registerClientExtensions(RegisterClientExtensionsEvent event) {
-		event.registerItem(new IClientItemExtensions() {
-			@Override
-			public HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack,
-					EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
-				EntityModelSet models = Minecraft.getInstance().getEntityModels();
-				ModelPart root = models.bakeLayer(CorncobPipeModel.LAYER_LOCATION);
-				return new CorncobPipeModel(root);
-			}
-
-		}, ExtraDelightItems.CORN_COB_PIPE.asItem());
 
 		event.registerItem(new IClientItemExtensions() {
 
@@ -191,5 +168,10 @@ public class ExtraDelightClientEvents {
 			}
 		}, ExtraDelightItems.JAR.asItem());
 
+	}
+
+	@SubscribeEvent
+	public static void registerLoader(ModelEvent.RegisterGeometryLoaders registerGeometryLoaders) {
+		registerGeometryLoaders.register(DynamicFoodGeometryLoader.ID, new DynamicFoodGeometryLoader());
 	}
 }

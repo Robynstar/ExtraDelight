@@ -21,28 +21,19 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class VanillaFruitLeafBlock extends Block {
-
-	public static final int DECAY_DISTANCE = 7;
-	public static final IntegerProperty DISTANCE = BlockStateProperties.DISTANCE;
-	public static final int MAX_AGE = 3;
-	public static final IntegerProperty AGE = BlockStateProperties.AGE_3;
-	public static final BooleanProperty PERSISTENT = BlockStateProperties.PERSISTENT;
+public class VanillaFruitLeafBlock extends AbstractFruitLeafBlock {
 
 	private final Item fruit;
 
 	public VanillaFruitLeafBlock(Properties p_49795_, Item fruit) {
 		super(p_49795_);
 		this.registerDefaultState(this.stateDefinition.any().setValue(AGE, Integer.valueOf(0))
-				.setValue(DISTANCE, Integer.valueOf(7)).setValue(PERSISTENT, false));
+				.setValue(DISTANCE, Integer.valueOf(7)).setValue(PERSISTENT, false).setValue(STERILE, false));
 		this.fruit = fruit;
 	}
 
@@ -53,7 +44,10 @@ public class VanillaFruitLeafBlock extends Block {
 
 	@Override
 	public boolean isRandomlyTicking(BlockState p_54449_) {
-		return !p_54449_.getValue(PERSISTENT) && p_54449_.getValue(DISTANCE) == 7 || p_54449_.getValue(AGE) < 3;
+		if (p_54449_.getValue(PERSISTENT))
+			return false;
+		else
+			return (p_54449_.getValue(DISTANCE) == 7 || p_54449_.getValue(AGE) < 3);
 	}
 
 	@Override
@@ -63,15 +57,17 @@ public class VanillaFruitLeafBlock extends Block {
 			p_222564_.removeBlock(p_222565_, false);
 		}
 
-		if (p_222566_.nextInt(100) % 6 == 0) {
-			int i = p_222563_.getValue(AGE);
-			if (i < 3 && p_222564_.getRawBrightness(p_222565_.above(), 0) >= 9
-					&& net.neoforged.neoforge.common.CommonHooks.canCropGrow(p_222564_, p_222565_, p_222563_,
-							p_222566_.nextInt(5) == 0)) {
-				BlockState blockstate = p_222563_.setValue(AGE, Integer.valueOf(i + 1));
-				p_222564_.setBlock(p_222565_, blockstate, 2);
-				p_222564_.gameEvent(GameEvent.BLOCK_CHANGE, p_222565_, GameEvent.Context.of(blockstate));
-				net.neoforged.neoforge.common.CommonHooks.fireCropGrowPost(p_222564_, p_222565_, p_222563_);
+		if (!p_222563_.getValue(STERILE)) {
+			if (p_222566_.nextInt(100) % 6 == 0) {
+				int i = p_222563_.getValue(AGE);
+				if (i < 3 && p_222564_.getRawBrightness(p_222565_.above(), 0) >= 9
+						&& net.neoforged.neoforge.common.CommonHooks.canCropGrow(p_222564_, p_222565_, p_222563_,
+								p_222566_.nextInt(5) == 0)) {
+					BlockState blockstate = p_222563_.setValue(AGE, Integer.valueOf(i + 1));
+					p_222564_.setBlock(p_222565_, blockstate, 2);
+					p_222564_.gameEvent(GameEvent.BLOCK_CHANGE, p_222565_, GameEvent.Context.of(blockstate));
+					net.neoforged.neoforge.common.CommonHooks.fireCropGrowPost(p_222564_, p_222565_, p_222563_);
+				}
 			}
 		}
 	}
@@ -143,7 +139,7 @@ public class VanillaFruitLeafBlock extends Block {
 
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> p_54447_) {
-		p_54447_.add(DISTANCE, PERSISTENT, AGE);
+		p_54447_.add(DISTANCE, PERSISTENT, AGE, STERILE);
 	}
 
 	@Override

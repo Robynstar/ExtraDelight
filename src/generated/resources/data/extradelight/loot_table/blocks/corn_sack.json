@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:air"
+          "name": "extradelight:corn_sack"
         }
       ],
       "rolls": 1.0

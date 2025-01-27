@@ -27,6 +27,10 @@ public class ExtraDelightTags {
 		return ItemTags.create(ResourceLocation.fromNamespaceAndPath("extradelight", tag));
 	}
 
+	public static TagKey<Item> butcherTag(String tag) {
+		return ItemTags.create(ResourceLocation.fromNamespaceAndPath("butchercraft", tag));
+	}
+
 	// General Tags
 	public static final TagKey<Item> CATEGORY_BEVERAGES = modTag("category/beverages");
 	public static final TagKey<Item> CATEGORY_CASSEROLES = modTag("category/casserole");
@@ -117,14 +121,17 @@ public class ExtraDelightTags {
 
 	// Butchercraft
 
+	public static final TagKey<Item> COW_CARCASS = butcherTag("cow_carcass");
+	public static final TagKey<Item> PIG_CARCASS = butcherTag("pig_carcass");
+	public static final TagKey<Item> SHEEP_CARCASS = butcherTag("sheep_carcass");
+	public static final TagKey<Item> CHICKEN_CARCASS = butcherTag("chicken_carcass");
+	public static final TagKey<Item> RABBIT_CARCASS = butcherTag("rabbit_carcass");
+	public static final TagKey<Item> GOAT_CARCASS = butcherTag("goat_carcass");
+
 	// Generic Meat
 	public static final TagKey<Item> MEAT = neoforgeItemTag("meat");
 	public static final TagKey<Item> MEAT_RAW = neoforgeItemTag("meat/raw");
 	public static final TagKey<Item> MEAT_COOKED = neoforgeItemTag("meat/cooked");
-
-	public static final TagKey<Item> SAUSAGE = neoforgeItemTag("sausage");
-	public static final TagKey<Item> SAUSAGE_RAW = neoforgeItemTag("sausage/raw");
-	public static final TagKey<Item> SAUSAGE_COOKED = neoforgeItemTag("sausage/cooked");
 
 	public static final TagKey<Item> SCRAP_MEAT = neoforgeItemTag("meat/scrap");
 	public static final TagKey<Item> SCRAP_MEAT_RAW = neoforgeItemTag("meat/scrap/raw");
@@ -157,8 +164,8 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> BEEF_RIBS = neoforgeItemTag("beef/ribs");
 	public static final TagKey<Item> CUBED_BEEF = neoforgeItemTag("beef/cubed");
 	public static final TagKey<Item> STEW_BEEF = neoforgeItemTag("beef/stew");
-	public static final TagKey<Item> OXTAIL = neoforgeItemTag("beef/oxtail");
 	public static final TagKey<Item> GROUND_BEEF = neoforgeItemTag("beef/ground");
+	public static final TagKey<Item> OXTAIL = neoforgeItemTag("beef/oxtail");
 
 	public static final TagKey<Item> BEEF_RAW = neoforgeItemTag("beef/raw");
 	public static final TagKey<Item> SCRAP_BEEF_RAW = neoforgeItemTag("beef/scrap/raw");
@@ -166,8 +173,8 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> BEEF_RIBS_RAW = neoforgeItemTag("beef/ribs/raw");
 	public static final TagKey<Item> CUBED_BEEF_RAW = neoforgeItemTag("beef/cubed/raw");
 	public static final TagKey<Item> STEW_BEEF_RAW = neoforgeItemTag("beef/stew/raw");
-	public static final TagKey<Item> OXTAIL_RAW = neoforgeItemTag("beef/oxtail/raw");
 	public static final TagKey<Item> GROUND_BEEF_RAW = neoforgeItemTag("beef/ground/raw");
+	public static final TagKey<Item> OXTAIL_RAW = neoforgeItemTag("beef/oxtail/raw");
 
 	public static final TagKey<Item> BEEF_COOKED = neoforgeItemTag("beef/cooked");
 	public static final TagKey<Item> SCRAP_BEEF_COOKED = neoforgeItemTag("beef/scrap/cooked");
@@ -175,8 +182,8 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> BEEF_RIBS_COOKED = neoforgeItemTag("beef/ribs/cooked");
 	public static final TagKey<Item> CUBED_BEEF_COOKED = neoforgeItemTag("beef/cubed/cooked");
 	public static final TagKey<Item> STEW_BEEF_COOKED = neoforgeItemTag("beef/stew/cooked");
-	public static final TagKey<Item> OXTAIL_COOKED = neoforgeItemTag("beef/oxtail/cooked");
 	public static final TagKey<Item> GROUND_BEEF_COOKED = neoforgeItemTag("beef/ground/cooked");
+	public static final TagKey<Item> OXTAIL_COOKED = neoforgeItemTag("beef/oxtail/cooked");
 
 	// Pork
 	public static final TagKey<Item> PORK = neoforgeItemTag("pork");
@@ -228,6 +235,90 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> STEW_MUTTON_COOKED = neoforgeItemTag("mutton/stew/cooked");
 	public static final TagKey<Item> GROUND_MUTTON_COOKED = neoforgeItemTag("mutton/ground/cooked");
 
+	// goat
+	public static final TagKey<Item> GOAT = neoforgeItemTag("goat");
+	public static final TagKey<Item> SCRAP_GOAT = neoforgeItemTag("goat/scrap");
+	public static final TagKey<Item> GOAT_ROAST = neoforgeItemTag("goat/roast");
+	public static final TagKey<Item> GOAT_RIBS = neoforgeItemTag("goat/ribs");
+	public static final TagKey<Item> CUBED_GOAT = neoforgeItemTag("goat/cubed");
+	public static final TagKey<Item> STEW_GOAT = neoforgeItemTag("goat/stew");
+	public static final TagKey<Item> GROUND_GOAT = neoforgeItemTag("goat/ground");
+
+	public static final TagKey<Item> GOAT_RAW = neoforgeItemTag("goat/raw");
+	public static final TagKey<Item> SCRAP_GOAT_RAW = neoforgeItemTag("goat/scrap/raw");
+	public static final TagKey<Item> GOAT_ROAST_RAW = neoforgeItemTag("goat/roast/raw");
+	public static final TagKey<Item> GOAT_RIBS_RAW = neoforgeItemTag("goat/ribs/raw");
+	public static final TagKey<Item> CUBED_GOAT_RAW = neoforgeItemTag("goat/cubed/raw");
+	public static final TagKey<Item> STEW_GOAT_RAW = neoforgeItemTag("goat/stew/raw");
+	public static final TagKey<Item> GROUND_GOAT_RAW = neoforgeItemTag("goat/ground/raw");
+
+	public static final TagKey<Item> GOAT_COOKED = neoforgeItemTag("goat/cooked");
+	public static final TagKey<Item> SCRAP_GOAT_COOKED = neoforgeItemTag("goat/scrap/cooked");
+	public static final TagKey<Item> GOAT_ROAST_COOKED = neoforgeItemTag("goat/roast/cooked");
+	public static final TagKey<Item> GOAT_RIBS_COOKED = neoforgeItemTag("goat/ribs/cooked");
+	public static final TagKey<Item> CUBED_GOAT_COOKED = neoforgeItemTag("goat/cubed/cooked");
+	public static final TagKey<Item> STEW_GOAT_COOKED = neoforgeItemTag("goat/stew/cooked");
+	public static final TagKey<Item> GROUND_GOAT_COOKED = neoforgeItemTag("goat/ground/cooked");
+
+	// Chicken
+	public static final TagKey<Item> CHICKEN = neoforgeItemTag("chicken");
+	public static final TagKey<Item> SCRAP_CHICKEN = neoforgeItemTag("chicken/scrap");
+	public static final TagKey<Item> CUBED_CHICKEN = neoforgeItemTag("chicken/cubed");
+	public static final TagKey<Item> STEW_CHICKEN = neoforgeItemTag("chicken/stew");
+	public static final TagKey<Item> CHICKEN_BREAST = neoforgeItemTag("chicken/breast");
+	public static final TagKey<Item> CHICKEN_THIGH = neoforgeItemTag("chicken/thigh");
+	public static final TagKey<Item> CHICKEN_LEG = neoforgeItemTag("chicken/leg");
+	public static final TagKey<Item> CHICKEN_WING = neoforgeItemTag("chicken/wing");
+	public static final TagKey<Item> GROUND_CHICKEN = neoforgeItemTag("chicken/ground");
+
+	public static final TagKey<Item> CHICKEN_RAW = neoforgeItemTag("chicken/raw");
+	public static final TagKey<Item> SCRAP_CHICKEN_RAW = neoforgeItemTag("chicken/scrap/raw");
+	public static final TagKey<Item> CUBED_CHICKEN_RAW = neoforgeItemTag("chicken/cubed/raw");
+	public static final TagKey<Item> STEW_CHICKEN_RAW = neoforgeItemTag("chicken/stew/raw");
+	public static final TagKey<Item> CHICKEN_BREAST_RAW = neoforgeItemTag("chicken/breast/raw");
+	public static final TagKey<Item> CHICKEN_THIGH_RAW = neoforgeItemTag("chicken/thigh/raw");
+	public static final TagKey<Item> CHICKEN_LEG_RAW = neoforgeItemTag("chicken/leg/raw");
+	public static final TagKey<Item> CHICKEN_WING_RAW = neoforgeItemTag("chicken/wing/raw");
+	public static final TagKey<Item> GROUND_CHICKEN_RAW = neoforgeItemTag("chicken/ground/raw");
+
+	public static final TagKey<Item> CHICKEN_COOKED = neoforgeItemTag("chicken/cooked");
+	public static final TagKey<Item> SCRAP_CHICKEN_COOKED = neoforgeItemTag("chicken/scrap/cooked");
+	public static final TagKey<Item> CUBED_CHICKEN_COOKED = neoforgeItemTag("chicken/cubed/cooked");
+	public static final TagKey<Item> STEW_CHICKEN_COOKED = neoforgeItemTag("chicken/stew/cooked");
+	public static final TagKey<Item> CHICKEN_BREAST_COOKED = neoforgeItemTag("chicken/breast/cooked");
+	public static final TagKey<Item> CHICKEN_THIGH_COOKED = neoforgeItemTag("chicken/thigh/cooked");
+	public static final TagKey<Item> CHICKEN_LEG_COOKED = neoforgeItemTag("chicken/leg/cooked");
+	public static final TagKey<Item> CHICKEN_WING_COOKED = neoforgeItemTag("chicken/wing/cooked");
+	public static final TagKey<Item> GROUND_CHICKEN_COOKED = neoforgeItemTag("chicken/ground/cooked");
+
+	// Chicken
+	public static final TagKey<Item> RABBIT = neoforgeItemTag("rabbit");
+	public static final TagKey<Item> SCRAP_RABBIT = neoforgeItemTag("rabbit/scrap");
+	public static final TagKey<Item> CUBED_RABBIT = neoforgeItemTag("rabbit/cubed");
+	public static final TagKey<Item> STEW_RABBIT = neoforgeItemTag("rabbit/stew");
+	public static final TagKey<Item> RABBIT_SADDLE = neoforgeItemTag("rabbit/saddle");
+	public static final TagKey<Item> RABBIT_THIGH = neoforgeItemTag("rabbit/thigh");
+	public static final TagKey<Item> RABBIT_LEG = neoforgeItemTag("rabbit/leg");
+	public static final TagKey<Item> GROUND_RABBIT = neoforgeItemTag("rabbit/ground");
+
+	public static final TagKey<Item> RABBIT_RAW = neoforgeItemTag("rabbit/raw");
+	public static final TagKey<Item> SCRAP_RABBIT_RAW = neoforgeItemTag("rabbit/scrap/raw");
+	public static final TagKey<Item> CUBED_RABBIT_RAW = neoforgeItemTag("rabbit/cubed/raw");
+	public static final TagKey<Item> STEW_RABBIT_RAW = neoforgeItemTag("rabbit/stew/raw");
+	public static final TagKey<Item> RABBIT_SADDLE_RAW = neoforgeItemTag("rabbit/saddle/raw");
+	public static final TagKey<Item> RABBIT_THIGH_RAW = neoforgeItemTag("rabbit/thigh/raw");
+	public static final TagKey<Item> RABBIT_LEG_RAW = neoforgeItemTag("rabbit/leg/raw");
+	public static final TagKey<Item> GROUND_RABBIT_RAW = neoforgeItemTag("rabbit/ground/raw");
+
+	public static final TagKey<Item> RABBIT_COOKED = neoforgeItemTag("rabbit/cooked");
+	public static final TagKey<Item> SCRAP_RABBIT_COOKED = neoforgeItemTag("rabbit/scrap/cooked");
+	public static final TagKey<Item> CUBED_RABBIT_COOKED = neoforgeItemTag("rabbit/cubed/cooked");
+	public static final TagKey<Item> STEW_RABBIT_COOKED = neoforgeItemTag("rabbit/stew/cooked");
+	public static final TagKey<Item> RABBIT_SADDLE_COOKED = neoforgeItemTag("rabbit/saddle/cooked");
+	public static final TagKey<Item> RABBIT_THIGH_COOKED = neoforgeItemTag("rabbit/thigh/cooked");
+	public static final TagKey<Item> RABBIT_LEG_COOKED = neoforgeItemTag("rabbit/leg/cooked");
+	public static final TagKey<Item> GROUND_RABBIT_COOKED = neoforgeItemTag("rabbit/ground/cooked");
+
 	// Guts
 	public static final TagKey<Item> OFFAL = neoforgeItemTag("offal");
 	public static final TagKey<Item> OFFAL_RAW = neoforgeItemTag("offal/raw");
@@ -265,7 +356,28 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> TONGUE_RAW = neoforgeItemTag("tongue/raw");
 	public static final TagKey<Item> TONGUE_COOKED = neoforgeItemTag("tongue/cooked");
 
+	public static final TagKey<Item> SAUSAGE = neoforgeItemTag("sausage");
+	public static final TagKey<Item> SAUSAGE_RAW = neoforgeItemTag("sausage/raw");
+	public static final TagKey<Item> SAUSAGE_COOKED = neoforgeItemTag("sausage/cooked");
+
+	public static final TagKey<Item> BLOOD_SAUSAGE = neoforgeItemTag("blood_sausage");
+	public static final TagKey<Item> BLOOD_SAUSAGE_RAW = neoforgeItemTag("blood_sausage/raw");
+	public static final TagKey<Item> BLOOD_SAUSAGE_COOKED = neoforgeItemTag("blood_sausage/cooked");
+
 	public static final TagKey<Item> GELATIN = neoforgeItemTag("gelatin");
+	public static final TagKey<Item> GELATIN_PROVIDER = butcherTag("gelatin_provider");
+
+	public static final TagKey<Item> HORN = neoforgeItemTag("horn");
+	public static final TagKey<Item> FAT = neoforgeItemTag("fat");
+	public static final TagKey<Item> LEATHER_SCRAP = neoforgeItemTag("leather_scrap");
+
+	public static final TagKey<Item> GRINDER_ATTACHMENT = butcherTag("grinder_attachment");
+	public static final TagKey<Item> SAUSAGE_CASING = butcherTag("sausage_casing");
+
+	public static final TagKey<Item> BUNNY_EARS = butcherTag("bunny_ears");
+	public static final TagKey<Item> BUNNY_TAILS = butcherTag("bunny_tails");
+	public static final TagKey<Item> TAXIDERMY = butcherTag("taxidermy");
+
 	public static final TagKey<Item> CHEESE = neoforgeItemTag("cheese");
 	public static final TagKey<Item> BUTTER = neoforgeItemTag("butter");
 
@@ -297,7 +409,7 @@ public class ExtraDelightTags {
 
 	public static final TagKey<Item> CANDY_BOWL_VALID = modTag("candy_bowl_valid");
 	public static final TagKey<Item> CHOCOLATE_BOX_VALID = modTag("chocolate_box_valid");
-	
+
 	public static final TagKey<Item> COOKIE_DOUGH = neoforgeItemTag("cookie_dough");
 	public static final TagKey<Item> GINGERBREAD_COOKIE_DOUGH = neoforgeItemTag("cookie_dough/gingerbread");
 	public static final TagKey<Item> SUGAR_COOKIE_DOUGH = neoforgeItemTag("cookie_dough/sugar");
@@ -343,6 +455,7 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> CINNAMON_STICK = neoforgeItemTag("cinnamon/stick");
 
 	public static final TagKey<Item> CHILI = neoforgeItemTag("crops/chili");
+	public static final TagKey<Item> PROCESSED_CHILI = neoforgeItemTag("processed/chili");
 	public static final TagKey<Item> DRIED_CHILI = neoforgeItemTag("crops/chili/dried");
 	public static final TagKey<Item> CHILI_SEEDS = neoforgeItemTag("seeds/chili");
 
@@ -445,4 +558,8 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> TOAST_OR_BREAD_SLICE = modTag("toast_or_bread_slice");
 
 	public static final TagKey<Item> CUSTARD = neoforgeItemTag("foods/custard");
+
+	public static final TagKey<Item> COCOA_POWDER = neoforgeItemTag("cocoa/powder");
+	public static final TagKey<Item> NUT_BUTTER_COOKIE_DOUGH = neoforgeItemTag("cookie_dough/nut_butter");
+	public static final TagKey<Item> CHOCOLATE_COOKIE_DOUGH = neoforgeItemTag("cookie_dough/chocolate");
 }

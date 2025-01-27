@@ -1,7 +1,7 @@
 {
   "parent": "extradelight:food",
   "criteria": {
-    "apple_cinnamon_cookie": {
+    "extradelight:apple_cookie": {
       "conditions": {
         "items": [
           {
@@ -11,7 +11,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "gingerbread_alex": {
+    "extradelight:gingerbread_alex": {
       "conditions": {
         "items": [
           {
@@ -21,7 +21,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "gingerbread_cookie": {
+    "extradelight:gingerbread_cookie": {
       "conditions": {
         "items": [
           {
@@ -31,7 +31,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "gingerbread_creeper": {
+    "extradelight:gingerbread_creeper": {
       "conditions": {
         "items": [
           {
@@ -41,7 +41,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "gingerbread_diamond": {
+    "extradelight:gingerbread_diamond": {
       "conditions": {
         "items": [
           {
@@ -51,7 +51,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "gingerbread_emerald": {
+    "extradelight:gingerbread_emerald": {
       "conditions": {
         "items": [
           {
@@ -61,7 +61,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "gingerbread_pickaxe": {
+    "extradelight:gingerbread_pickaxe": {
       "conditions": {
         "items": [
           {
@@ -71,7 +71,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "gingerbread_steve": {
+    "extradelight:gingerbread_steve": {
       "conditions": {
         "items": [
           {
@@ -81,7 +81,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "gingerbread_sword": {
+    "extradelight:gingerbread_sword": {
       "conditions": {
         "items": [
           {
@@ -91,7 +91,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "gingerbread_villager": {
+    "extradelight:gingerbread_villager": {
       "conditions": {
         "items": [
           {
@@ -101,7 +101,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "glow_berry_cookie": {
+    "extradelight:glow_berry_cookie": {
       "conditions": {
         "items": [
           {
@@ -111,7 +111,17 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "pumpkin_cookie": {
+    "extradelight:nut_butter_cookie": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extradelight:nut_butter_cookie"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight:pumpkin_cookie": {
       "conditions": {
         "items": [
           {
@@ -121,7 +131,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "sugar_cookie": {
+    "extradelight:sugar_cookie": {
       "conditions": {
         "items": [
           {
@@ -131,7 +141,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "sugar_cookie_alex": {
+    "extradelight:sugar_cookie_alex": {
       "conditions": {
         "items": [
           {
@@ -141,7 +151,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "sugar_cookie_creeper": {
+    "extradelight:sugar_cookie_creeper": {
       "conditions": {
         "items": [
           {
@@ -151,7 +161,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "sugar_cookie_diamond": {
+    "extradelight:sugar_cookie_diamond": {
       "conditions": {
         "items": [
           {
@@ -161,7 +171,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "sugar_cookie_emerald": {
+    "extradelight:sugar_cookie_emerald": {
       "conditions": {
         "items": [
           {
@@ -171,7 +181,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "sugar_cookie_pickaxe": {
+    "extradelight:sugar_cookie_pickaxe": {
       "conditions": {
         "items": [
           {
@@ -181,7 +191,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "sugar_cookie_steve": {
+    "extradelight:sugar_cookie_steve": {
       "conditions": {
         "items": [
           {
@@ -191,7 +201,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "sugar_cookie_sword": {
+    "extradelight:sugar_cookie_sword": {
       "conditions": {
         "items": [
           {
@@ -201,7 +211,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "sugar_cookie_villager": {
+    "extradelight:sugar_cookie_villager": {
       "conditions": {
         "items": [
           {
@@ -227,67 +237,70 @@
   },
   "requirements": [
     [
-      "pumpkin_cookie"
+      "extradelight:gingerbread_steve"
     ],
     [
-      "sugar_cookie"
+      "extradelight:sugar_cookie_alex"
     ],
     [
-      "glow_berry_cookie"
+      "extradelight:sugar_cookie_villager"
     ],
     [
-      "apple_cinnamon_cookie"
+      "extradelight:sugar_cookie_emerald"
     ],
     [
-      "gingerbread_cookie"
+      "extradelight:gingerbread_pickaxe"
     ],
     [
-      "gingerbread_steve"
+      "extradelight:glow_berry_cookie"
     ],
     [
-      "gingerbread_alex"
+      "extradelight:gingerbread_creeper"
     ],
     [
-      "gingerbread_villager"
+      "extradelight:sugar_cookie_sword"
     ],
     [
-      "gingerbread_creeper"
+      "extradelight:gingerbread_cookie"
     ],
     [
-      "gingerbread_sword"
+      "extradelight:sugar_cookie_diamond"
     ],
     [
-      "gingerbread_pickaxe"
+      "extradelight:sugar_cookie_pickaxe"
     ],
     [
-      "gingerbread_diamond"
+      "extradelight:gingerbread_sword"
     ],
     [
-      "gingerbread_emerald"
+      "extradelight:gingerbread_alex"
     ],
     [
-      "sugar_cookie_steve"
+      "extradelight:sugar_cookie_creeper"
     ],
     [
-      "sugar_cookie_alex"
+      "extradelight:apple_cookie"
     ],
     [
-      "sugar_cookie_villager"
+      "extradelight:gingerbread_villager"
     ],
     [
-      "sugar_cookie_creeper"
+      "extradelight:sugar_cookie"
     ],
     [
-      "sugar_cookie_sword"
+      "extradelight:sugar_cookie_steve"
     ],
     [
-      "sugar_cookie_pickaxe"
+      "extradelight:gingerbread_diamond"
     ],
     [
-      "sugar_cookie_diamond"
+      "extradelight:gingerbread_emerald"
     ],
     [
-      "sugar_cookie_emerald"
+      "extradelight:pumpkin_cookie"
+    ],
+    [
+      "extradelight:nut_butter_cookie"
     ]
   ],
   "sends_telemetry_event": true
