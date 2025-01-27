@@ -69,6 +69,7 @@ public class EnglishLoc extends LanguageProvider {
 		this.add("farmersdelight.tooltip.apple_milkshake", "Instant Health");
 		this.add("farmersdelight.tooltip.cookie_dough_milkshake", "Instant Health");
 		this.add("farmersdelight.tooltip.mint_chip_milkshake", "Instant Health");
+		this.add("farmersdelight.tooltip.nut_butter_milkshake", "Instant Health");
 
 		this.add("tooltip.dynamic.ingredients", "Ingredients");
 
