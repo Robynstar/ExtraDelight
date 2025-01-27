@@ -1,6 +1,7 @@
 package com.lance5057.extradelight.data;
 
 import com.lance5057.extradelight.ExtraDelight;
+import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.TranslatableKeys;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
@@ -1243,6 +1244,15 @@ public class EnglishLoc extends LanguageProvider {
 		this.add(ExtraDelightItems.CORN_SACK.get(), "Corn Sack");
 		this.add(ExtraDelightItems.NUT_BUTTER_COOKIE_BLOCK.get(), "Nut Butter Cookie Block");
 		this.add(ExtraDelightItems.PAMONHA.get(), "Pamonha");
+
+		this.add(ExtraDelightBlocks.CHILI_CROP.get(), "Chili");
+		this.add(ExtraDelightBlocks.COFFEE_BUSH.get(), "Coffee Bush");
+		this.add(ExtraDelightBlocks.CORN_BOTTOM.get(), "Corn");
+		this.add(ExtraDelightBlocks.CORN_TOP.get(), "Corn");
+		this.add(ExtraDelightBlocks.GINGER_CROP.get(), "Ginger");
+		this.add(ExtraDelightBlocks.MALLOW_ROOT_CROP.get(), "Mallow");
+		this.add(ExtraDelightBlocks.MINT_CROP.get(), "Mint");
+		this.add(ExtraDelightBlocks.PEANUT_CROP.get(), "Peanuts");
 
 //		this.add(ExtraDelightItems.DYNAMIC_TEST2.get(), "Sandwich");
 

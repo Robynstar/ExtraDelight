@@ -210,6 +210,10 @@ public class EDBlockTags extends BlockTagsProvider {
 
 		tag(ExtraDelightTags.COLD_SOURCES).add(Blocks.ICE, Blocks.BLUE_ICE, Blocks.FROSTED_ICE, Blocks.PACKED_ICE,
 					Blocks.SNOW_BLOCK, Blocks.POWDER_SNOW_CAULDRON);
+
+		tag(BlockTags.BEE_GROWABLES).add(ExtraDelightBlocks.CHILI_CROP.get(), ExtraDelightBlocks.CORN_BOTTOM.get(),
+				ExtraDelightBlocks.CORN_TOP.get(), ExtraDelightBlocks.GINGER_CROP.get(),
+				ExtraDelightBlocks.MALLOW_ROOT_CROP.get(), ExtraDelightBlocks.PEANUT_CROP.get());
 		}
 
 	protected void makeMineableWithAxe(DeferredBlock<Block> blockDeferredBlock) {
