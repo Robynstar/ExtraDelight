@@ -42,7 +42,6 @@ import com.lance5057.extradelight.workstations.oven.OvenBlock;
 import com.lance5057.extradelight.worldgen.features.trees.ExtraDelightTreeGrowers;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Items;

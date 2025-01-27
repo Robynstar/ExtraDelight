@@ -11,15 +11,13 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
-import net.minecraft.util.ExtraCodecs;
 import net.minecraft.world.item.Item.TooltipContext;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.TooltipProvider;
 
 public record ChillComponent(int time) implements TooltipProvider {
 	public static final Codec<ChillComponent> CODEC = RecordCodecBuilder.create(p_337946_ -> p_337946_
-			.group(ExtraCodecs.UNSIGNED_BYTE.fieldOf("flight_duration").forGetter(ChillComponent::time))
-			.apply(p_337946_, ChillComponent::new));
+			.group(Codec.INT.fieldOf("chill").forGetter(ChillComponent::time)).apply(p_337946_, ChillComponent::new));
 
 	public static final StreamCodec<ByteBuf, ChillComponent> UNIT_STREAM_CODEC = StreamCodec
 			.unit(new ChillComponent(0));

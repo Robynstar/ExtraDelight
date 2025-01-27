@@ -1,7 +1,7 @@
 {
   "type": "extradelight:feast",
   "container": {
-    "item": "minecraft:paper"
+    "item": "minecraft:bowl"
   },
   "out": {
     "id": "extradelight:white_chili_feast"

@@ -2,6 +2,7 @@
   "parent": "extradelight:block/wreath",
   "render_type": "minecraft:cutout",
   "textures": {
-    "all": "extradelight:block/crops/fruit/apple/apple_leaves"
+    "all": "extradelight:block/crops/fruit/apple/apple_leaves",
+    "particle": "extradelight:block/crops/fruit/apple/apple_leaves"
   }
 }

@@ -32,6 +32,8 @@ public class EDFoods {
 	public static final Supplier<MobEffectInstance> FIRE_RESISTANCE_BRIEF = () -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE,FoodValues.BRIEF_DURATION,0);
 	public static final Supplier<MobEffectInstance> FIRE_RESISTANCE_MEDIUM = () -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE,FoodValues.MEDIUM_DURATION,0);
 	public static final Supplier<MobEffectInstance> SPEED_MEDIUM = () -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED,FoodValues.MEDIUM_DURATION,0);
+	public static final Supplier<MobEffectInstance> FIRE_RESISTANCE_SHORT = () -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE,FoodValues.SHORT_DURATION,0);
+	public static final Supplier<MobEffectInstance> FIRE_RESISTANCE_LONG = () -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE,FoodValues.LONG_DURATION,0);
 
 	public static final FoodProperties NOTFOOD = new FoodProperties.Builder().nutrition(0).saturationModifier(0f).alwaysEdible().build();
 	public static final FoodProperties BADFOOD = new FoodProperties.Builder().nutrition(2).saturationModifier(1f).effect(ROT, 1F).usingConvertsTo(Items.BOWL).build();
@@ -253,4 +255,25 @@ public class EDFoods {
 	public static final FoodProperties CANDY_BAR_SALAD = new FoodProperties.Builder().nutrition(8).saturationModifier(0.31f).effect(COMFORT_MEDIUM, 1F).usingConvertsTo(Items.BOWL).build();
 	public static final FoodProperties MARSHMALLOW_FLUFF = new FoodProperties.Builder().nutrition(2).saturationModifier(0.12f).usingConvertsTo(Items.GLASS_BOTTLE).build();
 	public static final FoodProperties NUT_BUTTER = new FoodProperties.Builder().nutrition(3).saturationModifier(0.6f).usingConvertsTo(Items.GLASS_BOTTLE).build();
+	public static final FoodProperties JALAPENO_STUFFED_POTATO = new FoodProperties.Builder().nutrition(13).saturationModifier(0.65f).effect(COMFORT_MEDIUM, 1F).effect(FIRE_RESISTANCE_MEDIUM, 0F).build();
+	public static final FoodProperties JALAPENO_POPPER = new FoodProperties.Builder().nutrition(6).saturationModifier(0.23f).effect(FIRE_RESISTANCE_SHORT, 1F).build();
+	public static final FoodProperties CHILI_CHEESE_CORNBREAD_MUFFIN = new FoodProperties.Builder().nutrition(3).saturationModifier(0.12f).effect(FIRE_RESISTANCE_SHORT, 1F).effect(NOURISHMENT_BRIEF, 0F).build();
+	public static final FoodProperties CHILI_CON_CARNE = new FoodProperties.Builder().nutrition(6).saturationModifier(0.13f).effect(NOURISHMENT_MEDIUM, 1F).effect(FIRE_RESISTANCE_LONG, 0F).usingConvertsTo(Items.BOWL).build();
+	public static final FoodProperties WHITE_CHILI = new FoodProperties.Builder().nutrition(5).saturationModifier(0.12f).effect(NOURISHMENT_LONG, 1F).effect(FIRE_RESISTANCE_MEDIUM, 0F).usingConvertsTo(Items.BOWL).build();
+	public static final FoodProperties MISSISSIPPI_MUD_PIE = new FoodProperties.Builder().nutrition(4).saturationModifier(0.08f).effect(COMFORT_BRIEF, 1F).build();
+	public static final FoodProperties HAZELNUT_SOUP = new FoodProperties.Builder().nutrition(7).saturationModifier(0.21f).effect(NOURISHMENT_MEDIUM, 1F).effect(COMFORT_MEDIUM, 0F).usingConvertsTo(Items.BOWL).build();
+	public static final FoodProperties GRASSHOPPER_PIE = new FoodProperties.Builder().nutrition(1).saturationModifier(0.03f).effect(COMFORT_BRIEF, 1F).build();
+	public static final FoodProperties MARSHMALLOW_SLICE = new FoodProperties.Builder().nutrition(1).saturationModifier(0.02f).effect(COMFORT_BRIEF, 1F).build();
+	public static final FoodProperties ROCKY_ROAD = new FoodProperties.Builder().nutrition(3).saturationModifier(0.08f).build();
+	public static final FoodProperties AFFOGATO = new FoodProperties.Builder().nutrition(6).saturationModifier(0.2f).usingConvertsTo(Items.GLASS_BOTTLE).build();
+	public static final FoodProperties POTATO_SALAD = new FoodProperties.Builder().nutrition(3).saturationModifier(0.13f).effect(NOURISHMENT_BRIEF, 1F).usingConvertsTo(Items.BOWL).build();
+	public static final FoodProperties FRENCH_ONION_SOUP = new FoodProperties.Builder().nutrition(7).saturationModifier(0.16f).effect(NOURISHMENT_MEDIUM, 1F).effect(COMFORT_MEDIUM, 0F).usingConvertsTo(Items.BOWL).build();
+	public static final FoodProperties BACON_EGG_PIE = new FoodProperties.Builder().nutrition(4).saturationModifier(0.08f).effect(NOURISHMENT_MEDIUM, 1F).effect(COMFORT_BRIEF, 0F).build();
+	public static final FoodProperties ONION_BHAJI = new FoodProperties.Builder().nutrition(3).saturationModifier(0.15f).build();
+	public static final FoodProperties FAT_POTATO = new FoodProperties.Builder().nutrition(7).saturationModifier(0.17f).effect(COMFORT_BRIEF, 1F).usingConvertsTo(Items.BOWL).build();
+	public static final FoodProperties CINNAMON_TOAST = new FoodProperties.Builder().nutrition(5).saturationModifier(0.12f).effect(COMFORT_BRIEF, 1F).build();
+	public static final FoodProperties PANFORTE = new FoodProperties.Builder().nutrition(5).saturationModifier(0.07f).effect(COMFORT_BRIEF, 1F).build();
+	public static final FoodProperties CURRYWURST = new FoodProperties.Builder().nutrition(8).saturationModifier(0.18f).build();
+	public static final FoodProperties BORSCHT = new FoodProperties.Builder().nutrition(5).saturationModifier(0.13f).effect(COMFORT_MEDIUM, 1F).effect(NOURISHMENT_MEDIUM, 0F).usingConvertsTo(Items.BOWL).build();
+	public static final FoodProperties PAMONHA = new FoodProperties.Builder().nutrition(3).saturationModifier(0.08f).effect(NOURISHMENT_BRIEF, 1F).build();
 }
