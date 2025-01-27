@@ -2,6 +2,7 @@ package com.lance5057.extradelight.data;
 
 import java.util.concurrent.CompletableFuture;
 
+import net.minecraft.tags.BlockTags;
 import org.jetbrains.annotations.Nullable;
 
 import com.lance5057.extradelight.ExtraDelightItems;
@@ -507,5 +508,19 @@ public class EDItemTags extends ItemTagsProvider {
 				ExtraDelightItems.PUMPKIN_CUSTARD.get(), ExtraDelightItems.SWEET_BERRY_CUSTARD.get());
 
 		tag(ExtraDelightTags.COCOA_POWDER).add(ExtraDelightItems.COCOA_POWDER.get());
+
+		tag(ItemTags.CAMEL_FOOD).add(ExtraDelightItems.CACTUS.get());
+		tag(ItemTags.CHICKEN_FOOD).add(ExtraDelightItems.CORN_SEEDS.get(), ExtraDelightItems.CHILI_SEEDS.get(),
+				ExtraDelightItems.HAZELNUTS.get(), ExtraDelightItems.PEANUTS.get(),
+				ExtraDelightItems.SUNFLOWER_SEEDS.get());
+		tag(ItemTags.COW_FOOD).add(ExtraDelightItems.CORN_HUSK.get(), ExtraDelightItems.DRIED_CORN_HUSK.get());
+		tag(ItemTags.FROG_FOOD).add(ExtraDelightItems.AGAR_AGAR.get());
+		tag(ItemTags.LLAMA_FOOD).add(ExtraDelightItems.CORN_HUSK_BUNDLE.get(), ExtraDelightItems.DRIED_CORN_HUSK_BUNDLE.get());
+		tag(ItemTags.PARROT_FOOD).add(ExtraDelightItems.CORN_SEEDS.get(), ExtraDelightItems.CHILI_SEEDS.get(),
+				ExtraDelightItems.HAZELNUTS.get(), ExtraDelightItems.PEANUTS.get(),
+				ExtraDelightItems.SUNFLOWER_SEEDS.get());
+		tag(ItemTags.PIG_FOOD).add(ExtraDelightItems.CORN_COB.get(), ExtraDelightItems.GINGER.get(),
+				ExtraDelightItems.MALLOW_ROOT.get());
+		tag(ItemTags.SHEEP_FOOD).add(ExtraDelightItems.CORN_HUSK.get(), ExtraDelightItems.DRIED_CORN_HUSK.get());
 	}
 }
