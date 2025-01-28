@@ -547,6 +547,28 @@ public class BlockLootTables extends BlockLootSubProvider {
 										.addUniformBonusCount(this.registries.holderOrThrow(Enchantments.FORTUNE))))));
 	}
 
+	protected void createFruitBushDrop(Block bush, Item fruit) {
+		this.add(bush,
+				p_249159_ -> this.applyExplosionDecay(p_249159_, LootTable.lootTable().withPool(LootPool.lootPool()
+								.when(LootItemBlockStatePropertyCondition
+										.hasBlockStateProperties(bush).setProperties(
+												StatePropertiesPredicate.Builder.properties()
+														.hasProperty(BushStageFour.AGE, 3)))
+								.add(LootItem.lootTableItem(fruit))
+								.apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F)))
+								.apply(ApplyBonusCount
+										.addUniformBonusCount(this.registries.holderOrThrow(Enchantments.FORTUNE))))
+						.withPool(LootPool.lootPool()
+								.when(LootItemBlockStatePropertyCondition
+										.hasBlockStateProperties(bush)
+										.setProperties(StatePropertiesPredicate.Builder.properties()
+												.hasProperty(BushStageFour.AGE, 2)))
+								.add(LootItem.lootTableItem(fruit))
+								.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
+								.apply(ApplyBonusCount
+										.addUniformBonusCount(this.registries.holderOrThrow(Enchantments.FORTUNE))))));
+	}
+
 	protected void createFruitLeavesDrop(Block leaves, Block sapling, Item fruit) {
 		this.add(leaves, (p_124101_) -> {
 			return createLeavesDrops(p_124101_, sapling, NORMAL_LEAVES_SAPLING_CHANCES)
