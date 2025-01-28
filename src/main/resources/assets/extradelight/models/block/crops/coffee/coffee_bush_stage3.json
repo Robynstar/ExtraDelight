@@ -3,9 +3,9 @@
 	"parent": "block/block",
 	"render_type": "cutout",
 	"textures": {
-		"0": "extradelight:block/crops/coffee/grown_coffee_plant",
+		"0": "extradelight:block/crops/coffee/grown_coffee_bush",
 		"1": "block/acacia_log",
-		"particle": "extradelight:block/crops/coffee/grown_coffee_plant"
+		"particle": "extradelight:block/crops/coffee/grown_coffee_bush"
 	},
 	"elements": [
 		{
