@@ -15,7 +15,7 @@ import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.blocks.FruitLeafBlock;
 import com.lance5057.extradelight.blocks.HorizontalPanBlock;
 import com.lance5057.extradelight.blocks.crops.ChiliCrop;
-import com.lance5057.extradelight.blocks.crops.CoffeeBush;
+import com.lance5057.extradelight.blocks.crops.BushStageFour;
 import com.lance5057.extradelight.blocks.crops.GingerCrop;
 import com.lance5057.extradelight.blocks.crops.MallowRootCrop;
 import com.lance5057.extradelight.blocks.crops.PeanutCrop;
@@ -305,24 +305,7 @@ public class BlockLootTables extends BlockLootSubProvider {
 
 		this.dropSelf(ExtraDelightBlocks.TAP.get());
 
-		this.add(ExtraDelightBlocks.COFFEE_BUSH.get(),
-				p_249159_ -> this.applyExplosionDecay(p_249159_, LootTable.lootTable().withPool(LootPool.lootPool()
-						.when(LootItemBlockStatePropertyCondition
-								.hasBlockStateProperties(ExtraDelightBlocks.COFFEE_BUSH.get()).setProperties(
-										StatePropertiesPredicate.Builder.properties().hasProperty(CoffeeBush.AGE, 3)))
-						.add(LootItem.lootTableItem(ExtraDelightItems.COFFEE_CHERRIES.get()))
-						.apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F)))
-						.apply(ApplyBonusCount
-								.addUniformBonusCount(this.registries.holderOrThrow(Enchantments.FORTUNE))))
-						.withPool(LootPool.lootPool()
-								.when(LootItemBlockStatePropertyCondition
-										.hasBlockStateProperties(ExtraDelightBlocks.COFFEE_BUSH.get())
-										.setProperties(StatePropertiesPredicate.Builder.properties()
-												.hasProperty(CoffeeBush.AGE, 2)))
-								.add(LootItem.lootTableItem(ExtraDelightItems.COFFEE_CHERRIES.get()))
-								.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
-								.apply(ApplyBonusCount
-										.addUniformBonusCount(this.registries.holderOrThrow(Enchantments.FORTUNE))))));
+		this.createFruitBushDrop(ExtraDelightBlocks.COFFEE_BUSH.get(), ExtraDelightItems.COFFEE_CHERRIES.get());
 
 		LootItemCondition.Builder peanut = LootItemBlockStatePropertyCondition
 				.hasBlockStateProperties(ExtraDelightBlocks.PEANUT_CROP.get())
@@ -515,6 +498,28 @@ public class BlockLootTables extends BlockLootSubProvider {
 
 		this.dropOther(ExtraDelightBlocks.BACON_EGG_PIE.get(), Items.AIR);
 		this.dropOther(ExtraDelightBlocks.PANFORTE.get(), Items.AIR);
+	}
+
+	protected void createFruitBushDrop(Block bush, Item fruit) {
+		this.add(bush,
+				p_249159_ -> this.applyExplosionDecay(p_249159_, LootTable.lootTable().withPool(LootPool.lootPool()
+								.when(LootItemBlockStatePropertyCondition
+										.hasBlockStateProperties(bush).setProperties(
+												StatePropertiesPredicate.Builder.properties()
+														.hasProperty(BushStageFour.AGE, 3)))
+								.add(LootItem.lootTableItem(fruit))
+								.apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F)))
+								.apply(ApplyBonusCount
+										.addUniformBonusCount(this.registries.holderOrThrow(Enchantments.FORTUNE))))
+						.withPool(LootPool.lootPool()
+								.when(LootItemBlockStatePropertyCondition
+										.hasBlockStateProperties(bush)
+										.setProperties(StatePropertiesPredicate.Builder.properties()
+												.hasProperty(BushStageFour.AGE, 2)))
+								.add(LootItem.lootTableItem(fruit))
+								.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
+								.apply(ApplyBonusCount
+										.addUniformBonusCount(this.registries.holderOrThrow(Enchantments.FORTUNE))))));
 	}
 
 	protected void createFruitLeavesDrop(Block leaves, Block sapling, Item fruit) {

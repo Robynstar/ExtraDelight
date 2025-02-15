@@ -12,13 +12,16 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.WorldGenLevel;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 
-public class WildChiliFeature extends Feature<WildConfig> {
+public class WildCropFeature extends Feature<WildConfig> {
+	private final Block crop;
 
-	public WildChiliFeature() {
+	public WildCropFeature(Block crop) {
 		super(WildConfig.CODEC);
+		this.crop = crop;
 	}
 
 	@Override
@@ -39,7 +42,7 @@ public class WildChiliFeature extends Feature<WildConfig> {
 					randomsource.nextInt(k) - randomsource.nextInt(k),
 					randomsource.nextInt(j) - randomsource.nextInt(j));
 			if ((worldgenlevel.isEmptyBlock(pos) || worldgenlevel.getBlockState(pos).is(BlockTags.SNOW))
-					&& ExtraDelightBlocks.WILD_CHILI.get().defaultBlockState().canSurvive(worldgenlevel, pos)) {
+					&& crop.defaultBlockState().canSurvive(worldgenlevel, pos)) {
 				spawn(worldgenlevel, randomsource, pos);
 				++generated;
 			}
@@ -55,7 +58,7 @@ public class WildChiliFeature extends Feature<WildConfig> {
 	}
 
 	private void spawn(LevelAccessor worldIn, RandomSource rand, BlockPos generatingPos) {
-		worldIn.setBlock(generatingPos, ExtraDelightBlocks.WILD_CHILI.get().defaultBlockState(), 2);
+		worldIn.setBlock(generatingPos, crop.defaultBlockState(), 2);
 	}
 
 }

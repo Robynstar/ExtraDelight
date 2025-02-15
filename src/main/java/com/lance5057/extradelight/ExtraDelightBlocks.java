@@ -15,12 +15,7 @@ import com.lance5057.extradelight.blocks.TapBlock;
 import com.lance5057.extradelight.blocks.VanillaFruitLeafBlock;
 import com.lance5057.extradelight.blocks.YeastPotBlock;
 import com.lance5057.extradelight.blocks.chocolatebox.ChocolateBoxBlock;
-import com.lance5057.extradelight.blocks.crops.ChiliCrop;
-import com.lance5057.extradelight.blocks.crops.CoffeeBush;
-import com.lance5057.extradelight.blocks.crops.GingerCrop;
-import com.lance5057.extradelight.blocks.crops.MallowRootCrop;
-import com.lance5057.extradelight.blocks.crops.MintCrop;
-import com.lance5057.extradelight.blocks.crops.PeanutCrop;
+import com.lance5057.extradelight.blocks.crops.*;
 import com.lance5057.extradelight.blocks.crops.corn.CornBottom;
 import com.lance5057.extradelight.blocks.crops.corn.CornTop;
 import com.lance5057.extradelight.blocks.fluids.GlowBerryFluidBlock;
@@ -639,8 +634,11 @@ public class ExtraDelightBlocks {
 			() -> new HorizontalPanBlock(Block.Properties.ofFullCopy(Blocks.IRON_BLOCK),
 					Block.box(1.0D, 0.0D, 0.0D, 15.0D, 2.0D, 16.0D), Block.box(0.0D, 0.0D, 1.0D, 16.0D, 2.0D, 15.0D)));
 
-	public static final DeferredBlock<CoffeeBush> COFFEE_BUSH = ExtraDelightBlocks.BLOCKS.register("coffee_bush",
-			() -> new CoffeeBush(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).randomTicks().noCollission()
+	public static final DeferredBlock<BushStageFour> COFFEE_BUSH = ExtraDelightBlocks.BLOCKS.register("coffee_bush",
+			() -> new BushStageFour(Block.box(3.0, 0.0, 3.0, 13.0, 8.0, 13.0),
+					Block.box(1.0, 0.0, 1.0, 15.0, 16.0, 15.0),
+					ExtraDelightItems.COFFEE_CHERRIES,
+					BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).randomTicks().noCollission()
 					.sound(SoundType.SWEET_BERRY_BUSH).pushReaction(PushReaction.DESTROY)));
 
 	public static final DeferredBlock<PeanutCrop> PEANUT_CROP = ExtraDelightBlocks.BLOCKS.register("peanut_crop",
