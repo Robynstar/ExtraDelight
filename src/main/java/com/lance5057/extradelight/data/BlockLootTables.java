@@ -14,7 +14,6 @@ import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.blocks.FruitLeafBlock;
 import com.lance5057.extradelight.blocks.HorizontalPanBlock;
-import com.lance5057.extradelight.blocks.RecipeFeastBlock;
 import com.lance5057.extradelight.blocks.crops.ChiliCrop;
 import com.lance5057.extradelight.blocks.crops.CoffeeBush;
 import com.lance5057.extradelight.blocks.crops.GingerCrop;
@@ -32,9 +31,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CropBlock;
-import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
@@ -48,8 +45,6 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemCondition.Build
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.neoforged.neoforge.registries.DeferredBlock;
-import vectorwing.farmersdelight.common.block.PieBlock;
-import vectorwing.farmersdelight.common.registry.ModBlocks;
 import vectorwing.farmersdelight.common.registry.ModItems;
 
 public class BlockLootTables extends BlockLootSubProvider {
@@ -347,28 +342,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 				.hasBlockStateProperties(ExtraDelightBlocks.MALLOW_ROOT_CROP.get())
 				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(MallowRootCrop.AGE, 7));
 
-		this.add(ExtraDelightBlocks.MALLOW_ROOT_CROP.get(),
-				p_249159_ -> this.applyExplosionDecay(p_249159_,
-						LootTable.lootTable()
-								.withPool(LootPool.lootPool()
-										.when(LootItemBlockStatePropertyCondition
-												.hasBlockStateProperties(ExtraDelightBlocks.MALLOW_ROOT_CROP.get())
-												.setProperties(StatePropertiesPredicate.Builder.properties()
-														.hasProperty(MallowRootCrop.AGE, 7)))
-										.add(LootItem.lootTableItem(ExtraDelightItems.MALLOW_ROOT.get()))
-										.apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F)))
-										.apply(ApplyBonusCount.addUniformBonusCount(
-												this.registries.holderOrThrow(Enchantments.FORTUNE))))
-								.withPool(LootPool
-										.lootPool()
-										.when(LootItemBlockStatePropertyCondition
-												.hasBlockStateProperties(ExtraDelightBlocks.MALLOW_ROOT_CROP.get())
-												.setProperties(StatePropertiesPredicate.Builder.properties()
-														.hasProperty(MallowRootCrop.AGE, 6)))
-										.add(LootItem.lootTableItem(ExtraDelightItems.MALLOW_ROOT.get()))
-										.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
-										.apply(ApplyBonusCount.addUniformBonusCount(
-												this.registries.holderOrThrow(Enchantments.FORTUNE))))));
+		crop(ExtraDelightBlocks.MALLOW_ROOT_CROP.get(), ExtraDelightItems.MALLOW_ROOT.get(),
+				ExtraDelightItems.MALLOW_ROOT.get(), mallow);
 		this.dropOther(ExtraDelightBlocks.WILD_MALLOW_ROOT.get(), ExtraDelightItems.MALLOW_ROOT.get());
 
 		this.dropSelf(ExtraDelightBlocks.KEG.get());
