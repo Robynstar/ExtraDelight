@@ -4,9 +4,9 @@
 	"render_type": "cutout",
 	"textures": {
 		"3": "extradelight:block/bruschetta",
+		"particle": "extradelight:block/bruschetta",
 		"tray_top": "farmersdelight:block/tray_top",
-		"tray_bottom": "farmersdelight:block/tray_bottom",
-		"particle": "extradelight:block/bruschetta"
+		"tray_bottom": "farmersdelight:block/tray_bottom"
 	},
 	"elements": [
 		{
@@ -75,9 +75,9 @@
 			}
 		},
 		{
-			"from": [3, 4, 2.6],
-			"to": [6, 4, 5.6],
-			"rotation": {"angle": 22.5, "axis": "y", "origin": [3.5, 4.5, 4.1]},
+			"from": [3, 4.1, 2.6],
+			"to": [6, 4.1, 5.6],
+			"rotation": {"angle": 22.5, "axis": "y", "origin": [3.5, 4.6, 4.1]},
 			"faces": {
 				"up": {"uv": [13, 9, 16, 12], "rotation": 90, "texture": "#3"},
 				"down": {"uv": [13, 9, 16, 12], "rotation": 270, "texture": "#3"}
