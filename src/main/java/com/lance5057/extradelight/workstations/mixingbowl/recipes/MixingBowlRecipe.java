@@ -3,7 +3,6 @@ package com.lance5057.extradelight.workstations.mixingbowl.recipes;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
-import com.lance5057.extradelight.ExtraDelightRecipes;
 import it.unimi.dsi.fastutil.ints.IntList;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
@@ -17,6 +16,8 @@ import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.common.util.RecipeMatcher;
+
+import com.lance5057.extradelight.ExtraDelightRecipes;
 
 public class MixingBowlRecipe implements Recipe<SimpleContainer> {
     protected final int stirs;

@@ -1,8 +1,12 @@
 package com.lance5057.extradelight.data.recipebuilders;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.function.Consumer;
+
+import javax.annotation.Nullable;
+
 import com.google.gson.JsonObject;
-import com.lance5057.extradelight.ExtraDelightRecipes;
-import com.lance5057.extradelight.recipe.FeastRecipe;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementRewards;
 import net.minecraft.advancements.CriterionTriggerInstance;
@@ -18,10 +22,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 
-import javax.annotation.Nullable;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.function.Consumer;
+import com.lance5057.extradelight.ExtraDelightRecipes;
+import com.lance5057.extradelight.recipe.FeastRecipe;
 
 public class FeastRecipeBuilder implements RecipeBuilder {
     private final ItemStack result;

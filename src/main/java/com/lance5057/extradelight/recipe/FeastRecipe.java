@@ -1,8 +1,9 @@
 package com.lance5057.extradelight.recipe;
 
+import java.util.Optional;
+
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.lance5057.extradelight.ExtraDelightRecipes;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
@@ -16,7 +17,7 @@ import net.minecraft.world.item.crafting.SingleItemRecipe;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import java.util.Optional;
+import com.lance5057.extradelight.ExtraDelightRecipes;
 
 public class FeastRecipe extends SingleItemRecipe {
 

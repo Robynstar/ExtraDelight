@@ -1,7 +1,6 @@
 package com.lance5057.extradelight.recipe;
 
 import com.google.gson.JsonObject;
-import com.lance5057.extradelight.ExtraDelightRecipes;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
@@ -15,6 +14,8 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+
+import com.lance5057.extradelight.ExtraDelightRecipes;
 
 public class ToolOnBlockRecipe implements Recipe<Container> {
 

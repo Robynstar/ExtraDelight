@@ -1,8 +1,12 @@
 package com.lance5057.extradelight.data.recipebuilders;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.function.Consumer;
+
+import javax.annotation.Nullable;
+
 import com.google.gson.JsonObject;
-import com.lance5057.extradelight.ExtraDelightRecipes;
-import com.lance5057.extradelight.recipe.ToolOnBlockRecipe;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementRewards;
 import net.minecraft.advancements.CriterionTriggerInstance;
@@ -17,10 +21,8 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import javax.annotation.Nullable;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.function.Consumer;
+import com.lance5057.extradelight.ExtraDelightRecipes;
+import com.lance5057.extradelight.recipe.ToolOnBlockRecipe;
 
 public class ToolOnBlockBuilder implements RecipeBuilder {
     private final BlockItem in;

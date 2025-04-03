@@ -1,12 +1,12 @@
 package com.lance5057.extradelight.workstations.oven.recipes;
 
+import java.util.EnumSet;
+
+import javax.annotation.Nullable;
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
-import com.lance5057.extradelight.ExtraDelight;
-import com.lance5057.extradelight.ExtraDelightItems;
-import com.lance5057.extradelight.ExtraDelightRecipes;
-import com.lance5057.extradelight.workstations.oven.recipetab.OvenRecipeBookTab;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.FriendlyByteBuf;
@@ -22,8 +22,10 @@ import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.common.util.RecipeMatcher;
 import net.minecraftforge.items.wrapper.RecipeWrapper;
 
-import javax.annotation.Nullable;
-import java.util.EnumSet;
+import com.lance5057.extradelight.ExtraDelight;
+import com.lance5057.extradelight.ExtraDelightItems;
+import com.lance5057.extradelight.ExtraDelightRecipes;
+import com.lance5057.extradelight.workstations.oven.recipetab.OvenRecipeBookTab;
 
 public class OvenRecipe implements Recipe<RecipeWrapper> {
     public static final int INPUT_SLOTS = 9;

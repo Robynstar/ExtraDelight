@@ -2,30 +2,23 @@ package com.lance5057.extradelight.data.advancement;
 
 import java.util.function.Consumer;
 
-import com.lance5057.extradelight.ExtraDelight;
-import com.lance5057.extradelight.ExtraDelightBlocks;
-import com.lance5057.extradelight.ExtraDelightItems;
-import com.lance5057.extradelight.ExtraDelightTags;
-
 import net.minecraft.advancements.Advancement;
-import net.minecraft.advancements.Advancement;
-import net.minecraft.advancements.FrameType;
 import net.minecraft.advancements.FrameType;
 import net.minecraft.advancements.RequirementsStrategy;
-import net.minecraft.advancements.critereon.BlockPredicate;
-import net.minecraft.advancements.critereon.ConsumeItemTrigger;
-import net.minecraft.advancements.critereon.InventoryChangeTrigger;
-import net.minecraft.advancements.critereon.ItemPredicate;
-import net.minecraft.advancements.critereon.ItemUsedOnLocationTrigger;
-import net.minecraft.advancements.critereon.LocationPredicate;
+import net.minecraft.advancements.critereon.*;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
-import net.minecraftforge.common.data.ForgeAdvancementProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.common.data.ForgeAdvancementProvider;
 import vectorwing.farmersdelight.common.registry.ModItems;
+
+import com.lance5057.extradelight.ExtraDelight;
+import com.lance5057.extradelight.ExtraDelightBlocks;
+import com.lance5057.extradelight.ExtraDelightItems;
+import com.lance5057.extradelight.ExtraDelightTags;
 
 public class AdvancementGenerator implements ForgeAdvancementProvider.AdvancementGenerator {
 //	private final DataGenerator dataGenerator;

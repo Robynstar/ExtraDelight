@@ -1,7 +1,5 @@
 package com.lance5057.extradelight.workstations.dryingrack;
 
-import com.lance5057.extradelight.ExtraDelightRecipes;
-
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.resources.ResourceLocation;
@@ -12,6 +10,8 @@ import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
+
+import com.lance5057.extradelight.ExtraDelightRecipes;
 
 public class DryingRackRecipe implements Recipe<Container> {
 

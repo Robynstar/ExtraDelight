@@ -1,9 +1,14 @@
 package com.lance5057.extradelight.data.recipebuilders;
 
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Consumer;
+
+import javax.annotation.Nullable;
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import com.lance5057.extradelight.ExtraDelightRecipes;
-import com.lance5057.extradelight.workstations.mixingbowl.recipes.MixingBowlRecipe;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementRewards;
 import net.minecraft.advancements.CriterionTriggerInstance;
@@ -21,11 +26,8 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
 
-import javax.annotation.Nullable;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.function.Consumer;
+import com.lance5057.extradelight.ExtraDelightRecipes;
+import com.lance5057.extradelight.workstations.mixingbowl.recipes.MixingBowlRecipe;
 
 public class MixingBowlRecipeBuilder implements RecipeBuilder {
     final int stirs;

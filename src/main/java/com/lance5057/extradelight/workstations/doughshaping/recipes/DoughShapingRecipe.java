@@ -1,8 +1,6 @@
 package com.lance5057.extradelight.workstations.doughshaping.recipes;
 
 import com.google.gson.JsonObject;
-import com.lance5057.extradelight.ExtraDelightBlocks;
-import com.lance5057.extradelight.ExtraDelightRecipes;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
@@ -13,6 +11,9 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.SingleItemRecipe;
 import net.minecraft.world.level.Level;
+
+import com.lance5057.extradelight.ExtraDelightBlocks;
+import com.lance5057.extradelight.ExtraDelightRecipes;
 
 public class DoughShapingRecipe extends SingleItemRecipe {
     public DoughShapingRecipe(ResourceLocation id, String pGroup, Ingredient pIngredient, ItemStack pResult) {

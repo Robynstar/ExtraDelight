@@ -1,8 +1,9 @@
 package com.lance5057.extradelight.recipe;
 
+import java.util.Optional;
+
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.mojang.serialization.Codec;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
@@ -12,8 +13,6 @@ import net.minecraft.world.Container;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraftforge.registries.ForgeRegistries;
-
-import java.util.Optional;
 
 public class DynamicNameCookingRecipe extends SmokingRecipe {
 

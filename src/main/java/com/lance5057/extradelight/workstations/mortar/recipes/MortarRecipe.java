@@ -2,8 +2,6 @@ package com.lance5057.extradelight.workstations.mortar.recipes;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.lance5057.extradelight.ExtraDelightBlocks;
-import com.lance5057.extradelight.ExtraDelightRecipes;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
@@ -14,6 +12,9 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.ShapedRecipe;
 import net.minecraft.world.item.crafting.SingleItemRecipe;
 import net.minecraft.world.level.Level;
+
+import com.lance5057.extradelight.ExtraDelightBlocks;
+import com.lance5057.extradelight.ExtraDelightRecipes;
 
 public class MortarRecipe extends SingleItemRecipe {
     protected final int grinds;
