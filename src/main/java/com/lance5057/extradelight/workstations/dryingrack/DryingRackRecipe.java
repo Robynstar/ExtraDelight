@@ -3,6 +3,7 @@ package com.lance5057.extradelight.workstations.dryingrack;
 import com.lance5057.extradelight.ExtraDelightRecipes;
 
 import net.minecraft.core.NonNullList;
+import net.minecraft.core.RegistryAccess;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.Container;
 import net.minecraft.world.item.ItemStack;
@@ -47,7 +48,7 @@ public class DryingRackRecipe implements Recipe<Container> {
 	}
 
 	@Override
-	public ItemStack assemble(Container pContainer) {
+	public ItemStack assemble(Container container, RegistryAccess registryAccess) {
 		return this.result.copy();
 	}
 
@@ -57,14 +58,13 @@ public class DryingRackRecipe implements Recipe<Container> {
 		return true;
 	}
 
-	public Ingredient getInput() {
-		return ingredient;
+	@Override
+	public ItemStack getResultItem(RegistryAccess registryAccess) {
+		return result;
 	}
 
-	@Override
-	public ItemStack getResultItem() {
-		// TODO Auto-generated method stub
-		return result;
+	public Ingredient getInput() {
+		return ingredient;
 	}
 
 	public int getCookingTime() {

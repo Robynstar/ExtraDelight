@@ -527,40 +527,41 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 	}
 
 	private void dryingRackRecipes(Consumer<FinishedRecipe> consumer) {
-		DryingRackRecipeBuilder.drying(Ingredient.of(Items.WET_SPONGE), new ItemStack(Items.SPONGE), 10, 1000)
-				.unlockedBy("has_sponge", has(Items.WET_SPONGE)).save(consumer, EDLoc("sponge"));
-		DryingRackRecipeBuilder.drying(Ingredient.of(Items.KELP), new ItemStack(Items.DRIED_KELP), 10, 1000)
-				.unlockedBy("has_kelp", has(Items.KELP)).save(consumer, EDLoc("dried_kelp"));
+		DryingRackRecipeBuilder.drying(Ingredient.of(Items.WET_SPONGE), Items.SPONGE, 10, 1000)
+			.unlockedBy("has_sponge", has(Items.WET_SPONGE))
+			.save(consumer, EDLoc("sponge"));
+		DryingRackRecipeBuilder.drying(Ingredient.of(Items.KELP), Items.DRIED_KELP, 10, 1000)
+			.unlockedBy("has_kelp", has(Items.KELP))
+			.save(consumer, EDLoc("dried_kelp"));
 
-		DryingRackRecipeBuilder
-				.drying(Ingredient.of(ExtraDelightItems.SEAWEED_PASTE.get()),
-						new ItemStack(ExtraDelightItems.AGAR_SHEETS.get()), 10, 1000)
-				.unlockedBy("has_paste", has(ExtraDelightItems.SEAWEED_PASTE.get()))
-				.save(consumer, EDLoc("agar_sheets"));
+		DryingRackRecipeBuilder.drying(Ingredient.of(ExtraDelightItems.SEAWEED_PASTE.get()),
+				ExtraDelightItems.AGAR_SHEETS.get(), 10, 1000)
+			.unlockedBy("has_paste", has(ExtraDelightItems.SEAWEED_PASTE.get()))
+			.save(consumer, EDLoc("agar_sheets"));
 
-		DryingRackRecipeBuilder.drying(Ingredient.of(ForgeTags.COOKED_FISHES),
-				new ItemStack(ExtraDelightItems.FISH_FLAKES.get()), 10, 1000)
-				.unlockedBy("has_fish", has(ForgeTags.COOKED_FISHES)).save(consumer, EDLoc("fish_flakes"));
+		DryingRackRecipeBuilder.drying(Ingredient.of(ForgeTags.COOKED_FISHES), ExtraDelightItems.FISH_FLAKES.get(), 10,
+				1000)
+			.unlockedBy("has_fish", has(ForgeTags.COOKED_FISHES))
+			.save(consumer, EDLoc("fish_flakes"));
 
-		DryingRackRecipeBuilder
-				.drying(Ingredient.of(ExtraDelightTags.MEAT), new ItemStack(ExtraDelightItems.JERKY.get()), 10, 1000)
-				.unlockedBy("has_meat", has(ExtraDelightTags.MEAT)).save(consumer, EDLoc("jerky"));
+		DryingRackRecipeBuilder.drying(Ingredient.of(ExtraDelightTags.MEAT), ExtraDelightItems.JERKY.get(), 10, 1000)
+			.unlockedBy("has_meat", has(ExtraDelightTags.MEAT))
+			.save(consumer, EDLoc("jerky"));
 
-		DryingRackRecipeBuilder
-				.drying(Ingredient.of(ExtraDelightItems.CORN_HUSK.get()),
-						new ItemStack(ExtraDelightItems.DRIED_CORN_HUSK.get()), 10, 1000)
-				.unlockedBy("has_husk", has(ExtraDelightItems.CORN_HUSK.get())).save(consumer, EDLoc("corn_husk"));
+		DryingRackRecipeBuilder.drying(Ingredient.of(ExtraDelightItems.CORN_HUSK.get()),
+				ExtraDelightItems.DRIED_CORN_HUSK.get(), 10, 1000)
+			.unlockedBy("has_husk", has(ExtraDelightItems.CORN_HUSK.get()))
+			.save(consumer, EDLoc("corn_husk"));
 
-		DryingRackRecipeBuilder
-				.drying(Ingredient.of(ExtraDelightItems.RAW_CINNAMON.get()),
-						new ItemStack(ExtraDelightItems.CINNAMON_STICK.get()), 10, 1000)
-				.unlockedBy("has_husk", has(ExtraDelightItems.RAW_CINNAMON.get()))
-				.save(consumer, EDLoc("raw_cinnamon"));
+		DryingRackRecipeBuilder.drying(Ingredient.of(ExtraDelightItems.RAW_CINNAMON.get()),
+				ExtraDelightItems.CINNAMON_STICK.get(), 10, 1000)
+			.unlockedBy("has_husk", has(ExtraDelightItems.RAW_CINNAMON.get()))
+			.save(consumer, EDLoc("raw_cinnamon"));
 
-		DryingRackRecipeBuilder
-				.drying(Ingredient.of(ExtraDelightTags.PROCESSED_FRUIT),
-						new ItemStack(ExtraDelightItems.DRIED_FRUIT.get()), 10, 1000)
-				.unlockedBy("has_husk", has(ExtraDelightTags.DRIED_FRUIT)).save(consumer, EDLoc("dried_fruit"));
+		DryingRackRecipeBuilder.drying(Ingredient.of(ExtraDelightTags.PROCESSED_FRUIT),
+				ExtraDelightItems.DRIED_FRUIT.get(), 10, 1000)
+			.unlockedBy("has_husk", has(ExtraDelightTags.DRIED_FRUIT))
+			.save(consumer, EDLoc("dried_fruit"));
 	}
 
 	private void cookingRecipes(Consumer<FinishedRecipe> consumer) {

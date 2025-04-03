@@ -8,9 +8,10 @@ import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightTags;
 
 import net.minecraft.advancements.Advancement;
-import net.minecraft.advancements.AdvancementHolder;
-import net.minecraft.advancements.AdvancementRequirements;
-import net.minecraft.advancements.AdvancementType;
+import net.minecraft.advancements.Advancement;
+import net.minecraft.advancements.FrameType;
+import net.minecraft.advancements.FrameType;
+import net.minecraft.advancements.RequirementsStrategy;
 import net.minecraft.advancements.critereon.BlockPredicate;
 import net.minecraft.advancements.critereon.ConsumeItemTrigger;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
@@ -73,31 +74,31 @@ public class AdvancementGenerator implements ForgeAdvancementProvider.Advancemen
 //	}
 
 	@Override
-	public void generate(Provider registries, Consumer<AdvancementHolder> consumer,
+	public void generate(Provider registries, Consumer<Advancement> consumer,
 			ExistingFileHelper existingFileHelper) {
-		AdvancementHolder start = Advancement.Builder.advancement()
+		Advancement start = Advancement.Builder.advancement()
 				.display(ExtraDelightItems.WOODEN_SPOON.get(),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.start.name"),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.start.desc"),
-						new ResourceLocation("extradelight:textures/block/wallpaper_red.png"), AdvancementType.TASK,
+						new ResourceLocation("extradelight:textures/block/wallpaper_red.png"), FrameType.TASK,
 						false, false, true)
 				.addCriterion("start", InventoryChangeTrigger.TriggerInstance.hasItems(new ItemLike[] {}))
-				.save(consumer, ExtraDelight.MOD_ID + ":start");
+				.save(consumer, new ResourceLocation(ExtraDelight.MOD_ID + ":start"), existingFileHelper);
 
-		AdvancementHolder grater = Advancement.Builder.advancement()
+		Advancement grater = Advancement.Builder.advancement()
 				.display(ExtraDelightItems.GRATER.get(),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.grater.name"),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.grater.desc"), null,
-						AdvancementType.TASK, true, true, false)
+						FrameType.TASK, true, true, false)
 				.parent(start)
 				.addCriterion("grater", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.GRATER.get()))
 				.save(consumer, ExtraDelight.MOD_ID + ":grater");
 
-		AdvancementHolder spoon = Advancement.Builder.advancement()
+		Advancement spoon = Advancement.Builder.advancement()
 				.display(ExtraDelightItems.DIAMOND_SPOON.get(),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.spoon.name"),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.spoon.desc"), null,
-						AdvancementType.TASK, true, true, false)
+						FrameType.TASK, true, true, false)
 				.parent(start)
 				.addCriterion("diamond_spoon",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.DIAMOND_SPOON.get()))
@@ -111,37 +112,37 @@ public class AdvancementGenerator implements ForgeAdvancementProvider.Advancemen
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.STONE_SPOON.get()))
 				.addCriterion("wooden_spoon",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.WOODEN_SPOON.get()))
-				.requirements(AdvancementRequirements.Strategy.OR).save(consumer, ExtraDelight.MOD_ID + ":spoon");
+				.requirements(RequirementsStrategy.OR).save(consumer, ExtraDelight.MOD_ID + ":spoon");
 
-		AdvancementHolder mixingbowl = Advancement.Builder.advancement()
+		Advancement mixingbowl = Advancement.Builder.advancement()
 				.display(ExtraDelightItems.MIXING_BOWL.get(),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.mixingbowl.name"),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.mixingbowl.desc"), null,
-						AdvancementType.TASK, true, true, false)
+						FrameType.TASK, true, true, false)
 				.parent(spoon)
 				.addCriterion("mixingbowl",
 						ItemUsedOnLocationTrigger.TriggerInstance
 								.itemUsedOnBlock(
 										LocationPredicate.Builder.location()
 												.setBlock(BlockPredicate.Builder.block()
-														.of(ExtraDelightBlocks.MIXING_BOWL.get())),
+														.of(ExtraDelightBlocks.MIXING_BOWL.get()).build()),
 										ItemPredicate.Builder.item().of(ExtraDelightTags.SPOONS)))
 				.save(consumer, ExtraDelight.MOD_ID + ":mixingbowl");
 
-		AdvancementHolder oven = Advancement.Builder.advancement()
+		Advancement oven = Advancement.Builder.advancement()
 				.display(ExtraDelightItems.OVEN.get(),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.oven.name"),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.oven.desc"), null,
-						AdvancementType.TASK, true, true, false)
+						FrameType.TASK, true, true, false)
 				.parent(start)
 				.addCriterion("oven", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.OVEN.get()))
 				.save(consumer, ExtraDelight.MOD_ID + ":oven");
 
-		AdvancementHolder trays = Advancement.Builder.advancement()
+		Advancement trays = Advancement.Builder.advancement()
 				.display(ExtraDelightItems.TRAY.get(),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.trays.name"),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.trays.desc"), null,
-						AdvancementType.TASK, true, true, false)
+						FrameType.TASK, true, true, false)
 				.parent(oven)
 				.addCriterion("tray", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.TRAY.get()))
 				.addCriterion("sheet", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.SHEET.get()))
@@ -155,35 +156,35 @@ public class AdvancementGenerator implements ForgeAdvancementProvider.Advancemen
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.PIE_DISH.get()))
 				.addCriterion("muffin_tin",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MUFFIN_TIN.get()))
-				.requirements(AdvancementRequirements.Strategy.AND).save(consumer, ExtraDelight.MOD_ID + ":trays");
+				.requirements(RequirementsStrategy.AND).save(consumer, ExtraDelight.MOD_ID + ":trays");
 
-		AdvancementHolder mortar = Advancement.Builder.advancement()
+		Advancement mortar = Advancement.Builder.advancement()
 				.display(ExtraDelightItems.MORTAR_STONE.get(),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.mortar.name"),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.mortar.desc"), null,
-						AdvancementType.TASK, true, true, false)
+						FrameType.TASK, true, true, false)
 				.parent(start)
 				.addCriterion("mortar",
 						InventoryChangeTrigger.TriggerInstance
 								.hasItems(ItemPredicate.Builder.item().of(ExtraDelightTags.MORTAR).build()))
 				.save(consumer, ExtraDelight.MOD_ID + ":mortar");
 
-		AdvancementHolder flour = Advancement.Builder.advancement()
+		Advancement flour = Advancement.Builder.advancement()
 				.display(ExtraDelightItems.FLOUR.get(),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.flour.name"),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.flour.desc"), null,
-						AdvancementType.TASK, true, true, false)
+						FrameType.TASK, true, true, false)
 				.parent(mortar)
 				.addCriterion("flour",
 						InventoryChangeTrigger.TriggerInstance
 								.hasItems(ItemPredicate.Builder.item().of(ExtraDelightTags.FLOUR).build()))
 				.save(consumer, ExtraDelight.MOD_ID + ":flour");
 
-		AdvancementHolder amethyst = Advancement.Builder.advancement()
+		Advancement amethyst = Advancement.Builder.advancement()
 				.display(ExtraDelightItems.MORTAR_AMETHYST.get(),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.amethyst.name"),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.amethyst.desc"), null,
-						AdvancementType.CHALLENGE, true, true, true)
+						FrameType.CHALLENGE, true, true, true)
 				.parent(mortar)
 				.addCriterion("amethyst_mortar",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MORTAR_AMETHYST.get()))
@@ -191,11 +192,11 @@ public class AdvancementGenerator implements ForgeAdvancementProvider.Advancemen
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.PESTLE_AMETHYST.get()))
 				.save(consumer, ExtraDelight.MOD_ID + ":amethyst");
 
-		AdvancementHolder gildedblackstone = Advancement.Builder.advancement()
+		Advancement gildedblackstone = Advancement.Builder.advancement()
 				.display(ExtraDelightItems.MORTAR_GILDED_BLACKSTONE.get(),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.gildedblackstone.name"),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.gildedblackstone.desc"), null,
-						AdvancementType.CHALLENGE, true, true, true)
+						FrameType.CHALLENGE, true, true, true)
 				.parent(mortar)
 				.addCriterion("gildedblackstone_mortar",
 						InventoryChangeTrigger.TriggerInstance
@@ -205,34 +206,34 @@ public class AdvancementGenerator implements ForgeAdvancementProvider.Advancemen
 								.hasItems(ExtraDelightItems.PESTLE_GILDED_BLACKSTONE.get()))
 				.save(consumer, ExtraDelight.MOD_ID + ":gildedblackstone");
 
-		AdvancementHolder grind = Advancement.Builder.advancement()
+		Advancement grind = Advancement.Builder.advancement()
 				.display(ExtraDelightItems.PESTLE_ENDSTONE.get(),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.grind.name"),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.grind.desc"), null,
-						AdvancementType.GOAL, true, true, false)
+						FrameType.GOAL, true, true, false)
 				.parent(mortar)
 				.addCriterion("grind",
 						ItemUsedOnLocationTrigger.TriggerInstance.itemUsedOnBlock(
 								LocationPredicate.Builder.location()
-										.setBlock(BlockPredicate.Builder.block().of(ExtraDelightTags.MORTAR_BLOCK)),
+										.setBlock(BlockPredicate.Builder.block().of(ExtraDelightTags.MORTAR_BLOCK).build()),
 								ItemPredicate.Builder.item().of(ExtraDelightTags.SPOONS)))
 				.save(consumer, ExtraDelight.MOD_ID + ":grind");
 
-		AdvancementHolder doughshaping = Advancement.Builder.advancement()
+		Advancement doughshaping = Advancement.Builder.advancement()
 				.display(ExtraDelightItems.DOUGH_SHAPING.get(),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.doughshaping.name"),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.doughshaping.desc"), null,
-						AdvancementType.TASK, true, true, false)
+						FrameType.TASK, true, true, false)
 				.parent(start)
 				.addCriterion("doughshaping",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.DOUGH_SHAPING.get()))
 				.save(consumer, ExtraDelight.MOD_ID + ":doughshaping");
 
-		AdvancementHolder hellskitchen = Advancement.Builder.advancement()
+		Advancement hellskitchen = Advancement.Builder.advancement()
 				.display(ExtraDelightItems.NETHERITE_SPOON.get(),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.hellskitchen.name"),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.hellskitchen.desc"), null,
-						AdvancementType.TASK, true, true, false)
+						FrameType.TASK, true, true, false)
 				.parent(spoon)
 				.addCriterion("hellskitchen_spoon",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.NETHERITE_SPOON.get()))
@@ -240,68 +241,68 @@ public class AdvancementGenerator implements ForgeAdvancementProvider.Advancemen
 						InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_KNIFE.get()))
 				.save(consumer, ExtraDelight.MOD_ID + ":hellskitchen");
 
-		AdvancementHolder noodles = Advancement.Builder.advancement()
+		Advancement noodles = Advancement.Builder.advancement()
 				.display(ExtraDelightItems.LASAGNA_NOODLES.get(),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.noodles.name"),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.noodles.desc"), null,
-						AdvancementType.GOAL, true, true, false)
+						FrameType.GOAL, true, true, false)
 				.parent(doughshaping)
 				.addCriterion("lasagna_noodles",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.LASAGNA_NOODLES.get()))
 				.addCriterion("macaroni_noodles",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MACARONI.get()))
 				.addCriterion("pasta", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.RAW_PASTA.get()))
-				.requirements(AdvancementRequirements.Strategy.OR).save(consumer, ExtraDelight.MOD_ID + ":noodles");
+				.requirements(RequirementsStrategy.OR).save(consumer, ExtraDelight.MOD_ID + ":noodles");
 
-		AdvancementHolder dryingrack = Advancement.Builder.advancement()
+		Advancement dryingrack = Advancement.Builder.advancement()
 				.display(ExtraDelightItems.DRYING_RACK.get(),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.dryingrack.name"),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.dryingrack.desc"), null,
-						AdvancementType.TASK, true, true, false)
+						FrameType.TASK, true, true, false)
 				.parent(start)
 				.addCriterion("dryingrack",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.DRYING_RACK.get()))
 				.save(consumer, ExtraDelight.MOD_ID + ":dryingrack");
 
-		AdvancementHolder yeastpot = Advancement.Builder.advancement()
+		Advancement yeastpot = Advancement.Builder.advancement()
 				.display(ExtraDelightItems.YEAST_POT.get(),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.yeastpot.name"),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.yeastpot.desc"), null,
-						AdvancementType.TASK, true, true, false)
+						FrameType.TASK, true, true, false)
 				.parent(start)
 				.addCriterion("yeastpot",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.YEAST_POT.get()))
 				.addCriterion("yeast", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.YEAST.get()))
-				.requirements(AdvancementRequirements.Strategy.AND).save(consumer, ExtraDelight.MOD_ID + ":yeastpot");
+				.requirements(RequirementsStrategy.AND).save(consumer, ExtraDelight.MOD_ID + ":yeastpot");
 
-		AdvancementHolder vinegarpot = Advancement.Builder.advancement()
+		Advancement vinegarpot = Advancement.Builder.advancement()
 				.display(ExtraDelightItems.YEAST_POT.get(),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.vinegarpot.name"),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.vinegarpot.desc"), null,
-						AdvancementType.TASK, true, true, false)
+						FrameType.TASK, true, true, false)
 				.parent(start)
 				.addCriterion("vinegarpot",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.VINEGAR_POT.get()))
 				.addCriterion("vinegar",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.VINEGAR.get()))
-				.requirements(AdvancementRequirements.Strategy.AND).save(consumer, ExtraDelight.MOD_ID + ":vinegarpot");
+				.requirements(RequirementsStrategy.AND).save(consumer, ExtraDelight.MOD_ID + ":vinegarpot");
 
-		AdvancementHolder jelly = Advancement.Builder.advancement()
+		Advancement jelly = Advancement.Builder.advancement()
 				.display(ExtraDelightItems.JELLY_LIME.get(),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.jelly.name"),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.jelly.desc"), null,
-						AdvancementType.TASK, true, true, false)
+						FrameType.TASK, true, true, false)
 				.parent(start)
 				.addCriterion("jelly",
 						InventoryChangeTrigger.TriggerInstance
 								.hasItems(ItemPredicate.Builder.item().of(ExtraDelightTags.JELLY).build()))
 				.save(consumer, ExtraDelight.MOD_ID + ":jelly");
 
-		AdvancementHolder jellyall = Advancement.Builder.advancement()
+		Advancement jellyall = Advancement.Builder.advancement()
 				.display(ExtraDelightItems.JELLY_MAGENTA.get(),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.jellyall.name"),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.jellyall.desc"), null,
-						AdvancementType.CHALLENGE, true, true, true)
+						FrameType.CHALLENGE, true, true, true)
 				.parent(jelly)
 				.addCriterion("jellyall_white",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightBlocks.JELLY_WHITE.get()))
@@ -335,39 +336,39 @@ public class AdvancementGenerator implements ForgeAdvancementProvider.Advancemen
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightBlocks.JELLY_RED.get()))
 				.addCriterion("jellyall_black",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightBlocks.JELLY_BLACK.get()))
-				.requirements(AdvancementRequirements.Strategy.AND).save(consumer, ExtraDelight.MOD_ID + ":jellyall");
+				.requirements(RequirementsStrategy.AND).save(consumer, ExtraDelight.MOD_ID + ":jellyall");
 
-		AdvancementHolder food = Advancement.Builder.advancement()
+		Advancement food = Advancement.Builder.advancement()
 				.display(Items.APPLE, Component.translatable(ExtraDelight.MOD_ID + ".advancement.food.name"),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.food.desc"), null,
-						AdvancementType.TASK, true, true, false)
+						FrameType.TASK, true, true, false)
 				.parent(start).addCriterion("food", ConsumeItemTrigger.TriggerInstance.usedItem())
 				.save(consumer, ExtraDelight.MOD_ID + ":food");
 
-		AdvancementHolder badfood = Advancement.Builder.advancement()
+		Advancement badfood = Advancement.Builder.advancement()
 				.display(ExtraDelightItems.BAD_FOOD.get(),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.badfood.name"),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.badfood.desc"), null,
-						AdvancementType.TASK, true, true, false)
+						FrameType.TASK, true, true, false)
 				.parent(food)
 				.addCriterion("badfood", ConsumeItemTrigger.TriggerInstance.usedItem(ExtraDelightItems.BAD_FOOD.get()))
 				.save(consumer, ExtraDelight.MOD_ID + ":badfood");
 
-		AdvancementHolder cactus_juice = Advancement.Builder.advancement()
+		Advancement cactus_juice = Advancement.Builder.advancement()
 				.display(ExtraDelightItems.CACTUS_JUICE.get(),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.cactus_juice.name"),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.cactus_juice.desc"), null,
-						AdvancementType.GOAL, true, true, true)
+						FrameType.GOAL, true, true, true)
 				.parent(food)
 				.addCriterion("cactus_juice",
 						ConsumeItemTrigger.TriggerInstance.usedItem(ExtraDelightItems.CACTUS_JUICE.get()))
 				.save(consumer, ExtraDelight.MOD_ID + ":cactus_juice");
 
-		AdvancementHolder feasts = Advancement.Builder.advancement()
+		Advancement feasts = Advancement.Builder.advancement()
 				.display(ExtraDelightItems.BEEF_WELLINGTON_FEAST_ITEM.get(),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.feasts.name"),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.feasts.desc"), null,
-						AdvancementType.CHALLENGE, true, true, false)
+						FrameType.CHALLENGE, true, true, false)
 				.parent(food)
 				.addCriterion("bbq",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.BBQ_RIBS_FEAST_ITEM.get()))
@@ -417,13 +418,13 @@ public class AdvancementGenerator implements ForgeAdvancementProvider.Advancemen
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.MEAT_PIE_BLOCK_ITEM.get()))
 				.addCriterion("stirfry",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.STIRFRY_FEAST_ITEM.get()))
-				.requirements(AdvancementRequirements.Strategy.AND).save(consumer, ExtraDelight.MOD_ID + ":feasts");
+				.requirements(RequirementsStrategy.AND).save(consumer, ExtraDelight.MOD_ID + ":feasts");
 
-		AdvancementHolder meals = Advancement.Builder.advancement()
+		Advancement meals = Advancement.Builder.advancement()
 				.display(ExtraDelightItems.RICEBALL_FILLED.get(),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.meals.name"),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.meals.desc"), null,
-						AdvancementType.CHALLENGE, true, true, false)
+						FrameType.CHALLENGE, true, true, false)
 				.parent(food)
 				.addCriterion("JERKY", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.JERKY.get()))
 				.addCriterion("SCRAMBLED_EGGS",
@@ -593,13 +594,13 @@ public class AdvancementGenerator implements ForgeAdvancementProvider.Advancemen
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.COOKED_CACTUS.get()))
 				.addCriterion("STUFFED_CACTUS",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.STUFFED_CACTUS.get()))
-				.requirements(AdvancementRequirements.Strategy.AND).save(consumer, ExtraDelight.MOD_ID + ":meals");
+				.requirements(RequirementsStrategy.AND).save(consumer, ExtraDelight.MOD_ID + ":meals");
 
-		AdvancementHolder desert = Advancement.Builder.advancement()
+		Advancement desert = Advancement.Builder.advancement()
 				.display(ExtraDelightItems.GLOW_BERRY_PIE_ITEM.get(),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.desert.name"),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.desert.desc"), null,
-						AdvancementType.CHALLENGE, true, true, true)
+						FrameType.CHALLENGE, true, true, true)
 				.parent(food)
 				.addCriterion("CHOCOLATE_CUSTARD",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.CHOCOLATE_CUSTARD.get()))
@@ -640,13 +641,13 @@ public class AdvancementGenerator implements ForgeAdvancementProvider.Advancemen
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.HONEY_POPSICLE.get()))
 				.addCriterion("SWEET_BERRY_POPSICLE",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.SWEET_BERRY_POPSICLE.get()))
-				.requirements(AdvancementRequirements.Strategy.AND).save(consumer, ExtraDelight.MOD_ID + ":desert");
+				.requirements(RequirementsStrategy.AND).save(consumer, ExtraDelight.MOD_ID + ":desert");
 
-		AdvancementHolder ingredients = Advancement.Builder.advancement()
+		Advancement ingredients = Advancement.Builder.advancement()
 				.display(ExtraDelightItems.GRATED_CARROT.get(),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.ingredients.name"),
 						Component.translatable(ExtraDelight.MOD_ID + ".advancement.ingredients.desc"), null,
-						AdvancementType.CHALLENGE, true, true, false)
+						FrameType.CHALLENGE, true, true, false)
 				.parent(food)
 				.addCriterion("ALFREDO_SAUCE",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.ALFREDO_SAUCE.get()))
@@ -702,7 +703,7 @@ public class AdvancementGenerator implements ForgeAdvancementProvider.Advancemen
 				.addCriterion("YEAST", InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.YEAST.get()))
 				.addCriterion("VINEGAR",
 						InventoryChangeTrigger.TriggerInstance.hasItems(ExtraDelightItems.VINEGAR.get()))
-				.requirements(AdvancementRequirements.Strategy.AND)
+				.requirements(RequirementsStrategy.AND)
 				.save(consumer, ExtraDelight.MOD_ID + ":ingredients");
 	}
 

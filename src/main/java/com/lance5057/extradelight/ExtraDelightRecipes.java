@@ -76,12 +76,12 @@ public class ExtraDelightRecipes {
 	public static final RegistryObject<RecipeSerializer<?>> DYNAMIC_CAMPFIRE_SERIALIZER = RECIPE_SERIALIZERS
 			.register("dynamic_campfire", DynamicNameCampfireRecipe.Serializer::new);
 
-	public static final RegistryObject<RecipeSerializer<?>> DRYING_RACK_SERIALIZER = RECIPE_SERIALIZERS
+	public static final RegistryObject<DryingRackSerializer> DRYING_RACK_SERIALIZER = RECIPE_SERIALIZERS
 			.register("drying_rack", DryingRackSerializer::new);
-	public static final RegistryObject<RecipeSerializer<?>> FEAST_SERIALIZER = RECIPE_SERIALIZERS.register("feast",
+	public static final RegistryObject<FeastRecipe.Serializer> FEAST_SERIALIZER = RECIPE_SERIALIZERS.register("feast",
 			FeastRecipe.Serializer::new);
 
-	public static final RegistryObject<RecipeSerializer<?>> TOOL_ON_BLOCK_SERIALIZER = RECIPE_SERIALIZERS
+	public static final RegistryObject<ToolOnBlockRecipe.Serializer> TOOL_ON_BLOCK_SERIALIZER = RECIPE_SERIALIZERS
 			.register("tool_on_block", ToolOnBlockRecipe.Serializer::new);
 
 	public static final RecipeBookType RECIPE_TYPE_OVEN = RecipeBookType.create("OVEN");
