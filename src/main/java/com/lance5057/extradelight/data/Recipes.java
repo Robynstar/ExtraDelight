@@ -2,6 +2,7 @@ package com.lance5057.extradelight.data;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
+import com.lance5057.extradelight.ExtraDelightRecipes;
 import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.data.recipebuilders.DryingRackRecipeBuilder;
@@ -10,7 +11,6 @@ import com.lance5057.extradelight.data.recipebuilders.MixingBowlRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.MortarRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.OvenRecipeBuilder;
 import com.lance5057.extradelight.data.recipebuilders.ToolOnBlockBuilder;
-import com.lance5057.extradelight.workstations.doughshaping.recipes.DoughShapingRecipe;
 import com.lance5057.extradelight.workstations.oven.recipetab.OvenRecipeBookTab;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.PackOutput;
@@ -32,7 +32,6 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.DifferenceIngredient;
-import org.jetbrains.annotations.NotNull;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
@@ -63,10 +62,6 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 	public static ResourceLocation EDLoc(String texture) {
 		return new ResourceLocation(ExtraDelight.MOD_ID, texture);
 	}
-
-//	public static ResourceLocation CreateLoc(String texture) {
-//		return new ResourceLocation(Create.ID, texture);
-//	}
 
 	@Override
 	protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
@@ -518,12 +513,12 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 
 	public static SingleItemRecipeBuilder doughshaping(Ingredient p_251375_, RecipeCategory p_248984_,
 			ItemLike p_250105_, int p_249506_) {
-		return new SingleItemRecipeBuilder(p_248984_, DoughShapingRecipe::new, p_251375_, p_250105_, p_249506_);
+		return new SingleItemRecipeBuilder(p_248984_, ExtraDelightRecipes.DOUGH_SHAPING_SERIALIZER.get(), p_251375_, p_250105_, p_249506_);
 	}
 
 	public static SingleItemRecipeBuilder doughshaping(Ingredient p_248596_, RecipeCategory p_250503_,
 			ItemLike p_250269_) {
-		return new SingleItemRecipeBuilder(p_250503_, DoughShapingRecipe::new, p_248596_, p_250269_, 1);
+		return new SingleItemRecipeBuilder(p_250503_, ExtraDelightRecipes.DOUGH_SHAPING_SERIALIZER.get(), p_248596_, p_250269_, 1);
 	}
 
 	private void dryingRackRecipes(Consumer<FinishedRecipe> consumer) {
@@ -622,7 +617,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				ExtraDelightItems.SUGAR_COOKIE_EMERALD.get(), consumer, "sugar_cookie_emerald");
 	}
 
-	private void vanillaCooking(Ingredient of, @NotNull Item item, Consumer<FinishedRecipe> consumer, String name) {
+	private void vanillaCooking(Ingredient of, Item item, Consumer<FinishedRecipe> consumer, String name) {
 		SimpleCookingRecipeBuilder.campfireCooking(of, RecipeCategory.FOOD, item, MEDIUM_EXP, CAMPFIRE_COOKING)
 				.unlockedBy(getName(), InventoryChangeTrigger.TriggerInstance.hasItems(item))
 				.save(consumer, EDLoc("campfire/" + name + "_fire"));
@@ -1112,7 +1107,7 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				consumer, "beet_mint_salad");
 	}
 
-	private void mixing(@NotNull ItemStack output, int grind, ItemStack container, Ingredient[] ingredients,
+	private void mixing(ItemStack output, int grind, ItemStack container, Ingredient[] ingredients,
 			Consumer<FinishedRecipe> consumer, String rc) {
 		MixingBowlRecipeBuilder b = MixingBowlRecipeBuilder.stir(output, grind, container);
 

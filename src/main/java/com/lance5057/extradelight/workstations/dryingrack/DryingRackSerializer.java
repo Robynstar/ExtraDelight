@@ -22,9 +22,9 @@ public class DryingRackSerializer implements RecipeSerializer<DryingRackRecipe> 
 	@Override
 	public DryingRackRecipe fromJson(ResourceLocation pRecipeId, JsonObject pJson) {
 		String s = GsonHelper.getAsString(pJson, "group", "");
-		JsonElement jsonelement = (JsonElement) (GsonHelper.isArrayNode(pJson, "ingredient")
+		JsonElement jsonelement = GsonHelper.isArrayNode(pJson, "ingredient")
 				? GsonHelper.getAsJsonArray(pJson, "ingredient")
-				: GsonHelper.getAsJsonObject(pJson, "ingredient"));
+				: GsonHelper.getAsJsonObject(pJson, "ingredient");
 		Ingredient ingredient = Ingredient.fromJson(jsonelement);
 		// Forge: Check if primitive string to keep vanilla or a object which can
 		// contain a count field.

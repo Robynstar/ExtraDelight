@@ -1,10 +1,5 @@
 package com.lance5057.extradelight.data.recipebuilders;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.function.Consumer;
-import javax.annotation.Nullable;
-
 import com.google.gson.JsonObject;
 import com.lance5057.extradelight.ExtraDelightRecipes;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackSerializer;
@@ -20,6 +15,11 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.registries.ForgeRegistries;
+
+import javax.annotation.Nullable;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.function.Consumer;
 
 public class DryingRackRecipeBuilder implements RecipeBuilder {
 
@@ -40,10 +40,7 @@ public class DryingRackRecipeBuilder implements RecipeBuilder {
     @Nullable
     private String group;
 
-    private DryingRackRecipeBuilder(Item pResult,
-                                    Ingredient pIngredient,
-                                    float pExperience,
-                                    int pCookingTime,
+    private DryingRackRecipeBuilder(Item pResult, Ingredient pIngredient, float pExperience, int pCookingTime,
                                     DryingRackSerializer dryingRackSerializer) {
         this.result = pResult;
         this.ingredient = pIngredient;
@@ -52,12 +49,10 @@ public class DryingRackRecipeBuilder implements RecipeBuilder {
         this.serializer = dryingRackSerializer;
     }
 
-    public static DryingRackRecipeBuilder drying(Ingredient pIngredient,
-                                                 Item pResult,
-                                                 float pExperience,
+    public static DryingRackRecipeBuilder drying(Ingredient pIngredient, Item pResult, float pExperience,
                                                  int pCookingTime) {
         return new DryingRackRecipeBuilder(pResult, pIngredient, pExperience, pCookingTime,
-            ExtraDelightRecipes.DRYING_RACK_SERIALIZER.get());
+                                           ExtraDelightRecipes.DRYING_RACK_SERIALIZER.get());
     }
 
     @Override
@@ -78,13 +73,13 @@ public class DryingRackRecipeBuilder implements RecipeBuilder {
     @Override
     public void save(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation) {
         ResourceLocation recipeId = resourceLocation.withPrefix("drying/");
-        Advancement.Builder advancementBuilder = this.advancement.addCriterion("has_the_recipe",
-                RecipeUnlockedTrigger.unlocked(recipeId))
-            .rewards(AdvancementRewards.Builder.recipe(recipeId))
-            .requirements(RequirementsStrategy.OR);
+        Advancement.Builder advancementBuilder = this.advancement
+                .addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(recipeId))
+                .rewards(AdvancementRewards.Builder.recipe(recipeId))
+                .requirements(RequirementsStrategy.OR);
         this.criteria.forEach(advancementBuilder::addCriterion);
         consumer.accept(new Result(recipeId, group, ingredient, result, experience, cookingTime, advancementBuilder,
-            resourceLocation.withPrefix("recipes/drying/"), this.serializer));
+                                   resourceLocation.withPrefix("recipes/drying/"), this.serializer));
     }
 
     public static class Result implements FinishedRecipe {
@@ -107,14 +102,8 @@ public class DryingRackRecipeBuilder implements RecipeBuilder {
 
         private final DryingRackSerializer serializer;
 
-        public Result(ResourceLocation pId,
-                      String pGroup,
-                      Ingredient pIngredient,
-                      Item pResult,
-                      float pExperience,
-                      int pCookingTime,
-                      Advancement.Builder pAdvancement,
-                      ResourceLocation pAdvancementId,
+        public Result(ResourceLocation pId, String pGroup, Ingredient pIngredient, Item pResult, float pExperience,
+                      int pCookingTime, Advancement.Builder pAdvancement, ResourceLocation pAdvancementId,
                       DryingRackSerializer pSerializer) {
             this.id = pId;
             this.group = pGroup;
@@ -138,8 +127,9 @@ public class DryingRackRecipeBuilder implements RecipeBuilder {
             }
 
             pJson.add("ingredient", this.ingredient.toJson());
-            pJson.addProperty("result", ForgeRegistries.ITEMS.getKey(this.result)
-                .toString());
+            pJson.addProperty("result", ForgeRegistries.ITEMS
+                    .getKey(this.result)
+                    .toString());
             pJson.addProperty("experience", this.experience);
             pJson.addProperty("cookingtime", this.cookingTime);
         }

@@ -1,74 +1,87 @@
 package com.lance5057.extradelight.recipe;
 
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import com.mojang.serialization.Codec;
-import com.mojang.serialization.codecs.RecordCodecBuilder;
-
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.ExtraCodecs;
+import net.minecraft.util.GsonHelper;
 import net.minecraft.world.Container;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.CookingBookCategory;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.RecipeSerializer;
-import net.minecraft.world.item.crafting.SmeltingRecipe;
+import net.minecraft.world.item.crafting.*;
+import net.minecraftforge.registries.ForgeRegistries;
+
+import java.util.Optional;
 
 public class DynamicNameSmeltingRecipe extends SmeltingRecipe {
 
-	public DynamicNameSmeltingRecipe(ResourceLocation id, String p_250200_, CookingBookCategory p_251114_, Ingredient p_250340_,
-			ItemStack p_250306_, float p_249577_, int p_250030_) {
-		super(id, p_250200_, p_251114_, p_250340_, p_250306_, p_249577_, p_250030_);
-	}
+    public DynamicNameSmeltingRecipe(ResourceLocation id, String p_250200_, CookingBookCategory p_251114_,
+                                     Ingredient p_250340_, ItemStack p_250306_, float p_249577_, int p_250030_) {
+        super(id, p_250200_, p_251114_, p_250340_, p_250306_, p_249577_, p_250030_);
+    }
 
-	@Override
-	public ItemStack assemble(Container pInv, RegistryAccess p_267063_) {
-		ItemStack stack = this.result.copy();
-		ItemStack stackIn = pInv.getItem(0);
+    @Override
+    public ItemStack assemble(Container pInv, RegistryAccess p_267063_) {
+        ItemStack stack = this.result.copy();
+        ItemStack stackIn = pInv.getItem(0);
 
-		if (stackIn.hasTag()) {
-			CompoundTag tag = stackIn.getTag();
+        if (stackIn.hasTag()) {
+            CompoundTag tag = stackIn.getTag();
 
-			stack.getOrCreateTag().put("ingredients", tag.get("ingredients"));
-		}
+            stack
+                    .getOrCreateTag()
+                    .put("ingredients", tag.get("ingredients"));
+        }
 
-		return stack;
-	}
+        return stack;
+    }
 
-	public static class Serializer implements RecipeSerializer<DynamicNameSmeltingRecipe> {
-		private static final Codec<DynamicNameSmeltingRecipe> CODEC = RecordCodecBuilder.create(inst -> inst.group(
-				ExtraCodecs.strictOptionalField(Codec.STRING, "group", "")
-						.forGetter(DynamicNameSmeltingRecipe::getGroup),
-				CookingBookCategory.CODEC.fieldOf("category").forGetter(r -> r.category()),
-				Ingredient.CODEC_NONEMPTY.fieldOf("ingredient").forGetter(p_301068_ -> p_301068_.ingredient),
+    public static class Serializer implements RecipeSerializer<DynamicNameSmeltingRecipe> {
 
-				ItemStack.ITEM_WITH_COUNT_CODEC.fieldOf("result").forGetter(r -> r.result),
-				ExtraCodecs.strictOptionalField(Codec.FLOAT, "experience", 1f).forGetter(r -> r.getExperience()),
-				ExtraCodecs.strictOptionalField(Codec.INT, "time", 1).forGetter(r -> r.getCookingTime())
+        @Override
+        public DynamicNameSmeltingRecipe fromJson(ResourceLocation id, JsonObject pJson) {
+            String s = GsonHelper.getAsString(pJson, "group", "");
+            JsonElement jsonelement = GsonHelper.isArrayNode(pJson, "ingredient")
+                    ? GsonHelper.getAsJsonArray(pJson, "ingredient")
+                    : GsonHelper.getAsJsonObject(pJson, "ingredient");
+            Ingredient ingredient = Ingredient.fromJson(jsonelement);
+            if (!pJson.has("result"))
+                throw new com.google.gson.JsonSyntaxException("Missing result, expected to find a string or object");
+            ItemStack itemstack;
+            if (pJson
+                    .get("result")
+                    .isJsonObject())
+                itemstack = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "result"));
+            else {
+                String s1 = GsonHelper.getAsString(pJson, "result");
+                ResourceLocation resourcelocation = new ResourceLocation(s1);
+                itemstack = new ItemStack(Optional
+                    .ofNullable(ForgeRegistries.ITEMS.getValue(resourcelocation))
+                    .orElseThrow(() -> new IllegalStateException("Item: " + s1 + " does not exist")));
+            }
+            float f = GsonHelper.getAsFloat(pJson, "experience", 1f);
+            int i = GsonHelper.getAsInt(pJson, "time", 1);
+            return new DynamicNameSmeltingRecipe(id, s, CookingBookCategory.MISC, ingredient, itemstack, f, i);
+        }
 
-		).apply(inst, DynamicNameSmeltingRecipe::new));
+        public DynamicNameSmeltingRecipe fromNetwork(ResourceLocation id, FriendlyByteBuf pBuffer) {
+            String s = pBuffer.readUtf();
+            Ingredient ingredient = Ingredient.fromNetwork(pBuffer);
+            ItemStack itemstack = pBuffer.readItem();
+            float f = pBuffer.readFloat();
+            int i = pBuffer.readVarInt();
+            return new DynamicNameSmeltingRecipe(id, s, CookingBookCategory.MISC, ingredient, itemstack, f, i);
+        }
 
-		public DynamicNameSmeltingRecipe fromNetwork(FriendlyByteBuf pBuffer) {
-			String s = pBuffer.readUtf();
-			Ingredient ingredient = Ingredient.fromNetwork(pBuffer);
-			ItemStack itemstack = pBuffer.readItem();
-			float f = pBuffer.readFloat();
-			int i = pBuffer.readVarInt();
-			return new DynamicNameSmeltingRecipe(s, CookingBookCategory.MISC, ingredient, itemstack, f, i);
-		}
+        public void toNetwork(FriendlyByteBuf pBuffer, DynamicNameSmeltingRecipe pRecipe) {
+            pBuffer.writeUtf(pRecipe.group);
+            pRecipe.ingredient.toNetwork(pBuffer);
+            pBuffer.writeItem(pRecipe.result);
+            pBuffer.writeFloat(pRecipe.experience);
+            pBuffer.writeVarInt(pRecipe.cookingTime);
+        }
 
-		public void toNetwork(FriendlyByteBuf pBuffer, DynamicNameSmeltingRecipe pRecipe) {
-			pBuffer.writeUtf(pRecipe.group);
-			pRecipe.ingredient.toNetwork(pBuffer);
-			pBuffer.writeItem(pRecipe.result);
-			pBuffer.writeFloat(pRecipe.experience);
-			pBuffer.writeVarInt(pRecipe.cookingTime);
-		}
-
-		@Override
-		public Codec<DynamicNameSmeltingRecipe> codec() {
-			return CODEC;
-		}
-	}
+    }
 }

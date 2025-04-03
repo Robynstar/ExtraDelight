@@ -60,13 +60,13 @@ public class ExtraDelightRecipes {
 	public static final DeferredRegister<RecipeSerializer<?>> RECIPE_SERIALIZERS = DeferredRegister
 			.create(ForgeRegistries.RECIPE_SERIALIZERS, ExtraDelight.MOD_ID);
 
-	public static final RegistryObject<RecipeSerializer<?>> OVEN_SERIALIZER = RECIPE_SERIALIZERS.register("oven",
+	public static final RegistryObject<OvenRecipe.Serializer> OVEN_SERIALIZER = RECIPE_SERIALIZERS.register("oven",
 			OvenRecipe.Serializer::new);
-	public static final RegistryObject<RecipeSerializer<?>> DOUGH_SHAPING_SERIALIZER = RECIPE_SERIALIZERS
+	public static final RegistryObject<DoughShapingRecipe.Serializer> DOUGH_SHAPING_SERIALIZER = RECIPE_SERIALIZERS
 			.register("dough_shaping", DoughShapingRecipe.Serializer::new);
-	public static final RegistryObject<RecipeSerializer<?>> MORTAR_SERIALIZER = RECIPE_SERIALIZERS.register("mortar",
+	public static final RegistryObject<MortarRecipe.Serializer> MORTAR_SERIALIZER = RECIPE_SERIALIZERS.register("mortar",
 			MortarRecipe.Serializer::new);
-	public static final RegistryObject<RecipeSerializer<?>> MIXING_BOWL_SERIALIZER = RECIPE_SERIALIZERS
+	public static final RegistryObject<MixingBowlRecipe.Serializer> MIXING_BOWL_SERIALIZER = RECIPE_SERIALIZERS
 			.register("mixing_bowl", MixingBowlRecipe.Serializer::new);
 
 	public static final RegistryObject<RecipeSerializer<?>> DYNAMIC_SMELT_SERIALIZER = RECIPE_SERIALIZERS
